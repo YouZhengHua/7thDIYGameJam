@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76199576573b1e549bc670b673ab9d23, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  HealthPoint: 3
+  BaseMoveSpeed: 5.5
+  MoveSpeedRate: 1
+  Radius: 3.5
+  Force: 85
+  EnemyDelayTime: 1
+  Level: 1
+  NowExp: 0
+  DropItemRadius: 2
+  ExpRate: 1
+  LevelExpMax: 100
+  Options:
+  - {fileID: 11400000, guid: e3aab2970e3dd1749afe4beb7cf3e052, type: 2}
+  - {fileID: 11400000, guid: 818bc66ff943f91408ac20a0ad3facf4, type: 2}
+  - {fileID: 11400000, guid: de0c40f137f3fcf4c876f18cc40c3f16, type: 2}
+  - {fileID: 11400000, guid: f81c66e8efcd4994f8747ce292f07fe0, type: 2}
+  - {fileID: 11400000, guid: f3bb64baa9270a74daf01baa1f02bced, type: 2}
+  - {fileID: 11400000, guid: 167c19e08ab4a5b44b2162e1b50c133b, type: 2}
+  LevelUpAudio: {fileID: 8300000, guid: 4da67ca2618fd01458ab22c1945b8863, type: 3}
+  GetHitAudio: {fileID: 8300000, guid: 291608b8d286e2a4580ff36324455ce2, type: 3}
+  DropHealthRate: 0.01
+  InvincibleTime: 1

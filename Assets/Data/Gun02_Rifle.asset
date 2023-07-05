@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca2cba303af45d40a132e8a32612b3f, type: 3}
+  m_Name: Gun02_Rifle
+  m_EditorClassIdentifier: 
+  Name: "\u6B65\u69CD"
+  Price: 500
+  DefaultIsUnlocked: 0
+  RepleLevel: "\u5F31"
+  ReloadTimeLevel: "\u4E2D"
+  GunIndex: 1
+  ShootCountPreSecond: 11
+  ReloadTime: 1.3
+  LoadedTime: 0.2
+  MagazineSize: 30
+  ReloadType: 0
+  MagazineCount: 30
+  OneShootAmmoCount: 1
+  Damage: 25
+  AmmoFlySpeed: 1000
+  AmmoPenetrationCount: 1
+  AmmoPrefab: {fileID: 3626254014405645773, guid: b658767372958c8408aa6ef88eecf2a8, type: 3}
+  EffectiveRange: 15
+  ShootTypes: 020000000000000001000000
+  ShootSpeedRate: 0.6
+  ReloadSpeedRate: 0.8
+  NormalSpeedRate: 0.9
+  GunSprite: {fileID: 21300000, guid: 360b7c1be1cb2cf49a5af8336c58514c, type: 3}
+  DropAmmoRate: 0.15
+  AmmoBoxRate: 0.2
+  DropAmmoSprite: {fileID: 21300000, guid: 01347c97e678b03479c4a8cbe399a458, type: 3}
+  EnemyDelayTime: 0.05
+  Force: 10
+  ShootAudio: {fileID: 8300000, guid: ffe8170e242db904fba5bd22f5096dfb, type: 3}
+  ReloadAudio: {fileID: 8300000, guid: 760beaf26f0d5ba46bef913a466f291d, type: 3}
+  LoadedAudio: {fileID: 8300000, guid: ec6f1fcfb439ab74899b6477b9589e6c, type: 3}
+  NoAmmoAudio: {fileID: 8300000, guid: 682d79fa02f29aa449b23d0e21ea941f, type: 3}
+  ChangeShootType: {fileID: 8300000, guid: 7216791491298854185f57ecf5a5eb72, type: 3}
+  Options:
+  - {fileID: 11400000, guid: 132cb0fed28967b49b7171fba5046445, type: 2}
+  - {fileID: 11400000, guid: 48076e0962cb12948b8434330a646ea3, type: 2}
+  - {fileID: 11400000, guid: 54efe5d6b1bb7dd43a7ebad830299208, type: 2}
+  - {fileID: 11400000, guid: d1769577be271be4082f4601da08a350, type: 2}
+  - {fileID: 11400000, guid: a6bf59ddb282e044bac8256900f7133a, type: 2}
+  - {fileID: 11400000, guid: d29549195433d4e41b1fa0a0886d5edc, type: 2}
+  - {fileID: 11400000, guid: 528086aa42de58146b2c8705d4a1189f, type: 2}
+  FirePointName: FirePoint_Rifle
+  MaxOffset: 5
+  OffsetAddCount: 1
+  OffsetRecoverTime: 1
+  OptionRotation: {x: 0, y: 0, z: 30}
+  OptionScale: {x: 1, y: 0.5, z: 1}

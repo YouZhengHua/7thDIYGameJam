@@ -1,0 +1,63 @@
+﻿using UnityEngine;
+
+namespace Scripts.Game.Data
+{
+    [CreateAssetMenu(menuName = "Game/LevelEnemy")]
+    public class LevelEnemyData : ScriptableObject
+    {
+        private float? _nextTime = null;
+        public float NextTime
+        {
+            get
+            {
+                if (!_nextTime.HasValue)
+                {
+                    _nextTime = 0;
+                }
+                return _nextTime.Value;
+            }
+            set
+            {
+                _nextTime = value;
+            }
+        }
+        [Header("生成距離"), Range(5, 20)]
+        public float Distance = 15f;
+        /// <summary>
+        /// 怪物生成間隔
+        /// </summary>
+        [Header("生成間隔"), Min(0.1f)]
+        public float Intervals = 1f;
+        [Header("生成數量"), Min(1)]
+        public int Quantity = 1;
+        [SerializeField, Header("怪物資料")]
+        private EnemyData _Data;
+        private EnemyData _data = null;
+        /// <summary>
+        /// 怪物資料
+        /// </summary>
+        public EnemyData Data 
+        {
+            get
+            {
+                if (_data == null)
+                {
+                    _data = Object.Instantiate(_Data);
+                }
+                return _data;
+            } 
+        }
+        [Header("怪物預置物")]
+        public GameObject Prefab;
+        [Header("是否團聚生成")]
+        public bool IsGroup = false;
+        [Header("是否環形生成")]
+        public bool IsRound = false;
+        [Header("怪物池大小"), Range(1, 150)]
+        public int PoolSize = 50;
+        [Header("關卡怪物登場音效")]
+        public AudioClip WarmingAudio;
+        [Header("音效額外音量"), Range(0f, 3f)]
+        public float ExtendVolume = 0f;
+    }
+}
