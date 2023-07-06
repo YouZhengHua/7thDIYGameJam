@@ -145,7 +145,7 @@ namespace Scripts.Menu
             if(_gunData != null)
                 StaticPrefs.GunIndex = (int)_gunData.GunIndex;
             _gameStartButton.interactable = false;
-            LoadingScreen.instance.LoadScene("GameScene", false);
+            LoadingScreen.instance.LoadScene("02_GameScene", false);
         }
 
         public void ReflashToggleGroup()
@@ -210,7 +210,7 @@ namespace Scripts.Menu
 
         private void ExitButtonOnClick()
         {
-            _menuManager.ShowMenu();
+            LoadingScreen.instance.LoadScene("00_StartScene", false);
         }
     }
 }

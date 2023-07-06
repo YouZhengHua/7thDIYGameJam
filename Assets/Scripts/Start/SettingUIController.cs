@@ -5,11 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 using Scripts.Base;
 
-namespace Scripts.Menu
+namespace Scripts.Start
 {
     public class SettingUIController : BaseUIController, ISettingUIController
     {
-        private IMenuManager _menuManager;
+        private IStartManager _menuManager;
         private IAudioContoller _audioContoller;
         private Button _defaultButton;
         private Button _backToMenuButton;
@@ -20,7 +20,7 @@ namespace Scripts.Menu
         private SliderObject _music;
         private SliderObject _sound;
 
-        public SettingUIController(IMenuManager menu, IAudioContoller audioContoller, Canvas canvas, UserSetting defaultSetting, UserSetting userSetting) : base(canvas)
+        public SettingUIController(IStartManager menu, IAudioContoller audioContoller, Canvas canvas, UserSetting defaultSetting, UserSetting userSetting) : base(canvas)
         {
             _menuManager = menu;
             _audioContoller = audioContoller;
@@ -57,12 +57,12 @@ namespace Scripts.Menu
             _userSetting.musicVolume = _music.Value;
 
             _audioContoller.UpdateAudioVolume();
-            _menuManager.ShowGameOptions();
+            _menuManager.ShowMenu();
         }
 
         private void BackToMenuButtonOnClick()
         {
-            _menuManager.ShowGameOptions();
+            _menuManager.ShowMenu();
 
             _userSetting.soundVolume = _tmpSetting.soundVolume;
             _userSetting.musicVolume = _tmpSetting.musicVolume;

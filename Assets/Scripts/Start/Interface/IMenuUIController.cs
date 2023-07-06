@@ -1,6 +1,6 @@
 ﻿using Scripts.Base;
 
-namespace Scripts.Menu
+namespace Scripts.Start
 {
     public interface IMenuUIController : IBaseUIController
     {

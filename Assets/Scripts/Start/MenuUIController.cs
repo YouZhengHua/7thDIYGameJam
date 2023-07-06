@@ -2,16 +2,16 @@
 using UnityEngine.UI;
 using Scripts.Base;
 
-namespace Scripts.Menu
+namespace Scripts.Start
 {
     public class MenuUIController : BaseUIController, IMenuUIController
     {
-        private IMenuManager _menuManager;
+        private IStartManager _menuManager;
         private Button _startButton;
         private Button _exitButton;
         private Button _settingButton;
 
-        public MenuUIController(IMenuManager menu, Canvas canvas) : base(canvas)
+        public MenuUIController(IStartManager menu, Canvas canvas) : base(canvas)
         {
             _menuManager = menu;
 

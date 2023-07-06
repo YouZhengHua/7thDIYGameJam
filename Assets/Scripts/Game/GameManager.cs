@@ -244,7 +244,7 @@ namespace Scripts.Game
             else if (_gameFiniteStateMachine.CurrectState == GameState.BackToMenu)
             {
                 _gameFiniteStateMachine.SetNextState(GameState.BackToMenued);
-                LoadingScreen.instance.LoadScene("MenuScene", true);
+                LoadingScreen.instance.LoadScene("01_MenuScene", true);
             }
             else if (_gameFiniteStateMachine.CurrectState == GameState.GameEnd)
             {

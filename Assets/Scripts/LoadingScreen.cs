@@ -17,6 +17,7 @@ namespace Scripts
         public AudioMixer audioMixer;
         public Canvas canvas;
         private bool _needDestory = false;
+        private bool _autoContinue = false;
         private AsyncOperation _operation;
         private LoadState _state = LoadState.Idle;
 
@@ -35,6 +36,14 @@ namespace Scripts
 
         public void LoadScene(string sceneName, bool needDestory)
         {
+            _autoContinue = false;
+            LoadSceneAsync(sceneName);
+            _needDestory = needDestory;
+        }
+
+        public void LoadScene(string sceneName, bool needDestory, bool needAutoContinue)
+        {
+            _autoContinue = needAutoContinue;
             LoadSceneAsync(sceneName);
             _needDestory = needDestory;
         }
@@ -60,7 +69,7 @@ namespace Scripts
                     loadText.enabled = false;
                     readyText.enabled = true;
 
-                    if (Input.anyKeyDown)
+                    if (Input.anyKeyDown || _autoContinue)
                     {
                         if(_needDestory)
                             instance = null;

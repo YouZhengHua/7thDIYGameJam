@@ -5,7 +5,6 @@ namespace Scripts.Menu
 {
     public interface IMenuManager
     {
-        public void ShowMenu();
         public void ShowGameOptions();
         public void ShowGameOptionsWithReflash();
         public void ShowSetting();
