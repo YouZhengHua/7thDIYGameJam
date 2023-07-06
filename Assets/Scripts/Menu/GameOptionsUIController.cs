@@ -13,7 +13,6 @@ namespace Scripts.Menu
 {
     public class GameOptionsUIController : BaseUIController, IGameOptionsUIController
     {
-        private IMenuManager _menuManager;
         private Button _gameStartButton;
         private Button _backToMenuButton;
         private Button _buyGunButton;
@@ -26,9 +25,8 @@ namespace Scripts.Menu
         private IList<GunData> _gunDatas;
         private string _gunDescriptionFormat;
 
-        public GameOptionsUIController(IMenuManager menu, Canvas canvas, GameObject gunOptionPrefab, IList<GunData> gunDatas) : base(canvas)
+        public GameOptionsUIController(Canvas canvas, GameObject gunOptionPrefab, IList<GunData> gunDatas) : base(canvas)
         {
-            _menuManager = menu;
             _gunOptionPrefab = gunOptionPrefab;
             _gunIndexGroup = _canvas.GetComponentInChildren<ToggleGroup>();
             _gunDatas = gunDatas;
@@ -210,7 +208,7 @@ namespace Scripts.Menu
 
         private void ExitButtonOnClick()
         {
-            LoadingScreen.instance.LoadScene("00_StartScene", false);
+            LoadingScreen.instance.LoadScene("00_StartScene", false, true);
         }
     }
 }
