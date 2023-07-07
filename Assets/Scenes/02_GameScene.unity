@@ -5524,6 +5524,7 @@ GameObject:
   - component: {fileID: 1423023336}
   - component: {fileID: 1423023337}
   - component: {fileID: 1423023338}
+  - component: {fileID: 1423023339}
   m_Layer: 3
   m_Name: PlayerContainer
   m_TagString: Untagged
@@ -5602,6 +5603,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 575649395}
+--- !u!114 &1423023339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423023332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c67907afb6b6b14f9cc1e1ba06f48c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 4224
+  playerAni: {fileID: 575649395}
+  globalVolumeAni: {fileID: 648931748}
+  playerGetHitTriggerName: Hit
+  playerDeadBoolName: Dead
 --- !u!1 &1495886659
 GameObject:
   m_ObjectHideFlags: 0

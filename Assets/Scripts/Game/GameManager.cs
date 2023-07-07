@@ -120,6 +120,7 @@ namespace Scripts.Game
         private IAudioContoller _audioContoller;
         private SpriteRenderer _gunImage;
         private IMoveController playerMoveController;
+        private IPlayerDamageController playerDamageController;
 
         private void Awake()
         {
@@ -174,6 +175,7 @@ namespace Scripts.Game
             _expPool = new ExpPool(_exp1, _exp2, _exp3, _attributeHandle, _gameUI, _player, _gameFiniteStateMachine);
             _enemyPool = new EnemyPool(_gameFiniteStateMachine, _player, _endUI, Levels, _attributeHandle, _expPool, _dropAmmoPool, _damagePool, _dropHealthPool);
             playerMoveController = _playerContainer.GetComponent<IMoveController>();
+            playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
 
             _player.SetGameFiniteStateMachine = _gameFiniteStateMachine;
             _player.SetAttributeHandle = _attributeHandle;
@@ -192,6 +194,12 @@ namespace Scripts.Game
 
             playerMoveController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
             playerMoveController.SetAttributeHandle = _attributeHandle;
+
+            playerDamageController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
+            playerDamageController.SetAttributeHandle = _attributeHandle;
+            playerDamageController.SetEndUI = _endUI;
+            playerDamageController.SetGameUI = _gameUI;
+            playerDamageController.SetAudio = _audioContoller;
 
             _attributeHandle.SetGameUI = _gameUI;
 
