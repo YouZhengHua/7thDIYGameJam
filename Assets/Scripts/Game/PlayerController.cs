@@ -33,7 +33,6 @@ namespace Scripts.Game
         private Animator globalVolumeAni;
         private string playerGetHitTriggerName =  "Hit";
         private string playerDeadBoolName =  "Dead";
-        private string playerRunBoolName =  "Run";
 
         /// <summary>
         /// 槍械動畫
@@ -112,7 +111,6 @@ namespace Scripts.Game
             if (_gameFiniteStateMachine.CurrectState == GameState.InGame)
             {
                 LookMousePositionHandel();
-                MoveHandel();
                 if(_gameFiniteStateMachine.PlayerState != PlayerState.Shoot)
                 {
                     _attributeHandle.RecoverOffset(Time.deltaTime);
@@ -193,21 +191,6 @@ namespace Scripts.Game
             transform.rotation = Quaternion.Euler(0, mousePosition.x > GetTransform.position.x ? 0 : 180, GetTransform.rotation.z * -1);
             _gunHand.transform.localRotation = Quaternion.Euler(0, mousePosition.x > GetTransform.position.x ? 0 : 180, 90);
             _firePoint.localPosition = new Vector3(_firePointVector3.x * (mousePosition.x > GetTransform.position.x ? 1 : -1), _firePointVector3.y, _firePointVector3.z);
-        }
-
-        /// <summary>
-        /// 使玩家依照方向鍵輸入狀況移動
-        /// </summary>
-        private void MoveHandel()
-        {
-            float horizontalInput = Input.GetAxisRaw("Horizontal");
-            float verticalInput = Input.GetAxisRaw("Vertical");
-            Vector3 newPosition = Vector3.MoveTowards(GetTransform.position
-                , new Vector3(GetTransform.position.x + horizontalInput, GetTransform.position.y + verticalInput, 0)
-                , _attributeHandle.PlayerMoveSpeed * Time.deltaTime);
-            GetTransform.position = newPosition;
-            transform.position = GetTransform.position;
-            playerAni.SetBool(playerRunBoolName, horizontalInput != 0 || verticalInput != 0);
         }
 
         /// <summary>
