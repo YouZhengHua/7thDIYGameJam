@@ -27,25 +27,10 @@ namespace Scripts.Game
         private Transform _gunHand;
 
         /// <summary>
-        /// 全域空間動畫控制器
-        /// 玩家受傷時控制鏡頭泛紅
-        /// </summary>
-        private Animator globalVolumeAni;
-        private string playerGetHitTriggerName =  "Hit";
-        private string playerDeadBoolName =  "Dead";
-        private string playerRunBoolName =  "Run";
-
-        /// <summary>
         /// 槍械動畫
         /// </summary>
         private Animator _gunEffect;
         private string playerShootFire =  "Fire";
-
-        /// <summary>
-        /// 敵人的 Layer 名稱
-        /// </summary>
-        private string enemyLayerName = "怪物";
-        private string enemyLayerName2 = "怪物_穿透";
 
         /// <summary>
         /// 玩家輸入鍵位
@@ -62,8 +47,6 @@ namespace Scripts.Game
         private IMeleeController _meleeController;
         private IAttributeHandle _attributeHandle;
         private IAudioContoller _audio;
-
-        private float _invincibleTime;
 
         #region 主武器相關
         /// <summary>
@@ -92,7 +75,6 @@ namespace Scripts.Game
 
         private void Awake()
         {
-            globalVolumeAni = GameObject.Find("GlobalVolume").GetComponent<Animator>();
             playerAni = gameObject.GetComponent<Animator>();
             _gunHand = GameObject.Find("GunHand").transform;
             _fireEffect = GameObject.Find("FireEffect").GetComponent<SpriteRenderer>();
@@ -112,7 +94,6 @@ namespace Scripts.Game
             if (_gameFiniteStateMachine.CurrectState == GameState.InGame)
             {
                 LookMousePositionHandel();
-                MoveHandel();
                 if(_gameFiniteStateMachine.PlayerState != PlayerState.Shoot)
                 {
                     _attributeHandle.RecoverOffset(Time.deltaTime);
@@ -141,43 +122,6 @@ namespace Scripts.Game
                     }
                     ReloadHandel();
                 }
-                if(_invincibleTime > 0)
-                {
-                    _invincibleTime -= Time.deltaTime;
-                    if (_invincibleTime < 0)
-                        _invincibleTime = 0;
-                }
-            }
-        }
-
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if ((collision.gameObject.layer ==  LayerMask.NameToLayer(enemyLayerName) || collision.gameObject.layer == LayerMask.NameToLayer(enemyLayerName2)) && _invincibleTime <= 0 && !collision.gameObject.GetComponent<IEnemyController>().IsDead)
-            {
-                GetDamage((int)collision.gameObject.GetComponent<IEnemyController>().EnemyDamage);
-                playerAni.SetTrigger(playerGetHitTriggerName);
-                globalVolumeAni.SetTrigger(playerGetHitTriggerName);
-                collision.gameObject.GetComponent<IEnemyController>().PlayAttackAnimation();
-                foreach (var enemy in Physics2D.OverlapCircleAll(GetTransform.position, _attributeHandle.PlayerRepelRadius, LayerMask.GetMask(enemyLayerName)))
-                {
-                    Vector2 distance = enemy.transform.position - GetTransform.position;
-                    if (distance.magnitude < _attributeHandle.PlayerRepelRadius)
-                    {
-                        enemy.GetComponent<Rigidbody2D>().AddForce(distance.normalized * (_attributeHandle.PlayerRepelRadius - distance.magnitude) * _attributeHandle.PlayerRepelForce);
-                        enemy.GetComponent<IEnemyController>().AddVelocityTime(_attributeHandle.PlayerRepelTime);
-                    }
-                }
-                foreach (var enemy in Physics2D.OverlapCircleAll(GetTransform.position, _attributeHandle.PlayerRepelRadius, LayerMask.GetMask(enemyLayerName2)))
-                {
-                    Vector2 distance = enemy.transform.position - GetTransform.position;
-                    if (distance.magnitude < _attributeHandle.PlayerRepelRadius)
-                    {
-                        enemy.GetComponent<Rigidbody2D>().AddForce(distance.normalized * (_attributeHandle.PlayerRepelRadius - distance.magnitude) * _attributeHandle.PlayerRepelForce);
-                        enemy.GetComponent<IEnemyController>().AddVelocityTime(_attributeHandle.PlayerRepelTime);
-                    }
-                }
-                _endUI.AddGetHitTimes();
-                _gameUI.UpdatePlayerHealth();
             }
         }
 
@@ -193,21 +137,6 @@ namespace Scripts.Game
             transform.rotation = Quaternion.Euler(0, mousePosition.x > GetTransform.position.x ? 0 : 180, GetTransform.rotation.z * -1);
             _gunHand.transform.localRotation = Quaternion.Euler(0, mousePosition.x > GetTransform.position.x ? 0 : 180, 90);
             _firePoint.localPosition = new Vector3(_firePointVector3.x * (mousePosition.x > GetTransform.position.x ? 1 : -1), _firePointVector3.y, _firePointVector3.z);
-        }
-
-        /// <summary>
-        /// 使玩家依照方向鍵輸入狀況移動
-        /// </summary>
-        private void MoveHandel()
-        {
-            float horizontalInput = Input.GetAxisRaw("Horizontal");
-            float verticalInput = Input.GetAxisRaw("Vertical");
-            Vector3 newPosition = Vector3.MoveTowards(GetTransform.position
-                , new Vector3(GetTransform.position.x + horizontalInput, GetTransform.position.y + verticalInput, 0)
-                , _attributeHandle.PlayerMoveSpeed * Time.deltaTime);
-            GetTransform.position = newPosition;
-            transform.position = GetTransform.position;
-            playerAni.SetBool(playerRunBoolName, horizontalInput != 0 || verticalInput != 0);
         }
 
         /// <summary>
@@ -396,35 +325,6 @@ namespace Scripts.Game
                 _gameUI.UpdateReloadImage(1);
                 currentReloadTime = ReloadMagazineTime;
             }
-        }
-
-        /// <summary>
-        /// 受到傷害
-        /// </summary>
-        /// <param name="damage"></param>
-        public void GetDamage(int damage)
-        {
-            _attributeHandle.PlayerHealthPoint -= damage;
-            if (_attributeHandle.PlayerHealthPoint <= 0)
-            {
-                _attributeHandle.PlayerHealthPoint = 0;
-                Dead();
-            }
-            else
-            {
-                _audio.PlayEffect(_attributeHandle.GetHitAudio);
-            }
-            _invincibleTime = _attributeHandle.InvincibleTime;
-        }
-
-        /// <summary>
-        /// 死亡處理
-        /// </summary>
-        public void Dead()
-        {
-            playerAni.SetBool(playerDeadBoolName, true);
-            gameObject.SetActive(false);
-            _gameFiniteStateMachine.SetNextState(GameState.GameEnd);
         }
 
         /// <summary>
