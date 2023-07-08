@@ -105,7 +105,6 @@ namespace Scripts.Game
         private IPauseUIController _pauseUI;
         private IEndUIController _endUI;
         private ISettingUIController _settingUI;
-        private IMeleeController _meleeController;
         private IAttributeHandle _attributeHandle;
         private IDropHealthPool _dropHealthPool;
         private IAmmoPool _ammoPool;
@@ -152,7 +151,6 @@ namespace Scripts.Game
             _bulletPoolData.prefab = _gunData.AmmoPrefab;
             _audioContoller = new AudioContoller(_userSetting);
             _playerContainer = GameObject.Find("PlayerContainer");
-            _meleeController = GameObject.Find("MeleeWeapon").GetComponent<IMeleeController>();
             _gameFiniteStateMachine = new GameFiniteStateMachine(GameState.Loading, () => { Debug.Log("Loading 階段結束"); });
             _cameraController = new CameraController();
             _damagePool = new DamagePool(_damagePoolData);
@@ -170,11 +168,6 @@ namespace Scripts.Game
             playerMoveController = _playerContainer.GetComponent<IMoveController>();
             playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
             weaponController = _playerContainer.GetComponent<IWeaponController>();
-
-            _meleeController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
-            _meleeController.SetAttributeHandle = _attributeHandle;
-            _meleeController.SetGunImage = _gunImage;
-            _meleeController.SetAudio = _audioContoller;
 
             playerMoveController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
             playerMoveController.SetAttributeHandle = _attributeHandle;
