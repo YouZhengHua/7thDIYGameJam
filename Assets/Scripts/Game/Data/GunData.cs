@@ -11,11 +11,6 @@ namespace Scripts.Game.Data
         /// </summary>
         [Header("擊退等級")]
         public string RepleLevel;
-        /// <summary>
-        /// 裝彈耗時等級
-        /// </summary>
-        [Header("裝彈耗時階級")]
-        public string ReloadTimeLevel;
         #endregion
 
         /// <summary>
@@ -28,51 +23,7 @@ namespace Scripts.Game.Data
         /// </summary>
         [Header("每秒可射擊子彈數量"), Min(0.01f)]
         public float ShootCountPreSecond = 10f;
-        /// <summary>
-        /// 裝彈耗時(秒)
-        /// </summary>
-        [Header("裝彈耗時")]
-        public float ReloadTime = 0.9f;
-        /// <summary>
-        /// 上膛耗時(秒)
-        /// </summary>
-        [Header("上膛耗時")]
-        public float LoadedTime = 0.1f;
 
-        /// <summary>
-        /// 彈匣容量
-        /// </summary>
-        [Header("彈匣容量")]
-        public int MagazineSize = 10;
-        /// <summary>
-        /// 裝彈類別
-        /// </summary>
-        [Header("裝彈類別")]
-        public ReloadType ReloadType = ReloadType.All;
-        private int _TotalAmmoCount = -1;
-        /// <summary>
-        /// 總彈量
-        /// </summary>
-        public int TotalAmmoCount
-        {
-            get
-            {
-                if(_TotalAmmoCount == -1)
-                {
-                    _TotalAmmoCount = MagazineCount * MagazineSize;
-                }
-                return _TotalAmmoCount;
-            }
-            set
-            {
-                _TotalAmmoCount = value;
-            }
-        }
-        /// <summary>
-        /// 攜彈量
-        /// </summary>
-        [Header("攜彈量")]
-        public int MagazineCount = 30;
         /// <summary>
         /// 每次射擊的產生的子彈數量
         /// </summary>
@@ -100,10 +51,6 @@ namespace Scripts.Game.Data
         [Header("有效射程"), Min(1f)]
         public float EffectiveRange = 15f;
 
-        /// <summary>
-        /// 射擊模式陣列
-        /// </summary>
-        public ShootType[] ShootTypes;
         #region 降速比例
         /// <summary>
         /// 射擊時移動速度比例
@@ -124,15 +71,6 @@ namespace Scripts.Game.Data
 
         [Header("武器 貼圖")]
         public Sprite GunSprite;
-
-        #region 彈藥掉落
-        [Header("彈藥盒掉落機率"), Range(0, 1)]
-        public float DropAmmoRate = 0;
-        [Header("彈藥盒補充彈藥比例"), Min(0)]
-        public float AmmoBoxRate = 0.2f;
-        [Header("彈藥掉落物貼圖")]
-        public Sprite DropAmmoSprite;
-        #endregion
 
         [Header("怪物僵直時間"), Min(0)]
         public float EnemyDelayTime = 0.3f;

@@ -19,9 +19,6 @@ namespace Scripts.Game
         [SerializeField, Header("子彈池資料")]
         private PoolData _bulletPoolData;
 
-        [SerializeField, Header("掉落彈藥池資料")]
-        private PoolData _dropAmmoPoolData;
-
         [SerializeField, Header("傷害文字資料")]
         private PoolData _damagePoolData;
 
@@ -136,7 +133,6 @@ namespace Scripts.Game
             {
                 _gunData = Object.Instantiate(GunDatas[0]);
             }
-            _dropAmmoPoolData.prefab.GetComponent<SpriteRenderer>().sprite = _gunData.DropAmmoSprite;
             _playerData = Object.Instantiate(defaultPlayerData);
             _meleeData = Object.Instantiate(defaultMeleeData);
             _optionDatas = new List<OptionData>();

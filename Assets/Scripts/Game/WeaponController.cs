@@ -79,7 +79,7 @@ namespace Scripts.Game
                     _gameFiniteStateMachine.SetPlayerState(PlayerState.Idle);
             }
 
-            if (currentMainShootCooldownTime == 0.0f && _attributeHandle.NowAmmoCount > 0)
+            if (currentMainShootCooldownTime == 0.0f)
             {
                 MainShoot();
             }
@@ -117,11 +117,6 @@ namespace Scripts.Game
             _shotAmmo.Clear();
 
             currentMainShootCooldownTime = _attributeHandle.ShootCooldownTime;
-
-            if (_attributeHandle.NowAmmoCount == 0 && _attributeHandle.TotalAmmoCount > 0)
-            {
-                _audio.PlayEffect(_attributeHandle.NoAmmoAudio);
-            }
         }
 
         public IEnumerator FireEffectOff()
