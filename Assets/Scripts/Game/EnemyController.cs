@@ -10,11 +10,10 @@ namespace Scripts.Game
     public class EnemyController : MonoBehaviour, IEnemyController
     {
         private IGameFiniteStateMachine _gameFiniteStateMachine;
-        private IPlayerController _player;
+        private Transform playerTransform;
         private IEndUIController _endUI;
         private IAttributeHandle _attributeHandle;
         private IExpPool _expPool;
-        private IDropAmmoPool _dropAmmoPool;
         private IDamagePool _damagePool;
         private IDropHealthPool _dropHealthPool;
         private EnemyData _baseEnemyData;
@@ -52,7 +51,7 @@ namespace Scripts.Game
 
             if (_gameFiniteStateMachine.CurrectState == GameState.InGame && _state != EnemyState.Dead)
             {
-                if (_enemyData.AttackRange > 0 && (_player.GetTransform.position - transform.position).magnitude <= _enemyData.AttackRange)
+                if (_enemyData.AttackRange > 0 && (playerTransform.position - transform.position).magnitude <= _enemyData.AttackRange)
                 {
                     PlayAttackAnimation();
                 }
@@ -64,8 +63,8 @@ namespace Scripts.Game
                 else
                 {
                     _velocityTime = 0;
-                    this.LookAt(_player.GetTransform.position);
-                    this.MoveTo(_player.GetTransform.position);
+                    this.LookAt(playerTransform.position);
+                    this.MoveTo(playerTransform.position);
                 }
 
             }
@@ -101,13 +100,13 @@ namespace Scripts.Game
             {
                 if (_rigidbody2D.velocity.magnitude < 200f)
                 {
-                    _rigidbody2D.AddForce((transform.position - _player.GetTransform.position) * force);
+                    _rigidbody2D.AddForce((transform.position - playerTransform.position) * force);
                     _velocityTime += delayTime * 0.1f;
                 }
             }
             else
             {
-                _rigidbody2D.AddForce((transform.position - _player.GetTransform.position) * force);
+                _rigidbody2D.AddForce((transform.position - playerTransform.position) * force);
                 _velocityTime += delayTime;
             }
             if(_state == EnemyState.Run)
@@ -157,10 +156,6 @@ namespace Scripts.Game
             foreach (GameObject exp in _expPool.GetExpPrefabs(_enemyData.exp))
             {
                 exp.transform.position = transform.position + new Vector3(Random.Range(0, 0.3f), Random.Range(0, 0.3f));
-            }
-            if (_attributeHandle.NeedDropAmmoBox)
-            {
-                _dropAmmoPool.GetPrefab().transform.position = transform.position + new Vector3(Random.Range(0, 0.3f), Random.Range(0, 0.3f));
             }
             if (_attributeHandle.NeedDropHealth)
             {
@@ -223,11 +218,10 @@ namespace Scripts.Game
         #region DI 設定
         public IGameFiniteStateMachine SetGameFinitStateMachine { set => _gameFiniteStateMachine = value; }
         public EnemyData SetEnemyData { set => _baseEnemyData = value; }
-        public IPlayerController SetPlayer { set => _player = value; }
+        public Transform SetPlayerTransform { set => playerTransform = value; }
         public IEndUIController SetEndUI { set => _endUI = value; }
         public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
         public IExpPool SetExpPool { set => _expPool = value; }
-        public IDropAmmoPool SetDropAmmoPool { set => _dropAmmoPool = value; }
         public IDamagePool SetDamagePool { set => _damagePool = value; }
         public IDropHealthPool SetDropHealthPool { set => _dropHealthPool = value; }
         #endregion

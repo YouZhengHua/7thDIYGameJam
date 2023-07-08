@@ -1885,7 +1885,6 @@ GameObject:
   m_Component:
   - component: {fileID: 575649393}
   - component: {fileID: 575649392}
-  - component: {fileID: 575649394}
   - component: {fileID: 575649395}
   m_Layer: 3
   m_Name: Player
@@ -1961,18 +1960,6 @@ Transform:
   m_Father: {fileID: 1423023334}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &575649394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575649389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99fedf0ddd58dd043af54653abc93468, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &575649395
 Animator:
   serializedVersion: 4
@@ -5561,6 +5548,7 @@ GameObject:
   - component: {fileID: 1423023337}
   - component: {fileID: 1423023338}
   - component: {fileID: 1423023339}
+  - component: {fileID: 1423023340}
   m_Layer: 3
   m_Name: PlayerContainer
   m_TagString: Untagged
@@ -5636,6 +5624,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 575649395}
   zRotation: {fileID: 1134333993}
+  spinningSpeed: 0.2
+  deltaRate: 12
 --- !u!114 &1423023339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5655,6 +5645,18 @@ MonoBehaviour:
   globalVolumeAni: {fileID: 648931748}
   playerGetHitTriggerName: Hit
   playerDeadBoolName: Dead
+--- !u!114 &1423023340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423023332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf6cc2f880aa03f42814498f3300616e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1495886659
 GameObject:
   m_ObjectHideFlags: 0

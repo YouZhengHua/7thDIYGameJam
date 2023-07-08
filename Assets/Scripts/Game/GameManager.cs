@@ -103,7 +103,6 @@ namespace Scripts.Game
         private IGameFiniteStateMachine _gameFiniteStateMachine;
         private ICameraController _cameraController;
         private IMapController _mapController;
-        private IPlayerController _player;
         private IGameUIController _gameUI;
         private IOptionsUIController _optionsUI;
         private IPauseUIController _pauseUI;
@@ -111,7 +110,6 @@ namespace Scripts.Game
         private ISettingUIController _settingUI;
         private IMeleeController _meleeController;
         private IAttributeHandle _attributeHandle;
-        private IDropAmmoPool _dropAmmoPool;
         private IDropHealthPool _dropHealthPool;
         private IAmmoPool _ammoPool;
         private IEnemyPool _enemyPool;
@@ -121,6 +119,7 @@ namespace Scripts.Game
         private SpriteRenderer _gunImage;
         private IMoveController playerMoveController;
         private IPlayerDamageController playerDamageController;
+        private IWeaponController weaponController;
 
         private void Awake()
         {
@@ -156,7 +155,6 @@ namespace Scripts.Game
             }
             _bulletPoolData.prefab = _gunData.AmmoPrefab;
             _audioContoller = new AudioContoller(_userSetting);
-            _player = GameObject.Find("Player").GetComponent<IPlayerController>();
             _playerContainer = GameObject.Find("PlayerContainer");
             _meleeController = GameObject.Find("MeleeWeapon").GetComponent<IMeleeController>();
             _gameFiniteStateMachine = new GameFiniteStateMachine(GameState.Loading, () => { Debug.Log("Loading 階段結束"); });
@@ -167,25 +165,15 @@ namespace Scripts.Game
             _pauseUI = new PauseUIController(_gameFiniteStateMachine, _settingUI);
             _attributeHandle = new AttributeHandle(_gameFiniteStateMachine, _playerData, _gunData, _meleeData);
             _endUI = new EndUIController(_gameFiniteStateMachine, _attributeHandle);
-            _ammoPool = new AmmoPool(_gameFiniteStateMachine, _bulletPoolData, _attributeHandle, _player, _endUI);
+            _ammoPool = new AmmoPool(_gameFiniteStateMachine, _bulletPoolData, _attributeHandle, _endUI, _playerContainer.transform);
             _optionsUI = new OptionsUIController(_gameFiniteStateMachine, _attributeHandle, _optionPrefab, _optionDatas);
             _gameUI = new GameUIController(_playerHealth, _attributeHandle, _optionsUI, _audioContoller, _healthSprite, _unhealthSprite, _gameUICanvas);
-            _dropAmmoPool = new DropAmmoPool(_dropAmmoPoolData, _player, _attributeHandle, _gameUI, _gameFiniteStateMachine);
-            _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _player, _attributeHandle, _gameUI, _gameFiniteStateMachine);
-            _expPool = new ExpPool(_exp1, _exp2, _exp3, _attributeHandle, _gameUI, _player, _gameFiniteStateMachine);
-            _enemyPool = new EnemyPool(_gameFiniteStateMachine, _player, _endUI, Levels, _attributeHandle, _expPool, _dropAmmoPool, _damagePool, _dropHealthPool);
+            _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _attributeHandle, _gameUI, _gameFiniteStateMachine, _playerContainer.transform);
+            _expPool = new ExpPool(_exp1, _exp2, _exp3, _attributeHandle, _gameUI, _gameFiniteStateMachine, _playerContainer.transform);
+            _enemyPool = new EnemyPool(_gameFiniteStateMachine, _endUI, Levels, _attributeHandle, _expPool, _damagePool, _dropHealthPool, _playerContainer.transform);
             playerMoveController = _playerContainer.GetComponent<IMoveController>();
             playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
-
-            _player.SetGameFiniteStateMachine = _gameFiniteStateMachine;
-            _player.SetAttributeHandle = _attributeHandle;
-            _player.SetAmmoPool = _ammoPool;
-            _player.SetGameUI = _gameUI;
-            _player.SetEndUI = _endUI;
-            _player.SetUserSetting = _userSetting;
-            _player.SetMeleeController = _meleeController;
-            _player.SetContainer = _playerContainer;
-            _player.SetAudio = _audioContoller;
+            weaponController = _playerContainer.GetComponent<IWeaponController>();
 
             _meleeController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
             _meleeController.SetAttributeHandle = _attributeHandle;
@@ -200,6 +188,11 @@ namespace Scripts.Game
             playerDamageController.SetEndUI = _endUI;
             playerDamageController.SetGameUI = _gameUI;
             playerDamageController.SetAudio = _audioContoller;
+
+            weaponController.SetAmmoPool = _ammoPool;
+            weaponController.SetAttributeHandle = _attributeHandle;
+            weaponController.SetAudio = _audioContoller;
+            weaponController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
 
             _attributeHandle.SetGameUI = _gameUI;
 
@@ -243,7 +236,7 @@ namespace Scripts.Game
                 }
                 UpdateGameTime();
                 EnemyHandel();
-                _cameraController.MoveMainCameraTo(_player.GetTransform.position);
+                _cameraController.MoveMainCameraTo(_playerContainer.transform.position);
             }
             else if (_gameFiniteStateMachine.CurrectState == GameState.GamePause)
             {
@@ -284,11 +277,11 @@ namespace Scripts.Game
                         {
                             if (enemyData.IsGroup)
                             {
-                                Vector3 nextPosition = _player.GetTransform.position + GetRandomPosition(enemyData.Distance);
+                                Vector3 nextPosition = _playerContainer.transform.position + GetRandomPosition(enemyData.Distance);
                                 foreach (GameObject enemy in _enemyPool.GetEnemies(enemyData))
                                 {
                                     enemy.transform.position = nextPosition + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
-                                    nextPosition = _player.GetTransform.position + GetRandomPosition(enemyData.Distance);
+                                    nextPosition = _playerContainer.transform.position + GetRandomPosition(enemyData.Distance);
                                 }
                             }
                             else if (enemyData.IsRound)
@@ -297,7 +290,7 @@ namespace Scripts.Game
                                 IList<GameObject> enemies = _enemyPool.GetEnemies(enemyData);
                                 for (int i = 0; i < enemies.Count; i++)
                                 {
-                                    enemies[i].transform.position = _player.GetTransform.position + GetAnglePosition(enemyData.Distance, angle);
+                                    enemies[i].transform.position = _playerContainer.transform.position + GetAnglePosition(enemyData.Distance, angle);
                                     angle += 360f / enemies.Count;
                                 }
                             }
@@ -305,7 +298,7 @@ namespace Scripts.Game
                             {
                                 foreach (GameObject enemy in _enemyPool.GetEnemies(enemyData))
                                 {
-                                    enemy.transform.position = _player.GetTransform.position + GetRandomPosition(enemyData.Distance);
+                                    enemy.transform.position = _playerContainer.transform.position + GetRandomPosition(enemyData.Distance);
                                 }
                             }
                             if (enemyData.WarmingAudio != null)
