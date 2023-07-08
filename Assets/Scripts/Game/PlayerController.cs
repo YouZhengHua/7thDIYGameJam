@@ -93,7 +93,6 @@ namespace Scripts.Game
         {
             if (_gameFiniteStateMachine.CurrectState == GameState.InGame)
             {
-                LookMousePositionHandel();
                 if(_gameFiniteStateMachine.PlayerState != PlayerState.Shoot)
                 {
                     _attributeHandle.RecoverOffset(Time.deltaTime);
@@ -126,19 +125,6 @@ namespace Scripts.Game
         }
 
         #region Handel
-        /// <summary>
-        /// 使玩家看向滑鼠位置
-        /// </summary>
-        private void LookMousePositionHandel()
-        {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = GetTransform.position.z;
-            GetTransform.up = mousePosition - GetTransform.position;
-            transform.rotation = Quaternion.Euler(0, mousePosition.x > GetTransform.position.x ? 0 : 180, GetTransform.rotation.z * -1);
-            _gunHand.transform.localRotation = Quaternion.Euler(0, mousePosition.x > GetTransform.position.x ? 0 : 180, 90);
-            _firePoint.localPosition = new Vector3(_firePointVector3.x * (mousePosition.x > GetTransform.position.x ? 1 : -1), _firePointVector3.y, _firePointVector3.z);
-        }
-
         /// <summary>
         /// 槍械射擊處理
         /// 判斷是否處於射擊冷卻時間
