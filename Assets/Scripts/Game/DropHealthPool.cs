@@ -14,14 +14,14 @@ namespace Scripts.Game
     /// </summary>
     public class DropHealthPool : BasePool, IDropHealthPool
     {
-        public DropHealthPool(PoolData poolData, IPlayerController player, IAttributeHandle attributeHandle, IGameUIController gameUI, IGameFiniteStateMachine gameFiniteStateMachine): base(poolData.prefab, poolData.poolSize)
+        public DropHealthPool(PoolData poolData, IAttributeHandle attributeHandle, IGameUIController gameUI, IGameFiniteStateMachine gameFiniteStateMachine, Transform playerTransform): base(poolData.prefab, poolData.poolSize)
         {
             _prefabPool.ForEach(prefab =>
             {
-                prefab.GetComponent<IDropHealthController>().SetPlayerController = player;
                 prefab.GetComponent<IDropHealthController>().SetAttributeHandle = attributeHandle;
                 prefab.GetComponent<IDropHealthController>().SetGameUI = gameUI;
                 prefab.GetComponent<IDropHealthController>().SetGameFiniteStateMachine = gameFiniteStateMachine;
+                prefab.GetComponent<IDropHealthController>().SetPlayerTransform = playerTransform;
             });
         }
     }

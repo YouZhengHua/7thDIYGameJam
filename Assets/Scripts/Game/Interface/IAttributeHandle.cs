@@ -25,29 +25,9 @@ namespace Scripts.Game
         /// </summary>
         public float GunRepelTime { get; }
         /// <summary>
-        /// 槍械總彈量
-        /// </summary>
-        public int TotalAmmoCount { get; set; }
-        /// <summary>
-        /// 彈匣內剩餘彈量
-        /// </summary>
-        public int NowAmmoCount { get; set; }
-        /// <summary>
-        /// 彈匣容量
-        /// </summary>
-        public int MagazineSize { get; }
-        /// <summary>
-        /// 裝彈模式
-        /// </summary>
-        public ReloadType ReloadType { get; }
-        /// <summary>
         /// 單次射擊時射出的子彈數量
         /// </summary>
         public int OneShootAmmoCount { get; }
-        /// <summary>
-        /// 槍械射擊模式
-        /// </summary>
-        public ShootType[] ShootTypes { get; }
         /// <summary>
         /// 子彈飛行速度
         /// </summary>
@@ -60,16 +40,6 @@ namespace Scripts.Game
         /// 子彈穿透數量
         /// </summary>
         public int AmmoPenetrationCount { get; }
-        /// <summary>
-        /// 取得彈藥貼圖
-        /// </summary>
-        public Sprite AmmoSprite { get; }
-        /// <summary>
-        /// 取得裝彈時間
-        /// </summary>
-        /// <param name="needLoadedTime"></param>
-        /// <returns></returns>
-        public float GetGunReloadTime(bool needLoadedTime);
         /// <summary>
         /// 槍械有效射程
         /// </summary>
@@ -95,17 +65,9 @@ namespace Scripts.Game
         /// </summary>
         public AudioClip ChangeShootTypeAudio { get; }
         /// <summary>
-        /// 是否需要掉落子彈
-        /// </summary>
-        public bool NeedDropAmmoBox { get; }
-        /// <summary>
         /// 是否需要掉落補血品
         /// </summary>
         public bool NeedDropHealth { get; }
-        /// <summary>
-        /// 拾取彈藥包後補充的子彈數量
-        /// </summary>
-        public int AmmoBoxCount { get; }
         public string FirePointName { get; }
         /// <summary>
         /// 射擊偏移

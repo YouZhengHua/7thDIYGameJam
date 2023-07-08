@@ -11,14 +11,10 @@ namespace Scripts.Game
 {
     public class GameUIController : BaseUIController, IGameUIController
     {
-        private GameObject _reloadUI;
-        private Image _reloadImage;
         private TextMeshProUGUI _gameTime;
-        private TextMeshProUGUI _ammoCount;
         private IAttributeHandle _attributeHandle;
         private GameObject _playerHealthObject;
         private IList<GameObject> _playerHealthImages = new List<GameObject>();
-        private Image _ammoIcon;
         private Image _expRateImage;
         private IOptionsUIController _optionsUI;
         private IAudioContoller _audio;
@@ -27,7 +23,6 @@ namespace Scripts.Game
 
         public GameUIController(GameObject playerHealth, IAttributeHandle attributeHandle, IOptionsUIController optionsUI, IAudioContoller audio, Sprite healthSprite, Sprite unhealthSprite, Canvas canvas) : base(canvas)
         {
-            _reloadUI = GameObject.Find("ReloadUI");
             _attributeHandle = attributeHandle;
             _playerHealthObject = playerHealth;
             _optionsUI = optionsUI;
@@ -36,10 +31,6 @@ namespace Scripts.Game
             _unhealthSprite = unhealthSprite;
             foreach (Image image in GameObject.FindObjectsOfType<Image>())
             {
-                if(image.gameObject.name == "ReloadImage")
-                    _reloadImage = image;
-                if (image.gameObject.name == "AmmoIcon")
-                    _ammoIcon = image;
                 if (image.gameObject.name == "ExpRate")
                     _expRateImage = image;
             }
@@ -48,18 +39,12 @@ namespace Scripts.Game
             {
                 if (text.gameObject.name == "GameTime")
                     _gameTime = text;
-                if (text.gameObject.name == "AmmoCount")
-                    _ammoCount = text;
             }
-
-            HideReloadImage();
 
             for(int i = 0; i < _attributeHandle.PlayerMaxHealthPoint; i++)
             {
                 CreateHealthImage(i);
             }
-
-            _ammoIcon.sprite = _attributeHandle.AmmoSprite;
         }
 
         public void UpdatePlayerHealth()
@@ -93,33 +78,12 @@ namespace Scripts.Game
             _playerHealthImages.Add(healthObject);
         }
 
-        public void ShowReloadImage()
-        {
-            _reloadImage.fillAmount = 1;
-            _reloadUI.SetActive(true);
-        }
-
-        public void HideReloadImage()
-        {
-            _reloadUI.SetActive(false);
-        }
-
-        public void UpdateReloadImage(float reloatReate)
-        {
-            _reloadImage.fillAmount = reloatReate;
-        }
-
         public void UpdateGameTime(float gameTime)
         {
             int showTime = Mathf.Max(Mathf.FloorToInt(gameTime), 0);
             int min = Mathf.FloorToInt(showTime / 60);
             int sec = showTime % 60;
             _gameTime.text = string.Format("{0}:{1:00}", min, sec);
-        }
-
-        public void UpdateAmmoCount()
-        {
-            _ammoCount.text = $"{_attributeHandle.NowAmmoCount} / {_attributeHandle.TotalAmmoCount}";
         }
 
         public void GetExp(ExpNumber exp)

@@ -1,9 +1,11 @@
-﻿namespace Scripts.Game
+﻿using UnityEngine;
+
+namespace Scripts.Game
 {
     public interface IDropController
     {
+        public Transform SetPlayerTransform { set; }
         public IGameFiniteStateMachine SetGameFiniteStateMachine { set; }
-        public IPlayerController SetPlayerController { set; }
         public IAttributeHandle SetAttributeHandle { set; }
     }
 }

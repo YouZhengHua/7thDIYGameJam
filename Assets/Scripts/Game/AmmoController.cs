@@ -10,7 +10,7 @@ namespace Scripts.Game
         private int _nowPenetrationCount = 0;
         private IGameFiniteStateMachine _gameFiniteStateMachine;
         private IAttributeHandle _attributeHandle;
-        private IPlayerController _player;
+        private Transform playerTransform;
         private IEndUIController _endUI;
         private bool isFirstHit = true;
 
@@ -30,7 +30,7 @@ namespace Scripts.Game
 
         private void AutoInactive()
         {
-            if ((this.transform.position - _player.GetTransform.position).magnitude > _attributeHandle.GunEffectiveRange)
+            if ((this.transform.position - playerTransform.position).magnitude > _attributeHandle.GunEffectiveRange)
             {
                 gameObject.SetActive(false);
             }
@@ -53,7 +53,7 @@ namespace Scripts.Game
         public bool IsActive { get => _nowPenetrationCount < _attributeHandle.AmmoPenetrationCount; }
         public IGameFiniteStateMachine SetGameFiniteStateMachine { set => _gameFiniteStateMachine = value; }
         public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
-        public IPlayerController SetPlayer { set => _player = value; }
+        public Transform SetPlayerTransform { set => playerTransform = value; }
         public IEndUIController SetEndUI { set => _endUI = value; }
         public int AmmoGroup { get; set; }
     }

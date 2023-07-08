@@ -103,29 +103,7 @@ namespace Scripts.Menu
                 gunDescription = gunDescription.Replace("{Dmage}", _gunData.Damage.ToString());
             }
             gunDescription = gunDescription.Replace("{ShootCountPerSecond}", _gunData.ShootCountPreSecond.ToString());
-            gunDescription = gunDescription.Replace("{MagazineSize}", _gunData.MagazineSize.ToString());
-            gunDescription = gunDescription.Replace("{MagazineCount}", _gunData.MagazineCount.ToString());
-            gunDescription = gunDescription.Replace("{ReloadTime}", _gunData.ReloadTimeLevel);
             gunDescription = gunDescription.Replace("{Repel}", _gunData.RepleLevel);
-            IList<string> shootTypeCht = new List<string>();
-            foreach(ShootType shootType in _gunData.ShootTypes)
-            {
-                switch (shootType)
-                {
-                    case ShootType.One:
-                        shootTypeCht.Add("單發");
-                        break;
-                    case ShootType.Three:
-                        shootTypeCht.Add("三連發");
-                        break;
-                    case ShootType.Auto:
-                        shootTypeCht.Add("全自動射擊");
-                        break;
-                }
-            }
-            gunDescription = gunDescription.Replace("{ShootTypes}", string.Join('、', shootTypeCht));
-            gunDescription = gunDescription.Replace("{AmmoDropRate}", (_gunData.DropAmmoRate * 100f).ToString());
-            gunDescription = gunDescription.Replace("{AmmoBox}", _gunData.AmmoBoxRate.ToString());
             _gunDescription.text = gunDescription;
 
             _gameStartButton.gameObject.SetActive(StaticPrefs.GetGunIsUnlocked(_gunData.GunIndex, _gunData.DefaultIsUnlocked));
