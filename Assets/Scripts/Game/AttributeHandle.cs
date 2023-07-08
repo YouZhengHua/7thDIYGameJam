@@ -93,7 +93,6 @@ namespace Scripts.Game
                     break;
                 case OptionAttribute.AmmoCount:
                     _gunData.TotalAmmoCount += Mathf.RoundToInt((float)MagazineSize * data.Value);
-                    _gameUI.UpdateAmmoCount();
                     break;
                 case OptionAttribute.MagazineSize:
                     _gunExtendMagazineSize += Mathf.RoundToInt(data.Value);

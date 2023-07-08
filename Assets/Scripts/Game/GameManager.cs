@@ -203,7 +203,6 @@ namespace Scripts.Game
             Debug.Log("GameManager Start() Start");
             _nowTime = 0;
             _pauseUI.HideCanvas();
-            _gameUI.HideReloadImage();
             _optionsUI.HideCanvas();
             _endUI.HideCanvas();
             _settingUI.HideCanvas();
