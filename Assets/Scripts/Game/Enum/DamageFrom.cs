@@ -4,6 +4,7 @@
     {
         Melee,
         Gun,
-        AOE
+        AOE,
+        Drone//無人機
     }
 }

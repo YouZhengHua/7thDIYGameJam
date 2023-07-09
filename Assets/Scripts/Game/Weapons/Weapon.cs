@@ -35,6 +35,10 @@ public class Weapon : MonoBehaviour
         _weaponActive = active;
     }
 
+    public virtual void ReloadWeapon()
+    {
+    }
+
     public virtual void UnloadWeapon()
     {
         Destroy(this);

@@ -1,0 +1,62 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class KingBibleWeapon : Weapon
+{
+    public int bibleCount = 3;
+    public float radius = 2f;
+    public float rotationSpeed = 100f;
+
+    private List<GameObject> _ammoObjList = new List<GameObject>();
+    private float currentAngle = 0f;
+    private float angleOffset = 360f / 3f;
+    public override void Start()
+    {
+        base.Start();
+        //Testing code
+        LoadWeapon();
+    }
+    public override void LoadWeapon(bool active = true)
+    {
+        base.LoadWeapon(active);
+        angleOffset = 360f / (float)bibleCount;
+        for (int i = 0; i < bibleCount; i++)
+        {
+            GameObject _ammoObj = Instantiate(weaponData.AmmoPrefab, this.transform.position, Quaternion.identity);
+            _ammoObj.transform.SetParent(this.transform);
+            _ammoObjList.Add(_ammoObj);
+            float angle = i * angleOffset;
+            Vector3 position = GetPositionOnCircle(angle);
+            _ammoObj.transform.position = position;
+        }
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        // 使物件繞著玩家旋轉
+        for (int i = 0; i < _ammoObjList.Count; i++)
+        {
+            float angle = currentAngle + i * angleOffset;
+            Vector3 position = GetPositionOnCircle(angle);
+            _ammoObjList[i].transform.position = position;
+        }
+
+        // 更新角度
+        currentAngle += rotationSpeed * Time.deltaTime;
+        if (currentAngle >= 360f)
+        {
+            currentAngle -= 360f;
+        }
+
+    }
+
+    private Vector3 GetPositionOnCircle(float angle)
+    {
+        Vector3 center = this.transform.position;
+        float x = center.x + radius * Mathf.Cos(Mathf.Deg2Rad * angle);
+        float y = center.y + radius * Mathf.Sin(Mathf.Deg2Rad * angle);
+        return new Vector3(x, y, center.z);
+    }
+}

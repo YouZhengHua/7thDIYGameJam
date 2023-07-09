@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5caa92a1a9607a541a59e022267313ac, type: 3}
+  m_Name: KingBible Weapon Data
+  m_EditorClassIdentifier: 
+  Name: 
+  Price: 0
+  DefaultIsUnlocked: 0
+  AmmoPrefab: {fileID: 2891923082296894308, guid: bed6fc8dd9878494189a39022da7f368, type: 3}
+  Damage: 1
+  DamageFrom: 3
+  Force: 3
+  DelayTime: 0.1
+  CoolDownTime: 0.1
+  SkillTriggerInterval: 0.1
