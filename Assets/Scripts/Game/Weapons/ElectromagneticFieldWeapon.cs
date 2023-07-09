@@ -13,6 +13,13 @@ public class ElectromagneticFieldWeapon : Weapon
     public override void Start()
     {
         base.Start();
+        //Testing code
+        LoadWeapon();
+    }
+
+    public override void LoadWeapon(bool active = true)
+    {
+        base.LoadWeapon(active);
         _ammoObj = Instantiate(weaponData.AmmoPrefab, this.transform.position, Quaternion.identity);
         if (_ammoObj == null)
         {
@@ -21,6 +28,12 @@ public class ElectromagneticFieldWeapon : Weapon
         }
         _ammoObj.transform.SetParent(this.transform);
         //TODO 電磁範圍要影響特效大小
+    }
+
+    public override void UnloadWeapon()
+    {
+        base.UnloadWeapon();
+        Destroy(_ammoObj);
     }
 
     public override void Update()

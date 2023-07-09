@@ -5044,6 +5044,7 @@ GameObject:
   - component: {fileID: 1423023340}
   - component: {fileID: 1423023341}
   - component: {fileID: 1423023342}
+  - component: {fileID: 1423023343}
   m_Layer: 3
   m_Name: PlayerContainer
   m_TagString: Untagged
@@ -5147,7 +5148,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423023332}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf6cc2f880aa03f42814498f3300616e, type: 3}
   m_Name: 
@@ -5183,6 +5184,24 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: da9753154e76de3408d160fe0d84e3a5, type: 2}
   electromagneticRadius: 2
   rotateSpeed: 100
+--- !u!114 &1423023343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423023332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d2827070fc2d7345964f19b9156d113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 6af9c65a8fb296a4892006423108b5a8, type: 2}
+  FirePointName: FirePoint_Rifle
+  OneShootAmmoCount: 1
+  ShootOffset: {x: 0.008802022, y: 0.008649721, z: 0.008649721, w: 0.9998864}
+  AmmoFlySpeed: 1000
+  playerShootFire: Fire
 --- !u!1 &1495886659
 GameObject:
   m_ObjectHideFlags: 0

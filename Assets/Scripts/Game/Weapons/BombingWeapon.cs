@@ -37,6 +37,7 @@ public class BombingWeapon : Weapon
         Vector3 randomPoint = getRandomPointAroundPlayer();
 
         // 播放轰炸特效
+        //TODO 用架構的物件池 AmmoPool
         GameObject effect = Instantiate(weaponData.AmmoPrefab, randomPoint, Quaternion.identity);
         //TODO 轟炸範圍要影響特效大小
 
