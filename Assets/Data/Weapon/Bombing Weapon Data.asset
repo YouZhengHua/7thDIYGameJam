@@ -21,4 +21,4 @@ MonoBehaviour:
   Force: 3
   DelayTime: 0.1
   CoolDownTime: 0.1
-  SkillTriggerInterval: 5
+  SkillTriggerInterval: 2
