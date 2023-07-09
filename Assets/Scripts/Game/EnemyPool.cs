@@ -11,7 +11,7 @@ namespace Scripts.Game
     {
         public IDictionary<int, IBasePool> enemyPools;
         public IList<GameObject> enemyies;
-        public EnemyPool(IGameFiniteStateMachine gameFiniteStateMachine, IPlayerController player, IEndUIController endUI, LevelData[] levelDatas, IAttributeHandle attributeHandle, IExpPool expPool, IDropAmmoPool dropAmmoPool, IDamagePool damagePool, IDropHealthPool healthPool)
+        public EnemyPool(IGameFiniteStateMachine gameFiniteStateMachine, IEndUIController endUI, LevelData[] levelDatas, IAttributeHandle attributeHandle, IExpPool expPool, IDamagePool damagePool, IDropHealthPool healthPool, Transform playerTransform)
         {
             enemyPools = new Dictionary<int, IBasePool>();
             enemyies = new List<GameObject>();
@@ -21,26 +21,25 @@ namespace Scripts.Game
                 {
                     if (!enemyPools.ContainsKey(enemy.GetInstanceID()))
                     {
-                        enemyPools.Add(enemy.GetInstanceID(), CreateBasePool(gameFiniteStateMachine, player, endUI, enemy.Prefab, enemy.Data, attributeHandle, expPool, dropAmmoPool, damagePool, healthPool));
+                        enemyPools.Add(enemy.GetInstanceID(), CreateBasePool(gameFiniteStateMachine, endUI, enemy.Prefab, enemy.Data, attributeHandle, expPool, damagePool, healthPool, playerTransform));
                     }
                 }
             }
         }
 
-        private IBasePool CreateBasePool(IGameFiniteStateMachine gameFiniteStateMachine, IPlayerController player, IEndUIController endUI, GameObject prefab, EnemyData enemyData, IAttributeHandle attributeHandle, IExpPool expPool, IDropAmmoPool dropAmmoPool, IDamagePool damagePool, IDropHealthPool healthPool)
+        private IBasePool CreateBasePool(IGameFiniteStateMachine gameFiniteStateMachine, IEndUIController endUI, GameObject prefab, EnemyData enemyData, IAttributeHandle attributeHandle, IExpPool expPool, IDamagePool damagePool, IDropHealthPool healthPool, Transform playerTransform)
         {
             IBasePool result = new BasePool(prefab, 100);
             result.Prefabs.ForEach(prefab =>
             {
                 prefab.GetComponent<IEnemyController>().SetGameFinitStateMachine = gameFiniteStateMachine;
-                prefab.GetComponent<IEnemyController>().SetPlayer = player;
                 prefab.GetComponent<IEnemyController>().SetEndUI = endUI;
                 prefab.GetComponent<IEnemyController>().SetEnemyData = enemyData;
                 prefab.GetComponent<IEnemyController>().SetAttributeHandle = attributeHandle;
                 prefab.GetComponent<IEnemyController>().SetExpPool = expPool;
-                prefab.GetComponent<IEnemyController>().SetDropAmmoPool = dropAmmoPool;
                 prefab.GetComponent<IEnemyController>().SetDamagePool = damagePool;
                 prefab.GetComponent<IEnemyController>().SetDropHealthPool = healthPool;
+                prefab.GetComponent<IEnemyController>().SetPlayerTransform = playerTransform;
             });
             return result;
         }
