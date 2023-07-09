@@ -15,9 +15,9 @@ public class BombingWeapon : Weapon
         base.Start();
     }
 
-    public override void Update()
+    public override bool Update()
     {
-        base.Update();
+        if (!base.Update()) return false;
         _timer += Time.deltaTime;
 
         if (_timer >= weaponData.SkillTriggerInterval)
@@ -29,6 +29,7 @@ public class BombingWeapon : Weapon
             }
 
         }
+        return true;
     }
 
     private void _throwingBomb()

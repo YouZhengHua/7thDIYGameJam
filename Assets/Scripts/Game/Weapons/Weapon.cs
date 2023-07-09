@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Scripts;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
@@ -20,9 +21,9 @@ public class Weapon : MonoBehaviour
     }
 
     // Update is called once per frame
-    public virtual void Update()
+    public virtual bool Update()
     {
-        if (!_weaponActive) return;
+        return _weaponActive;
     }
 
     public virtual void SetWeaponActive(bool active)
@@ -43,4 +44,9 @@ public class Weapon : MonoBehaviour
     {
         Destroy(this);
     }
+}
+
+public interface IAmmoEvent
+{
+    public UnityEvent<Collider2D> OnHitEnemy { get; set; }
 }

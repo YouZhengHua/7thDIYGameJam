@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2891923082296894310}
   - component: {fileID: 2891923082296894311}
   - component: {fileID: 2891923082296894313}
-  - component: {fileID: 1492360156748354353}
-  - component: {fileID: 3518059249042065607}
   - component: {fileID: 5944129886828109925}
+  - component: {fileID: 7221266279933348234}
+  - component: {fileID: 6885284202637082998}
   m_Layer: 6
   m_Name: ammo07_KingBible
   m_TagString: Untagged
@@ -109,19 +109,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1492360156748354353
+--- !u!114 &5944129886828109925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2891923082296894308}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b6586ae93647b94e9f9e359ad8bc6be, type: 3}
+  m_Script: {fileID: 11500000, guid: 1977915156b36fc428d8f6832616673e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &3518059249042065607
+  drawSphere: 1
+  drawSphereColor: {r: 1, g: 0, b: 0.009907246, a: 1}
+  radius: 2.5
+--- !u!114 &7221266279933348234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2891923082296894308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eba500a334e433428f11d82b97cdd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &6885284202637082998
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,20 +160,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.22, y: 3.5}
   m_EdgeRadius: 0
---- !u!114 &5944129886828109925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2891923082296894308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1977915156b36fc428d8f6832616673e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawSphere: 1
-  drawSphereColor: {r: 1, g: 0, b: 0.009907246, a: 1}
-  radius: 2.5

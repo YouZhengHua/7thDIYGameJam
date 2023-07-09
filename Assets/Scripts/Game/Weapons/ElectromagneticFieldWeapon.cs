@@ -36,10 +36,10 @@ public class ElectromagneticFieldWeapon : Weapon
         Destroy(_ammoObj);
     }
 
-    public override void Update()
+    public override bool Update()
     {
-        base.Update();
-        if (_ammoObj == null) return;
+        if (!base.Update()) return false;
+        if (_ammoObj == null) return false;
         _timer += Time.deltaTime;
 
         if (_timer >= weaponData.SkillTriggerInterval)
@@ -50,6 +50,7 @@ public class ElectromagneticFieldWeapon : Weapon
 
         //自動旋轉 _ammoObj
         _ammoObj.transform.Rotate(Vector3.forward * Time.deltaTime * rotateSpeed);
+        return true;
     }
 
     private void _triggerElectricShock()

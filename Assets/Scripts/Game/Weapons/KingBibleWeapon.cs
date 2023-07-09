@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Scripts.Game;
 using UnityEngine;
 
 public class KingBibleWeapon : Weapon
@@ -24,6 +25,7 @@ public class KingBibleWeapon : Weapon
         for (int i = 0; i < bibleCount; i++)
         {
             GameObject _ammoObj = Instantiate(weaponData.AmmoPrefab, this.transform.position, Quaternion.identity);
+            _ammoObj.GetComponent<IAmmoEvent>().OnHitEnemy.AddListener(_hitEnemy);
             _ammoObj.transform.SetParent(this.transform);
             _ammoObjList.Add(_ammoObj);
             float angle = i * angleOffset;
@@ -32,9 +34,15 @@ public class KingBibleWeapon : Weapon
         }
     }
 
-    public override void Update()
+    private void _hitEnemy(Collider2D collision)
     {
-        base.Update();
+        Debug.Log("KingBibleWeapon _hitEnemy");
+        collision.gameObject.GetComponent<EnemyController>().TakeDamage(weaponData.Damage, weaponData.DamageFrom, weaponData.Force, weaponData.DelayTime);
+    }
+
+    public override bool Update()
+    {
+        if (!base.Update()) return false;
         // 使物件繞著玩家旋轉
         for (int i = 0; i < _ammoObjList.Count; i++)
         {
@@ -49,7 +57,7 @@ public class KingBibleWeapon : Weapon
         {
             currentAngle -= 360f;
         }
-
+        return true;
     }
 
     private Vector3 GetPositionOnCircle(float angle)

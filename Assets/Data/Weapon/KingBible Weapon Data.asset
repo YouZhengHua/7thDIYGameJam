@@ -16,7 +16,7 @@ MonoBehaviour:
   Price: 0
   DefaultIsUnlocked: 0
   AmmoPrefab: {fileID: 2891923082296894308, guid: bed6fc8dd9878494189a39022da7f368, type: 3}
-  Damage: 1
+  Damage: 30
   DamageFrom: 3
   Force: 3
   DelayTime: 0.1

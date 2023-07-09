@@ -36,10 +36,11 @@ public class PlasmaMachineGunWeapon : Weapon
         _gunEffect = _firePoint.gameObject.GetComponentInChildren<Animator>();
 
     }
-    public override void Update()
+    public override bool Update()
     {
-        base.Update();
+        if (!base.Update()) return false;
         MainShootHandel();
+        return true;
     }
 
     /// <summary>
