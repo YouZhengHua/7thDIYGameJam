@@ -36,7 +36,7 @@ namespace Scripts.Game
 
         private void OnEnable()
         {
-            if(_baseEnemyData != null)
+            if (_baseEnemyData != null)
                 _enemyData = Object.Instantiate(_baseEnemyData);
             gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
             _state = EnemyState.Run;
@@ -109,7 +109,7 @@ namespace Scripts.Game
                 _rigidbody2D.AddForce((transform.position - playerTransform.position) * force);
                 _velocityTime += delayTime;
             }
-            if(_state == EnemyState.Run)
+            if (_state == EnemyState.Run)
                 _animator.SetTrigger(_enemyGetHit);
         }
 
@@ -120,7 +120,7 @@ namespace Scripts.Game
 
         public void LookAt(Vector3 targetPosition)
         {
-            if(transform.position.x > targetPosition.x)
+            if (transform.position.x > targetPosition.x)
             {
                 transform.rotation = _lookLeft;
             }
@@ -136,6 +136,12 @@ namespace Scripts.Game
             transform.position = newPosition;
         }
 
+        public void TakeDamage(float damage, DamageFrom damageFrom, float force, float delayTime)
+        {
+            GotHit(force, delayTime);
+            GetDamage(damage, damageFrom);
+            ShowDamageText(damage, this.gameObject.transform.position);
+        }
         private void GetDamage(float damage, DamageFrom damageFrom)
         {
             _endUI.AddDamage(damage);
@@ -199,7 +205,7 @@ namespace Scripts.Game
 
         public void AddVelocityTime(float dealyTime)
         {
-            _velocityTime += dealyTime; 
+            _velocityTime += dealyTime;
         }
 
         public void PlayAttackAnimation()
