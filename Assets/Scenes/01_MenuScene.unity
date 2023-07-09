@@ -7497,7 +7497,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levels:
   - {fileID: 11400000, guid: 4b0911ca990362b449e7a31f3f8bb1f4, type: 2}
-  - {fileID: 0}
 --- !u!114 &2131390702
 MonoBehaviour:
   m_ObjectHideFlags: 0
