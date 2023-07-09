@@ -12,4 +12,8 @@ public class WeaponData : BaseItemData
     public DamageFrom DamageFrom = DamageFrom.Gun;
     public float Force = 100f;
     public float DelayTime = 0.1f;
+    //冷卻時間
+    public float CoolDownTime = 0.1f;
+    //技能觸發間隔時間
+    public float SkillTriggerInterval = 0.1f;
 }

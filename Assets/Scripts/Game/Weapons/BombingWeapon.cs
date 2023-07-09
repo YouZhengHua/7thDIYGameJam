@@ -7,10 +7,9 @@ public class BombingWeapon : Weapon
 {
     public float createRadius = 2f; // 生成半徑
     public float bombRadius = 2f; // 轰炸半径
-    public float bombingInterval = 5f; // 轰炸间隔时间
     // 轰炸次數
     public int bombingCount = 1;
-    private float _timer = 0f;
+
     public override void Start()
     {
         base.Start();
@@ -21,7 +20,7 @@ public class BombingWeapon : Weapon
         base.Update();
         _timer += Time.deltaTime;
 
-        if (_timer >= bombingInterval)
+        if (_timer >= weaponData.SkillTriggerInterval)
         {
             _timer = 0f;
             for (int times = 0; times < bombingCount; times++)
@@ -39,6 +38,7 @@ public class BombingWeapon : Weapon
 
         // 播放轰炸特效
         GameObject effect = Instantiate(weaponData.AmmoPrefab, randomPoint, Quaternion.identity);
+        //TODO 轟炸範圍要影響特效大小
 
         // 在半径范围内查找敌人单位
         Collider2D[] colliders = Physics2D.OverlapCircleAll(randomPoint, bombRadius);
