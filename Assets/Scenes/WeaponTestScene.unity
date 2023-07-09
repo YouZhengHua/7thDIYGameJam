@@ -5046,6 +5046,7 @@ GameObject:
   - component: {fileID: 1423023342}
   - component: {fileID: 1423023343}
   - component: {fileID: 1423023344}
+  - component: {fileID: 1423023345}
   m_Layer: 3
   m_Name: PlayerContainer
   m_TagString: Untagged
@@ -5149,7 +5150,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423023332}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf6cc2f880aa03f42814498f3300616e, type: 3}
   m_Name: 
@@ -5161,7 +5162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423023332}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02019be3dad0ad745b76dbb04ed2ff68, type: 3}
   m_Name: 
@@ -5192,7 +5193,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423023332}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d2827070fc2d7345964f19b9156d113, type: 3}
   m_Name: 
@@ -5210,7 +5211,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423023332}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c22e0e28d5731c4fa4e7ac07db1ed05, type: 3}
   m_Name: 
@@ -5219,6 +5220,20 @@ MonoBehaviour:
   bibleCount: 3
   radius: 2
   rotationSpeed: 100
+--- !u!114 &1423023345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423023332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ec6ef2505f2a1419703f7388617a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: f936ff2e054814d4882db0c2378d1279, type: 2}
+  offset: {x: 2, y: 1.3, z: 0}
 --- !u!1 &1495886659
 GameObject:
   m_ObjectHideFlags: 0
