@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/Weapon")]
 public class WeaponData : BaseItemData
 {
+    [Header("槍械編號")]
+    public WeaponIndex WeaponIndex;
     [Header("子彈預製物")]
     public GameObject AmmoPrefab;
     public float Damage = 1;

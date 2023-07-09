@@ -11,14 +11,14 @@ public class PlasmaMachineGunWeapon : Weapon
     public float AmmoFlySpeed;
     public string playerShootFire = "Fire";
     /// <summary>
+    /// 玩家面對方向
+    /// </summary>
+    private Transform _playerRotation;
+    /// <summary>
     /// 子彈發射位置
     /// </summary>
     private Transform _firePoint;
 
-    /// <summary>
-    /// 槍械動畫
-    /// </summary>
-    private SpriteRenderer _fireEffect;
     /// <summary>
     /// 槍械動畫
     /// </summary>
@@ -29,12 +29,11 @@ public class PlasmaMachineGunWeapon : Weapon
     {
         base.Start();
         _currentMainShootCooldownTime = weaponData.CoolDownTime;
-        _fireEffect = GameObject.Find("FireEffect").GetComponent<SpriteRenderer>();
-        _fireEffect.enabled = false;
 
-        _firePoint = GameObject.Find(FirePointName).GetComponent<Transform>();
+        _firePoint = this.GetComponentInChildren<Transform>();
         _gunEffect = _firePoint.gameObject.GetComponentInChildren<Animator>();
 
+        _playerRotation = GameObject.Find("ZRotation").GetComponent<Transform>();
     }
     public override bool Update()
     {
@@ -76,7 +75,7 @@ public class PlasmaMachineGunWeapon : Weapon
         foreach (GameObject bullet in _shotAmmo)
         {
             bullet.transform.position = _firePoint.position;
-            Vector3 currentRotation = _firePoint.rotation.eulerAngles;
+            Vector3 currentRotation = _playerRotation.rotation.eulerAngles;
             // 將 Y 旋轉值用公式設為正值
             if (currentRotation.y < 0)
             {
@@ -98,19 +97,11 @@ public class PlasmaMachineGunWeapon : Weapon
 
         //TODO 計算偏移
         // _attributeHandle.AddOffset();
-        _fireEffect.enabled = true;
-        StartCoroutine(FireEffectOff());
         //TODO 播放音效
         // _audio.PlayEffect(_attributeHandle.ShootAudio);
 
         _shotAmmo.Clear();
 
         _currentMainShootCooldownTime = weaponData.CoolDownTime;
-    }
-
-    public IEnumerator FireEffectOff()
-    {
-        yield return new WaitForSeconds(0.1f);
-        _fireEffect.enabled = false;
     }
 }
