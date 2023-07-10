@@ -50,15 +50,6 @@ namespace Scripts.Game
         private MeleeData defaultMeleeData;
         private MeleeData _meleeData;
 
-        [SerializeField, Header("玩家血量")]
-        private GameObject _playerHealth;
-
-        [SerializeField, Header("健康血量貼圖")]
-        private Sprite _healthSprite;
-
-        [SerializeField, Header("不健康血量貼圖")]
-        private Sprite _unhealthSprite;
-
         [SerializeField, Header("升級選項預置物")]
         private GameObject _optionPrefab;
 
@@ -159,7 +150,7 @@ namespace Scripts.Game
             _endUI = new EndUIController(_gameFiniteStateMachine, _attributeHandle);
             _ammoPool = new AmmoPool(_gameFiniteStateMachine, _bulletPoolData, _attributeHandle, _endUI, _playerContainer.transform);
             _optionsUI = new OptionsUIController(_gameFiniteStateMachine, _attributeHandle, _optionPrefab, _optionDatas);
-            _gameUI = new GameUIController(_playerHealth, _attributeHandle, _optionsUI, _audioContoller, _healthSprite, _unhealthSprite, _gameUICanvas);
+            _gameUI = new GameUIController(_attributeHandle, _optionsUI, _audioContoller, _gameUICanvas);
             _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _attributeHandle, _gameUI, _gameFiniteStateMachine, _playerContainer.transform);
             _expPool = new ExpPool(_exp1, _exp2, _exp3, _attributeHandle, _gameUI, _gameFiniteStateMachine, _playerContainer.transform);
             _enemyPool = new EnemyPool(_gameFiniteStateMachine, _endUI, Levels, _attributeHandle, _expPool, _damagePool, _dropHealthPool, _playerContainer.transform);
@@ -202,6 +193,7 @@ namespace Scripts.Game
                 }
             }
             _audioContoller.UpdateAudioVolume();
+            _gameUI.UpdatePlayerHealth();
             Debug.Log("GameManager Start() End");
         }
 
