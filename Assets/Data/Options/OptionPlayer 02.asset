@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionType: 2
   optionAttribute: 13
-  depiction: "\u6CBB\u7652\u73A9\u5BB6\u8840\u91CF 2 \u9EDE"
+  depiction: "\u6062\u5FA9\u73A9\u5BB6 10% \u8840\u91CF"
   maxSelectedCount: -1
-  _value: 2
+  _value: 10
   _isNegative: 1
   IsEndOption: 1

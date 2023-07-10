@@ -57,7 +57,7 @@ namespace Scripts.Game
                     _gunExtendPenetrationCount += Mathf.RoundToInt(data.Value);
                     break;
                 case OptionAttribute.PlayerHeal:
-                    _gameUI.HealPlayer(Mathf.RoundToInt(data.Value));
+                    _gameUI.HealPlayer(data.Value * _playerData.MaxHealthPoint);
                     break;
                 case OptionAttribute.PlayerMaxHealth:
                     _gameUI.AddPlayerHealthPointMax(Mathf.RoundToInt(data.Value));

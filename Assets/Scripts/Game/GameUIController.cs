@@ -91,7 +91,7 @@ namespace Scripts.Game
         /// 玩家接收到治療
         /// </summary>
         /// <param name="healPoint"></param>
-        public void HealPlayer(int healPoint)
+        public void HealPlayer(float healPoint)
         {
             if(_attributeHandle.PlayerHealthPoint < _attributeHandle.PlayerMaxHealthPoint)
             {
