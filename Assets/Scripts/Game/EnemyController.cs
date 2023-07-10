@@ -85,12 +85,6 @@ namespace Scripts.Game
                     GetDamage(_attributeHandle.GunDamage, DamageFrom.Gun);
                     ShowDamageText(_attributeHandle.GunDamage, collision.gameObject.transform.position);
                 }
-                else if (collision.gameObject.layer == LayerMask.NameToLayer("近戰武器"))
-                {
-                    GotHit(_attributeHandle.MeleeRepelForce, _attributeHandle.MeleeRepelTime);
-                    GetDamage(_attributeHandle.MeleeDamage, DamageFrom.Melee);
-                    ShowDamageText(_attributeHandle.MeleeDamage, collision.gameObject.transform.position);
-                }
             }
         }
 

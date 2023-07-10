@@ -46,10 +46,6 @@ namespace Scripts.Game
         private int targetGunIndex;
         private GunData _gunData;
 
-        [SerializeField, Header("近戰武器資料")]
-        private MeleeData defaultMeleeData;
-        private MeleeData _meleeData;
-
         [SerializeField, Header("升級選項預置物")]
         private GameObject _optionPrefab;
 
@@ -88,23 +84,73 @@ namespace Scripts.Game
         private float _nowTime;
         private GameObject _playerContainer;
 
+        /// <summary>
+        /// 遊戲狀態機
+        /// </summary>
         private IGameFiniteStateMachine _gameFiniteStateMachine;
+        /// <summary>
+        /// 攝影機控制器
+        /// </summary>
         private ICameraController _cameraController;
+        /// <summary>
+        /// 地圖控制器
+        /// </summary>
         private IMapController _mapController;
+        /// <summary>
+        /// 遊戲UI
+        /// </summary>
         private IGameUIController _gameUI;
+        /// <summary>
+        /// 升級選項UI
+        /// </summary>
         private IOptionsUIController _optionsUI;
+        /// <summary>
+        /// 暫停UI
+        /// </summary>
         private IPauseUIController _pauseUI;
+        /// <summary>
+        /// 結算畫面UI
+        /// </summary>
         private IEndUIController _endUI;
+        /// <summary>
+        /// 遊戲設定UI
+        /// </summary>
         private ISettingUIController _settingUI;
+        /// <summary>
+        /// 
+        /// </summary>
         private IAttributeHandle _attributeHandle;
+        /// <summary>
+        /// 補包掉落物池
+        /// </summary>
         private IDropHealthPool _dropHealthPool;
-        private IAmmoPool _ammoPool;
+        /// <summary>
+        /// 怪物池
+        /// </summary>
         private IEnemyPool _enemyPool;
+        /// <summary>
+        /// 經驗值掉落物池
+        /// </summary>
         private IExpPool _expPool;
+        /// <summary>
+        /// 傷害文字池
+        /// </summary>
         private IDamagePool _damagePool;
+        /// <summary>
+        /// 音效控制器
+        /// </summary>
         private IAudioContoller _audioContoller;
+        /// <summary>
+        /// 玩家移動控制器
+        /// </summary>
         private IMoveController _playerMoveController;
+        /// <summary>
+        /// 玩家受傷控制器
+        /// </summary>
         private IPlayerDamageController _playerDamageController;
+        /// <summary>
+        /// 玩家武器控制器
+        /// </summary>
         private IWeaponController _weaponController;
 
         private void Awake()
@@ -123,17 +169,12 @@ namespace Scripts.Game
                 _gunData = Object.Instantiate(GunDatas[0]);
             }
             _playerData = Object.Instantiate(defaultPlayerData);
-            _meleeData = Object.Instantiate(defaultMeleeData);
             _optionDatas = new List<OptionData>();
             foreach (OptionData optionData in _gunData.Options)
             {
                 _optionDatas.Add(Object.Instantiate(optionData));
             }
             foreach (OptionData optionData in _playerData.Options)
-            {
-                _optionDatas.Add(Object.Instantiate(optionData));
-            }
-            foreach (OptionData optionData in _meleeData.Options)
             {
                 _optionDatas.Add(Object.Instantiate(optionData));
             }
@@ -146,9 +187,8 @@ namespace Scripts.Game
             _mapController = new MapController(_mapData);
             _settingUI = new SettingUIController(_audioContoller, _settingUICanvas, _defaultSetting, _userSetting);
             _pauseUI = new PauseUIController(_gameFiniteStateMachine, _settingUI);
-            _attributeHandle = new AttributeHandle(_gameFiniteStateMachine, _playerData, _gunData, _meleeData);
+            _attributeHandle = new AttributeHandle(_gameFiniteStateMachine, _playerData, _gunData);
             _endUI = new EndUIController(_gameFiniteStateMachine, _attributeHandle);
-            _ammoPool = new AmmoPool(_gameFiniteStateMachine, _bulletPoolData, _attributeHandle, _endUI, _playerContainer.transform);
             _optionsUI = new OptionsUIController(_gameFiniteStateMachine, _attributeHandle, _optionPrefab, _optionDatas);
             _gameUI = new GameUIController(_attributeHandle, _optionsUI, _audioContoller, _gameUICanvas);
             _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _attributeHandle, _gameUI, _gameFiniteStateMachine, _playerContainer.transform);

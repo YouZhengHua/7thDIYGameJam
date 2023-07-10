@@ -14,7 +14,6 @@ namespace Scripts.Game
         private IGameUIController _gameUI;
         private PlayerData _playerData;
         private GunData _gunData;
-        private MeleeData _meleeData;
 
         private float _gunDamagePoint = 0f;
         private float _gunDamageMultiple = 0f;
@@ -24,11 +23,6 @@ namespace Scripts.Game
         private int _gunExtendPenetrationCount = 0;
         private float _extendDropHealthMultiple = 0f;
 
-        private float _meleeDamagePoint = 0f;
-        private float _meleeDamageMultiple = 0f;
-        private float _meleeAttackPerSecondMultiple = 0f;
-        private float _meleeScaleMultiple = 0f;
-
         private float _playerSpeedMultiple = 0f;
         private float _totalExp = 0f;
         private float _expExtendMultiple = 0f;
@@ -37,12 +31,11 @@ namespace Scripts.Game
         private float _nowOffset;
         private float _nowRecovetTime;
 
-        public AttributeHandle(IGameFiniteStateMachine gameFiniteStateMachine, PlayerData playerData, GunData gunData, MeleeData meleeData)
+        public AttributeHandle(IGameFiniteStateMachine gameFiniteStateMachine, PlayerData playerData, GunData gunData)
         {
             _gameFiniteStateMachine = gameFiniteStateMachine;
             _playerData = playerData;
             _gunData = gunData;
-            _meleeData = meleeData;
         }
 
         public void UpdateAttribute(OptionData data)
@@ -62,18 +55,6 @@ namespace Scripts.Game
                     break;
                 case OptionAttribute.GunPenetrationCount:
                     _gunExtendPenetrationCount += Mathf.RoundToInt(data.Value);
-                    break;
-                case OptionAttribute.MeleeDamage:
-                    _meleeDamagePoint += data.Value;
-                    break;
-                case OptionAttribute.MeleeDamageMultiple:
-                    _meleeDamageMultiple += data.Value;
-                    break;
-                case OptionAttribute.MeleeRange:
-                    _meleeScaleMultiple += data.Value;
-                    break;
-                case OptionAttribute.MeleeSpeed:
-                    _meleeAttackPerSecondMultiple += data.Value;
                     break;
                 case OptionAttribute.PlayerHeal:
                     _gameUI.HealPlayer(Mathf.RoundToInt(data.Value));
@@ -181,19 +162,9 @@ namespace Scripts.Game
             get => _playerData.BaseMoveSpeed * (_playerData.MoveSpeedRate + _playerSpeedMultiple) * _gunData.NormalSpeedRate 
                         * (_gameFiniteStateMachine.PlayerState == PlayerState.Shoot ? _gunData.ShootSpeedRate
                         : _gameFiniteStateMachine.PlayerState == PlayerState.Reload ? _gunData.ReloadSpeedRate
-                        : _gameFiniteStateMachine.PlayerState == PlayerState.MeleeAttack ? _meleeData.AttackMoveSpeedRate
                         : 1f);
         }
         public float InvincibleTime { get => _playerData.InvincibleTime; }
-        #endregion
-
-        #region 近戰武器
-        public float MeleeDamage { get => (_meleeData.Damage + _meleeDamagePoint) * (1f + _meleeDamageMultiple); }
-        public float MeleeRepelForce { get => _meleeData.Force; }
-        public float MeleeRepelTime { get => _meleeData.EnemyDelayTime; }
-        public float MeleeAttackSpeed { get => _meleeData.AttackPerSecond * (1f + _meleeAttackPerSecondMultiple) / _meleeData.BaseAttackPerSecond; }
-        public Vector3 MeleeScale { get => _meleeData.BaseScale * (1f + _meleeScaleMultiple); }
-        public AudioClip MeleeAttackAudio { get => _meleeData.AttackAudio; }
         #endregion
     }
 }

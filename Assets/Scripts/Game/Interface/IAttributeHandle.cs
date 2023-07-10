@@ -84,33 +84,6 @@ namespace Scripts.Game
         public void RecoverOffset(float recoverTime);
         #endregion
 
-        #region 近戰武器
-        /// <summary>
-        /// 近戰武器傷害
-        /// </summary>
-        public float MeleeDamage { get; }
-        /// <summary>
-        /// 近戰武器的擊退力道
-        /// </summary>
-        public float MeleeRepelForce { get; }
-        /// <summary>
-        /// 近戰武器的擊退持續時間
-        /// </summary>
-        public float MeleeRepelTime { get; }
-        /// <summary>
-        /// 近戰武器揮舞速度;
-        /// </summary>
-        public float MeleeAttackSpeed { get; }
-        /// <summary>
-        /// 武器體積比例
-        /// </summary>
-        public Vector3 MeleeScale { get; }
-        /// <summary>
-        /// 近戰攻擊揮擊音效
-        /// </summary>
-        public AudioClip MeleeAttackAudio { get; }
-        #endregion
-
         #region 玩家相關
         /// <summary>
         /// 玩家受創時的擊退範圍
