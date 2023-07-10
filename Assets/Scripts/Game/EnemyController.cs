@@ -80,10 +80,25 @@ namespace Scripts.Game
             {
                 if (collision.gameObject.layer == LayerMask.NameToLayer("玩家子彈") && collision.gameObject.GetComponent<IAmmoController>().IsActive)
                 {
+                    string ammoName = collision.gameObject.name.Split('_')[1];
+                    try
+                    {
+                        ammoName = ammoName.Substring(0, ammoName.IndexOf("(clone)"));
+                    }
+                    catch
+                    {
+                        Debug.Log($"子彈名稱沒有包含 (clone), {ammoName}");
+                    }
                     collision.gameObject.GetComponent<IAmmoController>().HitEmeny();
-                    GotHit(_attributeHandle.GunRepelForce, _attributeHandle.GunRepelTime);
-                    GetDamage(_attributeHandle.GunDamage, DamageFrom.Gun);
-                    ShowDamageText(_attributeHandle.GunDamage, collision.gameObject.transform.position);
+                    //子彈擊退力量
+                    float repelForce = 0f;
+                    //子彈擊退持續時間
+                    float repelTime = 0f;
+                    //子彈傷害
+                    float damage = 10f;
+                    GotHit(repelForce, repelTime);
+                    GetDamage(damage, DamageFrom.Gun);
+                    ShowDamageText(damage, collision.gameObject.transform.position);
                 }
             }
         }

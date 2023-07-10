@@ -41,11 +41,6 @@ namespace Scripts.Game
         [SerializeField, Header("關卡資料")]
         private LevelData[] Levels;
 
-        [SerializeField, Header("槍械陣列")]
-        private GunData[] GunDatas;
-        private int targetGunIndex;
-        private GunData _gunData;
-
         [SerializeField, Header("升級選項預置物")]
         private GameObject _optionPrefab;
 
@@ -156,29 +151,12 @@ namespace Scripts.Game
         private void Awake()
         {
             Debug.Log("GameManager Awake() Start");
-            targetGunIndex = StaticPrefs.GunIndex;
-            foreach(GunData gunData in GunDatas)
-            {
-                if((int)gunData.GunIndex == targetGunIndex)
-                {
-                    _gunData = Object.Instantiate(gunData);
-                }
-            }
-            if(_gunData == null)
-            {
-                _gunData = Object.Instantiate(GunDatas[0]);
-            }
             _playerData = Object.Instantiate(defaultPlayerData);
             _optionDatas = new List<OptionData>();
-            foreach (OptionData optionData in _gunData.Options)
-            {
-                _optionDatas.Add(Object.Instantiate(optionData));
-            }
             foreach (OptionData optionData in _playerData.Options)
             {
                 _optionDatas.Add(Object.Instantiate(optionData));
             }
-            _bulletPoolData.prefab = _gunData.AmmoPrefab;
             _audioContoller = new AudioContoller(_userSetting);
             _playerContainer = GameObject.Find("PlayerContainer");
             _gameFiniteStateMachine = new GameFiniteStateMachine(GameState.Loading, () => { Debug.Log("Loading 階段結束"); });
@@ -187,7 +165,7 @@ namespace Scripts.Game
             _mapController = new MapController(_mapData);
             _settingUI = new SettingUIController(_audioContoller, _settingUICanvas, _defaultSetting, _userSetting);
             _pauseUI = new PauseUIController(_gameFiniteStateMachine, _settingUI);
-            _attributeHandle = new AttributeHandle(_gameFiniteStateMachine, _playerData, _gunData);
+            _attributeHandle = new AttributeHandle(_gameFiniteStateMachine, _playerData);
             _endUI = new EndUIController(_gameFiniteStateMachine, _attributeHandle);
             _optionsUI = new OptionsUIController(_gameFiniteStateMachine, _attributeHandle, _optionPrefab, _optionDatas);
             _gameUI = new GameUIController(_attributeHandle, _optionsUI, _audioContoller, _gameUICanvas);

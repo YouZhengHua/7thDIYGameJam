@@ -100,7 +100,8 @@ namespace Scripts.Game
         /// <param name="damage"></param>
         public void GetDamage(int damage)
         {
-            _attributeHandle.PlayerHealthPoint -= damage;
+            float calDamage = CalTool.CalDamage(damage, _attributeHandle.PlayerDEF, 0f);
+            _attributeHandle.PlayerHealthPoint -= calDamage;
             if (_attributeHandle.PlayerHealthPoint <= 0)
             {
                 _attributeHandle.PlayerHealthPoint = 0;
