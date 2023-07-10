@@ -112,10 +112,9 @@ namespace Scripts.Game
         private IExpPool _expPool;
         private IDamagePool _damagePool;
         private IAudioContoller _audioContoller;
-        private SpriteRenderer _gunImage;
-        private IMoveController playerMoveController;
-        private IPlayerDamageController playerDamageController;
-        private IWeaponController weaponController;
+        private IMoveController _playerMoveController;
+        private IPlayerDamageController _playerDamageController;
+        private IWeaponController _weaponController;
 
         private void Awake()
         {
@@ -135,7 +134,6 @@ namespace Scripts.Game
             _playerData = Object.Instantiate(defaultPlayerData);
             _meleeData = Object.Instantiate(defaultMeleeData);
             _optionDatas = new List<OptionData>();
-            _gunImage = GameObject.Find("GunHand").GetComponent<SpriteRenderer>();
             foreach (OptionData optionData in _gunData.Options)
             {
                 _optionDatas.Add(Object.Instantiate(optionData));
@@ -165,23 +163,22 @@ namespace Scripts.Game
             _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _attributeHandle, _gameUI, _gameFiniteStateMachine, _playerContainer.transform);
             _expPool = new ExpPool(_exp1, _exp2, _exp3, _attributeHandle, _gameUI, _gameFiniteStateMachine, _playerContainer.transform);
             _enemyPool = new EnemyPool(_gameFiniteStateMachine, _endUI, Levels, _attributeHandle, _expPool, _damagePool, _dropHealthPool, _playerContainer.transform);
-            playerMoveController = _playerContainer.GetComponent<IMoveController>();
-            playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
-            weaponController = _playerContainer.GetComponent<IWeaponController>();
+            _playerMoveController = _playerContainer.GetComponent<IMoveController>();
+            _playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
+            _weaponController = _playerContainer.GetComponent<IWeaponController>();
 
-            playerMoveController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
-            playerMoveController.SetAttributeHandle = _attributeHandle;
+            _playerMoveController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
+            _playerMoveController.SetAttributeHandle = _attributeHandle;
 
-            playerDamageController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
-            playerDamageController.SetAttributeHandle = _attributeHandle;
-            playerDamageController.SetEndUI = _endUI;
-            playerDamageController.SetGameUI = _gameUI;
-            playerDamageController.SetAudio = _audioContoller;
+            _playerDamageController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
+            _playerDamageController.SetAttributeHandle = _attributeHandle;
+            _playerDamageController.SetEndUI = _endUI;
+            _playerDamageController.SetGameUI = _gameUI;
+            _playerDamageController.SetAudio = _audioContoller;
 
-            weaponController.SetAmmoPool = _ammoPool;
-            weaponController.SetAttributeHandle = _attributeHandle;
-            weaponController.SetAudio = _audioContoller;
-            weaponController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
+            _weaponController.SetAttributeHandle = _attributeHandle;
+            _weaponController.SetAudio = _audioContoller;
+            _weaponController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
 
             _attributeHandle.SetGameUI = _gameUI;
 
@@ -195,7 +192,6 @@ namespace Scripts.Game
             _optionsUI.HideCanvas();
             _endUI.HideCanvas();
             _settingUI.HideCanvas();
-            _gunImage.sprite = _gunData.GunSprite;
             _gameFiniteStateMachine.SetNextState(GameState.InGame);
             _gameFiniteStateMachine.SetPlayerState(PlayerState.Idle);
             foreach (LevelData level in Levels)

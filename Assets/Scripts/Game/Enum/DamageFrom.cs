@@ -3,6 +3,8 @@
     public enum DamageFrom
     {
         Melee,
-        Gun
+        Gun,
+        AOE,
+        Drone//無人機
     }
 }

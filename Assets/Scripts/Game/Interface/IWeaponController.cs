@@ -14,12 +14,15 @@ namespace Scripts.Game
         /// </summary>
         public IAttributeHandle SetAttributeHandle { set; }
         /// <summary>
-        /// 設定彈藥池
-        /// </summary>
-        public IAmmoPool SetAmmoPool { set; }
-        /// <summary>
         /// 設定音效控制器
         /// </summary>
         public IAudioContoller SetAudio { set; }
+
+        /// <summary>
+        /// 設定玩家總共持有哪些武器
+        /// </summary>
+        /// <param name="weapons"></param>
+        public void SetPlayerWeapons(IList<WeaponIndex> weapons);
+
     }
 }
