@@ -5,5 +5,6 @@
         Gun,
         Melee,
         Player,
+        Weapon
     }
 }

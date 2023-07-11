@@ -76,5 +76,7 @@ namespace Scripts.Game.Data
         public float DropHealthRate = 0.01f;
         [Header("無敵時間")]
         public float InvincibleTime = 1f;
+        [Header("防禦力")]
+        public float DEF = 0f;
     }
 }

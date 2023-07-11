@@ -47,17 +47,31 @@ namespace Scripts.Game
             }
         }
 
-        public void SetPlayerWeapons(IList<WeaponIndex> weapons)
-        {
-            foreach(Weapon weapon in canUseWeapons)
-            {
-                Debug.Log(weapons.Contains(weapon.GetWeaponIndex));
-                weapon.SetWeaponActive(weapons.Contains(weapon.GetWeaponIndex));
-            }
-        }
-
         public IGameFiniteStateMachine SetGameFiniteStateMachine { set => _gameFiniteStateMachine = value; }
         public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
         public IAudioContoller SetAudio { set => _audio = value; }
+
+        public void SetWeaponActive(WeaponIndex weaponIndex, bool isActive)
+        {
+            foreach (Weapon weapon in canUseWeapons)
+            {
+                if(weapon.GetWeaponIndex == weaponIndex)
+                    weapon.SetWeaponActive(isActive);
+            }
+        }
+
+        public Weapon GetWeapon(WeaponIndex weaponIndex)
+        {
+            Weapon result = null;
+            foreach (Weapon weapon in canUseWeapons)
+            {
+                if (weapon.GetWeaponIndex == weaponIndex)
+                {
+                    result = weapon;
+                    continue;
+                }
+            }
+            return result;
+        }
     }
 }

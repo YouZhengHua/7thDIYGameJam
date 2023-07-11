@@ -10,7 +10,7 @@ namespace Scripts.Game
 
         public void GetExp(ExpNumber exp);
 
-        public void HealPlayer(int healPoint);
+        public void HealPlayer(float healPoint);
 
         public void AddPlayerHealthPointMax(int healPoint);
     }

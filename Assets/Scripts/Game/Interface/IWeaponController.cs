@@ -19,10 +19,17 @@ namespace Scripts.Game
         public IAudioContoller SetAudio { set; }
 
         /// <summary>
-        /// 設定玩家總共持有哪些武器
+        /// 設定指定的武器編號是否處於激活狀態
         /// </summary>
-        /// <param name="weapons"></param>
-        public void SetPlayerWeapons(IList<WeaponIndex> weapons);
+        /// <param name="weaponIndex"></param>
+        /// <param name="isActive"></param>
+        public void SetWeaponActive(WeaponIndex weaponIndex, bool isActive);
 
+        /// <summary>
+        /// 取得武器編號對應的武器資料
+        /// </summary>
+        /// <param name="weaponIndex"></param>
+        /// <returns></returns>
+        public Weapon GetWeapon(WeaponIndex weaponIndex);
     }
 }

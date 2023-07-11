@@ -12,72 +12,48 @@ namespace Scripts.Game
     public class GameUIController : BaseUIController, IGameUIController
     {
         private TextMeshProUGUI _gameTime;
+        private TextMeshProUGUI _hpText;
         private IAttributeHandle _attributeHandle;
-        private GameObject _playerHealthObject;
-        private IList<GameObject> _playerHealthImages = new List<GameObject>();
         private Image _expRateImage;
+        private Image _hpRateImage;
         private IOptionsUIController _optionsUI;
         private IAudioContoller _audio;
-        private Sprite _healthSprite;
-        private Sprite _unhealthSprite;
 
-        public GameUIController(GameObject playerHealth, IAttributeHandle attributeHandle, IOptionsUIController optionsUI, IAudioContoller audio, Sprite healthSprite, Sprite unhealthSprite, Canvas canvas) : base(canvas)
+        public GameUIController(IAttributeHandle attributeHandle, IOptionsUIController optionsUI, IAudioContoller audio, Canvas canvas) : base(canvas)
         {
             _attributeHandle = attributeHandle;
-            _playerHealthObject = playerHealth;
             _optionsUI = optionsUI;
             _audio = audio;
-            _healthSprite = healthSprite;
-            _unhealthSprite = unhealthSprite;
             foreach (Image image in GameObject.FindObjectsOfType<Image>())
             {
                 if (image.gameObject.name == "ExpRate")
                     _expRateImage = image;
+                if (image.gameObject.name == "HpRate")
+                    _hpRateImage = image;
             }
 
             foreach (TextMeshProUGUI text in GameObject.FindObjectsOfType<TextMeshProUGUI>())
             {
                 if (text.gameObject.name == "GameTime")
                     _gameTime = text;
-            }
-
-            for(int i = 0; i < _attributeHandle.PlayerMaxHealthPoint; i++)
-            {
-                CreateHealthImage(i);
+                if (text.gameObject.name == "HpText")
+                    _hpText = text;
             }
         }
 
+        /// <summary>
+        /// 更新 UI 的血量資訊
+        /// </summary>
         public void UpdatePlayerHealth()
         {
-            for(int i = 0;  i < _attributeHandle.PlayerMaxHealthPoint; i++)
-            {
-                if (i < _attributeHandle.PlayerHealthPoint)
-                {
-                    GetPlayerHealthImage(i).sprite = _healthSprite;
-                }
-                else
-                {
-                    GetPlayerHealthImage(i).sprite = _unhealthSprite;
-                }
-            }
+            _hpText.text = $"{_attributeHandle.PlayerHealthPoint} / {_attributeHandle.PlayerMaxHealthPoint}";
+            _hpRateImage.fillAmount = _attributeHandle.PlayerHealthPoint / _attributeHandle.PlayerMaxHealthPoint;
         }
 
-        private Image GetPlayerHealthImage(int index)
-        {
-            if(index >= _playerHealthImages.Count)
-            {
-                CreateHealthImage(index);
-            }
-            return _playerHealthImages[index].GetComponent<Image>();
-        }
-
-        private void CreateHealthImage(int index)
-        {
-            GameObject healthObject = GameObject.Instantiate(_playerHealthObject, _canvas.transform);
-            healthObject.transform.position = healthObject.transform.position + new Vector3((20f + index * 110f) * StaticPrefs.Scale, -20f * StaticPrefs.Scale, 0);
-            _playerHealthImages.Add(healthObject);
-        }
-
+        /// <summary>
+        /// 更新 UI 的遊戲時間
+        /// </summary>
+        /// <param name="gameTime"></param>
         public void UpdateGameTime(float gameTime)
         {
             int showTime = Mathf.Max(Mathf.FloorToInt(gameTime), 0);
@@ -86,6 +62,10 @@ namespace Scripts.Game
             _gameTime.text = string.Format("{0}:{1:00}", min, sec);
         }
 
+        /// <summary>
+        /// 取得經驗值
+        /// </summary>
+        /// <param name="exp"></param>
         public void GetExp(ExpNumber exp)
         {
             _attributeHandle.AddExp((float)exp);
@@ -99,20 +79,31 @@ namespace Scripts.Game
             UpdateExpGUI();
         }
 
+        /// <summary>
+        /// 更新 UI 的經驗條長度
+        /// </summary>
         private void UpdateExpGUI()
         {
             _expRateImage.fillAmount = _attributeHandle.ExpPercentage;
         }
 
-        public void HealPlayer(int healPoint)
+        /// <summary>
+        /// 玩家接收到治療
+        /// </summary>
+        /// <param name="healPoint"></param>
+        public void HealPlayer(float healPoint)
         {
             if(_attributeHandle.PlayerHealthPoint < _attributeHandle.PlayerMaxHealthPoint)
             {
-                _attributeHandle.PlayerHealthPoint += healPoint;
+                _attributeHandle.PlayerHealthPoint = Mathf.Min(_attributeHandle.PlayerHealthPoint + healPoint, _attributeHandle.PlayerMaxHealthPoint);
                 UpdatePlayerHealth();
             }
         }
 
+        /// <summary>
+        /// 玩家增加最大血量
+        /// </summary>
+        /// <param name="healthPoint"></param>
         public void AddPlayerHealthPointMax(int healthPoint)
         {
             _attributeHandle.PlayerMaxHealthPoint += healthPoint;

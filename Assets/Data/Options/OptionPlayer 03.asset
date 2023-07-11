@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: OptionPlayer 03
   m_EditorClassIdentifier: 
   optionType: 2
-  optionAttribute: 14
+  optionAttribute: 7
   depiction: "\u589E\u52A0\u73A9\u5BB6\u6700\u5927\u8840\u91CF 1 \u9EDE"
   maxSelectedCount: 3
   _value: 1
-  _isNegative: 1
+  _isNegative: 0
   IsEndOption: 0
+  WeaponIndex: 0

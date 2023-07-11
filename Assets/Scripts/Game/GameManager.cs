@@ -16,9 +16,6 @@ namespace Scripts.Game
         [SerializeField, Header("怪物池資料")]
         private PoolData _enemyPoolData;
 
-        [SerializeField, Header("子彈池資料")]
-        private PoolData _bulletPoolData;
-
         [SerializeField, Header("傷害文字資料")]
         private PoolData _damagePoolData;
 
@@ -41,23 +38,8 @@ namespace Scripts.Game
         [SerializeField, Header("關卡資料")]
         private LevelData[] Levels;
 
-        [SerializeField, Header("槍械陣列")]
-        private GunData[] GunDatas;
-        private int targetGunIndex;
-        private GunData _gunData;
-
-        [SerializeField, Header("近戰武器資料")]
-        private MeleeData defaultMeleeData;
-        private MeleeData _meleeData;
-
-        [SerializeField, Header("玩家血量")]
-        private GameObject _playerHealth;
-
-        [SerializeField, Header("健康血量貼圖")]
-        private Sprite _healthSprite;
-
-        [SerializeField, Header("不健康血量貼圖")]
-        private Sprite _unhealthSprite;
+        [SerializeField, Header("武器選項")]
+        private OptionData[] Weapons;
 
         [SerializeField, Header("升級選項預置物")]
         private GameObject _optionPrefab;
@@ -97,75 +79,107 @@ namespace Scripts.Game
         private float _nowTime;
         private GameObject _playerContainer;
 
+        /// <summary>
+        /// 遊戲狀態機
+        /// </summary>
         private IGameFiniteStateMachine _gameFiniteStateMachine;
+        /// <summary>
+        /// 攝影機控制器
+        /// </summary>
         private ICameraController _cameraController;
+        /// <summary>
+        /// 地圖控制器
+        /// </summary>
         private IMapController _mapController;
+        /// <summary>
+        /// 遊戲UI
+        /// </summary>
         private IGameUIController _gameUI;
+        /// <summary>
+        /// 升級選項UI
+        /// </summary>
         private IOptionsUIController _optionsUI;
+        /// <summary>
+        /// 暫停UI
+        /// </summary>
         private IPauseUIController _pauseUI;
+        /// <summary>
+        /// 結算畫面UI
+        /// </summary>
         private IEndUIController _endUI;
+        /// <summary>
+        /// 遊戲設定UI
+        /// </summary>
         private ISettingUIController _settingUI;
+        /// <summary>
+        /// 
+        /// </summary>
         private IAttributeHandle _attributeHandle;
+        /// <summary>
+        /// 補包掉落物池
+        /// </summary>
         private IDropHealthPool _dropHealthPool;
-        private IAmmoPool _ammoPool;
+        /// <summary>
+        /// 怪物池
+        /// </summary>
         private IEnemyPool _enemyPool;
+        /// <summary>
+        /// 經驗值掉落物池
+        /// </summary>
         private IExpPool _expPool;
+        /// <summary>
+        /// 傷害文字池
+        /// </summary>
         private IDamagePool _damagePool;
+        /// <summary>
+        /// 音效控制器
+        /// </summary>
         private IAudioContoller _audioContoller;
+        /// <summary>
+        /// 玩家移動控制器
+        /// </summary>
         private IMoveController _playerMoveController;
+        /// <summary>
+        /// 玩家受傷控制器
+        /// </summary>
         private IPlayerDamageController _playerDamageController;
+        /// <summary>
+        /// 玩家武器控制器
+        /// </summary>
         private IWeaponController _weaponController;
 
         private void Awake()
         {
             Debug.Log("GameManager Awake() Start");
-            targetGunIndex = StaticPrefs.GunIndex;
-            foreach(GunData gunData in GunDatas)
-            {
-                if((int)gunData.GunIndex == targetGunIndex)
-                {
-                    _gunData = Object.Instantiate(gunData);
-                }
-            }
-            if(_gunData == null)
-            {
-                _gunData = Object.Instantiate(GunDatas[0]);
-            }
             _playerData = Object.Instantiate(defaultPlayerData);
-            _meleeData = Object.Instantiate(defaultMeleeData);
             _optionDatas = new List<OptionData>();
-            foreach (OptionData optionData in _gunData.Options)
-            {
-                _optionDatas.Add(Object.Instantiate(optionData));
-            }
             foreach (OptionData optionData in _playerData.Options)
             {
                 _optionDatas.Add(Object.Instantiate(optionData));
             }
-            foreach (OptionData optionData in _meleeData.Options)
+            foreach (OptionData optionData in Weapons)
             {
                 _optionDatas.Add(Object.Instantiate(optionData));
             }
-            _bulletPoolData.prefab = _gunData.AmmoPrefab;
-            _audioContoller = new AudioContoller(_userSetting);
+
             _playerContainer = GameObject.Find("PlayerContainer");
+            _playerMoveController = _playerContainer.GetComponent<IMoveController>();
+            _playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
+            _weaponController = _playerContainer.GetComponent<IWeaponController>();
+            _audioContoller = new AudioContoller(_userSetting);
             _gameFiniteStateMachine = new GameFiniteStateMachine(GameState.Loading, () => { Debug.Log("Loading 階段結束"); });
             _cameraController = new CameraController();
             _damagePool = new DamagePool(_damagePoolData);
             _mapController = new MapController(_mapData);
             _settingUI = new SettingUIController(_audioContoller, _settingUICanvas, _defaultSetting, _userSetting);
             _pauseUI = new PauseUIController(_gameFiniteStateMachine, _settingUI);
-            _attributeHandle = new AttributeHandle(_gameFiniteStateMachine, _playerData, _gunData, _meleeData);
+            _attributeHandle = new AttributeHandle(_gameFiniteStateMachine, _playerData, _weaponController);
             _endUI = new EndUIController(_gameFiniteStateMachine, _attributeHandle);
-            _ammoPool = new AmmoPool(_gameFiniteStateMachine, _bulletPoolData, _attributeHandle, _endUI, _playerContainer.transform);
             _optionsUI = new OptionsUIController(_gameFiniteStateMachine, _attributeHandle, _optionPrefab, _optionDatas);
-            _gameUI = new GameUIController(_playerHealth, _attributeHandle, _optionsUI, _audioContoller, _healthSprite, _unhealthSprite, _gameUICanvas);
+            _gameUI = new GameUIController(_attributeHandle, _optionsUI, _audioContoller, _gameUICanvas);
             _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _attributeHandle, _gameUI, _gameFiniteStateMachine, _playerContainer.transform);
             _expPool = new ExpPool(_exp1, _exp2, _exp3, _attributeHandle, _gameUI, _gameFiniteStateMachine, _playerContainer.transform);
             _enemyPool = new EnemyPool(_gameFiniteStateMachine, _endUI, Levels, _attributeHandle, _expPool, _damagePool, _dropHealthPool, _playerContainer.transform);
-            _playerMoveController = _playerContainer.GetComponent<IMoveController>();
-            _playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
-            _weaponController = _playerContainer.GetComponent<IWeaponController>();
 
             _playerMoveController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
             _playerMoveController.SetAttributeHandle = _attributeHandle;
@@ -187,12 +201,12 @@ namespace Scripts.Game
         private void Start()
         {
             Debug.Log("GameManager Start() Start");
+            _gameFiniteStateMachine.SetNextState(GameState.GameStart, () => { Debug.Log("GameStart 階段結束"); });
             _nowTime = 0;
             _pauseUI.HideCanvas();
             _optionsUI.HideCanvas();
             _endUI.HideCanvas();
             _settingUI.HideCanvas();
-            _gameFiniteStateMachine.SetNextState(GameState.InGame);
             _gameFiniteStateMachine.SetPlayerState(PlayerState.Idle);
             foreach (LevelData level in Levels)
             {
@@ -202,14 +216,15 @@ namespace Scripts.Game
                 }
             }
             _audioContoller.UpdateAudioVolume();
+            _gameUI.UpdatePlayerHealth();
             Debug.Log("GameManager Start() End");
         }
 
         private void Update()
         {
-            if(_gameFiniteStateMachine.CurrectState == GameState.Loading)
+            if(_gameFiniteStateMachine.CurrectState == GameState.GameStart)
             {
-                _gameFiniteStateMachine.SetNextState(GameState.GameStart, () => { Debug.Log("GameStart 階段結束"); });
+                _optionsUI.ShowWeaponOptions();
             }
             else if (_gameFiniteStateMachine.CurrectState == GameState.InGame)
             {
