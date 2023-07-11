@@ -1,15 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UpgradeElementUI : MonoBehaviour
 {
-    [SerializeField] private Transform[] progressUIs;
+    [SerializeField] private Transform progressUIContainer;
     [SerializeField] private UpgradeElementSO upgradeElementSO;
+    [SerializeField] private TextMeshProUGUI ButtonName;
+
+    private List<Transform> progressUIs;
+
+    private void Awake() {
+        progressUIs = new List<Transform>();
+        foreach(Transform child in progressUIContainer) {
+            progressUIs.Add(child);
+        }
+    }
 
     private void Start() {
-        if (progressUIs.Length != upgradeElementSO.maxLevel) {
+        ButtonName.text = upgradeElementSO.elementName;
+
+        if (progressUIs.Count != upgradeElementSO.maxLevel) {
             Debug.LogError("The length of UI checkbox of " + upgradeElementSO.name + " does not match");
         }
 
