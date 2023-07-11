@@ -53,20 +53,35 @@ namespace Scripts.Game
             _canvas.gameObject.SetActive(true);
         }
 
+        public void ShowWeaponOptions()
+        {
+            IList<OptionData> _weaponOptions = new List<OptionData>();
+            foreach(OptionData option in _optionDatas)
+            {
+                if(option.optionType == OptionType.Weapon)
+                {
+                    _weaponOptions.Add(option);
+                }
+            }
+            for (int i = 0; i < _options.Length; i++)
+            {
+                OptionData data = _weaponOptions[Random.Range(0, _weaponOptions.Count)];
+                _weaponOptions.Remove(data);
+                _options[i].SetOptionData(data);
+            }
+
+            _gameFiniteStateMachine.SetNextState(GameState.SelectOption);
+            _canvas.gameObject.SetActive(true);
+        }
+
         private void UpdateShowOptions()
         {
             _showOptionDatas.Clear();
             UpdateSelectedOptions();
             for (int i = 0; i < _options.Length; i++)
             {
-                bool canAdded = false;
-                OptionData data;
-                do
-                {
-                    data = _canSelectedOptionDatas[Random.Range(0, _canSelectedOptionDatas.Count)];
-                    canAdded = !_showOptionDatas.Contains(data);
-
-                } while (!canAdded);
+                OptionData data = _canSelectedOptionDatas[Random.Range(0, _canSelectedOptionDatas.Count)];
+                _canSelectedOptionDatas.Remove(data);
                 _showOptionDatas.Add(data);
             }
         }
@@ -95,15 +110,15 @@ namespace Scripts.Game
 
         public void HideCanvas()
         {
-            _gameFiniteStateMachine.SetNextState(GameState.InGame);
             _canvas.gameObject.SetActive(false);
         }
 
         public void OptionOnClick(OptionData data)
         {
-            data.selectedCount += 1;
             _attributeHandle.UpdateAttribute(data);
+            data.selectedCount += 1;
             HideCanvas();
+            _gameFiniteStateMachine.SetNextState(GameState.InGame);
         }
     }
 }

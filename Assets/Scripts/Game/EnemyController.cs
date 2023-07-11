@@ -83,7 +83,7 @@ namespace Scripts.Game
                     string ammoName = collision.gameObject.name.Split('_')[1];
                     try
                     {
-                        ammoName = ammoName.Substring(0, ammoName.IndexOf("(clone)"));
+                        ammoName = ammoName.Substring(0, ammoName.IndexOf("(Clone)"));
                     }
                     catch
                     {

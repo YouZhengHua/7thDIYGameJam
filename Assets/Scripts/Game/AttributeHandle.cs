@@ -11,6 +11,7 @@ namespace Scripts.Game
     public class AttributeHandle : IAttributeHandle
     {
         private IGameFiniteStateMachine _gameFiniteStateMachine;
+        private IWeaponController _weapon;
         private IGameUIController _gameUI;
         private PlayerData _playerData;
 
@@ -22,34 +23,59 @@ namespace Scripts.Game
         private float _expExtendMultiple = 0f;
         private float _extendGetItemRadius = 0f;
 
-        public AttributeHandle(IGameFiniteStateMachine gameFiniteStateMachine, PlayerData playerData)
+        public AttributeHandle(IGameFiniteStateMachine gameFiniteStateMachine, PlayerData playerData, IWeaponController weaponController)
         {
             _gameFiniteStateMachine = gameFiniteStateMachine;
             _playerData = playerData;
+            _weapon = weaponController;
         }
 
         public void UpdateAttribute(OptionData data)
         {
-            switch (data.optionAttribute)
+            if (data.optionType == OptionType.Weapon)
             {
-                case OptionAttribute.PlayerHeal:
-                    _gameUI.HealPlayer(data.Value * _playerData.MaxHealthPoint);
-                    break;
-                case OptionAttribute.PlayerMaxHealth:
-                    _gameUI.AddPlayerHealthPointMax(Mathf.RoundToInt(data.Value));
-                    break;
-                case OptionAttribute.PlayerSpeed:
-                    _playerSpeedMultiple += data.Value;
-                    break;
-                case OptionAttribute.ExtendExp:
-                    _expExtendMultiple += data.Value;
-                    break;
-                case OptionAttribute.GetDropItemRadius:
-                    _extendGetItemRadius += data.Value;
-                    break;
-                case OptionAttribute.AddScore:
-                    _totalExp += data.Value;
-                    break;
+                if(data.selectedCount == 0)
+                {
+                    _weapon.SetWeaponActive(data.WeaponIndex, true);
+                }
+                else
+                {
+                    Weapon weapon = _weapon.GetWeapon(data.WeaponIndex);
+                    if (weapon == null)
+                        Debug.Log("查無升級武器資料");
+                    else
+                    {
+                        // TODO 調整武器素質
+                        Debug.Log("調整武器素質");
+                    }
+                }
+            }
+            else
+            {
+                switch (data.optionAttribute)
+                {
+                    case OptionAttribute.PlayerHeal:
+                        _gameUI.HealPlayer(data.Value * _playerData.MaxHealthPoint);
+                        break;
+                    case OptionAttribute.PlayerMaxHealth:
+                        _gameUI.AddPlayerHealthPointMax(Mathf.RoundToInt(data.Value));
+                        break;
+                    case OptionAttribute.PlayerSpeed:
+                        _playerSpeedMultiple += data.Value;
+                        break;
+                    case OptionAttribute.ExtendExp:
+                        _expExtendMultiple += data.Value;
+                        break;
+                    case OptionAttribute.GetDropItemRadius:
+                        _extendGetItemRadius += data.Value;
+                        break;
+                    case OptionAttribute.AddScore:
+                        _totalExp += data.Value;
+                        break;
+                    case OptionAttribute.PlayerDef:
+                        _extendDEF += data.Value;
+                        break;
+                }
             }
         }
 
@@ -89,6 +115,14 @@ namespace Scripts.Game
         }
         public float InvincibleTime { get => _playerData.InvincibleTime; }
         public float PlayerDEF { get => _playerData.DEF + _extendDEF; }
+        /// <summary>
+        /// 玩家添加武器
+        /// </summary>
+        /// <param name="weaponIndex"></param>
+        private void AddWeapon(WeaponIndex weaponIndex)
+        {
+            
+        }
         #endregion
     }
 }

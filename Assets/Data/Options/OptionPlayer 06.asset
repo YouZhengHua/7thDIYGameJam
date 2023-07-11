@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: OptionPlayer 06
   m_EditorClassIdentifier: 
   optionType: 2
-  optionAttribute: 12
+  optionAttribute: 5
   depiction: "\u73A9\u5BB6\u79FB\u52D5\u901F\u5EA6\u589E\u52A0 15 %"
   maxSelectedCount: 2
   _value: 0.15
-  _isNegative: 1
+  _isNegative: 0
   IsEndOption: 0
+  WeaponIndex: 0

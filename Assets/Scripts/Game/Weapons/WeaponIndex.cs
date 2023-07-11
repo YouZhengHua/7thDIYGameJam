@@ -1,5 +1,5 @@
-/// <summary>
-/// ºj±ñ½s¸¹
+ï»¿/// <summary>
+/// æ§æ¢°ç·¨è™Ÿ
 /// </summary>
 public enum WeaponIndex
 {

@@ -5000,7 +5000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6cc2f880aa03f42814498f3300616e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TestPlayerWeapons: 0400000000000000
+  TestPlayerWeapons: 
 --- !u!1 &1423256434
 GameObject:
   m_ObjectHideFlags: 0
@@ -5123,7 +5123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mapData: {fileID: 11400000, guid: 107467d6feb96e3409cea469773d3ad1, type: 2}
   _enemyPoolData: {fileID: 11400000, guid: 8c17ae721ef5bfa42b3741ebfd9c83aa, type: 2}
-  _bulletPoolData: {fileID: 11400000, guid: f1c3027d89b770040809a0a371cb004c, type: 2}
   _damagePoolData: {fileID: 11400000, guid: ca0f92e76f8a40d47ba10ea614969760, type: 2}
   _dropHealthPoolData: {fileID: 11400000, guid: 8972677931d51ff43a5e06a1734c4ebe, type: 2}
   _exp1: {fileID: 11400000, guid: 4ffaac57ce6e49d469ce1da475cd6634, type: 2}
@@ -5139,10 +5138,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 81953db2e6b938842b7e57481adb7eee, type: 2}
   - {fileID: 11400000, guid: 4486771b5fb9099458310c9e2097ee33, type: 2}
   - {fileID: 11400000, guid: 85ca1b83e2845ae4680c9e4b9f868e09, type: 2}
-  GunDatas:
-  - {fileID: 11400000, guid: a292ea5a42f3c1544b59f23b29064782, type: 2}
-  - {fileID: 11400000, guid: ea0bcbf69d41fa24f91e442fd00ee05c, type: 2}
-  - {fileID: 11400000, guid: d9b97c01a67d2c446b13fd9adf7628d8, type: 2}
+  Weapons:
+  - {fileID: 11400000, guid: 17509b446e2c33340bbe4a715c5ad3ba, type: 2}
+  - {fileID: 11400000, guid: 049eeab66285492468f608f3f97f965f, type: 2}
+  - {fileID: 11400000, guid: f9e2283814487ea43ac78c9bf365f04b, type: 2}
+  - {fileID: 11400000, guid: 9471189fe5db30444990cdcce4284dfd, type: 2}
   _optionPrefab: {fileID: 8508617249987231611, guid: 35c9c9f08bae8af4790ddedbb8d5cc17, type: 3}
   _userSetting: {fileID: 11400000, guid: abb8e8f88633b11419d94df063a5d869, type: 2}
   _defaultSetting: {fileID: 11400000, guid: 6a85d2c901f7dac4190fa093fc640980, type: 2}

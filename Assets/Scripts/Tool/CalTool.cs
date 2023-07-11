@@ -18,7 +18,9 @@ public static class CalTool
     public static float CalDamage(float originalDamage, float def, float minDamage = 1f)
     {
         float calDamage = originalDamage - def;
-        return CalTool.Round(Mathf.Max(calDamage, minDamage), 1);
+        if (calDamage < minDamage)
+            return minDamage;
+        return CalTool.Round(calDamage, 1);
     }
 
     /// <summary>
