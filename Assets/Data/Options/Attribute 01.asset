@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85365df07b98ffd408d77d29dc812b0a, type: 3}
-  m_Name: OptionGun_Comm 01
+  m_Name: Attribute 01
   m_EditorClassIdentifier: 
-  optionType: 0
-  optionAttribute: 10
-  depiction: "\u53D6\u5F97 6 \u500B\u5F48\u5323\u7684\u5B50\u5F48\u91CF"
-  maxSelectedCount: -1
-  _value: 6
-  _isNegative: 1
+  _optionType: 0
+  _attributeType: 12
+  _depiction: "\u7D50\u7B97\u5206\u6578\u589E\u52A0 100 \u5206"
+  _image: {fileID: 0}
+  _maxSelectedCount: 1
+  _value: 100
+  _isNegative: 0
+  _isEndOption: 0
+  _isLoopOption: 1
+  _weaponIndex: 0

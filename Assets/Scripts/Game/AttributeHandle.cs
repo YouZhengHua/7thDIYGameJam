@@ -32,9 +32,9 @@ namespace Scripts.Game
 
         public void UpdateAttribute(OptionData data)
         {
-            if (data.optionType == OptionType.Weapon)
+            if (data.OptionType == OptionType.Weapon)
             {
-                if(data.selectedCount == 0)
+                if(data.SelectedCount == 0)
                 {
                     _weapon.SetWeaponActive(data.WeaponIndex, true);
                 }
@@ -52,28 +52,30 @@ namespace Scripts.Game
             }
             else
             {
-                switch (data.optionAttribute)
+                switch (data.AttributeType)
                 {
-                    case OptionAttribute.PlayerHeal:
+                    case AttributeType.PlayerHeal:
                         _gameUI.HealPlayer(data.Value * _playerData.MaxHealthPoint);
                         break;
-                    case OptionAttribute.PlayerMaxHealth:
+                    case AttributeType.PlayerMaxHealth:
                         _gameUI.AddPlayerHealthPointMax(Mathf.RoundToInt(data.Value));
                         break;
-                    case OptionAttribute.PlayerSpeed:
+                    case AttributeType.PlayerSpeed:
                         _playerSpeedMultiple += data.Value;
                         break;
-                    case OptionAttribute.ExtendExp:
+                    case AttributeType.ExtendExp:
                         _expExtendMultiple += data.Value;
                         break;
-                    case OptionAttribute.GetDropItemRadius:
+                    case AttributeType.GetDropItemRadius:
                         _extendGetItemRadius += data.Value;
                         break;
-                    case OptionAttribute.AddScore:
+                    case AttributeType.Score:
                         _totalExp += data.Value;
                         break;
-                    case OptionAttribute.PlayerDef:
+                    case AttributeType.PlayerDef:
                         _extendDEF += data.Value;
+                        break;
+                    case AttributeType.DamageMultiple:
                         break;
                 }
             }

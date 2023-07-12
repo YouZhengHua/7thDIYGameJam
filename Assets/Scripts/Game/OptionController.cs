@@ -29,7 +29,7 @@ namespace Scripts.Game
         public void SetOptionData(OptionData data)
         {
             _data = data;
-            _text.text = data.depiction;
+            _text.text = data.Depiction;
         }
 
         public IOptionsUIController SetOptionsUI { set => _optionsUI = value; }

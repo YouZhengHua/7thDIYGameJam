@@ -31,5 +31,10 @@ namespace Scripts.Game
         /// <param name="weaponIndex"></param>
         /// <returns></returns>
         public Weapon GetWeapon(WeaponIndex weaponIndex);
+        /// <summary>
+        /// 取得所有武器資料
+        /// </summary>
+        /// <returns></returns>
+        public IList<Weapon> GetWeapons();
     }
 }

@@ -155,11 +155,13 @@ namespace Scripts.Game
             _optionDatas = new List<OptionData>();
             foreach (OptionData optionData in _playerData.Options)
             {
-                _optionDatas.Add(Object.Instantiate(optionData));
+                if(optionData.IsAcitve)
+                    _optionDatas.Add(Object.Instantiate(optionData));
             }
             foreach (OptionData optionData in Weapons)
             {
-                _optionDatas.Add(Object.Instantiate(optionData));
+                if(optionData.IsAcitve)
+                    _optionDatas.Add(Object.Instantiate(optionData));
             }
 
             _playerContainer = GameObject.Find("PlayerContainer");

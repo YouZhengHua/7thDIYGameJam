@@ -5143,6 +5143,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 049eeab66285492468f608f3f97f965f, type: 2}
   - {fileID: 11400000, guid: f9e2283814487ea43ac78c9bf365f04b, type: 2}
   - {fileID: 11400000, guid: 9471189fe5db30444990cdcce4284dfd, type: 2}
+  - {fileID: 11400000, guid: ead5308a26c896744982271dcded2779, type: 2}
+  - {fileID: 11400000, guid: 42cef8f92f45263408f961e8ee55a174, type: 2}
+  - {fileID: 11400000, guid: c1fc5b331e3838d4fac15c9c4d917221, type: 2}
+  - {fileID: 11400000, guid: 7c48bb9d97857fa4fbe459ebc883ec14, type: 2}
   _optionPrefab: {fileID: 8508617249987231611, guid: 35c9c9f08bae8af4790ddedbb8d5cc17, type: 3}
   _userSetting: {fileID: 11400000, guid: abb8e8f88633b11419d94df063a5d869, type: 2}
   _defaultSetting: {fileID: 11400000, guid: 6a85d2c901f7dac4190fa093fc640980, type: 2}
