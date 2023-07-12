@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85365df07b98ffd408d77d29dc812b0a, type: 3}
-  m_Name: OptionPlayer 02
+  m_Name: Attribute 04
   m_EditorClassIdentifier: 
-  optionType: 2
-  optionAttribute: 6
-  depiction: "\u6062\u5FA9\u73A9\u5BB6 10% \u8840\u91CF"
-  maxSelectedCount: -1
-  _value: 0.1
+  _optionType: 0
+  _attributeType: 10
+  _depiction: "\u7D93\u9A57\u503C\u500D\u7387\u589E\u52A0 50%"
+  _image: {fileID: 0}
+  _maxSelectedCount: 2
+  _value: 0.5
   _isNegative: 0
-  IsEndOption: 0
-  WeaponIndex: 0
+  _isEndOption: 0
+  _isLoopOption: 0
+  _weaponIndex: 0

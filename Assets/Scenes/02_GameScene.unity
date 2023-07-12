@@ -4783,7 +4783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2827070fc2d7345964f19b9156d113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 6af9c65a8fb296a4892006423108b5a8, type: 2}
+  _weaponData: {fileID: 11400000, guid: 6af9c65a8fb296a4892006423108b5a8, type: 2}
   FirePointName: FirePoint_PlasmaMachineGun
   OneShootAmmoCount: 1
   ShootOffset: {x: 0.008802022, y: 0.008649721, z: 0.008649721, w: 0.9998864}
@@ -5143,6 +5143,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 049eeab66285492468f608f3f97f965f, type: 2}
   - {fileID: 11400000, guid: f9e2283814487ea43ac78c9bf365f04b, type: 2}
   - {fileID: 11400000, guid: 9471189fe5db30444990cdcce4284dfd, type: 2}
+  - {fileID: 11400000, guid: ead5308a26c896744982271dcded2779, type: 2}
+  - {fileID: 11400000, guid: 42cef8f92f45263408f961e8ee55a174, type: 2}
+  - {fileID: 11400000, guid: c1fc5b331e3838d4fac15c9c4d917221, type: 2}
+  - {fileID: 11400000, guid: 7c48bb9d97857fa4fbe459ebc883ec14, type: 2}
   _optionPrefab: {fileID: 8508617249987231611, guid: 35c9c9f08bae8af4790ddedbb8d5cc17, type: 3}
   _userSetting: {fileID: 11400000, guid: abb8e8f88633b11419d94df063a5d869, type: 2}
   _defaultSetting: {fileID: 11400000, guid: 6a85d2c901f7dac4190fa093fc640980, type: 2}
@@ -5610,7 +5614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02019be3dad0ad745b76dbb04ed2ff68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 205d0e65f1132b14e9ffa3c7ccc4aa7d, type: 2}
+  _weaponData: {fileID: 11400000, guid: 205d0e65f1132b14e9ffa3c7ccc4aa7d, type: 2}
   createRadius: 2
   bombRadius: 2
   bombingCount: 1

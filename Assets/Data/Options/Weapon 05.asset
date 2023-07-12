@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85365df07b98ffd408d77d29dc812b0a, type: 3}
-  m_Name: OptionWeapon 03
+  m_Name: Weapon 05
   m_EditorClassIdentifier: 
-  optionType: 3
-  optionAttribute: 0
-  depiction: Temp Collider Ammo
-  maxSelectedCount: 2
+  _optionType: 1
+  _attributeType: 0
+  _depiction: "\u70B8\u5F48"
+  _image: {fileID: 0}
+  _maxSelectedCount: 1
   _value: 0
   _isNegative: 0
-  IsEndOption: 0
-  WeaponIndex: 5
+  _isEndOption: 0
+  _isLoopOption: 0
+  _weaponIndex: 4
+  _isActive: 0

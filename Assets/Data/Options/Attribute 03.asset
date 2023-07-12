@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85365df07b98ffd408d77d29dc812b0a, type: 3}
-  m_Name: OptionGun_Rifle 02
+  m_Name: Attribute 03
   m_EditorClassIdentifier: 
-  optionType: 0
-  optionAttribute: 2
-  depiction: "\u589E\u52A0 10 % \u7684\u69CD\u68B0\u5C04\u901F"
-  maxSelectedCount: 2
-  _value: 0.2
-  _isNegative: 1
-  IsEndOption: 0
+  _optionType: 0
+  _attributeType: 8
+  _depiction: "\u751F\u547D\u4E0A\u9650\u589E\u52A0 10 \u9EDE"
+  _image: {fileID: 0}
+  _maxSelectedCount: 3
+  _value: 10
+  _isNegative: 0
+  _isEndOption: 0
+  _isLoopOption: 0
+  _weaponIndex: 0

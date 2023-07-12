@@ -73,5 +73,10 @@ namespace Scripts.Game
             }
             return result;
         }
+
+        public IList<Weapon> GetWeapons()
+        {
+            return canUseWeapons;
+        }
     }
 }
