@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: Bombing
   Price: 0
   DefaultIsUnlocked: 0
+  WeaponIndex: 0
   AmmoPrefab: {fileID: 348025601964002051, guid: ae907b2bfc3d70046b0fe83e2a38aded, type: 3}
   Damage: 50
   DamageFrom: 2

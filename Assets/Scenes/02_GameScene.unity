@@ -4783,7 +4783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2827070fc2d7345964f19b9156d113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 6af9c65a8fb296a4892006423108b5a8, type: 2}
+  _weaponData: {fileID: 11400000, guid: 6af9c65a8fb296a4892006423108b5a8, type: 2}
   FirePointName: FirePoint_PlasmaMachineGun
   OneShootAmmoCount: 1
   ShootOffset: {x: 0.008802022, y: 0.008649721, z: 0.008649721, w: 0.9998864}
@@ -5614,7 +5614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02019be3dad0ad745b76dbb04ed2ff68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 205d0e65f1132b14e9ffa3c7ccc4aa7d, type: 2}
+  _weaponData: {fileID: 11400000, guid: 205d0e65f1132b14e9ffa3c7ccc4aa7d, type: 2}
   createRadius: 2
   bombRadius: 2
   bombingCount: 1

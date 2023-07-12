@@ -76,6 +76,10 @@ namespace Scripts.Game
                         _extendDEF += data.Value;
                         break;
                     case AttributeType.DamageMultiple:
+                        foreach(Weapon weapon in _weapon.GetWeapons())
+                        {
+                            weapon.weaponData.Damage *= 1f + data.Value;
+                        }
                         break;
                 }
             }
