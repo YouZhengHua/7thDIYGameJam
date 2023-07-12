@@ -13,6 +13,16 @@ namespace Scripts.Game
         private Transform playerTransform;
         private IEndUIController _endUI;
         private bool isFirstHit = true;
+        
+        /// <summary>
+        /// 槍械有效射程
+        /// </summary>
+        private float _gunEffectiveRange = 15f;
+
+        /// <summary>
+        /// 子彈可穿透數量
+        /// </summary>
+        private int ammoPenetrationCount = 1;
 
         private void OnEnable()
         {
@@ -30,7 +40,7 @@ namespace Scripts.Game
 
         private void AutoInactive()
         {
-            if ((this.transform.position - playerTransform.position).magnitude > _attributeHandle.GunEffectiveRange)
+            if ((this.transform.position - playerTransform.position).magnitude > _gunEffectiveRange)
             {
                 gameObject.SetActive(false);
             }
@@ -39,7 +49,7 @@ namespace Scripts.Game
         public void HitEmeny()
         {
             _nowPenetrationCount += 1;
-            if(_nowPenetrationCount >= _attributeHandle.AmmoPenetrationCount)
+            if(_nowPenetrationCount >= ammoPenetrationCount)
             {
                 this.gameObject.SetActive(false);
             }
@@ -50,7 +60,7 @@ namespace Scripts.Game
             }
         }
 
-        public bool IsActive { get => _nowPenetrationCount < _attributeHandle.AmmoPenetrationCount; }
+        public bool IsActive { get => _nowPenetrationCount < ammoPenetrationCount; }
         public IGameFiniteStateMachine SetGameFiniteStateMachine { set => _gameFiniteStateMachine = value; }
         public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
         public Transform SetPlayerTransform { set => playerTransform = value; }

@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: 
   Price: 0
   DefaultIsUnlocked: 0
+  WeaponIndex: 6
   AmmoPrefab: {fileID: 5963066614265696250, guid: 9d09fd569ece3a6449e5095f1e25c439, type: 3}
   Damage: 1
   DamageFrom: 1

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76199576573b1e549bc670b673ab9d23, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  HealthPoint: 10000
+  HealthPoint: 100
   BaseMoveSpeed: 5.5
   MoveSpeedRate: 1
   Radius: 3.5
@@ -22,7 +22,9 @@ MonoBehaviour:
   NowExp: 0
   DropItemRadius: 2
   ExpRate: 1
-  LevelExpMax: 100
+  _levelExpMax: 100
+  _levelExp: 3
+  _levelPow: 1.2
   Options:
   - {fileID: 11400000, guid: e3aab2970e3dd1749afe4beb7cf3e052, type: 2}
   - {fileID: 11400000, guid: 818bc66ff943f91408ac20a0ad3facf4, type: 2}
@@ -30,7 +32,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f81c66e8efcd4994f8747ce292f07fe0, type: 2}
   - {fileID: 11400000, guid: f3bb64baa9270a74daf01baa1f02bced, type: 2}
   - {fileID: 11400000, guid: 167c19e08ab4a5b44b2162e1b50c133b, type: 2}
+  - {fileID: 11400000, guid: d6d4d669ffbc4274c89b193cbd1cae65, type: 2}
+  - {fileID: 11400000, guid: 026022816f1175d4c971a9e5fb7e9124, type: 2}
   LevelUpAudio: {fileID: 8300000, guid: 4da67ca2618fd01458ab22c1945b8863, type: 3}
   GetHitAudio: {fileID: 8300000, guid: 291608b8d286e2a4580ff36324455ce2, type: 3}
   DropHealthRate: 0.01
   InvincibleTime: 1
+  DEF: 0

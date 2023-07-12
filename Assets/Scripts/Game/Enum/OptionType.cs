@@ -2,8 +2,7 @@
 {
     public enum OptionType
     {
-        Gun,
-        Melee,
-        Player,
+        Attribute,
+        Weapon
     }
 }

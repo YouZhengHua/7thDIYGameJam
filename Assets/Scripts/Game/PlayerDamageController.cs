@@ -46,17 +46,10 @@ namespace Scripts.Game
         [SerializeField, Header("玩家死亡時的動畫名稱")]
         private string playerDeadBoolName = "Dead";
 
-        private new CapsuleCollider2D collider;
-
         /// <summary>
         /// 玩家無敵時間
         /// </summary>
         private float _invincibleTime;
-
-        private void Start()
-        {
-            collider = this.GetComponent<CapsuleCollider2D>();
-        }
 
         private void Update()
         {
@@ -100,7 +93,8 @@ namespace Scripts.Game
         /// <param name="damage"></param>
         public void GetDamage(int damage)
         {
-            _attributeHandle.PlayerHealthPoint -= damage;
+            float calDamage = CalTool.CalDamage(damage, _attributeHandle.PlayerDEF, 1f);
+            _attributeHandle.PlayerHealthPoint -= calDamage;
             if (_attributeHandle.PlayerHealthPoint <= 0)
             {
                 _attributeHandle.PlayerHealthPoint = 0;

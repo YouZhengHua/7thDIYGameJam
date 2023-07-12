@@ -53,32 +53,59 @@ namespace Scripts.Game
             _canvas.gameObject.SetActive(true);
         }
 
+        public void ShowWeaponOptions()
+        {
+            IList<OptionData> _weaponOptions = new List<OptionData>();
+            foreach(OptionData option in _optionDatas)
+            {
+                if(option.OptionType == OptionType.Weapon && !option.IsEndOption)
+                {
+                    _weaponOptions.Add(option);
+                }
+            }
+            for (int i = 0; i < _options.Length; i++)
+            {
+                if (_weaponOptions.Count > 0)
+                {
+                    OptionData data = _weaponOptions[Random.Range(0, _weaponOptions.Count)];
+                    _weaponOptions.Remove(data);
+                    _options[i].SetOptionData(data);
+                }
+            }
+
+            _gameFiniteStateMachine.SetNextState(GameState.SelectOption);
+            _canvas.gameObject.SetActive(true);
+        }
+
+        /// <summary>
+        /// 更新升級選項內容
+        /// </summary>
         private void UpdateShowOptions()
         {
             _showOptionDatas.Clear();
             UpdateSelectedOptions();
             for (int i = 0; i < _options.Length; i++)
             {
-                bool canAdded = false;
-                OptionData data;
-                do
+                if (_canSelectedOptionDatas.Count > 0)
                 {
-                    data = _canSelectedOptionDatas[Random.Range(0, _canSelectedOptionDatas.Count)];
-                    canAdded = !_showOptionDatas.Contains(data);
-
-                } while (!canAdded);
-                _showOptionDatas.Add(data);
+                    OptionData data = _canSelectedOptionDatas[Random.Range(0, _canSelectedOptionDatas.Count)];
+                    _canSelectedOptionDatas.Remove(data);
+                    _showOptionDatas.Add(data);
+                }
             }
         }
 
+        /// <summary>
+        /// 更新可選擇的升級選項清單
+        /// </summary>
         private void UpdateSelectedOptions()
         {
             _canSelectedOptionDatas.Clear();
             foreach(OptionData option in _optionDatas)
             {
                 if (!option.IsSelectedMax && !option.IsEndOption
-                        && (option.optionAttribute != OptionAttribute.PlayerHeal 
-                            || (option.optionAttribute == OptionAttribute.PlayerHeal && _attributeHandle.PlayerHealthPoint < _attributeHandle.PlayerMaxHealthPoint)
+                        && (option.AttributeType != AttributeType.PlayerHeal 
+                            || (option.AttributeType == AttributeType.PlayerHeal && _attributeHandle.PlayerHealthPoint < _attributeHandle.PlayerMaxHealthPoint)
                         )
                     )
                     _canSelectedOptionDatas.Add(option);
@@ -95,15 +122,15 @@ namespace Scripts.Game
 
         public void HideCanvas()
         {
-            _gameFiniteStateMachine.SetNextState(GameState.InGame);
             _canvas.gameObject.SetActive(false);
         }
 
         public void OptionOnClick(OptionData data)
         {
-            data.selectedCount += 1;
             _attributeHandle.UpdateAttribute(data);
+            data.SelectedCount += 1;
             HideCanvas();
+            _gameFiniteStateMachine.SetNextState(GameState.InGame);
         }
     }
 }

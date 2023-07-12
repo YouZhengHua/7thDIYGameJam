@@ -33,7 +33,7 @@ namespace Scripts.Game.Data
         [Header("擊退力道")]
         public float Force = 100;
 
-        [Header("擊退力道")]
+        [Header("擊退持續時間")]
         public float EnemyDelayTime = 1f;
 
         [Header("玩家等級"), Min(1)]
@@ -48,22 +48,26 @@ namespace Scripts.Game.Data
         [Header("經驗值倍率")]
         public float ExpRate = 1f;
 
-        [Header("經驗值上限")]
-        public float LevelExpMax = 100;
+        [SerializeField, Header("經驗值上限")]
+        private float _levelExpMax = 100;
+        [SerializeField, Header("每級所需的基礎經驗值")]
+        private float _levelExp = 3f;
+        [SerializeField, Header("經驗值指數")]
+        private float _levelPow = 1.2f;
 
         /// <summary>
         /// 取得下一等級的升級經驗值
         /// 計算公式
-        /// Level 1 = 3;
-        /// Level N = ((N - 1) * 3) * (1.2^N)
+        /// Level N = Min((N * 基礎經驗值) * (經驗值指數 ^ (N - 1)), 經驗值上限)
         /// </summary>
         public float NextLevelExp 
         { 
             get
             {
-                return Mathf.Min(Level == 1 ? 3f : ((float)(Level - 1) * 3f) * Mathf.Pow(1.2f, Level), LevelExpMax);
+                return Mathf.Min(((float)Level * _levelExp) * Mathf.Pow(_levelPow, (Level - 1)), _levelExpMax);
             }
         }
+
 
         [Header("適用的升級選項")]
         public OptionData[] Options;
@@ -76,5 +80,7 @@ namespace Scripts.Game.Data
         public float DropHealthRate = 0.01f;
         [Header("無敵時間")]
         public float InvincibleTime = 1f;
+        [Header("防禦力")]
+        public float DEF = 0f;
     }
 }

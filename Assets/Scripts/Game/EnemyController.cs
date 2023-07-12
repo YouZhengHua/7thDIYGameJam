@@ -80,16 +80,36 @@ namespace Scripts.Game
             {
                 if (collision.gameObject.layer == LayerMask.NameToLayer("玩家子彈") && collision.gameObject.GetComponent<IAmmoController>().IsActive)
                 {
-                    collision.gameObject.GetComponent<IAmmoController>().HitEmeny();
-                    GotHit(_attributeHandle.GunRepelForce, _attributeHandle.GunRepelTime);
-                    GetDamage(_attributeHandle.GunDamage, DamageFrom.Gun);
-                    ShowDamageText(_attributeHandle.GunDamage, collision.gameObject.transform.position);
-                }
-                else if (collision.gameObject.layer == LayerMask.NameToLayer("近戰武器"))
-                {
-                    GotHit(_attributeHandle.MeleeRepelForce, _attributeHandle.MeleeRepelTime);
-                    GetDamage(_attributeHandle.MeleeDamage, DamageFrom.Melee);
-                    ShowDamageText(_attributeHandle.MeleeDamage, collision.gameObject.transform.position);
+                    string ammoName = collision.gameObject.name.Split('_')[1];
+                    try
+                    {
+                        ammoName = ammoName.Substring(0, ammoName.IndexOf("(Clone)"));
+                        Weapon weapon = null;
+                        foreach(Weapon w in GameObject.Find("Weapons").GetComponentsInChildren<Weapon>())
+                        {
+                            if (w.gameObject.name.Contains(ammoName))
+                            {
+                                weapon = w;
+                            }
+                        }
+                        if(weapon != null)
+                        {
+                            collision.gameObject.GetComponent<IAmmoController>().HitEmeny();
+                            //子彈擊退力量
+                            float repelForce = weapon.weaponData.Force;
+                            //子彈擊退持續時間
+                            float repelTime = weapon.weaponData.DelayTime;
+                            //子彈傷害
+                            float damage = weapon.weaponData.Damage;
+                            GotHit(repelForce, repelTime);
+                            GetDamage(damage, DamageFrom.Gun);
+                            ShowDamageText(damage, collision.gameObject.transform.position);
+                        }
+                    }
+                    catch
+                    {
+                        Debug.Log($"子彈名稱沒有包含 (clone), {ammoName}");
+                    }
                 }
             }
         }

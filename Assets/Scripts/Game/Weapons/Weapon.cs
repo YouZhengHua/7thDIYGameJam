@@ -7,7 +7,9 @@ using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
-    public WeaponData weaponData;
+    [SerializeField, Header("武器資料")]
+    private WeaponData _weaponData;
+    private WeaponData _cloneWeaponData;
     public IGameFiniteStateMachine SetGameFiniteStateMachine { set => _gameFiniteStateMachine = value; }
     //TODO 接 AttributeHandle? 串Option
 
@@ -17,10 +19,15 @@ public class Weapon : MonoBehaviour
     protected bool _weaponActive = true;
     protected IAudioContoller _audio;
     protected IGameFiniteStateMachine _gameFiniteStateMachine;
+
+    public virtual void Awake()
+    {
+        _cloneWeaponData = Object.Instantiate(_weaponData);
+    }
+
     // Start is called before the first frame update
     public virtual void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -49,6 +56,7 @@ public class Weapon : MonoBehaviour
     }
 
     public WeaponIndex GetWeaponIndex { get => weaponData.WeaponIndex; }
+    public WeaponData weaponData { get => _cloneWeaponData; }
 }
 
 public interface IAmmoEvent
