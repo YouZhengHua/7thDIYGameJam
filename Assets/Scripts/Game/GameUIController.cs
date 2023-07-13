@@ -82,29 +82,5 @@ namespace Scripts.Game
         {
             _expRateImage.fillAmount = AttributeHandle.Instance.ExpPercentage;
         }
-
-        /// <summary>
-        /// 玩家接收到治療
-        /// </summary>
-        /// <param name="healPoint"></param>
-        public void HealPlayer(float healPoint)
-        {
-            if(AttributeHandle.Instance.PlayerHealthPoint < AttributeHandle.Instance.PlayerMaxHealthPoint)
-            {
-                AttributeHandle.Instance.PlayerHealthPoint = Mathf.Min(AttributeHandle.Instance.PlayerHealthPoint + healPoint, AttributeHandle.Instance.PlayerMaxHealthPoint);
-                UpdatePlayerHealth();
-            }
-        }
-
-        /// <summary>
-        /// 玩家增加最大血量
-        /// </summary>
-        /// <param name="healthPoint"></param>
-        public void AddPlayerHealthPointMax(int healthPoint)
-        {
-            AttributeHandle.Instance.PlayerMaxHealthPoint += healthPoint;
-            AttributeHandle.Instance.PlayerHealthPoint += healthPoint;
-            UpdatePlayerHealth();
-        }
     }
 }

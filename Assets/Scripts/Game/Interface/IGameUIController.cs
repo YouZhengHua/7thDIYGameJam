@@ -9,9 +9,5 @@ namespace Scripts.Game
         public void UpdatePlayerHealth();
 
         public void GetExp(ExpNumber exp);
-
-        public void HealPlayer(float healPoint);
-
-        public void AddPlayerHealthPointMax(int healPoint);
     }
 }

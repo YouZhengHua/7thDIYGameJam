@@ -13,10 +13,6 @@ namespace Scripts.Game
         /// 結算UI控制器
         /// </summary>
         private IEndUIController _endUI;
-        /// <summary>
-        /// 遊戲UI控制器
-        /// </summary>
-        private IGameUIController _gameUI;
 
         [SerializeField, Header("目標判定階層")]
         private LayerMask enemyLayer;
@@ -70,7 +66,6 @@ namespace Scripts.Game
                         }
                     }
                     _endUI.AddGetHitTimes();
-                    _gameUI.UpdatePlayerHealth();
                 }
             }
         }
@@ -81,11 +76,9 @@ namespace Scripts.Game
         /// <param name="damage"></param>
         public void GetDamage(int damage)
         {
-            float calDamage = CalTool.CalDamage(damage, AttributeHandle.Instance.PlayerDEF, 1f);
-            AttributeHandle.Instance.PlayerHealthPoint -= calDamage;
+            AttributeHandle.Instance.PlayerGetDamage(damage);
             if (AttributeHandle.Instance.PlayerHealthPoint <= 0)
             {
-                AttributeHandle.Instance.PlayerHealthPoint = 0;
                 Dead();
             }
             else
@@ -104,7 +97,6 @@ namespace Scripts.Game
             gameObject.SetActive(false);
             GameStateMachine.Instance.SetNextState(GameState.GameEnd);
         }
-        public IGameUIController SetGameUI { set => _gameUI = value; }
         public IEndUIController SetEndUI { set => _endUI = value; }
     }
 }
