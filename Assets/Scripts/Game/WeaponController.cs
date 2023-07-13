@@ -6,11 +6,6 @@ namespace Scripts.Game
     public class WeaponController : MonoBehaviour, IWeaponController
     {
         /// <summary>
-        /// 屬性處理器
-        /// </summary>
-        private IAttributeHandle _attributeHandle;
-
-        /// <summary>
         /// 音效控制器
         /// </summary>
         private IAudioContoller _audio;
@@ -40,7 +35,6 @@ namespace Scripts.Game
                 }
             }
         }
-        public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
         public IAudioContoller SetAudio { set => _audio = value; }
 
         public void SetWeaponActive(WeaponIndex weaponIndex, bool isActive)

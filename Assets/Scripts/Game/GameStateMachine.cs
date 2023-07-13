@@ -9,14 +9,18 @@ namespace Scripts.Game
     public class GameStateMachine : BaseStateMachine<GameState>
     {
         #region 單例模式
+        private static readonly object padlock = new object();
         private static GameStateMachine _instance = null;
         public static GameStateMachine Instance 
         {
             get
             {
-                if (_instance == null)
-                    _instance = new GameStateMachine();
-                return _instance;
+                lock (padlock)
+                {
+                    if (_instance == null)
+                        _instance = new GameStateMachine();
+                    return _instance;
+                }
             } 
         }
         #endregion

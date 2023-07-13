@@ -108,10 +108,6 @@ namespace Scripts.Game
         /// </summary>
         private ISettingUIController _settingUI;
         /// <summary>
-        /// 
-        /// </summary>
-        private IAttributeHandle _attributeHandle;
-        /// <summary>
         /// 補包掉落物池
         /// </summary>
         private IDropHealthPool _dropHealthPool;
@@ -131,10 +127,6 @@ namespace Scripts.Game
         /// 音效控制器
         /// </summary>
         private IAudioContoller _audioContoller;
-        /// <summary>
-        /// 玩家移動控制器
-        /// </summary>
-        private IMoveController _playerMoveController;
         /// <summary>
         /// 玩家受傷控制器
         /// </summary>
@@ -160,36 +152,32 @@ namespace Scripts.Game
                     _optionDatas.Add(Object.Instantiate(optionData));
             }
 
+            GameStateMachine.Instance.SetNextState(GameState.Loading);
+            AttributeHandle.Instance.SetPlayerData(_playerData);
             _playerContainer = GameObject.Find("PlayerContainer");
-            _playerMoveController = _playerContainer.GetComponent<IMoveController>();
             _playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
             _weaponController = _playerContainer.GetComponent<IWeaponController>();
-            _audioContoller = new AudioContoller(_userSetting);
-            GameStateMachine.Instance.SetNextState(GameState.Loading);
+            _endUI = new EndUIController();
             _cameraController = new CameraController();
+            _audioContoller = new AudioContoller(_userSetting);
             _damagePool = new DamagePool(_damagePoolData);
             _mapController = new MapController(_mapData);
             _settingUI = new SettingUIController(_audioContoller, _settingUICanvas, _defaultSetting, _userSetting);
             _pauseUI = new PauseUIController(_settingUI);
-            _attributeHandle = new AttributeHandle(_playerData, _weaponController);
-            _endUI = new EndUIController(_attributeHandle);
-            _optionsUI = new OptionsUIController(_attributeHandle, _optionPrefab, _optionDatas);
-            _gameUI = new GameUIController(_attributeHandle, _optionsUI, _audioContoller, _gameUICanvas);
-            _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _attributeHandle, _gameUI, _playerContainer.transform);
-            _expPool = new ExpPool(_exp1, _exp2, _exp3, _attributeHandle, _gameUI, _playerContainer.transform);
-            _enemyPool = new EnemyPool(_endUI, Levels, _attributeHandle, _expPool, _damagePool, _dropHealthPool, _playerContainer.transform);
+            AttributeHandle.Instance.SetWeaponController(_weaponController);
+            _optionsUI = new OptionsUIController(_optionPrefab, _optionDatas);
+            _gameUI = new GameUIController(_optionsUI, _audioContoller, _gameUICanvas);
+            _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _gameUI, _playerContainer.transform);
+            _expPool = new ExpPool(_exp1, _exp2, _exp3, _gameUI, _playerContainer.transform);
+            _enemyPool = new EnemyPool(_endUI, Levels, _expPool, _damagePool, _dropHealthPool, _playerContainer.transform);
 
-            _playerMoveController.SetAttributeHandle = _attributeHandle;
-
-            _playerDamageController.SetAttributeHandle = _attributeHandle;
             _playerDamageController.SetEndUI = _endUI;
             _playerDamageController.SetGameUI = _gameUI;
             _playerDamageController.SetAudio = _audioContoller;
 
-            _weaponController.SetAttributeHandle = _attributeHandle;
             _weaponController.SetAudio = _audioContoller;
 
-            _attributeHandle.SetGameUI = _gameUI;
+            AttributeHandle.Instance.SetGameUIController(_gameUI);
 
             Debug.Log("GameManager Awake() End");
         }

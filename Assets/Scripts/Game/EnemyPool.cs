@@ -11,7 +11,7 @@ namespace Scripts.Game
     {
         public IDictionary<int, IBasePool> enemyPools;
         public IList<GameObject> enemyies;
-        public EnemyPool(IEndUIController endUI, LevelData[] levelDatas, IAttributeHandle attributeHandle, IExpPool expPool, IDamagePool damagePool, IDropHealthPool healthPool, Transform playerTransform)
+        public EnemyPool(IEndUIController endUI, LevelData[] levelDatas, IExpPool expPool, IDamagePool damagePool, IDropHealthPool healthPool, Transform playerTransform)
         {
             enemyPools = new Dictionary<int, IBasePool>();
             enemyies = new List<GameObject>();
@@ -21,20 +21,19 @@ namespace Scripts.Game
                 {
                     if (!enemyPools.ContainsKey(enemy.GetInstanceID()))
                     {
-                        enemyPools.Add(enemy.GetInstanceID(), CreateBasePool(endUI, enemy.Prefab, enemy.Data, attributeHandle, expPool, damagePool, healthPool, playerTransform));
+                        enemyPools.Add(enemy.GetInstanceID(), CreateBasePool(endUI, enemy.Prefab, enemy.Data, expPool, damagePool, healthPool, playerTransform));
                     }
                 }
             }
         }
 
-        private IBasePool CreateBasePool(IEndUIController endUI, GameObject prefab, EnemyData enemyData, IAttributeHandle attributeHandle, IExpPool expPool, IDamagePool damagePool, IDropHealthPool healthPool, Transform playerTransform)
+        private IBasePool CreateBasePool(IEndUIController endUI, GameObject prefab, EnemyData enemyData, IExpPool expPool, IDamagePool damagePool, IDropHealthPool healthPool, Transform playerTransform)
         {
             IBasePool result = new BasePool(prefab, 100);
             result.Prefabs.ForEach(prefab =>
             {
                 prefab.GetComponent<IEnemyController>().SetEndUI = endUI;
                 prefab.GetComponent<IEnemyController>().SetEnemyData = enemyData;
-                prefab.GetComponent<IEnemyController>().SetAttributeHandle = attributeHandle;
                 prefab.GetComponent<IEnemyController>().SetExpPool = expPool;
                 prefab.GetComponent<IEnemyController>().SetDamagePool = damagePool;
                 prefab.GetComponent<IEnemyController>().SetDropHealthPool = healthPool;

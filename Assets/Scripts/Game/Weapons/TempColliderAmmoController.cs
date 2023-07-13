@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 public class TempColliderAmmoController : MonoBehaviour, IAmmoController, IAmmoEvent
 {
-    public IAttributeHandle SetAttributeHandle { set => throw new System.NotImplementedException(); }
     public Transform SetPlayerTransform { set => throw new System.NotImplementedException(); }
     public IEndUIController SetEndUI { set => throw new System.NotImplementedException(); }
 

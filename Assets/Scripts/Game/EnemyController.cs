@@ -11,7 +11,6 @@ namespace Scripts.Game
     {
         private Transform playerTransform;
         private IEndUIController _endUI;
-        private IAttributeHandle _attributeHandle;
         private IExpPool _expPool;
         private IDamagePool _damagePool;
         private IDropHealthPool _dropHealthPool;
@@ -182,7 +181,7 @@ namespace Scripts.Game
             {
                 exp.transform.position = transform.position + new Vector3(Random.Range(0, 0.3f), Random.Range(0, 0.3f));
             }
-            if (_attributeHandle.NeedDropHealth)
+            if (AttributeHandle.Instance.NeedDropHealth)
             {
                 _dropHealthPool.GetPrefab().transform.position = transform.position + new Vector3(Random.Range(0, 0.3f), Random.Range(0, 0.3f));
             }
@@ -244,7 +243,6 @@ namespace Scripts.Game
         public EnemyData SetEnemyData { set => _baseEnemyData = value; }
         public Transform SetPlayerTransform { set => playerTransform = value; }
         public IEndUIController SetEndUI { set => _endUI = value; }
-        public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
         public IExpPool SetExpPool { set => _expPool = value; }
         public IDamagePool SetDamagePool { set => _damagePool = value; }
         public IDropHealthPool SetDropHealthPool { set => _dropHealthPool = value; }

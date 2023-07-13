@@ -6,10 +6,6 @@ namespace Scripts.Game
     public interface IWeaponController
     {
         /// <summary>
-        /// 設定屬性處理器
-        /// </summary>
-        public IAttributeHandle SetAttributeHandle { set; }
-        /// <summary>
         /// 設定音效控制器
         /// </summary>
         public IAudioContoller SetAudio { set; }

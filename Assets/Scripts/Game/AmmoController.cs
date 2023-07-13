@@ -8,7 +8,6 @@ namespace Scripts.Game
     public class AmmoController : MonoBehaviour, IAmmoController
     {
         private int _nowPenetrationCount = 0;
-        private IAttributeHandle _attributeHandle;
         private Transform playerTransform;
         private IEndUIController _endUI;
         private bool isFirstHit = true;
@@ -60,7 +59,6 @@ namespace Scripts.Game
         }
 
         public bool IsActive { get => _nowPenetrationCount < ammoPenetrationCount; }
-        public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
         public Transform SetPlayerTransform { set => playerTransform = value; }
         public IEndUIController SetEndUI { set => _endUI = value; }
         public int AmmoGroup { get; set; }

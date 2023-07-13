@@ -3,10 +3,6 @@
     public interface IPlayerDamageController
     {
         /// <summary>
-        /// 設定屬性處理器
-        /// </summary>
-        public IAttributeHandle SetAttributeHandle { set; }
-        /// <summary>
         /// 設定遊戲UI控制器
         /// </summary>
         public IGameUIController SetGameUI { set ; }

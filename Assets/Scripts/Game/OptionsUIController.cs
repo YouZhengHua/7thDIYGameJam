@@ -10,16 +10,14 @@ namespace Scripts.Game
 {
     public class OptionsUIController : IOptionsUIController
     {
-        private IAttributeHandle _attributeHandle;
         private IList<OptionData> _optionDatas;
         private IList<OptionData> _canSelectedOptionDatas;
         private IList<OptionData> _showOptionDatas;
         private IOptionController[] _options;
         private Canvas _canvas;
 
-        public OptionsUIController(IAttributeHandle attributeHandle , GameObject prefab, IList<OptionData> optionDatas)
+        public OptionsUIController(GameObject prefab, IList<OptionData> optionDatas)
         {
-            _attributeHandle = attributeHandle;
             _optionDatas = optionDatas;
             _canSelectedOptionDatas = new List<OptionData>();
 
@@ -103,7 +101,7 @@ namespace Scripts.Game
             {
                 if (!option.IsSelectedMax && !option.IsEndOption
                         && (option.AttributeType != AttributeType.PlayerHeal 
-                            || (option.AttributeType == AttributeType.PlayerHeal && _attributeHandle.PlayerHealthPoint < _attributeHandle.PlayerMaxHealthPoint)
+                            || (option.AttributeType == AttributeType.PlayerHeal && AttributeHandle.Instance.PlayerHealthPoint < AttributeHandle.Instance.PlayerMaxHealthPoint)
                         )
                     )
                     _canSelectedOptionDatas.Add(option);
@@ -125,7 +123,7 @@ namespace Scripts.Game
 
         public void OptionOnClick(OptionData data)
         {
-            _attributeHandle.UpdateAttribute(data);
+            AttributeHandle.Instance.UpdateAttribute(data);
             data.SelectedCount += 1;
             HideCanvas();
             GameStateMachine.Instance.SetNextState(GameState.InGame);

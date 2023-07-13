@@ -10,10 +10,6 @@ namespace Scripts.Game
     /// </summary>
     public class MoveController : MonoBehaviour, IMoveController
     {
-        /// <summary>
-        /// 屬性處理器
-        /// </summary>
-        private IAttributeHandle _attributeHandle;
         [SerializeField, Header("動畫控制器")]
         private Animator animator;
         /// <summary>
@@ -84,8 +80,6 @@ namespace Scripts.Game
             }
         }
 
-        private float moveSpeed { get => _attributeHandle.PlayerMoveSpeed; }
-
-        public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
+        private float moveSpeed { get => AttributeHandle.Instance.PlayerMoveSpeed; }
     }
 }

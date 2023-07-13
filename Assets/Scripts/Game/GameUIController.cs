@@ -13,15 +13,13 @@ namespace Scripts.Game
     {
         private TextMeshProUGUI _gameTime;
         private TextMeshProUGUI _hpText;
-        private IAttributeHandle _attributeHandle;
         private Image _expRateImage;
         private Image _hpRateImage;
         private IOptionsUIController _optionsUI;
         private IAudioContoller _audio;
 
-        public GameUIController(IAttributeHandle attributeHandle, IOptionsUIController optionsUI, IAudioContoller audio, Canvas canvas) : base(canvas)
+        public GameUIController(IOptionsUIController optionsUI, IAudioContoller audio, Canvas canvas) : base(canvas)
         {
-            _attributeHandle = attributeHandle;
             _optionsUI = optionsUI;
             _audio = audio;
             foreach (Image image in GameObject.FindObjectsOfType<Image>())
@@ -46,8 +44,8 @@ namespace Scripts.Game
         /// </summary>
         public void UpdatePlayerHealth()
         {
-            _hpText.text = $"{_attributeHandle.PlayerHealthPoint} / {_attributeHandle.PlayerMaxHealthPoint}";
-            _hpRateImage.fillAmount = _attributeHandle.PlayerHealthPoint / _attributeHandle.PlayerMaxHealthPoint;
+            _hpText.text = $"{AttributeHandle.Instance.PlayerHealthPoint} / {AttributeHandle.Instance.PlayerMaxHealthPoint}";
+            _hpRateImage.fillAmount = AttributeHandle.Instance.PlayerHealthPoint / AttributeHandle.Instance.PlayerMaxHealthPoint;
         }
 
         /// <summary>
@@ -68,12 +66,12 @@ namespace Scripts.Game
         /// <param name="exp"></param>
         public void GetExp(ExpNumber exp)
         {
-            _attributeHandle.AddExp((float)exp);
-            if(_attributeHandle.IsLevelUp)
+            AttributeHandle.Instance.AddExp((float)exp);
+            if(AttributeHandle.Instance.IsLevelUp)
             {
-                _attributeHandle.NowExp -= _attributeHandle.NextLevelExp;
-                _attributeHandle.Level += 1;
-                _audio.PlayEffect(_attributeHandle.LevelUpAudio, 0.5f);
+                AttributeHandle.Instance.NowExp -= AttributeHandle.Instance.NextLevelExp;
+                AttributeHandle.Instance.Level += 1;
+                _audio.PlayEffect(AttributeHandle.Instance.LevelUpAudio, 0.5f);
                 _optionsUI.ShowCanvas();
             }
             UpdateExpGUI();
@@ -84,7 +82,7 @@ namespace Scripts.Game
         /// </summary>
         private void UpdateExpGUI()
         {
-            _expRateImage.fillAmount = _attributeHandle.ExpPercentage;
+            _expRateImage.fillAmount = AttributeHandle.Instance.ExpPercentage;
         }
 
         /// <summary>
@@ -93,9 +91,9 @@ namespace Scripts.Game
         /// <param name="healPoint"></param>
         public void HealPlayer(float healPoint)
         {
-            if(_attributeHandle.PlayerHealthPoint < _attributeHandle.PlayerMaxHealthPoint)
+            if(AttributeHandle.Instance.PlayerHealthPoint < AttributeHandle.Instance.PlayerMaxHealthPoint)
             {
-                _attributeHandle.PlayerHealthPoint = Mathf.Min(_attributeHandle.PlayerHealthPoint + healPoint, _attributeHandle.PlayerMaxHealthPoint);
+                AttributeHandle.Instance.PlayerHealthPoint = Mathf.Min(AttributeHandle.Instance.PlayerHealthPoint + healPoint, AttributeHandle.Instance.PlayerMaxHealthPoint);
                 UpdatePlayerHealth();
             }
         }
@@ -106,8 +104,8 @@ namespace Scripts.Game
         /// <param name="healthPoint"></param>
         public void AddPlayerHealthPointMax(int healthPoint)
         {
-            _attributeHandle.PlayerMaxHealthPoint += healthPoint;
-            _attributeHandle.PlayerHealthPoint += healthPoint;
+            AttributeHandle.Instance.PlayerMaxHealthPoint += healthPoint;
+            AttributeHandle.Instance.PlayerHealthPoint += healthPoint;
             UpdatePlayerHealth();
         }
     }

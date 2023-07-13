@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace Scripts.Game
 {
-    public class AttributeHandle : IAttributeHandle
+    public class AttributeHandle
     {
         private IWeaponController _weapon;
         private IGameUIController _gameUI;
@@ -22,10 +22,39 @@ namespace Scripts.Game
         private float _expExtendMultiple = 0f;
         private float _extendGetItemRadius = 0f;
 
-        public AttributeHandle(PlayerData playerData, IWeaponController weaponController)
+        private static readonly object padlock = new object();
+        private static AttributeHandle _instance = null;
+        public static AttributeHandle Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (_instance == null)
+                        _instance = new AttributeHandle();
+                    return _instance;
+                }
+            }
+        }
+
+        public AttributeHandle()
+        {
+
+        }
+
+        public void SetPlayerData(PlayerData playerData)
         {
             _playerData = playerData;
+        }
+
+        public void SetWeaponController(IWeaponController weaponController)
+        {
             _weapon = weaponController;
+        }
+
+        public void SetGameUIController(IGameUIController gameUIController)
+        {
+            _gameUI = gameUIController;
         }
 
         public void UpdateAttribute(OptionData data)
@@ -82,8 +111,6 @@ namespace Scripts.Game
                 }
             }
         }
-
-        public IGameUIController SetGameUI { set => _gameUI = value; }
 
         #region 槍械
         public bool NeedDropHealth { get => (_playerData.DropHealthRate + _extendDropHealthMultiple) >= Random.value; }
