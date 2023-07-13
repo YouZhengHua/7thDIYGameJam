@@ -10,7 +10,6 @@ namespace Scripts.Start
     public class SettingUIController : BaseUIController, ISettingUIController
     {
         private IStartManager _menuManager;
-        private IAudioContoller _audioContoller;
         private Button _defaultButton;
         private Button _backToMenuButton;
         private Button _saveButton;
@@ -20,10 +19,9 @@ namespace Scripts.Start
         private SliderObject _music;
         private SliderObject _sound;
 
-        public SettingUIController(IStartManager menu, IAudioContoller audioContoller, Canvas canvas, UserSetting defaultSetting, UserSetting userSetting) : base(canvas)
+        public SettingUIController(IStartManager menu, Canvas canvas, UserSetting defaultSetting, UserSetting userSetting) : base(canvas)
         {
             _menuManager = menu;
-            _audioContoller = audioContoller;
             _defaultSetting = defaultSetting;
             _userSetting = userSetting;
             _music = new SliderObject(GameObject.Find("Music"));
@@ -56,7 +54,7 @@ namespace Scripts.Start
             _userSetting.soundVolume = _sound.Value;
             _userSetting.musicVolume = _music.Value;
 
-            _audioContoller.UpdateAudioVolume();
+            AudioContoller.Instance.UpdateAudioVolume();
             _menuManager.ShowMenu();
         }
 
@@ -72,7 +70,7 @@ namespace Scripts.Start
             _userSetting.Reload = _tmpSetting.Reload;
             _userSetting.Shoot = _tmpSetting.Shoot;
 
-            _audioContoller.UpdateAudioVolume();
+            AudioContoller.Instance.UpdateAudioVolume();
         }
 
         public override void ShowCanvas()
@@ -92,7 +90,7 @@ namespace Scripts.Start
         private void OnMusicValueOnChange()
         {
             _userSetting.musicVolume = _music.Value;
-            _audioContoller.UpdateAudioVolume();
+            AudioContoller.Instance.UpdateAudioVolume();
         }
 
         public void ResetUserSetting()

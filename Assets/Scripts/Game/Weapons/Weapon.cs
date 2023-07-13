@@ -13,10 +13,8 @@ public class Weapon : MonoBehaviour
     //TODO 接 AttributeHandle? 串Option
 
     //TODO 接 IAudioContoller
-    public IAudioContoller SetAudio { set => _audio = value; }
     protected float _timer = 0f;
     protected bool _weaponActive = true;
-    protected IAudioContoller _audio;
 
     public virtual void Awake()
     {

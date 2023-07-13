@@ -124,10 +124,6 @@ namespace Scripts.Game
         /// </summary>
         private IDamagePool _damagePool;
         /// <summary>
-        /// 音效控制器
-        /// </summary>
-        private IAudioContoller _audioContoller;
-        /// <summary>
         /// 玩家受傷控制器
         /// </summary>
         private IPlayerDamageController _playerDamageController;
@@ -154,28 +150,25 @@ namespace Scripts.Game
 
             GameStateMachine.Instance.SetNextState(GameState.Loading);
             AttributeHandle.Instance.SetPlayerData(_playerData);
+            AudioContoller.Instance.SetUserSetting(_userSetting);
             _playerContainer = GameObject.Find("PlayerContainer");
             _playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
             _weaponController = _playerContainer.GetComponent<IWeaponController>();
             _endUI = new EndUIController();
             _cameraController = new CameraController();
-            _audioContoller = new AudioContoller(_userSetting);
             _damagePool = new DamagePool(_damagePoolData);
             _mapController = new MapController(_mapData);
-            _settingUI = new SettingUIController(_audioContoller, _settingUICanvas, _defaultSetting, _userSetting);
+            _settingUI = new SettingUIController(_settingUICanvas, _defaultSetting, _userSetting);
             _pauseUI = new PauseUIController(_settingUI);
             AttributeHandle.Instance.SetWeaponController(_weaponController);
             _optionsUI = new OptionsUIController(_optionPrefab, _optionDatas);
-            _gameUI = new GameUIController(_optionsUI, _audioContoller, _gameUICanvas);
+            _gameUI = new GameUIController(_optionsUI, _gameUICanvas);
             _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _gameUI, _playerContainer.transform);
             _expPool = new ExpPool(_exp1, _exp2, _exp3, _gameUI, _playerContainer.transform);
             _enemyPool = new EnemyPool(_endUI, Levels, _expPool, _damagePool, _dropHealthPool, _playerContainer.transform);
 
             _playerDamageController.SetEndUI = _endUI;
             _playerDamageController.SetGameUI = _gameUI;
-            _playerDamageController.SetAudio = _audioContoller;
-
-            _weaponController.SetAudio = _audioContoller;
 
             AttributeHandle.Instance.SetGameUIController(_gameUI);
 
@@ -198,7 +191,7 @@ namespace Scripts.Game
                         enemyData.NextTime = 0;
                 }
             }
-            _audioContoller.UpdateAudioVolume();
+            AudioContoller.Instance.UpdateAudioVolume();
             _gameUI.UpdatePlayerHealth();
             Debug.Log("GameManager Start() End");
         }
@@ -237,7 +230,7 @@ namespace Scripts.Game
             {
                 bool isWin = IsTimeWin;
                 _endUI.ShowCanvas(isWin);
-                _audioContoller.PlayEffect(isWin ? WinAudio : LoseAudio, isWin ? 0.5f : 1.5f);
+                AudioContoller.Instance.PlayEffect(isWin ? WinAudio : LoseAudio, isWin ? 0.5f : 1.5f);
                 GameStateMachine.Instance.SetNextState(GameState.GameEnded);
             }
             else if(GameStateMachine.Instance.CurrectState == GameState.Restart)
@@ -285,7 +278,7 @@ namespace Scripts.Game
                             }
                             if (enemyData.WarmingAudio != null)
                             {
-                                _audioContoller.PlayEffect(enemyData.WarmingAudio, enemyData.ExtendVolume);
+                                AudioContoller.Instance.PlayEffect(enemyData.WarmingAudio, enemyData.ExtendVolume);
                             }
                             enemyData.NextTime = _nowTime + enemyData.Intervals;
                         }

@@ -17,10 +17,6 @@ namespace Scripts.Game
         /// 遊戲UI控制器
         /// </summary>
         private IGameUIController _gameUI;
-        /// <summary>
-        /// 音效控制器
-        /// </summary>
-        private IAudioContoller _audio;
 
         [SerializeField, Header("目標判定階層")]
         private LayerMask enemyLayer;
@@ -94,7 +90,7 @@ namespace Scripts.Game
             }
             else
             {
-                _audio.PlayEffect(AttributeHandle.Instance.GetHitAudio);
+                AudioContoller.Instance.PlayEffect(AttributeHandle.Instance.GetHitAudio);
             }
             _invincibleTime = AttributeHandle.Instance.InvincibleTime;
         }
@@ -110,6 +106,5 @@ namespace Scripts.Game
         }
         public IGameUIController SetGameUI { set => _gameUI = value; }
         public IEndUIController SetEndUI { set => _endUI = value; }
-        public IAudioContoller SetAudio { set => _audio = value; }
     }
 }

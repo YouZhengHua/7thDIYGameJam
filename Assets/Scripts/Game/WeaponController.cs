@@ -6,11 +6,6 @@ namespace Scripts.Game
     public class WeaponController : MonoBehaviour, IWeaponController
     {
         /// <summary>
-        /// 音效控制器
-        /// </summary>
-        private IAudioContoller _audio;
-
-        /// <summary>
         /// 所有武器清單
         /// </summary>
         private IList<Weapon> canUseWeapons = new List<Weapon>();
@@ -22,7 +17,6 @@ namespace Scripts.Game
         {
             foreach(Weapon weapon in this.GetComponentsInChildren<Weapon>())
             {
-                weapon.SetAudio = _audio;
                 weapon.SetWeaponActive(false);
                 canUseWeapons.Add(weapon);
             }
@@ -35,7 +29,6 @@ namespace Scripts.Game
                 }
             }
         }
-        public IAudioContoller SetAudio { set => _audio = value; }
 
         public void SetWeaponActive(WeaponIndex weaponIndex, bool isActive)
         {

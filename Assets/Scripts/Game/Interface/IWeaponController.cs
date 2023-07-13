@@ -6,11 +6,6 @@ namespace Scripts.Game
     public interface IWeaponController
     {
         /// <summary>
-        /// 設定音效控制器
-        /// </summary>
-        public IAudioContoller SetAudio { set; }
-
-        /// <summary>
         /// 設定指定的武器編號是否處於激活狀態
         /// </summary>
         /// <param name="weaponIndex"></param>

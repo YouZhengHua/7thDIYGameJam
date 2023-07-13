@@ -16,12 +16,10 @@ namespace Scripts.Game
         private Image _expRateImage;
         private Image _hpRateImage;
         private IOptionsUIController _optionsUI;
-        private IAudioContoller _audio;
 
-        public GameUIController(IOptionsUIController optionsUI, IAudioContoller audio, Canvas canvas) : base(canvas)
+        public GameUIController(IOptionsUIController optionsUI, Canvas canvas) : base(canvas)
         {
             _optionsUI = optionsUI;
-            _audio = audio;
             foreach (Image image in GameObject.FindObjectsOfType<Image>())
             {
                 if (image.gameObject.name == "ExpRate")
@@ -71,7 +69,7 @@ namespace Scripts.Game
             {
                 AttributeHandle.Instance.NowExp -= AttributeHandle.Instance.NextLevelExp;
                 AttributeHandle.Instance.Level += 1;
-                _audio.PlayEffect(AttributeHandle.Instance.LevelUpAudio, 0.5f);
+                AudioContoller.Instance.PlayEffect(AttributeHandle.Instance.LevelUpAudio, 0.5f);
                 _optionsUI.ShowCanvas();
             }
             UpdateExpGUI();
