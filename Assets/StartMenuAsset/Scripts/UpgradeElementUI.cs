@@ -9,6 +9,7 @@ public class UpgradeElementUI : MonoBehaviour
     [SerializeField] private Transform progressUIContainer;
     [SerializeField] private UpgradeElementSO upgradeElementSO;
     [SerializeField] private TextMeshProUGUI ButtonName;
+    [SerializeField] private Button button;
 
     private List<Transform> progressUIs;
 
@@ -52,5 +53,13 @@ public class UpgradeElementUI : MonoBehaviour
 
     public void DeactivateProgressUI(Transform progressUI) {
         progressUI.GetComponent<Outline>().enabled = false;
+    }
+
+    public Button GetButton() {
+        return button;
+    }
+
+    public UpgradeElementSO GetUpgradeElementSO() {
+        return upgradeElementSO;
     }
 }

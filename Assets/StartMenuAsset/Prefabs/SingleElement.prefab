@@ -299,6 +299,7 @@ MonoBehaviour:
   progressUIContainer: {fileID: 2027957895683454140}
   upgradeElementSO: {fileID: 11400000, guid: 931dee15435ed2540a96ad930bf01860, type: 2}
   ButtonName: {fileID: 970211383565760911}
+  button: {fileID: 5496269440517028781}
 --- !u!1 &6192253473696170082
 GameObject:
   m_ObjectHideFlags: 0
