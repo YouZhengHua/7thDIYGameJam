@@ -10,7 +10,6 @@ namespace Scripts.Game
 {
     public class OptionsUIController : IOptionsUIController
     {
-        private IGameFiniteStateMachine _gameFiniteStateMachine;
         private IAttributeHandle _attributeHandle;
         private IList<OptionData> _optionDatas;
         private IList<OptionData> _canSelectedOptionDatas;
@@ -18,9 +17,8 @@ namespace Scripts.Game
         private IOptionController[] _options;
         private Canvas _canvas;
 
-        public OptionsUIController(IGameFiniteStateMachine gameFiniteStateMachine, IAttributeHandle attributeHandle , GameObject prefab, IList<OptionData> optionDatas)
+        public OptionsUIController(IAttributeHandle attributeHandle , GameObject prefab, IList<OptionData> optionDatas)
         {
-            _gameFiniteStateMachine = gameFiniteStateMachine;
             _attributeHandle = attributeHandle;
             _optionDatas = optionDatas;
             _canSelectedOptionDatas = new List<OptionData>();
@@ -49,7 +47,7 @@ namespace Scripts.Game
             {
                 _options[i].SetOptionData(_showOptionDatas[i]);
             }
-            _gameFiniteStateMachine.SetNextState(GameState.SelectOption);
+            GameStateMachine.Instance.SetNextState(GameState.SelectOption);
             _canvas.gameObject.SetActive(true);
         }
 
@@ -73,7 +71,7 @@ namespace Scripts.Game
                 }
             }
 
-            _gameFiniteStateMachine.SetNextState(GameState.SelectOption);
+            GameStateMachine.Instance.SetNextState(GameState.SelectOption);
             _canvas.gameObject.SetActive(true);
         }
 
@@ -130,7 +128,7 @@ namespace Scripts.Game
             _attributeHandle.UpdateAttribute(data);
             data.SelectedCount += 1;
             HideCanvas();
-            _gameFiniteStateMachine.SetNextState(GameState.InGame);
+            GameStateMachine.Instance.SetNextState(GameState.InGame);
         }
     }
 }

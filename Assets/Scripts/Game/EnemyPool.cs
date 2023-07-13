@@ -11,7 +11,7 @@ namespace Scripts.Game
     {
         public IDictionary<int, IBasePool> enemyPools;
         public IList<GameObject> enemyies;
-        public EnemyPool(IGameFiniteStateMachine gameFiniteStateMachine, IEndUIController endUI, LevelData[] levelDatas, IAttributeHandle attributeHandle, IExpPool expPool, IDamagePool damagePool, IDropHealthPool healthPool, Transform playerTransform)
+        public EnemyPool(IEndUIController endUI, LevelData[] levelDatas, IAttributeHandle attributeHandle, IExpPool expPool, IDamagePool damagePool, IDropHealthPool healthPool, Transform playerTransform)
         {
             enemyPools = new Dictionary<int, IBasePool>();
             enemyies = new List<GameObject>();
@@ -21,18 +21,17 @@ namespace Scripts.Game
                 {
                     if (!enemyPools.ContainsKey(enemy.GetInstanceID()))
                     {
-                        enemyPools.Add(enemy.GetInstanceID(), CreateBasePool(gameFiniteStateMachine, endUI, enemy.Prefab, enemy.Data, attributeHandle, expPool, damagePool, healthPool, playerTransform));
+                        enemyPools.Add(enemy.GetInstanceID(), CreateBasePool(endUI, enemy.Prefab, enemy.Data, attributeHandle, expPool, damagePool, healthPool, playerTransform));
                     }
                 }
             }
         }
 
-        private IBasePool CreateBasePool(IGameFiniteStateMachine gameFiniteStateMachine, IEndUIController endUI, GameObject prefab, EnemyData enemyData, IAttributeHandle attributeHandle, IExpPool expPool, IDamagePool damagePool, IDropHealthPool healthPool, Transform playerTransform)
+        private IBasePool CreateBasePool(IEndUIController endUI, GameObject prefab, EnemyData enemyData, IAttributeHandle attributeHandle, IExpPool expPool, IDamagePool damagePool, IDropHealthPool healthPool, Transform playerTransform)
         {
             IBasePool result = new BasePool(prefab, 100);
             result.Prefabs.ForEach(prefab =>
             {
-                prefab.GetComponent<IEnemyController>().SetGameFinitStateMachine = gameFiniteStateMachine;
                 prefab.GetComponent<IEnemyController>().SetEndUI = endUI;
                 prefab.GetComponent<IEnemyController>().SetEnemyData = enemyData;
                 prefab.GetComponent<IEnemyController>().SetAttributeHandle = attributeHandle;

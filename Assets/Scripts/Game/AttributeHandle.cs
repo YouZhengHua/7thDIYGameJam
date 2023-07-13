@@ -10,7 +10,6 @@ namespace Scripts.Game
 {
     public class AttributeHandle : IAttributeHandle
     {
-        private IGameFiniteStateMachine _gameFiniteStateMachine;
         private IWeaponController _weapon;
         private IGameUIController _gameUI;
         private PlayerData _playerData;
@@ -23,9 +22,8 @@ namespace Scripts.Game
         private float _expExtendMultiple = 0f;
         private float _extendGetItemRadius = 0f;
 
-        public AttributeHandle(IGameFiniteStateMachine gameFiniteStateMachine, PlayerData playerData, IWeaponController weaponController)
+        public AttributeHandle(PlayerData playerData, IWeaponController weaponController)
         {
-            _gameFiniteStateMachine = gameFiniteStateMachine;
             _playerData = playerData;
             _weapon = weaponController;
         }

@@ -80,10 +80,6 @@ namespace Scripts.Game
         private GameObject _playerContainer;
 
         /// <summary>
-        /// 遊戲狀態機
-        /// </summary>
-        private IGameFiniteStateMachine _gameFiniteStateMachine;
-        /// <summary>
         /// 攝影機控制器
         /// </summary>
         private ICameraController _cameraController;
@@ -169,24 +165,22 @@ namespace Scripts.Game
             _playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
             _weaponController = _playerContainer.GetComponent<IWeaponController>();
             _audioContoller = new AudioContoller(_userSetting);
-            _gameFiniteStateMachine = new GameFiniteStateMachine(GameState.Loading, () => { Debug.Log("Loading 階段結束"); });
+            GameStateMachine.Instance.SetNextState(GameState.Loading);
             _cameraController = new CameraController();
             _damagePool = new DamagePool(_damagePoolData);
             _mapController = new MapController(_mapData);
             _settingUI = new SettingUIController(_audioContoller, _settingUICanvas, _defaultSetting, _userSetting);
-            _pauseUI = new PauseUIController(_gameFiniteStateMachine, _settingUI);
-            _attributeHandle = new AttributeHandle(_gameFiniteStateMachine, _playerData, _weaponController);
-            _endUI = new EndUIController(_gameFiniteStateMachine, _attributeHandle);
-            _optionsUI = new OptionsUIController(_gameFiniteStateMachine, _attributeHandle, _optionPrefab, _optionDatas);
+            _pauseUI = new PauseUIController(_settingUI);
+            _attributeHandle = new AttributeHandle(_playerData, _weaponController);
+            _endUI = new EndUIController(_attributeHandle);
+            _optionsUI = new OptionsUIController(_attributeHandle, _optionPrefab, _optionDatas);
             _gameUI = new GameUIController(_attributeHandle, _optionsUI, _audioContoller, _gameUICanvas);
-            _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _attributeHandle, _gameUI, _gameFiniteStateMachine, _playerContainer.transform);
-            _expPool = new ExpPool(_exp1, _exp2, _exp3, _attributeHandle, _gameUI, _gameFiniteStateMachine, _playerContainer.transform);
-            _enemyPool = new EnemyPool(_gameFiniteStateMachine, _endUI, Levels, _attributeHandle, _expPool, _damagePool, _dropHealthPool, _playerContainer.transform);
+            _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _attributeHandle, _gameUI, _playerContainer.transform);
+            _expPool = new ExpPool(_exp1, _exp2, _exp3, _attributeHandle, _gameUI, _playerContainer.transform);
+            _enemyPool = new EnemyPool(_endUI, Levels, _attributeHandle, _expPool, _damagePool, _dropHealthPool, _playerContainer.transform);
 
-            _playerMoveController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
             _playerMoveController.SetAttributeHandle = _attributeHandle;
 
-            _playerDamageController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
             _playerDamageController.SetAttributeHandle = _attributeHandle;
             _playerDamageController.SetEndUI = _endUI;
             _playerDamageController.SetGameUI = _gameUI;
@@ -194,7 +188,6 @@ namespace Scripts.Game
 
             _weaponController.SetAttributeHandle = _attributeHandle;
             _weaponController.SetAudio = _audioContoller;
-            _weaponController.SetGameFiniteStateMachine = _gameFiniteStateMachine;
 
             _attributeHandle.SetGameUI = _gameUI;
 
@@ -203,13 +196,13 @@ namespace Scripts.Game
         private void Start()
         {
             Debug.Log("GameManager Start() Start");
-            _gameFiniteStateMachine.SetNextState(GameState.GameStart, () => { Debug.Log("GameStart 階段結束"); });
+            GameStateMachine.Instance.SetNextState(GameState.GameStart);
             _nowTime = 0;
             _pauseUI.HideCanvas();
             _optionsUI.HideCanvas();
             _endUI.HideCanvas();
             _settingUI.HideCanvas();
-            _gameFiniteStateMachine.SetPlayerState(PlayerState.Idle);
+            PlayerStateMachine.Instance.SetNextState(PlayerState.Idle);
             foreach (LevelData level in Levels)
             {
                 foreach (LevelEnemyData enemyData in level.EnemyDatas)
@@ -224,44 +217,44 @@ namespace Scripts.Game
 
         private void Update()
         {
-            if(_gameFiniteStateMachine.CurrectState == GameState.GameStart)
+            if(GameStateMachine.Instance.CurrectState == GameState.GameStart)
             {
                 _optionsUI.ShowWeaponOptions();
             }
-            else if (_gameFiniteStateMachine.CurrectState == GameState.InGame)
+            else if (GameStateMachine.Instance.CurrectState == GameState.InGame)
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     _pauseUI.ShowCanvas();
-                    _gameFiniteStateMachine.SetNextState(GameState.GamePause);
+                    GameStateMachine.Instance.SetNextState(GameState.GamePause);
                 }
                 UpdateGameTime();
                 EnemyHandel();
                 _cameraController.MoveMainCameraTo(_playerContainer.transform.position);
             }
-            else if (_gameFiniteStateMachine.CurrectState == GameState.GamePause)
+            else if (GameStateMachine.Instance.CurrectState == GameState.GamePause)
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     _pauseUI.HideCanvas();
-                    _gameFiniteStateMachine.SetNextState(GameState.InGame);
+                    GameStateMachine.Instance.SetNextState(GameState.InGame);
                 }
             }
-            else if (_gameFiniteStateMachine.CurrectState == GameState.BackToMenu)
+            else if (GameStateMachine.Instance.CurrectState == GameState.BackToMenu)
             {
-                _gameFiniteStateMachine.SetNextState(GameState.BackToMenued);
+                GameStateMachine.Instance.SetNextState(GameState.BackToMenued);
                 LoadingScreen.instance.LoadScene("01_MenuScene", true);
             }
-            else if (_gameFiniteStateMachine.CurrectState == GameState.GameEnd)
+            else if (GameStateMachine.Instance.CurrectState == GameState.GameEnd)
             {
                 bool isWin = IsTimeWin;
                 _endUI.ShowCanvas(isWin);
                 _audioContoller.PlayEffect(isWin ? WinAudio : LoseAudio, isWin ? 0.5f : 1.5f);
-                _gameFiniteStateMachine.SetNextState(GameState.GameEnded);
+                GameStateMachine.Instance.SetNextState(GameState.GameEnded);
             }
-            else if(_gameFiniteStateMachine.CurrectState == GameState.Restart)
+            else if(GameStateMachine.Instance.CurrectState == GameState.Restart)
             {
-                _gameFiniteStateMachine.SetNextState(GameState.Restarted);
+                GameStateMachine.Instance.SetNextState(GameState.Restarted);
                 LoadingScreen.instance.LoadScene(SceneManager.GetActiveScene().name, false);
             }
         }
@@ -343,7 +336,7 @@ namespace Scripts.Game
             _gameUI.UpdateGameTime(_gameTime - _nowTime);
             if(IsTimeWin)
             {
-                _gameFiniteStateMachine.SetNextState(GameState.GameEnd);
+                GameStateMachine.Instance.SetNextState(GameState.GameEnd);
             }
         }
 

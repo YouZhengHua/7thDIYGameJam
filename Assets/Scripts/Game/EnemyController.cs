@@ -9,7 +9,6 @@ namespace Scripts.Game
 {
     public class EnemyController : MonoBehaviour, IEnemyController
     {
-        private IGameFiniteStateMachine _gameFiniteStateMachine;
         private Transform playerTransform;
         private IEndUIController _endUI;
         private IAttributeHandle _attributeHandle;
@@ -49,7 +48,7 @@ namespace Scripts.Game
             else
                 _rigidbody2D.velocity = Vector2.zero;
 
-            if (_gameFiniteStateMachine.CurrectState == GameState.InGame && _state != EnemyState.Dead)
+            if (GameStateMachine.Instance.CurrectState == GameState.InGame && _state != EnemyState.Dead)
             {
                 if (_enemyData.AttackRange > 0 && (playerTransform.position - transform.position).magnitude <= _enemyData.AttackRange)
                 {
@@ -242,7 +241,6 @@ namespace Scripts.Game
         public float EnemyDamage { get => _enemyData.Damage; }
 
         #region DI 設定
-        public IGameFiniteStateMachine SetGameFinitStateMachine { set => _gameFiniteStateMachine = value; }
         public EnemyData SetEnemyData { set => _baseEnemyData = value; }
         public Transform SetPlayerTransform { set => playerTransform = value; }
         public IEndUIController SetEndUI { set => _endUI = value; }

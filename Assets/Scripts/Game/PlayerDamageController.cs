@@ -10,10 +10,6 @@ namespace Scripts.Game
     public class PlayerDamageController : MonoBehaviour, IPlayerDamageController
     {
         /// <summary>
-        /// 遊戲狀態機
-        /// </summary>
-        private IGameFiniteStateMachine _gameFiniteStateMachine;
-        /// <summary>
         /// 屬性處理器
         /// </summary>
         private IAttributeHandle _attributeHandle;
@@ -114,10 +110,9 @@ namespace Scripts.Game
         {
             playerAni.SetBool(playerDeadBoolName, true);
             gameObject.SetActive(false);
-            _gameFiniteStateMachine.SetNextState(GameState.GameEnd);
+            GameStateMachine.Instance.SetNextState(GameState.GameEnd);
         }
 
-        public IGameFiniteStateMachine SetGameFiniteStateMachine { set => _gameFiniteStateMachine = value; }
         public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
         public IGameUIController SetGameUI { set => _gameUI = value; }
         public IEndUIController SetEndUI { set => _endUI = value; }

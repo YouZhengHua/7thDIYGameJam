@@ -10,7 +10,6 @@ public class Weapon : MonoBehaviour
     [SerializeField, Header("武器資料")]
     private WeaponData _weaponData;
     private WeaponData _cloneWeaponData;
-    public IGameFiniteStateMachine SetGameFiniteStateMachine { set => _gameFiniteStateMachine = value; }
     //TODO 接 AttributeHandle? 串Option
 
     //TODO 接 IAudioContoller
@@ -18,7 +17,6 @@ public class Weapon : MonoBehaviour
     protected float _timer = 0f;
     protected bool _weaponActive = true;
     protected IAudioContoller _audio;
-    protected IGameFiniteStateMachine _gameFiniteStateMachine;
 
     public virtual void Awake()
     {
@@ -33,7 +31,7 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     public virtual bool Update()
     {
-        return _weaponActive && _gameFiniteStateMachine.CurrectState == GameState.InGame;
+        return _weaponActive && GameStateMachine.Instance.CurrectState == GameState.InGame;
     }
 
     public virtual void SetWeaponActive(bool active)

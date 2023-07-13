@@ -9,7 +9,6 @@ namespace Scripts.Game
 {
     public class EndUIController : IEndUIController
     {
-        private IGameFiniteStateMachine _gameStateMachine;
         private IAttributeHandle _attributeHandle;
         private Button _backToMenuButton;
         private Button _restateGameButton;
@@ -33,9 +32,8 @@ namespace Scripts.Game
         private readonly Color _loseBackgroundColor = new (0.333f, 0.039f, 0.039f, 0.627f);
         private IList<int> _ammoGroups;
 
-        public EndUIController(IGameFiniteStateMachine gameStateMachine, IAttributeHandle attributeHandle)
+        public EndUIController(IAttributeHandle attributeHandle)
         {
-            _gameStateMachine = gameStateMachine;
             _attributeHandle = attributeHandle;
             _ammoGroups = new List<int>();
 
@@ -94,13 +92,13 @@ namespace Scripts.Game
         private void BackToMenuButtonOnClick()
         {
             _backToMenuButton.interactable = false;
-            _gameStateMachine.SetNextState(GameState.BackToMenu);
+            GameStateMachine.Instance.SetNextState(GameState.BackToMenu);
         }
 
         private void RestrartMenuButtonOnClick()
         {
             _restateGameButton.interactable = false;
-            _gameStateMachine.SetNextState(GameState.Restart);
+            GameStateMachine.Instance.SetNextState(GameState.Restart);
         }
 
         public void ShowCanvas(bool isWin)

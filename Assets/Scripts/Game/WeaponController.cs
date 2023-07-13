@@ -6,11 +6,6 @@ namespace Scripts.Game
     public class WeaponController : MonoBehaviour, IWeaponController
     {
         /// <summary>
-        /// 遊戲狀態機
-        /// </summary>
-        private IGameFiniteStateMachine _gameFiniteStateMachine;
-
-        /// <summary>
         /// 屬性處理器
         /// </summary>
         private IAttributeHandle _attributeHandle;
@@ -32,7 +27,6 @@ namespace Scripts.Game
         {
             foreach(Weapon weapon in this.GetComponentsInChildren<Weapon>())
             {
-                weapon.SetGameFiniteStateMachine = _gameFiniteStateMachine;
                 weapon.SetAudio = _audio;
                 weapon.SetWeaponActive(false);
                 canUseWeapons.Add(weapon);
@@ -46,8 +40,6 @@ namespace Scripts.Game
                 }
             }
         }
-
-        public IGameFiniteStateMachine SetGameFiniteStateMachine { set => _gameFiniteStateMachine = value; }
         public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
         public IAudioContoller SetAudio { set => _audio = value; }
 
