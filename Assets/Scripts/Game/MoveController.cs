@@ -17,6 +17,8 @@ namespace Scripts.Game
         /// </summary>
         private new Rigidbody2D rigidbody;
 
+        private bool IsLookMouse = false;
+
         #region 玩家轉向參數
         [SerializeField, Header("玩家面對方向的物件")]
         private Transform zRotation;
@@ -46,27 +48,17 @@ namespace Scripts.Game
             // 遊戲進行中才能進行移動
             if(GameStateMachine.Instance.CurrectState == GameState.InGame)
             {
-                float inputAd = Input.GetAxisRaw("Horizontal");
-                float inputWs = Input.GetAxisRaw("Vertical");
-
-                targetAd = Mathf.MoveTowards(targetAd, inputAd, Time.deltaTime * deltaRate);
-                targetWs = Mathf.MoveTowards(targetWs, inputWs, Time.deltaTime * deltaRate);
-
-                Vector2 moveVelocity = Vector2.ClampMagnitude(new Vector2(targetAd, targetWs), 1f);
-                moveVelocity *= moveSpeed;
-                rigidbody.velocity = moveVelocity;
-                if(animator != null)
+                if (Input.GetKeyDown(KeyCode.L))
                 {
-                    animator.SetFloat("ws", targetWs);
-                    animator.SetFloat("ad", targetAd);
+                    IsLookMouse = !IsLookMouse;
+                    if(IsLookMouse)
+                        Debug.Log("瞄準模式變更為: 跟隨滑鼠位置");
+                    else
+                        Debug.Log("瞄準模式變更為: 與移動方向一致");
                 }
-
-                if (inputAd != 0f || inputWs != 0f)
-                {
-                    zRotation.up = new Vector3(targetAd, targetWs, 0f);
-                    selfQuaternion = Quaternion.Lerp(selfQuaternion, zRotation.rotation, spinningSpeed);
-                    zRotation.rotation = selfQuaternion;
-                }
+                Move();
+                if(IsLookMouse)
+                    LookAtMouse();
             }
             else
             {
@@ -78,6 +70,46 @@ namespace Scripts.Game
                     animator.SetFloat("ad", 0f);
                 }
             }
+        }
+
+        /// <summary>
+        /// 移動
+        /// </summary>
+        private void Move()
+        {
+            float inputAd = Input.GetAxisRaw("Horizontal");
+            float inputWs = Input.GetAxisRaw("Vertical");
+
+            targetAd = Mathf.MoveTowards(targetAd, inputAd, Time.deltaTime * deltaRate);
+            targetWs = Mathf.MoveTowards(targetWs, inputWs, Time.deltaTime * deltaRate);
+
+            Vector2 moveVelocity = Vector2.ClampMagnitude(new Vector2(targetAd, targetWs), 1f);
+            moveVelocity *= moveSpeed;
+            rigidbody.velocity = moveVelocity;
+            if (animator != null)
+            {
+                animator.SetFloat("ws", targetWs);
+                animator.SetFloat("ad", targetAd);
+            }
+
+            if (!IsLookMouse && (inputAd != 0f || inputWs != 0f))
+            {
+                zRotation.up = new Vector3(targetAd, targetWs, 0f);
+                selfQuaternion = Quaternion.Lerp(selfQuaternion, zRotation.rotation, spinningSpeed);
+                zRotation.rotation = selfQuaternion;
+            }
+        }
+
+        /// <summary>
+        /// 玩家面向滑鼠位置
+        /// </summary>
+        private void LookAtMouse()
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = this.transform.position.z;
+            zRotation.up = mousePosition - this.transform.position;
+            selfQuaternion = Quaternion.Lerp(selfQuaternion, zRotation.rotation, spinningSpeed);
+            zRotation.rotation = selfQuaternion;
         }
 
         private float moveSpeed { get => AttributeHandle.Instance.PlayerMoveSpeed; }
