@@ -31,6 +31,9 @@ namespace Scripts.Game
         [SerializeField, Header("武器 Prefab 列表Data"), Tooltip("從這裡拿參考實例化武器")]
         private WeaponControllerData weaponControllerData;
 
+        [SerializeField, Header("武器根節點"), Tooltip("武器實例化的根節點")]
+        private Transform weaponRoot;
+
         private void Start()
         {
             foreach (Weapon weapon in this.GetComponentsInChildren<Weapon>())
@@ -56,14 +59,17 @@ namespace Scripts.Game
 
         public void LoadWeapon(WeaponIndex weaponIndex, bool active = true)
         {
-            GameObject weaponPrefab = weaponControllerData.weaponPrefabList.Find(x => x.GetComponent<Weapon>().GetWeaponIndex == weaponIndex);
+            GameObject weaponPrefab = weaponControllerData.weaponPrefabList.Find(x => x.name == weaponIndex.ToString());
             if (weaponPrefab != null)
             {
                 Weapon weapon = Instantiate(weaponPrefab, this.transform).GetComponent<Weapon>();
+                weapon.transform.SetParent(weaponRoot);
                 weapon.SetGameFiniteStateMachine = _gameFiniteStateMachine;
                 weapon.SetAudio = _audio;
                 weapon.LoadWeapon(active);
                 canUseWeapons.Add(weapon);
+                //for test
+                TestPlayerWeapons.Add(weaponIndex);
             }
         }
 
