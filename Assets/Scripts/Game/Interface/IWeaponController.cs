@@ -6,12 +6,11 @@ namespace Scripts.Game
     public interface IWeaponController
     {
         /// <summary>
-        /// 設定指定的武器編號是否處於激活狀態
+        /// 載入並設定指定的武器編號是否激活
         /// </summary>
         /// <param name="weaponIndex"></param>
-        /// <param name="isActive"></param>
-        public void SetWeaponActive(WeaponIndex weaponIndex, bool isActive);
-
+        /// <param name="active"></param>
+        public void LoadWeapon(WeaponIndex weaponIndex, bool active = true);
         /// <summary>
         /// 取得武器編號對應的武器資料
         /// </summary>

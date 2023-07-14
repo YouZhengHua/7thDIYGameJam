@@ -6,21 +6,6 @@ namespace Scripts.Game
     public class WeaponController : MonoBehaviour, IWeaponController
     {
         /// <summary>
-        /// 遊戲狀態機
-        /// </summary>
-        private IGameFiniteStateMachine _gameFiniteStateMachine;
-
-        /// <summary>
-        /// 屬性處理器
-        /// </summary>
-        private IAttributeHandle _attributeHandle;
-
-        /// <summary>
-        /// 音效控制器
-        /// </summary>
-        private IAudioContoller _audio;
-
-        /// <summary>
         /// 所有武器清單
         /// </summary>
         private IList<Weapon> canUseWeapons = new List<Weapon>();
@@ -38,8 +23,6 @@ namespace Scripts.Game
         {
             foreach (Weapon weapon in this.GetComponentsInChildren<Weapon>())
             {
-                weapon.SetGameFiniteStateMachine = _gameFiniteStateMachine;
-                weapon.SetAudio = _audio;
                 weapon.SetWeaponActive(false);
                 canUseWeapons.Add(weapon);
             }
@@ -53,10 +36,6 @@ namespace Scripts.Game
             }
         }
 
-        public IGameFiniteStateMachine SetGameFiniteStateMachine { set => _gameFiniteStateMachine = value; }
-        public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
-        public IAudioContoller SetAudio { set => _audio = value; }
-
         public void LoadWeapon(WeaponIndex weaponIndex, bool active = true)
         {
             GameObject weaponPrefab = weaponControllerData.weaponPrefabList.Find(x => x.name == weaponIndex.ToString());
@@ -64,21 +43,10 @@ namespace Scripts.Game
             {
                 Weapon weapon = Instantiate(weaponPrefab, this.transform).GetComponent<Weapon>();
                 weapon.transform.SetParent(weaponRoot);
-                weapon.SetGameFiniteStateMachine = _gameFiniteStateMachine;
-                weapon.SetAudio = _audio;
                 weapon.LoadWeapon(active);
                 canUseWeapons.Add(weapon);
                 //for test
                 TestPlayerWeapons.Add(weaponIndex);
-            }
-        }
-
-        public void SetWeaponActive(WeaponIndex weaponIndex, bool isActive)
-        {
-            foreach (Weapon weapon in canUseWeapons)
-            {
-                if (weapon.GetWeaponIndex == weaponIndex)
-                    weapon.SetWeaponActive(isActive);
             }
         }
 

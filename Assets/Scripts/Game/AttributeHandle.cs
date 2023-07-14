@@ -62,7 +62,7 @@ namespace Scripts.Game
             {
                 if(data.SelectedCount == 0)
                 {
-                    _weapon.SetWeaponActive(data.WeaponIndex, true);
+                    _weapon.LoadWeapon(data.WeaponIndex, true);
                 }
                 else
                 {
