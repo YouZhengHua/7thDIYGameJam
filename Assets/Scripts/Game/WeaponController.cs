@@ -10,9 +10,6 @@ namespace Scripts.Game
         /// </summary>
         private IList<Weapon> canUseWeapons = new List<Weapon>();
 
-        [SerializeField, Header("使用者裝載的武器"), Tooltip("測試用，將需要實作的武器放入清單內")]
-        private List<WeaponIndex> TestPlayerWeapons;
-
         [SerializeField, Header("武器 Prefab 列表Data"), Tooltip("從這裡拿參考實例化武器")]
         private WeaponControllerData weaponControllerData;
 
@@ -26,14 +23,6 @@ namespace Scripts.Game
                 weapon.SetWeaponActive(false);
                 canUseWeapons.Add(weapon);
             }
-
-            if (TestPlayerWeapons != null)
-            {
-                foreach (Weapon weapon in canUseWeapons)
-                {
-                    weapon.SetWeaponActive(TestPlayerWeapons.Contains(weapon.GetWeaponIndex));
-                }
-            }
         }
 
         public void LoadWeapon(WeaponIndex weaponIndex, bool active = true)
@@ -45,8 +34,6 @@ namespace Scripts.Game
                 weapon.transform.SetParent(weaponRoot);
                 weapon.LoadWeapon(active);
                 canUseWeapons.Add(weapon);
-                //for test
-                TestPlayerWeapons.Add(weaponIndex);
             }
         }
 
