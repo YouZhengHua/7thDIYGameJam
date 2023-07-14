@@ -34,6 +34,15 @@ public class BaseUpgradeInfo : ScriptableObject
 
     public Info_SO[] infos;
 
+    public int GetCurrentLevel(Info queryName) {
+        foreach (Info_SO info_SO in infos) {
+            if (queryName == info_SO.infoName) {
+                return info_SO.upgradeElementSO.currentLevel;
+            }
+        }
 
+        Debug.LogError("Can't find the corresponding query UpgradeSO");
+        return -1;
+    }
 
 }

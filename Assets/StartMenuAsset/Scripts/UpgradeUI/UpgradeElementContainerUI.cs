@@ -7,6 +7,7 @@ public class UpgradeElementContainerUI : MonoBehaviour
 {
     [SerializeField] private UpgradeElementUI[] elements;
     [SerializeField] private Button checkBox;
+    [SerializeField] private UpgradeDescriptionUI descriptionUI;
 
     private List<Button> buttons;
     private UpgradeElementUI chosenElement;
@@ -29,6 +30,7 @@ public class UpgradeElementContainerUI : MonoBehaviour
             button.onClick.AddListener(() => {
                 DisableAllButtonsOutline(buttons);
                 EnableOutline(button);
+                descriptionUI.UpdateDescription();
             });
         }
 
@@ -39,6 +41,10 @@ public class UpgradeElementContainerUI : MonoBehaviour
         foreach(Button button in buttons) {
             DisableOutline(button);
         }
+    }
+
+    public UpgradeElementSO GetElementSO() {
+        return chosenElement.GetUpgradeElementSO();
     }
 
     private void EnableOutline(Button button) {
