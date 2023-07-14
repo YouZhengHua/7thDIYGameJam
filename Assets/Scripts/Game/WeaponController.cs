@@ -28,9 +28,12 @@ namespace Scripts.Game
         [SerializeField, Header("使用者裝載的武器"), Tooltip("測試用，將需要實作的武器放入清單內")]
         private List<WeaponIndex> TestPlayerWeapons;
 
+        [SerializeField, Header("武器 Prefab 列表Data"), Tooltip("從這裡拿參考實例化武器")]
+        private WeaponControllerData weaponControllerData;
+
         private void Start()
         {
-            foreach(Weapon weapon in this.GetComponentsInChildren<Weapon>())
+            foreach (Weapon weapon in this.GetComponentsInChildren<Weapon>())
             {
                 weapon.SetGameFiniteStateMachine = _gameFiniteStateMachine;
                 weapon.SetAudio = _audio;
@@ -51,11 +54,24 @@ namespace Scripts.Game
         public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
         public IAudioContoller SetAudio { set => _audio = value; }
 
+        public void LoadWeapon(WeaponIndex weaponIndex, bool active = true)
+        {
+            GameObject weaponPrefab = weaponControllerData.weaponPrefabList.Find(x => x.GetComponent<Weapon>().GetWeaponIndex == weaponIndex);
+            if (weaponPrefab != null)
+            {
+                Weapon weapon = Instantiate(weaponPrefab, this.transform).GetComponent<Weapon>();
+                weapon.SetGameFiniteStateMachine = _gameFiniteStateMachine;
+                weapon.SetAudio = _audio;
+                weapon.LoadWeapon(active);
+                canUseWeapons.Add(weapon);
+            }
+        }
+
         public void SetWeaponActive(WeaponIndex weaponIndex, bool isActive)
         {
             foreach (Weapon weapon in canUseWeapons)
             {
-                if(weapon.GetWeaponIndex == weaponIndex)
+                if (weapon.GetWeaponIndex == weaponIndex)
                     weapon.SetWeaponActive(isActive);
             }
         }
