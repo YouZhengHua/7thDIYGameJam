@@ -136,8 +136,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: 2ebeb6adc78b1814f8851bd800592cc9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -300,6 +300,8 @@ MonoBehaviour:
   upgradeElementSO: {fileID: 11400000, guid: 931dee15435ed2540a96ad930bf01860, type: 2}
   ButtonName: {fileID: 970211383565760911}
   button: {fileID: 5496269440517028781}
+  buttonChosenSprite: {fileID: 0}
+  buttonUnChosenSprite: {fileID: 0}
 --- !u!1 &6192253473696170082
 GameObject:
   m_ObjectHideFlags: 0

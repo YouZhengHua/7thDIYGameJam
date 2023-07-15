@@ -10,6 +10,8 @@ public class UpgradeElementUI : MonoBehaviour
     [SerializeField] private UpgradeElementSO upgradeElementSO;
     [SerializeField] private TextMeshProUGUI ButtonName;
     [SerializeField] private Button button;
+    [SerializeField] private Sprite buttonChosenSprite;
+    [SerializeField] private Sprite buttonUnChosenSprite;
 
     private List<Transform> progressUIs;
 

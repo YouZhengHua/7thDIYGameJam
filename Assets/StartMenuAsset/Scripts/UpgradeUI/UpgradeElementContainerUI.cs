@@ -27,10 +27,11 @@ public class UpgradeElementContainerUI : MonoBehaviour
         foreach (UpgradeElementUI element in elements)
         {
             element.GetButton().onClick.AddListener(() => chosenElement = element);
-            if (DataSystem.Instance.gameValueData.elementLevelDic.ContainsKey(element.GetUpgradeElementSO().name))
-            {
-                element.Set(DataSystem.Instance.gameValueData.elementLevelDic[element.GetUpgradeElementSO().name]);
-            }
+            
+            //if (DataSystem.Instance.gameValueData.elementLevelDic.ContainsKey(element.GetUpgradeElementSO().name))
+            //{
+            //    element.Set(DataSystem.Instance.gameValueData.elementLevelDic[element.GetUpgradeElementSO().name]);
+            //}
         }
 
 
@@ -47,7 +48,7 @@ public class UpgradeElementContainerUI : MonoBehaviour
         checkBox.onClick.AddListener(() =>
         {
             chosenElement.Upgrade();
-            DataSystem.Instance.SaveElementData(chosenElement.GetUpgradeElementSO().name, chosenElement.GetUpgradeElementSO().currentLevel);
+            //DataSystem.Instance.SaveElementData(chosenElement.GetUpgradeElementSO().name, chosenElement.GetUpgradeElementSO().currentLevel);
         });
     }
 
