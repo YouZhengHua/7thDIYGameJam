@@ -45,4 +45,14 @@ public class BaseUpgradeInfo : ScriptableObject
         return -1;
     }
 
+    public float GetEffect(Info queryName) {
+        foreach (Info_SO info_SO in infos) {
+            if (queryName == info_SO.infoName) {
+                return info_SO.upgradeElementSO.GetEffect();
+            }
+        }
+
+        Debug.LogError("Can't find the corresponding query UpgradeSO");
+        return -1;
+    }
 }

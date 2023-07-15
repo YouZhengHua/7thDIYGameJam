@@ -17,11 +17,24 @@ public class UpgradeElementSO : ScriptableObject
         intType
     };
 
-    [SerializeField] private float floatEffect;
-    [SerializeField] private int intEffect;
+    [SerializeField] private float EffectPerLevel;
 
+    public float GetEffect() {
+        return EffectPerLevel * currentLevel;
+    }
 
+    private void OnEnable() {
+        /*
+        if (DataSystem.Instance.gameValueData.elementLevelDic.ContainsKey(name))
+        {
+            currentLevel = (DataSystem.Instance.gameValueData.elementLevelDic[name]);
+        }
+        */
+    }
 
+    private void OnDisable() {
+        // DataSystem.Instance.SaveElementData(name, currentLevel);
+    }
 
     public void IncreaseCurrentLevel() {
         if (currentLevel >= maxLevel) {

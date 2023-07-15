@@ -16,3 +16,5 @@ MonoBehaviour:
   currentLevel: 0
   maxLevel: 4
   Icon: {fileID: 0}
+  cost: 100
+  Effect: 0

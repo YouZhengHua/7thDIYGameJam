@@ -40,14 +40,6 @@ public class UpgradeElementUI : MonoBehaviour
         }
     }
 
-    public void Set(int currentLevel)
-    {
-        upgradeElementSO.currentLevel = currentLevel;
-        for (int i = 0; i < currentLevel; i++)
-        {
-            EnableNextCheckBox(i);
-        }
-    }
 
     public void Upgrade()
     {
