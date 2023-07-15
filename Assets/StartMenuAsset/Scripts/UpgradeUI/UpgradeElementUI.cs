@@ -13,33 +13,50 @@ public class UpgradeElementUI : MonoBehaviour
 
     private List<Transform> progressUIs;
 
-    private void Awake() {
+    private void Awake()
+    {
         progressUIs = new List<Transform>();
-        foreach(Transform child in progressUIContainer) {
+        foreach (Transform child in progressUIContainer)
+        {
             progressUIs.Add(child);
         }
     }
 
-    private void Start() {
+    private void Start()
+    {
         ButtonName.text = upgradeElementSO.elementName;
 
-        if (progressUIs.Count != upgradeElementSO.maxLevel) {
+        if (progressUIs.Count != upgradeElementSO.maxLevel)
+        {
             Debug.LogError("The length of UI checkbox of " + upgradeElementSO.name + " does not match");
         }
 
         int currentLevel = upgradeElementSO.currentLevel;
-        for(int i = 0; i < currentLevel; i++) {
+        for (int i = 0; i < currentLevel; i++)
+        {
             ActivateProgressUI(progressUIs[i]);
         }
     }
 
-    public void Upgrade() {
+    public void Set(int currentLevel)
+    {
+        upgradeElementSO.currentLevel = currentLevel;
+        for (int i = 0; i < currentLevel; i++)
+        {
+            EnableNextCheckBox(i);
+        }
+    }
+
+    public void Upgrade()
+    {
         upgradeElementSO.IncreaseCurrentLevel();
         EnableNextCheckBox(upgradeElementSO.currentLevel - 1);
     }
 
-    public void EnableNextCheckBox(int nextIndex) {
-        if (nextIndex == upgradeElementSO.maxLevel) {
+    public void EnableNextCheckBox(int nextIndex)
+    {
+        if (nextIndex == upgradeElementSO.maxLevel)
+        {
             Debug.Log("This ability has maxouted!");
             return;
         }
@@ -47,19 +64,23 @@ public class UpgradeElementUI : MonoBehaviour
         ActivateProgressUI(progressUIs[nextIndex]);
     }
 
-    public void ActivateProgressUI(Transform progressUI) {
+    public void ActivateProgressUI(Transform progressUI)
+    {
         progressUI.GetComponent<Outline>().enabled = true;
     }
 
-    public void DeactivateProgressUI(Transform progressUI) {
+    public void DeactivateProgressUI(Transform progressUI)
+    {
         progressUI.GetComponent<Outline>().enabled = false;
     }
 
-    public Button GetButton() {
+    public Button GetButton()
+    {
         return button;
     }
 
-    public UpgradeElementSO GetUpgradeElementSO() {
+    public UpgradeElementSO GetUpgradeElementSO()
+    {
         return upgradeElementSO;
     }
 }

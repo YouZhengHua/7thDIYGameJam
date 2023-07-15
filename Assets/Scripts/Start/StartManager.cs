@@ -29,6 +29,7 @@ namespace Scripts.Start
             _menuUIController = new MenuUIController(this, _menuCanvas);
             _settingUIController = new SettingUIController(this, _audioContoller, _settingCanvas, _defaultSetting, _userSetting);
             inputKeycodes = new List<KeyCode>();
+            DataSystem.Instance.OnLoadData();
         }
 
         private void Start()
@@ -63,7 +64,7 @@ namespace Scripts.Start
                 }
                 DebugTime -= Time.deltaTime;
 
-                if(string.Join(',', inputKeycodes) == string.Join(',', AddMoneyCode))
+                if (string.Join(',', inputKeycodes) == string.Join(',', AddMoneyCode))
                 {
                     StaticPrefs.Score += 1000;
                     inputKeycodes.Clear();
@@ -81,7 +82,7 @@ namespace Scripts.Start
                     Debug.Log("重置分數及槍械解鎖狀態");
                 }
             }
-            if(DebugTime < 0)
+            if (DebugTime < 0)
             {
                 DebugTime = 0;
                 inputKeycodes.Clear();
