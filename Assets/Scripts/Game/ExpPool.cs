@@ -11,7 +11,7 @@ namespace Scripts.Game
         private IBasePool expPool2;
         private IBasePool expPool3;
         private List<GameObject> expPrefabs;
-        public ExpPool(ExpData exp1, ExpData exp2, ExpData exp3, IAttributeHandle attributeHandle, IGameUIController gameUI, IGameFiniteStateMachine gameFiniteStateMachine, Transform playerTransform)
+        public ExpPool(ExpData exp1, ExpData exp2, ExpData exp3, IGameUIController gameUI, Transform playerTransform)
         {
             expPool1 = new BasePool(exp1.poolData.prefab, exp1.poolData.poolSize);
             expPool2 = new BasePool(exp2.poolData.prefab, exp2.poolData.poolSize);
@@ -21,24 +21,18 @@ namespace Scripts.Game
             {
                 prefab.GetComponent<IDropExpController>().SetExpData = exp1;
                 prefab.GetComponent<IDropExpController>().SetGameUI = gameUI;
-                prefab.GetComponent<IDropExpController>().SetAttributeHandle = attributeHandle;
-                prefab.GetComponent<IDropExpController>().SetGameFiniteStateMachine = gameFiniteStateMachine;
                 prefab.GetComponent<IDropExpController>().SetPlayerTransform = playerTransform;
             });
             expPool2.Prefabs.ForEach(prefab =>
             {
                 prefab.GetComponent<IDropExpController>().SetExpData = exp2;
                 prefab.GetComponent<IDropExpController>().SetGameUI = gameUI;
-                prefab.GetComponent<IDropExpController>().SetAttributeHandle = attributeHandle;
-                prefab.GetComponent<IDropExpController>().SetGameFiniteStateMachine = gameFiniteStateMachine;
                 prefab.GetComponent<IDropExpController>().SetPlayerTransform = playerTransform;
             });
             expPool3.Prefabs.ForEach(prefab =>
             {
                 prefab.GetComponent<IDropExpController>().SetExpData = exp3;
                 prefab.GetComponent<IDropExpController>().SetGameUI = gameUI;
-                prefab.GetComponent<IDropExpController>().SetAttributeHandle = attributeHandle;
-                prefab.GetComponent<IDropExpController>().SetGameFiniteStateMachine = gameFiniteStateMachine;
                 prefab.GetComponent<IDropExpController>().SetPlayerTransform = playerTransform;
             });
         }

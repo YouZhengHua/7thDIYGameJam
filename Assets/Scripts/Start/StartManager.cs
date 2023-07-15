@@ -16,7 +16,6 @@ namespace Scripts.Start
         private UserSetting _userSetting;
         ISettingUIController _settingUIController;
         IMenuUIController _menuUIController;
-        IAudioContoller _audioContoller;
         private float DebugTime = 0f;
 
         private IList<KeyCode> inputKeycodes;
@@ -25,9 +24,9 @@ namespace Scripts.Start
 
         private void Awake()
         {
-            _audioContoller = new AudioContoller(_userSetting);
+            AudioContoller.Instance.SetUserSetting(_userSetting);
             _menuUIController = new MenuUIController(this, _menuCanvas);
-            _settingUIController = new SettingUIController(this, _audioContoller, _settingCanvas, _defaultSetting, _userSetting);
+            _settingUIController = new SettingUIController(this, _settingCanvas, _defaultSetting, _userSetting);
             inputKeycodes = new List<KeyCode>();
             DataSystem.Instance.OnLoadData();
         }
@@ -35,7 +34,7 @@ namespace Scripts.Start
         private void Start()
         {
             ShowMenu();
-            _audioContoller.UpdateAudioVolume();
+            AudioContoller.Instance.UpdateAudioVolume();
         }
 
         private void Update()

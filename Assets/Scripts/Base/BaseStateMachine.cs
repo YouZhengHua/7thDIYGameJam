@@ -1,21 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Scripts.Base
 {
-    public class BaseFiniteStateMachine<T> : IBaseFiniteStateMachine<T>
+    public class BaseStateMachine<T>
     {
         protected T _currectState;
+        protected IList<Action> _exitStateLamdbas;
         protected Action _exitStateLamdba;
 
-        public BaseFiniteStateMachine(T currectState)
+        protected BaseStateMachine()
         {
-            _currectState = currectState;
-        }
-
-        public BaseFiniteStateMachine(T currectState, Action exitStateLamdba)
-        {
-            _currectState = currectState;
-            _exitStateLamdba = exitStateLamdba;
+            _exitStateLamdbas = new List<Action>();
         }
 
         public T CurrectState { get => _currectState; }
@@ -27,14 +24,18 @@ namespace Scripts.Base
         public virtual void SetNextState(T value, Action nextExitStateLamdba)
         {
             ChangeState(value);
-            _exitStateLamdba = nextExitStateLamdba;
+            _exitStateLamdbas.Add(nextExitStateLamdba);
         }
 
         protected virtual void ChangeState(T value)
         {
+            Debug.Log($"Change {typeof(T).Name} : {_currectState} -> {value}.");
             _currectState = value;
-            _exitStateLamdba?.Invoke();
-            _exitStateLamdba = null;
+            foreach(Action action in _exitStateLamdbas)
+            {
+                action.Invoke();
+            }
+            _exitStateLamdbas.Clear();
         }
     }
 }

@@ -14,13 +14,11 @@ namespace Scripts.Game
     /// </summary>
     public class AmmoPool : BasePool, IAmmoPool
     {
-        public AmmoPool(IGameFiniteStateMachine gameFiniteStateMachine, PoolData poolData, IAttributeHandle attributeHandle, IEndUIController endUI, Transform playerTransform): base(poolData.prefab, poolData.poolSize)
+        public AmmoPool(PoolData poolData, IEndUIController endUI, Transform playerTransform): base(poolData.prefab, poolData.poolSize)
         {
             _prefabPool.ForEach(prefab =>
             {
-                prefab.GetComponent<IAmmoController>().SetGameFiniteStateMachine = gameFiniteStateMachine;
                 prefab.GetComponent<IAmmoController>().SetEndUI = endUI;
-                prefab.GetComponent<IAmmoController>().SetAttributeHandle = attributeHandle;
                 prefab.GetComponent<IAmmoController>().SetPlayerTransform = playerTransform;
             });
         }
