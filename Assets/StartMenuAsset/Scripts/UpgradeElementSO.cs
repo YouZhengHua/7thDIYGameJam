@@ -12,6 +12,12 @@ public class UpgradeElementSO : ScriptableObject
     public Sprite Icon;
     public float cost;
 
+
+#if UNITY_EDITOR
+    [Multiline]
+    public string DescriptionOnUI = "";
+#endif
+
     public enum effectType {
         floatType,
         intType
