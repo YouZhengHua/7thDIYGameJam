@@ -8,8 +8,6 @@ namespace Scripts.Game
     public class AmmoController : MonoBehaviour, IAmmoController
     {
         private int _nowPenetrationCount = 0;
-        private IGameFiniteStateMachine _gameFiniteStateMachine;
-        private IAttributeHandle _attributeHandle;
         private Transform playerTransform;
         private IEndUIController _endUI;
         private bool isFirstHit = true;
@@ -32,7 +30,7 @@ namespace Scripts.Game
 
         private void Update()
         {
-            if (_gameFiniteStateMachine.CurrectState == GameState.InGame)
+            if (GameStateMachine.Instance.CurrectState == GameState.InGame)
             {
                 AutoInactive();
             }
@@ -61,8 +59,6 @@ namespace Scripts.Game
         }
 
         public bool IsActive { get => _nowPenetrationCount < ammoPenetrationCount; }
-        public IGameFiniteStateMachine SetGameFiniteStateMachine { set => _gameFiniteStateMachine = value; }
-        public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
         public Transform SetPlayerTransform { set => playerTransform = value; }
         public IEndUIController SetEndUI { set => _endUI = value; }
         public int AmmoGroup { get; set; }

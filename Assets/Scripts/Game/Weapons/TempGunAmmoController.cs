@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class TempGunAmmoController : MonoBehaviour, IAmmoController
 {
-    public IGameFiniteStateMachine SetGameFiniteStateMachine { set => throw new System.NotImplementedException(); }
-    public IAttributeHandle SetAttributeHandle { set => throw new System.NotImplementedException(); }
     public Transform SetPlayerTransform { set => throw new System.NotImplementedException(); }
     public IEndUIController SetEndUI { set => throw new System.NotImplementedException(); }
 

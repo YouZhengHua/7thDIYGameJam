@@ -27,6 +27,9 @@ namespace Scripts.Game.Data
             }
         }
 
+        [Header("護盾值")]
+        public float Shield = 0f;
+
         [Header("擊退半徑")]
         public float Radius = 5;
 

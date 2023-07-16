@@ -9,8 +9,6 @@ namespace Scripts.Game
     public class DropController : MonoBehaviour, IDropController
     {
         protected Transform playerTransform;
-        protected IAttributeHandle _attributeHandle;
-        protected IGameFiniteStateMachine _gameFiniteStateMachine;
         protected DropItemData _dropItemData;
         private bool isGot = false;
 
@@ -20,9 +18,9 @@ namespace Scripts.Game
         }
         protected virtual void Update()
         {
-            if (_gameFiniteStateMachine.CurrectState == GameState.InGame)
+            if (GameStateMachine.Instance.CurrectState == GameState.InGame)
             {
-                isGot = isGot || (playerTransform.position - transform.position).magnitude < _attributeHandle.GetDropItemRadius;
+                isGot = isGot || (playerTransform.position - transform.position).magnitude < AttributeHandle.Instance.GetDropItemRadius;
                 if (isGot)
                 {
                     MoveDropItem();
@@ -46,8 +44,6 @@ namespace Scripts.Game
 
         private float ItemMoveSpeed { get => _dropItemData == null ? 10f : _dropItemData.speed; }
 
-        public IGameFiniteStateMachine SetGameFiniteStateMachine { set => _gameFiniteStateMachine = value; }
-        public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
         public Transform SetPlayerTransform { set => playerTransform = value; }
         protected DropItemData SetDropItemData { set => _dropItemData = value; }
     }

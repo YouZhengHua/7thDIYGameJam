@@ -9,7 +9,6 @@ namespace Scripts.Game
 {
     public class PauseUIController : IPauseUIController
     {
-        private IGameFiniteStateMachine _gameStateMachine;
         private ISettingUIController _settingUIController;
         private Button _backToGameButton;
         private Button _backToMenuButton;
@@ -17,9 +16,8 @@ namespace Scripts.Game
         private Button _settingGameButton;
         private Canvas _canvas;
 
-        public PauseUIController(IGameFiniteStateMachine gameStateMachine, ISettingUIController settingUIController)
+        public PauseUIController(ISettingUIController settingUIController)
         {
-            _gameStateMachine = gameStateMachine;
             _settingUIController = settingUIController;
             foreach (Canvas canvas in GameObject.FindObjectsOfType<Canvas>())
             {
@@ -51,19 +49,19 @@ namespace Scripts.Game
         private void BackToMenuButtonOnClick()
         {
             _backToMenuButton.interactable = false;
-            _gameStateMachine.SetNextState(GameState.BackToMenu);
+            GameStateMachine.Instance.SetNextState(GameState.BackToMenu);
         }
 
         private void BackToGameButtonOnClick()
         {
             HideCanvas();
-            _gameStateMachine.SetNextState(GameState.InGame);
+            GameStateMachine.Instance.SetNextState(GameState.InGame);
         }
 
         private void RestrartMenuButtonOnClick()
         {
             _restateGameButton.interactable = false;
-            _gameStateMachine.SetNextState(GameState.Restart);
+            GameStateMachine.Instance.SetNextState(GameState.Restart);
         }
 
         private void SettingButtonOnClick()
@@ -74,7 +72,7 @@ namespace Scripts.Game
         public void ShowCanvas()
         {
             _canvas.gameObject.SetActive(true);
-            _backToGameButton.gameObject.SetActive(_gameStateMachine.CurrectState != GameState.GamePause);
+            _backToGameButton.gameObject.SetActive(GameStateMachine.Instance.CurrectState != GameState.GamePause);
         }
 
         public void HideCanvas()

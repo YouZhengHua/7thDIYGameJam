@@ -9,8 +9,6 @@ namespace Scripts.Game
 {
     public class EndUIController : IEndUIController
     {
-        private IGameFiniteStateMachine _gameStateMachine;
-        private IAttributeHandle _attributeHandle;
         private Button _backToMenuButton;
         private Button _restateGameButton;
         private Canvas _canvas;
@@ -33,10 +31,8 @@ namespace Scripts.Game
         private readonly Color _loseBackgroundColor = new (0.333f, 0.039f, 0.039f, 0.627f);
         private IList<int> _ammoGroups;
 
-        public EndUIController(IGameFiniteStateMachine gameStateMachine, IAttributeHandle attributeHandle)
+        public EndUIController()
         {
-            _gameStateMachine = gameStateMachine;
-            _attributeHandle = attributeHandle;
             _ammoGroups = new List<int>();
 
             foreach (Canvas canvas in GameObject.FindObjectsOfType<Canvas>())
@@ -94,13 +90,13 @@ namespace Scripts.Game
         private void BackToMenuButtonOnClick()
         {
             _backToMenuButton.interactable = false;
-            _gameStateMachine.SetNextState(GameState.BackToMenu);
+            GameStateMachine.Instance.SetNextState(GameState.BackToMenu);
         }
 
         private void RestrartMenuButtonOnClick()
         {
             _restateGameButton.interactable = false;
-            _gameStateMachine.SetNextState(GameState.Restart);
+            GameStateMachine.Instance.SetNextState(GameState.Restart);
         }
 
         public void ShowCanvas(bool isWin)
@@ -118,7 +114,7 @@ namespace Scripts.Game
 
         private void UpdateScoreboard()
         {
-            _levelText.text = _attributeHandle.Level.ToString();
+            _levelText.text = AttributeHandle.Instance.Level.ToString();
             _shootCountText.text = string.Format(_shootCount == 0 ? "未開槍" : "{0}%", HitRate);
             _getHitTimesText.text = string.Format("{0}", _killEnemyCountByMelee);
             _hitEnemyCountText.text = string.Format("{0}", KillEnemyCount);

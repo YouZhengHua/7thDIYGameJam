@@ -10,25 +10,9 @@ namespace Scripts.Game
     public class PlayerDamageController : MonoBehaviour, IPlayerDamageController
     {
         /// <summary>
-        /// 遊戲狀態機
-        /// </summary>
-        private IGameFiniteStateMachine _gameFiniteStateMachine;
-        /// <summary>
-        /// 屬性處理器
-        /// </summary>
-        private IAttributeHandle _attributeHandle;
-        /// <summary>
         /// 結算UI控制器
         /// </summary>
         private IEndUIController _endUI;
-        /// <summary>
-        /// 遊戲UI控制器
-        /// </summary>
-        private IGameUIController _gameUI;
-        /// <summary>
-        /// 音效控制器
-        /// </summary>
-        private IAudioContoller _audio;
 
         [SerializeField, Header("目標判定階層")]
         private LayerMask enemyLayer;
@@ -72,17 +56,16 @@ namespace Scripts.Game
                     playerAni.SetTrigger(playerGetHitTriggerName);
                     globalVolumeAni.SetTrigger(playerGetHitTriggerName);
                     collision.gameObject.GetComponent<IEnemyController>().PlayAttackAnimation();
-                    foreach (var enemy in Physics2D.OverlapCircleAll(this.transform.position, _attributeHandle.PlayerRepelRadius, enemyLayer))
+                    foreach (var enemy in Physics2D.OverlapCircleAll(this.transform.position, AttributeHandle.Instance.PlayerRepelRadius, enemyLayer))
                     {
                         Vector2 distance = enemy.transform.position - this.transform.position;
-                        if (distance.magnitude < _attributeHandle.PlayerRepelRadius)
+                        if (distance.magnitude < AttributeHandle.Instance.PlayerRepelRadius)
                         {
-                            enemy.GetComponent<Rigidbody2D>().AddForce(distance.normalized * (_attributeHandle.PlayerRepelRadius - distance.magnitude) * _attributeHandle.PlayerRepelForce);
-                            enemy.GetComponent<IEnemyController>().AddVelocityTime(_attributeHandle.PlayerRepelTime);
+                            enemy.GetComponent<Rigidbody2D>().AddForce(distance.normalized * (AttributeHandle.Instance.PlayerRepelRadius - distance.magnitude) * AttributeHandle.Instance.PlayerRepelForce);
+                            enemy.GetComponent<IEnemyController>().AddVelocityTime(AttributeHandle.Instance.PlayerRepelTime);
                         }
                     }
                     _endUI.AddGetHitTimes();
-                    _gameUI.UpdatePlayerHealth();
                 }
             }
         }
@@ -93,18 +76,16 @@ namespace Scripts.Game
         /// <param name="damage"></param>
         public void GetDamage(int damage)
         {
-            float calDamage = CalTool.CalDamage(damage, _attributeHandle.PlayerDEF, 1f);
-            _attributeHandle.PlayerHealthPoint -= calDamage;
-            if (_attributeHandle.PlayerHealthPoint <= 0)
+            AttributeHandle.Instance.PlayerGetDamage(damage);
+            if (AttributeHandle.Instance.PlayerHealthPoint <= 0)
             {
-                _attributeHandle.PlayerHealthPoint = 0;
                 Dead();
             }
             else
             {
-                _audio.PlayEffect(_attributeHandle.GetHitAudio);
+                AudioContoller.Instance.PlayEffect(AttributeHandle.Instance.GetHitAudio);
             }
-            _invincibleTime = _attributeHandle.InvincibleTime;
+            _invincibleTime = AttributeHandle.Instance.InvincibleTime;
         }
 
         /// <summary>
@@ -114,13 +95,8 @@ namespace Scripts.Game
         {
             playerAni.SetBool(playerDeadBoolName, true);
             gameObject.SetActive(false);
-            _gameFiniteStateMachine.SetNextState(GameState.GameEnd);
+            GameStateMachine.Instance.SetNextState(GameState.GameEnd);
         }
-
-        public IGameFiniteStateMachine SetGameFiniteStateMachine { set => _gameFiniteStateMachine = value; }
-        public IAttributeHandle SetAttributeHandle { set => _attributeHandle = value; }
-        public IGameUIController SetGameUI { set => _gameUI = value; }
         public IEndUIController SetEndUI { set => _endUI = value; }
-        public IAudioContoller SetAudio { set => _audio = value; }
     }
 }
