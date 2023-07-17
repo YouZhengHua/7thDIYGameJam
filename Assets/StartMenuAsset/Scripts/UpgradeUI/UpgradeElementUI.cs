@@ -10,8 +10,8 @@ public class UpgradeElementUI : MonoBehaviour
     [SerializeField] private UpgradeElementSO upgradeElementSO;
     [SerializeField] private TextMeshProUGUI ButtonName;
     [SerializeField] private Button button;
-    [SerializeField] private Sprite buttonChosenSprite;
-    [SerializeField] private Sprite buttonUnChosenSprite;
+    [SerializeField] private Sprite upgradedSprite;
+    [SerializeField] private Sprite notUpgradedSprite;
 
     private List<Transform> progressUIs;
 
@@ -60,13 +60,15 @@ public class UpgradeElementUI : MonoBehaviour
 
     public void ActivateProgressUI(Transform progressUI)
     {
-        progressUI.GetComponent<Outline>().enabled = true;
+        progressUI.GetComponent<Image>().sprite = upgradedSprite;
     }
 
     public void DeactivateProgressUI(Transform progressUI)
     {
-        progressUI.GetComponent<Outline>().enabled = false;
+        progressUI.GetComponent<Image>().sprite = notUpgradedSprite;
     }
+
+
 
     public Button GetButton()
     {

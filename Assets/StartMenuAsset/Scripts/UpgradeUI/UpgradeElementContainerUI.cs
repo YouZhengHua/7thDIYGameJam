@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class UpgradeElementContainerUI : MonoBehaviour
 {
     [SerializeField] private UpgradeElementUI[] elements;
-    [SerializeField] private Button checkBox;
     [SerializeField] private UpgradeDescriptionUI descriptionUI;
+    [SerializeField] private ConfirmCheckBoxUI checkBoxUI;
 
     private List<Button> buttons;
     private UpgradeElementUI chosenElement;
@@ -27,11 +27,6 @@ public class UpgradeElementContainerUI : MonoBehaviour
         foreach (UpgradeElementUI element in elements)
         {
             element.GetButton().onClick.AddListener(() => chosenElement = element);
-            
-            //if (DataSystem.Instance.gameValueData.elementLevelDic.ContainsKey(element.GetUpgradeElementSO().name))
-            //{
-            //    element.Set(DataSystem.Instance.gameValueData.elementLevelDic[element.GetUpgradeElementSO().name]);
-            //}
         }
 
 
@@ -42,14 +37,22 @@ public class UpgradeElementContainerUI : MonoBehaviour
                 DisableAllButtonsOutline(buttons);
                 EnableOutline(button);
                 descriptionUI.UpdateDescription();
+                UpdateCheckBoxVisual();
             });
         }
+    }
 
-        checkBox.onClick.AddListener(() =>
-        {
-            chosenElement.Upgrade();
-            //DataSystem.Instance.SaveElementData(chosenElement.GetUpgradeElementSO().name, chosenElement.GetUpgradeElementSO().currentLevel);
-        });
+    public void UpgradeChosenElement() {
+        chosenElement.Upgrade();
+        UpdateCheckBoxVisual();
+    }
+
+    public void UpdateCheckBoxVisual() {
+        if (chosenElement.GetUpgradeElementSO().IsUpgradeAvailable()) {
+            checkBoxUI.ActiveCheckBox();
+        } else {
+            checkBoxUI.DeActiveChechBox();
+        }
     }
 
     public void DisableAllButtonsOutline(List<Button> buttons)

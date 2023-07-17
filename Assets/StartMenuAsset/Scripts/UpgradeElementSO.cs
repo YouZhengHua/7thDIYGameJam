@@ -30,16 +30,23 @@ public class UpgradeElementSO : ScriptableObject
     }
 
     private void OnEnable() {
-        /*
-        if (DataSystem.Instance.gameValueData.elementLevelDic.ContainsKey(name))
-        {
-            currentLevel = (DataSystem.Instance.gameValueData.elementLevelDic[name]);
+        if (DataSystem.Instance != null) {
+            if (DataSystem.Instance.gameValueData.elementLevelDic.ContainsKey(name)) {
+                currentLevel = (DataSystem.Instance.gameValueData.elementLevelDic[name]);
+            }
         }
-        */
     }
 
-    private void OnDisable() {
-        // DataSystem.Instance.SaveElementData(name, currentLevel);
+    public void Save() {
+        DataSystem.Instance.SaveElementData(name, currentLevel);
+    }
+
+    public bool IsUpgradeAvailable() {
+        if (currentLevel == maxLevel) {
+            return false;
+        }
+
+        return StaticPrefs.IsAffordable(cost);
     }
 
     public void IncreaseCurrentLevel() {
@@ -48,7 +55,7 @@ public class UpgradeElementSO : ScriptableObject
             return;
         }
 
-        if (StaticPrefs.IsAffordable(cost)) {
+        if (IsUpgradeAvailable()) {
             StaticPrefs.Cost(cost);
             currentLevel++;
             Debug.Log(name + " has been upgrade to level " + currentLevel);

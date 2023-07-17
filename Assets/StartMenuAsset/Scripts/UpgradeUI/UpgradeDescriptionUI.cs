@@ -22,6 +22,7 @@ public class UpgradeDescriptionUI : MonoBehaviour
         SetChosenSO();
         UpdateTitle();
         UpdateCost();
+        UpdateContext();
     }
 
     public void UpdateTitle() {
@@ -29,9 +30,11 @@ public class UpgradeDescriptionUI : MonoBehaviour
     }
 
     public void UpdateCost() {
-        cost.text = chosenSO.cost.ToString();
+        cost.text = "ªá¶O¡G"¡@+ chosenSO.cost.ToString();
     }
 
-    
+    public void UpdateContext() {
+        context.text = chosenSO.DescriptionOnUI;
+    }
 
 }
