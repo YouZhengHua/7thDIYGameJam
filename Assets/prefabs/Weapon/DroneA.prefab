@@ -45,4 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponData: {fileID: 11400000, guid: f936ff2e054814d4882db0c2378d1279, type: 2}
-  offset: {x: 0, y: 0, z: 0}
+  missileAmmoPrefab: {fileID: 2435465102209507531, guid: 6fd3e390891e47640b36d748a70f77f0, type: 3}
+  offset: {x: 2, y: 2, z: 0}
+  shootRadius: 5
+  targetRadius: 3
+  shootInterval: 0.1
+  shootCount: 10
