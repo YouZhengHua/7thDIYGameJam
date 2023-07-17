@@ -6,8 +6,10 @@ namespace Scripts.Game.Data
     [CreateAssetMenu(menuName = "Game/Player")]
 	public class PlayerData : BaseData
 	{
+        /// <summary>
+        /// 血量最大值
+        /// </summary>
         private float? _MaxHealthPoint;
-
         /// <summary>
         /// 血量最大值
         /// </summary>
@@ -17,7 +19,7 @@ namespace Scripts.Game.Data
             {
                 if (!_MaxHealthPoint.HasValue)
                 {
-                    _MaxHealthPoint = Mathf.RoundToInt(HealthPoint);
+                    _MaxHealthPoint = CalTool.Round(HealthPoint, 1);
                 }
                 return _MaxHealthPoint.Value;
             }
@@ -29,6 +31,30 @@ namespace Scripts.Game.Data
 
         [Header("護盾值")]
         public float Shield = 0f;
+
+        /// <summary>
+        /// 護盾最大值
+        /// </summary>
+        private float? _MaxShield;
+
+        /// <summary>
+        /// 護盾最大值
+        /// </summary>
+        public float MaxShield
+        {
+            get
+            {
+                if (!_MaxShield.HasValue)
+                {
+                    _MaxShield = CalTool.Round(Shield, 1);
+                }
+                return _MaxShield.Value;
+            }
+            set
+            {
+                _MaxShield = value;
+            }
+        }
 
         [Header("擊退半徑")]
         public float Radius = 5;

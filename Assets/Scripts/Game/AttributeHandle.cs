@@ -188,6 +188,15 @@ namespace Scripts.Game
         /// 取得或設定玩家的最大血量
         /// </summary>
         public float PlayerMaxHealthPoint { get => CalTool.Round(_playerData.MaxHealthPoint, 1); }
+
+        /// <summary>
+        /// 取得玩家的護盾值
+        /// </summary>
+        public float PlayerShield { get => CalTool.Round(_playerData.Shield, 1); }
+        /// <summary>
+        /// 取得玩家的最大護盾值
+        /// </summary>
+        public float PlayerMaxShield { get => CalTool.Round(_playerData.MaxShield, 1); }
         /// <summary>
         /// 取得玩家的移動速度
         /// </summary>
@@ -210,8 +219,24 @@ namespace Scripts.Game
         /// <param name="damage"></param>
         public void PlayerGetDamage(float damage)
         {
+            // 扣除防禦值
             damage = CalTool.CalDamage(damage, this.PlayerDEF);
-            damage -= _playerData.Shield;
+            // 扣除護盾值
+            if(_playerData.Shield > 0)
+            {
+                // 剩餘護盾值
+                float shield = _playerData.Shield;
+                shield -= damage;
+
+                // 剩餘傷害值
+                damage -= _playerData.Shield;
+
+                _playerData.Shield = Mathf.Max(shield, 0f);
+            }
+
+            // 扣除血量
+            if(damage > 0f)
+                _playerData.HealthPoint -= damage;
             _gameUI.UpdatePlayerHealth();
         }
 
