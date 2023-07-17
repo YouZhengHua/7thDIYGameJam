@@ -29,6 +29,10 @@ namespace Scripts
         public AudioContoller()
         {
             _audioMixer = Resources.Load<AudioMixer>("Audio/AudioMixer");
+        }
+
+        private void Init()
+        {
             _musicAudio = GameObject.Find("MusicAudioSource").GetComponent<AudioSource>();
             _soundAudio = GameObject.Find("SoundAudioSource").GetComponent<AudioSource>();
         }
@@ -36,6 +40,7 @@ namespace Scripts
         public void SetUserSetting(UserSetting userSetting)
         {
             _userSetting = userSetting;
+            Init();
         }
 
         public void UpdateAudioVolume()
