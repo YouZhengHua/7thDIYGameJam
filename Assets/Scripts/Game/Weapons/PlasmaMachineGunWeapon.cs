@@ -6,9 +6,6 @@ using UnityEngine;
 public class PlasmaMachineGunWeapon : Weapon
 {
     public string FirePointName;
-    public int OneShootAmmoCount;
-    public Quaternion ShootOffset;
-    public float AmmoFlySpeed;
     public string playerShootFire = "Fire";
     /// <summary>
     /// 玩家面對方向
@@ -66,7 +63,7 @@ public class PlasmaMachineGunWeapon : Weapon
     public void MainShoot()
     {
 
-        for (int i = 0; i < OneShootAmmoCount; i++)
+        for (int i = 0; i < weaponData.OneShootAmmoCount; i++)
         {
             GameObject effect = Instantiate(weaponData.AmmoPrefab, this.transform.position, Quaternion.identity);
             _shotAmmo.Add(effect);
@@ -82,14 +79,14 @@ public class PlasmaMachineGunWeapon : Weapon
                 currentRotation.y = 360 + currentRotation.y;
             }
             Quaternion rotation = Quaternion.Euler(currentRotation.x, currentRotation.y, currentRotation.z);
-            bullet.transform.rotation = rotation * ShootOffset;
+            bullet.transform.rotation = rotation;
             // 取得目前物體的旋轉值
             // Vector3 currentRotation = bullet.transform.rotation.eulerAngles;
 
 
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
             bulletRigidbody.velocity = Vector3.zero.normalized;
-            bulletRigidbody.AddForce(ShootOffset * _firePoint.up * AmmoFlySpeed);
+            bulletRigidbody.AddForce(_firePoint.up * weaponData.AmmoFlySpeed);
             // bullet.GetComponent<IAmmoController>().AmmoGroup = Time.time.GetHashCode();
         }
 

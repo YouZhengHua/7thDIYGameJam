@@ -9,17 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85365df07b98ffd408d77d29dc812b0a, type: 3}
+  m_Script: {fileID: 11500000, guid: c0cf65386cb9aab49948c0450445f56c, type: 3}
   m_Name: Weapon 02
   m_EditorClassIdentifier: 
   _optionType: 1
-  _attributeType: 0
   _depiction: "\u624B\u6301\u6A5F\u69CD"
   _image: {fileID: 0}
   _maxSelectedCount: 1
-  _value: 0
-  _isNegative: 0
   _isEndOption: 0
   _isLoopOption: 0
+  _isActive: 0
   _weaponIndex: 1
-  _isActive: 1

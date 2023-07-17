@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ElectromagneticFieldWeapon : Weapon
 {
-    public float electromagneticRadius = 2f; // 電磁半徑
     //自轉速度
     public float rotateSpeed = 100f;
 
@@ -57,7 +56,7 @@ public class ElectromagneticFieldWeapon : Weapon
     {
         Debug.Log("觸發電磁");
         // 在半径范围内查找敌人单位
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, electromagneticRadius);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, weaponData.DamageRadius);
 
         foreach (Collider2D collider in colliders)
         {

@@ -56,59 +56,57 @@ namespace Scripts.Game
             _gameUI = gameUIController;
         }
 
-        public void UpdateAttribute(OptionData data)
+        public void UpdateAttribute(AttributeOptionData data)
         {
-            if (data.OptionType == OptionType.Weapon)
+            switch (data.AttributeType)
             {
-                if(data.SelectedCount == 0)
-                {
-                    _weapon.LoadWeapon(data.WeaponIndex, true);
-                }
-                else
-                {
-                    Weapon weapon = _weapon.GetWeapon(data.WeaponIndex);
-                    if (weapon == null)
-                        Debug.Log("查無升級武器資料");
-                    else
+                case AttributeType.PlayerHeal:
+                    this.HealPlayer(data.Value * _playerData.MaxHealthPoint);
+                    _gameUI.UpdatePlayerHealth();
+                    break;
+                case AttributeType.PlayerMaxHealth:
+                    this.AddPlayerMaxHP(Mathf.RoundToInt(data.Value));
+                    _gameUI.UpdatePlayerHealth();
+                    break;
+                case AttributeType.PlayerSpeed:
+                    _playerSpeedMultiple += data.Value;
+                    break;
+                case AttributeType.ExtendExp:
+                    _expExtendMultiple += data.Value;
+                    break;
+                case AttributeType.GetDropItemRadius:
+                    _extendGetItemRadius += data.Value;
+                    break;
+                case AttributeType.Score:
+                    StaticPrefs.Score += data.Value;
+                    break;
+                case AttributeType.PlayerDef:
+                    _extendDEF += data.Value;
+                    break;
+                case AttributeType.DamageMultiple:
+                    foreach(Weapon weapon in _weapon.GetWeapons())
                     {
-                        // TODO 調整武器素質
-                        Debug.Log("調整武器素質");
+                        weapon.weaponData.Damage *= 1f + data.Value;
                     }
-                }
+                    break;
+            }
+        }
+
+        public void UpdateWeapon(WeaponOptionData data)
+        {
+            if (data.SelectedCount == 0)
+            {
+                _weapon.LoadWeapon(data.WeaponIndex, true);
             }
             else
             {
-                switch (data.AttributeType)
+                Weapon weapon = _weapon.GetWeapon(data.WeaponIndex);
+                if (weapon == null)
+                    Debug.Log("查無升級武器資料");
+                else
                 {
-                    case AttributeType.PlayerHeal:
-                        this.HealPlayer(data.Value * _playerData.MaxHealthPoint);
-                        _gameUI.UpdatePlayerHealth();
-                        break;
-                    case AttributeType.PlayerMaxHealth:
-                        this.AddPlayerMaxHP(Mathf.RoundToInt(data.Value));
-                        _gameUI.UpdatePlayerHealth();
-                        break;
-                    case AttributeType.PlayerSpeed:
-                        _playerSpeedMultiple += data.Value;
-                        break;
-                    case AttributeType.ExtendExp:
-                        _expExtendMultiple += data.Value;
-                        break;
-                    case AttributeType.GetDropItemRadius:
-                        _extendGetItemRadius += data.Value;
-                        break;
-                    case AttributeType.Score:
-                        StaticPrefs.Score += data.Value;
-                        break;
-                    case AttributeType.PlayerDef:
-                        _extendDEF += data.Value;
-                        break;
-                    case AttributeType.DamageMultiple:
-                        foreach(Weapon weapon in _weapon.GetWeapons())
-                        {
-                            weapon.weaponData.Damage *= 1f + data.Value;
-                        }
-                        break;
+                    // TODO 調整武器素質
+                    Debug.Log("調整武器素質");
                 }
             }
         }

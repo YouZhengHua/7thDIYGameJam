@@ -5,11 +5,6 @@ using UnityEngine;
 
 public class BombingWeapon : Weapon
 {
-    public float createRadius = 2f; // 生成半徑
-    public float bombRadius = 2f; // 轰炸半径
-    // 轰炸次數
-    public int bombingCount = 1;
-
     public override void Start()
     {
         base.Start();
@@ -23,7 +18,7 @@ public class BombingWeapon : Weapon
         if (_timer >= weaponData.SkillTriggerInterval)
         {
             _timer = 0f;
-            for (int times = 0; times < bombingCount; times++)
+            for (int times = 0; times < weaponData.OneShootAmmoCount; times++)
             {
                 _throwingBomb();
             }
@@ -43,7 +38,7 @@ public class BombingWeapon : Weapon
         //TODO 轟炸範圍要影響特效大小
 
         // 在半径范围内查找敌人单位
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(randomPoint, bombRadius);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(randomPoint, weaponData.DamageRadius);
 
         foreach (Collider2D collider in colliders)
         {
@@ -64,7 +59,7 @@ public class BombingWeapon : Weapon
     private Vector3 getRandomPointAroundPlayer()
     {
         // 在半径范围内生成随机点
-        Vector2 randomCircle = Random.insideUnitCircle * createRadius;
+        Vector2 randomCircle = Random.insideUnitCircle * weaponData.CreateRadius;
         Vector3 randomPoint = transform.position + new Vector3(randomCircle.x, randomCircle.y, 0);
 
         return randomPoint;
@@ -74,6 +69,6 @@ public class BombingWeapon : Weapon
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, createRadius);
+        Gizmos.DrawWireSphere(transform.position, weaponData.CreateRadius);
     }
 }
