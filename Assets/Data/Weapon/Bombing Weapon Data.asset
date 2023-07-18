@@ -22,4 +22,12 @@ MonoBehaviour:
   Force: 3
   DelayTime: 0.1
   CoolDownTime: 0.1
+  AmmoScale: 1
+  OneShootAmmoCount: 1
+  AmmoFlySpeed: 100
+  AmmoPenetrationCount: 1
+  HavaPenetrationLimit: 1
+  AmmoFlyRange: 15
   SkillTriggerInterval: 2
+  DamageRadius: 2
+  CreateRadius: 2

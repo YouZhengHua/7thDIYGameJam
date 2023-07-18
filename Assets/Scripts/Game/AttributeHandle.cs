@@ -56,57 +56,99 @@ namespace Scripts.Game
             _gameUI = gameUIController;
         }
 
-        public void UpdateAttribute(OptionData data)
+        public void UpdateAttribute(AttributeOptionData data)
         {
-            if (data.OptionType == OptionType.Weapon)
+            switch (data.AttributeType)
             {
-                if(data.SelectedCount == 0)
-                {
-                    _weapon.LoadWeapon(data.WeaponIndex, true);
-                }
-                else
-                {
-                    Weapon weapon = _weapon.GetWeapon(data.WeaponIndex);
-                    if (weapon == null)
-                        Debug.Log("查無升級武器資料");
-                    else
+                case AttributeType.PlayerHeal:
+                    this.HealPlayer(data.Value * _playerData.MaxHealthPoint);
+                    break;
+                case AttributeType.PlayerMaxHealth:
+                    this.AddPlayerMaxHP(Mathf.RoundToInt(data.Value));
+                    break;
+                case AttributeType.PlayerSpeed:
+                    _playerSpeedMultiple += data.Value;
+                    break;
+                case AttributeType.ExtendExp:
+                    _expExtendMultiple += data.Value;
+                    break;
+                case AttributeType.GetDropItemRadius:
+                    _extendGetItemRadius += data.Value;
+                    break;
+                case AttributeType.Score:
+                    StaticPrefs.Score += data.Value;
+                    break;
+                case AttributeType.PlayerDef:
+                    _extendDEF += data.Value;
+                    break;
+                case AttributeType.DamageMultiple:
+                    foreach(Weapon weapon in _weapon.GetWeapons())
                     {
-                        // TODO 調整武器素質
-                        Debug.Log("調整武器素質");
+                        weapon.weaponData.Damage *= 1f + data.Value;
                     }
-                }
+                    break;
+            }
+        }
+
+        public void UpdateWeapon(WeaponOptionData data)
+        {
+            if (data.SelectedCount == 0)
+            {
+                _weapon.LoadWeapon(data.WeaponIndex, true);
             }
             else
             {
-                switch (data.AttributeType)
+                Weapon weapon = _weapon.GetWeapon(data.WeaponIndex);
+                if (weapon == null)
                 {
-                    case AttributeType.PlayerHeal:
-                        this.HealPlayer(data.Value * _playerData.MaxHealthPoint);
-                        _gameUI.UpdatePlayerHealth();
-                        break;
-                    case AttributeType.PlayerMaxHealth:
-                        this.AddPlayerMaxHP(Mathf.RoundToInt(data.Value));
-                        _gameUI.UpdatePlayerHealth();
-                        break;
-                    case AttributeType.PlayerSpeed:
-                        _playerSpeedMultiple += data.Value;
-                        break;
-                    case AttributeType.ExtendExp:
-                        _expExtendMultiple += data.Value;
-                        break;
-                    case AttributeType.GetDropItemRadius:
-                        _extendGetItemRadius += data.Value;
-                        break;
-                    case AttributeType.Score:
-                        StaticPrefs.Score += data.Value;
-                        break;
-                    case AttributeType.PlayerDef:
-                        _extendDEF += data.Value;
-                        break;
+                    Debug.LogError("查無待升級的武器資料");
+                    return;
+                }
+                int attuributeIndex = data.SelectedCount - 1;
+                if(attuributeIndex > data.WeaponUpdateAttributes.Length)
+                {
+                    Debug.LogError("武器資料沒有足夠的升級選項", weapon.gameObject);
+                    return;
+                }
+                WeaponAttribute weaponAttribute = data.WeaponUpdateAttributes[attuributeIndex];
+                switch (weaponAttribute.AttributeType)
+                {
                     case AttributeType.DamageMultiple:
-                        foreach(Weapon weapon in _weapon.GetWeapons())
+                        Debug.Log($"調整武器傷害(Damage): {weapon.weaponData.Damage} => {weapon.weaponData.Damage * (1f + weaponAttribute.Value)}");
+                        weapon.weaponData.Damage *= 1f + weaponAttribute.Value;
+                        break;
+                    case AttributeType.DamageRadius:
+                        Debug.Log($"調整武器傷害範圍(DamageRadius): {weapon.weaponData.DamageRadius} => {weapon.weaponData.DamageRadius * (1f + weaponAttribute.Value)}");
+                        weapon.weaponData.DamageRadius *= 1f + weaponAttribute.Value;
+                        break;
+                    case AttributeType.ShootCountPreSecond:
+                        Debug.Log($"調整武器攻擊頻率(SkillTriggerInterval): {weapon.weaponData.SkillTriggerInterval} => {weapon.weaponData.SkillTriggerInterval * (1f + weaponAttribute.Value)}");
+                        Debug.Log($"調整武器攻擊頻率(CoolDownTime): {weapon.weaponData.CoolDownTime} => {weapon.weaponData.CoolDownTime * (1f + weaponAttribute.Value)}");
+                        weapon.weaponData.SkillTriggerInterval *= 1f + weaponAttribute.Value;
+                        weapon.weaponData.CoolDownTime *= 1f + weaponAttribute.Value;
+                        break;
+                    case AttributeType.AmmoFlySpeed:
+                        Debug.Log($"調整投射物的飛行速度(AmmoFlySpeed): {weapon.weaponData.AmmoFlySpeed} => {weapon.weaponData.AmmoFlySpeed * (1f + weaponAttribute.Value)}");
+                        weapon.weaponData.AmmoFlySpeed *= 1f + weaponAttribute.Value;
+                        break;
+                    case AttributeType.ShootCount:
+                        Debug.Log($"調整投射物數量(OneShootAmmoCount): {weapon.weaponData.OneShootAmmoCount} => {weapon.weaponData.OneShootAmmoCount + weaponAttribute.Value}");
+                        weapon.weaponData.OneShootAmmoCount += (int)weaponAttribute.Value;
+                        weapon.ReloadWeapon();
+                        break;
+                    case AttributeType.AmmoScale:
+                        Debug.Log($"調整投射物大小(AmmoScale): {weapon.weaponData.AmmoScale} => {weapon.weaponData.AmmoScale * (1f + weaponAttribute.Value)}");
+                        weapon.weaponData.AmmoScale *= 1f + weaponAttribute.Value;
+                        break;
+                    case AttributeType.PenetrationCount:
+                        Debug.Log($"調整投射物穿透數目(PenetrationCount): {weapon.weaponData.AmmoPenetrationCount} => {weapon.weaponData.AmmoPenetrationCount + weaponAttribute.Value}");
+                        weapon.weaponData.AmmoPenetrationCount += (int)weaponAttribute.Value;
+                        break;
+                    case AttributeType.SpecialOption:
+                        Debug.Log($"武器特殊升級選項: {weapon.weaponData.WeaponIndex}");
+                        if(weapon.weaponData.WeaponIndex == WeaponIndex.DroneA)
                         {
-                            weapon.weaponData.Damage *= 1f + data.Value;
+                            Debug.Log("每五秒玩家角色會增加最大生命的 10% 護盾值");
                         }
                         break;
                 }
@@ -188,6 +230,15 @@ namespace Scripts.Game
         /// 取得或設定玩家的最大血量
         /// </summary>
         public float PlayerMaxHealthPoint { get => CalTool.Round(_playerData.MaxHealthPoint, 1); }
+
+        /// <summary>
+        /// 取得玩家的護盾值
+        /// </summary>
+        public float PlayerShield { get => CalTool.Round(_playerData.Shield, 1); }
+        /// <summary>
+        /// 取得玩家的最大護盾值
+        /// </summary>
+        public float PlayerMaxShield { get => CalTool.Round(_playerData.MaxShield, 1); }
         /// <summary>
         /// 取得玩家的移動速度
         /// </summary>
@@ -210,8 +261,24 @@ namespace Scripts.Game
         /// <param name="damage"></param>
         public void PlayerGetDamage(float damage)
         {
+            // 扣除防禦值
             damage = CalTool.CalDamage(damage, this.PlayerDEF);
-            damage -= _playerData.Shield;
+            // 扣除護盾值
+            if(_playerData.Shield > 0)
+            {
+                // 剩餘護盾值
+                float shield = _playerData.Shield;
+                shield -= damage;
+
+                // 剩餘傷害值
+                damage -= _playerData.Shield;
+
+                _playerData.Shield = Mathf.Max(shield, 0f);
+            }
+
+            // 扣除血量
+            if(damage > 0f)
+                _playerData.HealthPoint -= damage;
             _gameUI.UpdatePlayerHealth();
         }
 
@@ -224,6 +291,7 @@ namespace Scripts.Game
             _playerData.HealthPoint += value;
             if (_playerData.HealthPoint > _playerData.MaxHealthPoint)
                 _playerData.HealthPoint = _playerData.MaxHealthPoint;
+            _gameUI.UpdatePlayerHealth();
         }
 
         /// <summary>
@@ -234,7 +302,16 @@ namespace Scripts.Game
         {
             _playerData.MaxHealthPoint += value;
             _playerData.HealthPoint += value;
+            _gameUI.UpdatePlayerHealth();
         }
+        /// <summary>
+        /// 玩家自動回復間隔
+        /// </summary>
+        public float PlayerAutoRecoverTime { get => _playerData.AutoRecoverTime; }
+        /// <summary>
+        /// 玩家自動回復點數
+        /// </summary>
+        public float PlayerAutoRecoverPoint { get => _playerData.AutoRecoverPoint; }
         #endregion
     }
 }

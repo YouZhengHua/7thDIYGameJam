@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85365df07b98ffd408d77d29dc812b0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 65a4e6b62432c66478c1e510e45980cd, type: 3}
   m_Name: Attribute 01
   m_EditorClassIdentifier: 
   _optionType: 0
-  _attributeType: 12
   _depiction: "\u7D50\u7B97\u5206\u6578\u589E\u52A0 100 \u5206"
   _image: {fileID: 0}
   _maxSelectedCount: 1
-  _value: 100
-  _isNegative: 0
   _isEndOption: 0
   _isLoopOption: 1
-  _weaponIndex: 0
+  _isActive: 1
+  _attributeType: 12
+  _value: 100
+  _isNegative: 0

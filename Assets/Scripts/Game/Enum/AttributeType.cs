@@ -68,6 +68,23 @@
 		/// 增加遊戲分數
 		/// </summary>
 		Score,
-        #endregion
+		#endregion
+
+		/// <summary>
+		/// 傷害範圍
+		/// </summary>
+		DamageRadius,
+		/// <summary>
+		/// 投射物飛行速度
+		/// </summary>
+		AmmoFlySpeed,
+		/// <summary>
+		/// 投射物體積
+		/// </summary>
+		AmmoScale,
+		/// <summary>
+		/// 特殊升級項目
+		/// </summary>
+		SpecialOption
     }
 }

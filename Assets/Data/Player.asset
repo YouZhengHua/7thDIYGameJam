@@ -15,6 +15,7 @@ MonoBehaviour:
   HealthPoint: 100
   BaseMoveSpeed: 5.5
   MoveSpeedRate: 1
+  Shield: 5
   Radius: 3.5
   Force: 85
   EnemyDelayTime: 1
@@ -26,14 +27,14 @@ MonoBehaviour:
   _levelExp: 3
   _levelPow: 1.2
   Options:
-  - {fileID: 11400000, guid: e3aab2970e3dd1749afe4beb7cf3e052, type: 2}
-  - {fileID: 11400000, guid: 818bc66ff943f91408ac20a0ad3facf4, type: 2}
-  - {fileID: 11400000, guid: de0c40f137f3fcf4c876f18cc40c3f16, type: 2}
-  - {fileID: 11400000, guid: f81c66e8efcd4994f8747ce292f07fe0, type: 2}
-  - {fileID: 11400000, guid: f3bb64baa9270a74daf01baa1f02bced, type: 2}
-  - {fileID: 11400000, guid: 167c19e08ab4a5b44b2162e1b50c133b, type: 2}
-  - {fileID: 11400000, guid: d6d4d669ffbc4274c89b193cbd1cae65, type: 2}
-  - {fileID: 11400000, guid: 026022816f1175d4c971a9e5fb7e9124, type: 2}
+  - {fileID: 11400000, guid: c72c7bef9da127441a6c36fa13d8ef82, type: 2}
+  - {fileID: 11400000, guid: fb169d207aa81434e83fc8270507792b, type: 2}
+  - {fileID: 11400000, guid: e63f056dbf38c3f48b19edf295e2fb96, type: 2}
+  - {fileID: 11400000, guid: ad91d173dee55bf4d9b4099b7c21d574, type: 2}
+  - {fileID: 11400000, guid: 5c103e9266fcb6c4998a85d61459b640, type: 2}
+  - {fileID: 11400000, guid: 976572972f64c4c49abe3709659854ee, type: 2}
+  - {fileID: 11400000, guid: 5c8837b8db3ce1c46ab9e192c4394672, type: 2}
+  - {fileID: 11400000, guid: 68b21f485631f6046a9fabcd616b03a7, type: 2}
   LevelUpAudio: {fileID: 8300000, guid: 4da67ca2618fd01458ab22c1945b8863, type: 3}
   GetHitAudio: {fileID: 8300000, guid: 291608b8d286e2a4580ff36324455ce2, type: 3}
   DropHealthRate: 0.01

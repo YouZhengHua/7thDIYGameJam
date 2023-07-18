@@ -184,7 +184,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponData: {fileID: 11400000, guid: 6af9c65a8fb296a4892006423108b5a8, type: 2}
   FirePointName: FirePoint_PlasmaMachineGun
-  OneShootAmmoCount: 1
-  ShootOffset: {x: 0.008802022, y: 0.008649721, z: 0.008649721, w: 0.9998864}
-  AmmoFlySpeed: 500
   playerShootFire: Fire
+  _angleRange: 10
