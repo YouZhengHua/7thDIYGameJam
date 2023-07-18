@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u91D1\u5E63\u91CF\u589E\u52A0"
   m_EditorClassIdentifier: 
   elementName: "\u91D1\u5E63\u91CF\u589E\u52A0"
-  currentLevel: 4
+  currentLevel: 0
   maxLevel: 4
   Icon: {fileID: 0}
   cost: 0

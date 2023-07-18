@@ -58,6 +58,7 @@ public class UpgradeElementSO : ScriptableObject
         if (IsUpgradeAvailable()) {
             StaticPrefs.Cost(cost);
             currentLevel++;
+            Save();
             Debug.Log(name + " has been upgrade to level " + currentLevel);
         }
     }
