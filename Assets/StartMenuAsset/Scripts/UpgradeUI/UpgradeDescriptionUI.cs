@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -30,7 +30,7 @@ public class UpgradeDescriptionUI : MonoBehaviour
     }
 
     public void UpdateCost() {
-        cost.text = "ªá¶O¡G"¡@+ chosenSO.cost.ToString();
+        cost.text = "èŠ±è²»ï¼š"ã€€+ chosenSO.cost.ToString();
     }
 
     public void UpdateContext() {
