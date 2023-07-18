@@ -26,7 +26,7 @@ public class KingBibleWeapon : Weapon
             _ammoObjList.Add(_ammoObj);
             float angle = i * angleOffset;
             Vector3 position = GetPositionOnCircle(angle);
-            _ammoObj.transform.position = position;
+            _ammoObj.transform.localPosition = position;
         }
     }
 
@@ -48,7 +48,7 @@ public class KingBibleWeapon : Weapon
         {
             float angle = currentAngle + i * angleOffset;
             Vector3 position = GetPositionOnCircle(angle);
-            _ammoObjList[i].transform.position = position;
+            _ammoObjList[i].transform.localPosition = position;
         }
 
         // 更新角度
@@ -60,9 +60,17 @@ public class KingBibleWeapon : Weapon
         return true;
     }
 
+    public override void ReloadWeapon()
+    {
+        base.ReloadWeapon();
+        _ammoObjList.ForEach(col => Destroy(col));
+        _ammoObjList.Clear();
+        LoadWeapon();
+    }
+
     private Vector3 GetPositionOnCircle(float angle)
     {
-        Vector3 center = this.transform.position;
+        Vector3 center = this.transform.localPosition;
         float x = center.x + weaponData.DamageRadius * Mathf.Cos(Mathf.Deg2Rad * angle);
         float y = center.y + weaponData.DamageRadius * Mathf.Sin(Mathf.Deg2Rad * angle);
         return new Vector3(x, y, center.z);

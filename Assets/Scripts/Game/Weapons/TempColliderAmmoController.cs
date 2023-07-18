@@ -4,22 +4,11 @@ using Scripts.Game;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TempColliderAmmoController : MonoBehaviour, IAmmoController, IAmmoEvent
+public class TempColliderAmmoController : MonoBehaviour, IAmmoEvent
 {
-    public Transform SetPlayerTransform { set => throw new System.NotImplementedException(); }
-    public IEndUIController SetEndUI { set => throw new System.NotImplementedException(); }
-
-    public bool IsActive => true;
-
-    public int AmmoGroup { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public UnityEvent<Collider2D> OnHitEnemy { get => _onHitEnemyEvent; set => _onHitEnemyEvent = value; }
 
     private UnityEvent<Collider2D> _onHitEnemyEvent = new UnityEvent<Collider2D>();
-
-    public void HitEmeny()
-    {
-        //nothing to do
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +24,7 @@ public class TempColliderAmmoController : MonoBehaviour, IAmmoController, IAmmoE
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("TempColliderAmmoController OnTriggerEnter2D");
+        Debug.Log("TempColliderAmmoController OnTriggerEnter2D", this.gameObject);
         _onHitEnemyEvent?.Invoke(collision);
     }
 }

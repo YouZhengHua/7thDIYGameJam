@@ -136,6 +136,7 @@ namespace Scripts.Game
                     case AttributeType.ShootCount:
                         Debug.Log($"調整投射物數量(OneShootAmmoCount): {weapon.weaponData.OneShootAmmoCount} => {weapon.weaponData.OneShootAmmoCount + weaponAttribute.Value}");
                         weapon.weaponData.OneShootAmmoCount += (int)weaponAttribute.Value;
+                        weapon.ReloadWeapon();
                         break;
                     case AttributeType.AmmoScale:
                         Debug.Log($"調整投射物大小(AmmoScale): {weapon.weaponData.AmmoScale} => {weapon.weaponData.AmmoScale * (1f + weaponAttribute.Value)}");

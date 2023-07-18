@@ -22,6 +22,9 @@ public class PlasmaMachineGunWeapon : Weapon
     private Animator _gunEffect;
     private List<GameObject> _shotAmmo = new List<GameObject>();
     private float _currentMainShootCooldownTime = 0.0f;
+    [SerializeField, Header("多發子彈時的擴散角度"), Range(0f, 180f)]
+    private float _angleRange = 30f;
+    private Quaternion _offset;
     public override void Start()
     {
         base.Start();
@@ -62,38 +65,23 @@ public class PlasmaMachineGunWeapon : Weapon
     /// </summary>
     public void MainShoot()
     {
-
         for (int i = 0; i < weaponData.OneShootAmmoCount; i++)
         {
-            GameObject effect = Instantiate(weaponData.AmmoPrefab, this.transform.position, Quaternion.identity);
+            GameObject effect = Instantiate(weaponData.AmmoPrefab);
             _shotAmmo.Add(effect);
         }
 
-        foreach (GameObject bullet in _shotAmmo)
+        for(int i = 0; i < _shotAmmo.Count; i++)
         {
-            bullet.transform.position = _firePoint.position;
-            Vector3 currentRotation = _playerRotation.rotation.eulerAngles;
-            // 將 Y 旋轉值用公式設為正值
-            if (currentRotation.y < 0)
-            {
-                currentRotation.y = 360 + currentRotation.y;
-            }
-            Quaternion rotation = Quaternion.Euler(currentRotation.x, currentRotation.y, currentRotation.z);
-            bullet.transform.rotation = rotation;
-            // 取得目前物體的旋轉值
-            // Vector3 currentRotation = bullet.transform.rotation.eulerAngles;
-
-
-            Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-            bulletRigidbody.velocity = Vector3.zero.normalized;
-            bulletRigidbody.AddForce(_firePoint.up * weaponData.AmmoFlySpeed);
-            // bullet.GetComponent<IAmmoController>().AmmoGroup = Time.time.GetHashCode();
+            _shotAmmo[i].transform.position = _firePoint.position;
+            _offset = Quaternion.Euler(0f, 0f, weaponData.OneShootAmmoCount == 1 ? 0f : (_angleRange / 2f) - (_angleRange / (weaponData.OneShootAmmoCount - 1) * i));
+            _shotAmmo[i].transform.localRotation = Quaternion.Euler(_playerRotation.localRotation.eulerAngles + _shotAmmo[i].transform.rotation.eulerAngles);
+            Rigidbody2D bulletRigidbody = _shotAmmo[i].GetComponent<Rigidbody2D>();
+            bulletRigidbody.AddForce(_offset * _playerRotation.up * weaponData.AmmoFlySpeed);
         }
 
         _gunEffect.SetTrigger(playerShootFire);
 
-        //TODO 計算偏移
-        // _attributeHandle.AddOffset();
         //TODO 播放音效
         // _audio.PlayEffect(_attributeHandle.ShootAudio);
 
