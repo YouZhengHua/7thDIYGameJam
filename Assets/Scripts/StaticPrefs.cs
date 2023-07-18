@@ -1,5 +1,7 @@
 ﻿using Scripts.Game;
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Scripts
 {
@@ -8,12 +10,36 @@ namespace Scripts
         /// <summary>
         /// 取得分數
         /// </summary>
+        /// 
+        public static Action<float> OnScoreChange;
+        
         public static float Score
         {
             get => PlayerPrefs.GetFloat("Score", 0f);
             set
             {
                 PlayerPrefs.SetFloat("Score", value);
+            }
+        }
+
+        public static bool IsAffordable(int cost) {
+            return IsAffordable((float)cost);
+        }
+
+        public static bool IsAffordable(float cost) {
+            return Score >= cost;
+        }
+
+        public static void Cost(int cost) {
+            Cost((float)cost);
+        }
+
+        public static void Cost(float cost) {
+            if (IsAffordable(cost)) {
+                Score -= cost;
+                OnScoreChange?.Invoke(Score);
+            } else {
+                Debug.Log("This payment isn't affordable, transaction stops!");
             }
         }
 

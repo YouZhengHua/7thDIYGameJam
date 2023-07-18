@@ -18,13 +18,23 @@ public class UpgradeDescriptionUI : MonoBehaviour
         chosenSO = containerUI.GetElementSO();
     }
 
+    public void UpdateDescription() {
+        SetChosenSO();
+        UpdateTitle();
+        UpdateCost();
+        UpdateContext();
+    }
+
     public void UpdateTitle() {
         title.text = chosenSO.elementName;
     }
 
-    public void UpdateDescription() {
-        SetChosenSO();
-        UpdateTitle();
+    public void UpdateCost() {
+        cost.text = "ªá¶O¡G"¡@+ chosenSO.cost.ToString();
+    }
+
+    public void UpdateContext() {
+        context.text = chosenSO.DescriptionOnUI;
     }
 
 }
