@@ -18,7 +18,7 @@ MonoBehaviour:
   _maxSelectedCount: 9
   _isEndOption: 0
   _isLoopOption: 0
-  _isActive: 0
+  _isActive: 1
   _weaponIndex: 6
   _weaponUpdateAttributes:
   - _attributeType: 5
