@@ -15,8 +15,41 @@ MonoBehaviour:
   _optionType: 1
   _depiction: "\u96FB\u78C1\u5834"
   _image: {fileID: 0}
-  _maxSelectedCount: 1
+  _maxSelectedCount: 9
   _isEndOption: 0
   _isLoopOption: 0
   _isActive: 0
   _weaponIndex: 2
+  _weaponUpdateAttributes:
+  - _attributeType: 2
+    _value: 0.1
+    _isNegative: 1
+    _attributeDepiction: "\u50B7\u5BB3\u89F8\u767C\u9593\u9694\u7E2E\u77ED 10%"
+  - _attributeType: 1
+    _value: 0.12
+    _isNegative: 0
+    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 12%"
+  - _attributeType: 13
+    _value: 0.5
+    _isNegative: 0
+    _attributeDepiction: "\u50B7\u5BB3\u534A\u5F91\u589E\u52A0 0.5"
+  - _attributeType: 2
+    _value: 0.1
+    _isNegative: 1
+    _attributeDepiction: "\u50B7\u5BB3\u89F8\u767C\u9593\u9694\u7E2E\u77ED 10%"
+  - _attributeType: 1
+    _value: 0.18
+    _isNegative: 0
+    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 18%"
+  - _attributeType: 13
+    _value: 0.5
+    _isNegative: 0
+    _attributeDepiction: "\u50B7\u5BB3\u534A\u5F91\u589E\u52A0 0.5"
+  - _attributeType: 2
+    _value: 0.1
+    _isNegative: 1
+    _attributeDepiction: "\u50B7\u5BB3\u89F8\u767C\u9593\u9694\u7E2E\u77ED 10%"
+  - _attributeType: 13
+    _value: 1
+    _isNegative: 0
+    _attributeDepiction: "\u50B7\u5BB3\u534A\u5F91\u589E\u52A0 1"
