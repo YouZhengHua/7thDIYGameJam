@@ -111,5 +111,9 @@ namespace Scripts.Game.Data
         public float InvincibleTime = 1f;
         [Header("防禦力")]
         public float DEF = 0f;
+        [Header("自動回復點數"), Min(0f)]
+        public float AutoRecoverPoint = 0f;
+        [Header("自動回復間隔"), Range(0, 60f)]
+        public float AutoRecoverTime = 0f;
     }
 }

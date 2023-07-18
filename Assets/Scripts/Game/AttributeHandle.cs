@@ -62,11 +62,9 @@ namespace Scripts.Game
             {
                 case AttributeType.PlayerHeal:
                     this.HealPlayer(data.Value * _playerData.MaxHealthPoint);
-                    _gameUI.UpdatePlayerHealth();
                     break;
                 case AttributeType.PlayerMaxHealth:
                     this.AddPlayerMaxHP(Mathf.RoundToInt(data.Value));
-                    _gameUI.UpdatePlayerHealth();
                     break;
                 case AttributeType.PlayerSpeed:
                     _playerSpeedMultiple += data.Value;
@@ -293,6 +291,7 @@ namespace Scripts.Game
             _playerData.HealthPoint += value;
             if (_playerData.HealthPoint > _playerData.MaxHealthPoint)
                 _playerData.HealthPoint = _playerData.MaxHealthPoint;
+            _gameUI.UpdatePlayerHealth();
         }
 
         /// <summary>
@@ -303,7 +302,16 @@ namespace Scripts.Game
         {
             _playerData.MaxHealthPoint += value;
             _playerData.HealthPoint += value;
+            _gameUI.UpdatePlayerHealth();
         }
+        /// <summary>
+        /// 玩家自動回復間隔
+        /// </summary>
+        public float PlayerAutoRecoverTime { get => _playerData.AutoRecoverTime; }
+        /// <summary>
+        /// 玩家自動回復點數
+        /// </summary>
+        public float PlayerAutoRecoverPoint { get => _playerData.AutoRecoverPoint; }
         #endregion
     }
 }
