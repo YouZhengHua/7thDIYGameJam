@@ -17,9 +17,9 @@ MonoBehaviour:
   DefaultIsUnlocked: 0
   WeaponIndex: 6
   AmmoPrefab: {fileID: 5963066614265696250, guid: 9d09fd569ece3a6449e5095f1e25c439, type: 3}
-  Damage: 1
+  Damage: 30
   DamageFrom: 1
-  Force: 100
+  Force: 20
   DelayTime: 0.1
   CoolDownTime: 0.1
-  SkillTriggerInterval: 0.1
+  SkillTriggerInterval: 3

@@ -16,3 +16,6 @@ MonoBehaviour:
   currentLevel: 0
   maxLevel: 4
   Icon: {fileID: 0}
+  cost: 100
+  DescriptionOnUI: "\u6BCF\u4E0A\u5347\u4E00\u7D1A\uFF0C\n\u53EF\u5C07\u51B7\u537B\u964D\u4F4E1\u79D2"
+  EffectPerLevel: 1

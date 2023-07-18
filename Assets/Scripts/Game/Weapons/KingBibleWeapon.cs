@@ -12,7 +12,7 @@ public class KingBibleWeapon : Weapon
     {
         base.Start();
         //Testing code
-        LoadWeapon();
+        // LoadWeapon();
     }
     public override void LoadWeapon(bool active = true)
     {
@@ -33,7 +33,11 @@ public class KingBibleWeapon : Weapon
     private void _hitEnemy(Collider2D collision)
     {
         Debug.Log("KingBibleWeapon _hitEnemy");
-        collision.gameObject.GetComponent<EnemyController>().TakeDamage(weaponData.Damage, weaponData.DamageFrom, weaponData.Force, weaponData.DelayTime);
+        EnemyController enemyController;
+        if (TryGetComponent<EnemyController>(out enemyController))
+        {
+            enemyController.TakeDamage(weaponData.Damage, weaponData.DamageFrom, weaponData.Force, weaponData.DelayTime);
+        }
     }
 
     public override bool Update()

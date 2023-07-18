@@ -13,7 +13,7 @@ public class ElectromagneticFieldWeapon : Weapon
     {
         base.Start();
         //Testing code
-        LoadWeapon();
+        // LoadWeapon();
     }
 
     public override void LoadWeapon(bool active = true)
