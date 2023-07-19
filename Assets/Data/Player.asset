@@ -13,16 +13,27 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   HealthPoint: 100
-  BaseMoveSpeed: 5.5
-  MoveSpeedRate: 1
+  MoveSpeed:
+    _value: 5.5
+    _multiple: 1
   Shield: 5
-  Radius: 3.5
-  Force: 85
-  EnemyDelayTime: 1
+  Radius:
+    _value: 3.5
+    _multiple: 1
+  Force:
+    _value: 85
+    _multiple: 1
+  EnemyDelayTime:
+    _value: 1
+    _multiple: 1
   Level: 1
   NowExp: 0
-  DropItemRadius: 2
-  ExpRate: 1
+  DropItemRadius:
+    _value: 2
+    _multiple: 1
+  ExpRate:
+    _value: 1
+    _multiple: 1
   _levelExpMax: 100
   _levelExp: 3
   _levelPow: 1.2
@@ -39,4 +50,12 @@ MonoBehaviour:
   GetHitAudio: {fileID: 8300000, guid: 291608b8d286e2a4580ff36324455ce2, type: 3}
   DropHealthRate: 0.01
   InvincibleTime: 1
-  DEF: 0
+  DEF:
+    _value: 0
+    _multiple: 1
+  AutoRecoverPoint:
+    _value: 0
+    _multiple: 1
+  AutoRecoverTime:
+    _value: 1
+    _multiple: 1

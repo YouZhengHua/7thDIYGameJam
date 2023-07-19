@@ -29,7 +29,7 @@ namespace Scripts.Game.Data
             }
         }
 
-        [Header("護盾值")]
+        [Header("護盾值"), Min(0)]
         public float Shield = 0f;
 
         /// <summary>
@@ -57,13 +57,13 @@ namespace Scripts.Game.Data
         }
 
         [Header("擊退半徑")]
-        public float Radius = 5;
+        public FloatAttributeHandle Radius;
 
         [Header("擊退力道")]
-        public float Force = 100;
+        public FloatAttributeHandle Force;
 
         [Header("擊退持續時間")]
-        public float EnemyDelayTime = 1f;
+        public FloatAttributeHandle EnemyDelayTime;
 
         [Header("玩家等級"), Min(1)]
         public int Level = 1;
@@ -72,10 +72,10 @@ namespace Scripts.Game.Data
         public float NowExp = 0f;
 
         [Header("吸收掉落物半徑")]
-        public float DropItemRadius = 1.5f;
+        public FloatAttributeHandle DropItemRadius;
 
         [Header("經驗值倍率")]
-        public float ExpRate = 1f;
+        public FloatAttributeHandle ExpRate;
 
         [SerializeField, Header("經驗值上限")]
         private float _levelExpMax = 100;
@@ -110,10 +110,10 @@ namespace Scripts.Game.Data
         [Header("無敵時間")]
         public float InvincibleTime = 1f;
         [Header("防禦力")]
-        public float DEF = 0f;
-        [Header("自動回復點數"), Min(0f)]
-        public float AutoRecoverPoint = 0f;
-        [Header("自動回復間隔"), Range(0, 60f)]
-        public float AutoRecoverTime = 0f;
+        public FloatAttributeHandle DEF;
+        [Header("自動回復點數")]
+        public FloatAttributeHandle AutoRecoverPoint;
+        [Header("自動回復間隔")]
+        public FloatAttributeHandle AutoRecoverTime;
     }
 }

@@ -41,7 +41,7 @@ public class ElectromagneticFieldWeapon : Weapon
         if (_ammoObj == null) return false;
         _timer += Time.deltaTime;
 
-        if (_timer >= weaponData.SkillTriggerInterval)
+        if (_timer >= weaponData.SkillTriggerInterval.Value)
         {
             _timer = 0f;
             _triggerElectricShock();
@@ -56,7 +56,7 @@ public class ElectromagneticFieldWeapon : Weapon
     {
         Debug.Log("觸發電磁");
         // 在半径范围内查找敌人单位
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, weaponData.DamageRadius);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, weaponData.DamageRadius.Value);
 
         foreach (Collider2D collider in colliders)
         {
@@ -66,7 +66,7 @@ public class ElectromagneticFieldWeapon : Weapon
             {
                 // 对敌人单位执行受伤的动作
                 Debug.Log("enemyUnit = " + enemyUnit.name);
-                enemyUnit.TakeDamage(weaponData.Damage.Value, weaponData.DamageFrom, weaponData.Force, weaponData.DelayTime);
+                enemyUnit.TakeDamage(weaponData.Damage.Value, weaponData.DamageFrom, weaponData.Force.Value, weaponData.DelayTime.Value);
             }
         }
     }

@@ -25,12 +25,12 @@ public class WeaponData : BaseItemData
     /// 擊退力道
     /// </summary>
     [Header("擊退力道")]
-    public float Force = 100f;
+    public FloatAttributeHandle Force;
     /// <summary>
     /// 擊退持續時間
     /// </summary>
     [Header("怪物擊退持續時間")]
-    public float DelayTime = 0.1f;
+    public FloatAttributeHandle DelayTime;
     #endregion
 
     #region 投射物屬性
@@ -42,22 +42,22 @@ public class WeaponData : BaseItemData
     /// 投射物大小
     /// </summary>
     [Header("投射物大小比例")]
-    public float AmmoScale = 1f;
+    public FloatAttributeHandle AmmoScale;
     /// <summary>
     /// 投射物每次射出數量
     /// </summary>
     [Header("投射物每次射出數量")]
-    public int OneShootAmmoCount = 1;
+    public IntAttributeHandle OneShootAmmoCount;
     /// <summary>
     /// 投射物飛行速度
     /// </summary>
     [Header("投射物飛行速度")]
-    public float AmmoFlySpeed = 500f;
+    public FloatAttributeHandle AmmoFlySpeed;
     /// <summary>
     /// 投射物穿透次數
     /// </summary>
-    [Header("投射物穿透次數"), Min(0)]
-    public int AmmoPenetrationCount = 1;
+    [Header("投射物穿透次數")]
+    public FloatAttributeHandle AmmoPenetrationCount;
     /// <summary>
     /// 投射物是否具有穿透上限
     /// </summary>
@@ -66,8 +66,8 @@ public class WeaponData : BaseItemData
     /// <summary>
     /// 投射物飛行距離上限
     /// </summary>
-    [Header("投射物飛行距離上限"), Range(0f, 100f)]
-    public float AmmoFlyRange = 15f;
+    [Header("投射物飛行距離上限")]
+    public FloatAttributeHandle AmmoFlyRange;
     #endregion
 
     #region 範圍武器屬性
@@ -75,48 +75,16 @@ public class WeaponData : BaseItemData
     /// 範圍武器觸發間隔
     /// </summary>
     [Header("範圍武器觸發間隔")]
-    public float SkillTriggerInterval = 0.1f;
+    public FloatAttributeHandle SkillTriggerInterval;
     /// <summary>
     /// 範圍武器傷害半徑
     /// </summary>
     [Header("範圍武器傷害半徑")]
-    public float DamageRadius = 2f;
+    public FloatAttributeHandle DamageRadius;
     /// <summary>
     /// 範圍武器生成半徑
     /// </summary>
     [Header("範圍武器生成半徑")]
-    public float CreateRadius = 2f;
+    public FloatAttributeHandle CreateRadius;
     #endregion
-}
-
-[Serializable]
-public class FloatAttributeHandle
-{
-    [SerializeField, Header("基礎值")]
-    private float _value;
-    [SerializeField, Header("基礎倍率")]
-    private float _multiple = 1f;
-    private float _extendPoint = 0f;
-    private float _extendMultiple = 0f;
-    public float Value { get => (_value + _extendPoint) * (_multiple + _extendMultiple); }
-    /// <summary>
-    /// 增加固定值
-    /// </summary>
-    /// <param name="point"></param>
-    public void AddValuePoint(float point)
-    {
-        _extendPoint += point;
-    }
-    /// <summary>
-    /// 增加倍率
-    /// </summary>
-    /// <param name="point"></param>
-    public void AddValueMultiple(float multiple)
-    {
-        _extendMultiple += multiple;
-    }
-    public override string ToString()
-    {
-        return this.Value.ToString();
-    }
 }

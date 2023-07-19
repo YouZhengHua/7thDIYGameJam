@@ -65,7 +65,7 @@ public class PlasmaMachineGunWeapon : Weapon
     /// </summary>
     public void MainShoot()
     {
-        for (int i = 0; i < weaponData.OneShootAmmoCount; i++)
+        for (int i = 0; i < weaponData.OneShootAmmoCount.Value; i++)
         {
             GameObject effect = Instantiate(weaponData.AmmoPrefab);
             _shotAmmo.Add(effect);
@@ -74,10 +74,10 @@ public class PlasmaMachineGunWeapon : Weapon
         for(int i = 0; i < _shotAmmo.Count; i++)
         {
             _shotAmmo[i].transform.position = _firePoint.position;
-            _offset = Quaternion.Euler(0f, 0f, weaponData.OneShootAmmoCount == 1 ? 0f : (_angleRange / 2f) - (_angleRange / (weaponData.OneShootAmmoCount - 1) * i));
+            _offset = Quaternion.Euler(0f, 0f, weaponData.OneShootAmmoCount.Value == 1 ? 0f : (_angleRange / 2f) - (_angleRange / (weaponData.OneShootAmmoCount.Value - 1) * i));
             _shotAmmo[i].transform.localRotation = Quaternion.Euler(_playerRotation.localRotation.eulerAngles + _shotAmmo[i].transform.rotation.eulerAngles);
             Rigidbody2D bulletRigidbody = _shotAmmo[i].GetComponent<Rigidbody2D>();
-            bulletRigidbody.AddForce(_offset * _playerRotation.up * weaponData.AmmoFlySpeed);
+            bulletRigidbody.AddForce(_offset * _playerRotation.up * weaponData.AmmoFlySpeed.Value);
         }
 
         _gunEffect.SetTrigger(playerShootFire);

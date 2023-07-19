@@ -15,10 +15,10 @@ public class BombingWeapon : Weapon
         if (!base.Update()) return false;
         _timer += Time.deltaTime;
 
-        if (_timer >= weaponData.SkillTriggerInterval)
+        if (_timer >= weaponData.SkillTriggerInterval.Value)
         {
             _timer = 0f;
-            for (int times = 0; times < weaponData.OneShootAmmoCount; times++)
+            for (int times = 0; times < weaponData.OneShootAmmoCount.Value; times++)
             {
                 _throwingBomb();
             }
@@ -38,7 +38,7 @@ public class BombingWeapon : Weapon
         //TODO 轟炸範圍要影響特效大小
 
         // 在半径范围内查找敌人单位
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(randomPoint, weaponData.DamageRadius);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(randomPoint, weaponData.DamageRadius.Value);
 
         foreach (Collider2D collider in colliders)
         {
@@ -48,7 +48,7 @@ public class BombingWeapon : Weapon
             {
                 // 对敌人单位执行受伤的动作
                 Debug.Log("enemyUnit = " + enemyUnit.name);
-                enemyUnit.TakeDamage(weaponData.Damage.Value, weaponData.DamageFrom, weaponData.Force, weaponData.DelayTime);
+                enemyUnit.TakeDamage(weaponData.Damage.Value, weaponData.DamageFrom, weaponData.Force.Value, weaponData.DelayTime.Value);
             }
         }
 
@@ -59,7 +59,7 @@ public class BombingWeapon : Weapon
     private Vector3 getRandomPointAroundPlayer()
     {
         // 在半径范围内生成随机点
-        Vector2 randomCircle = Random.insideUnitCircle * weaponData.CreateRadius;
+        Vector2 randomCircle = Random.insideUnitCircle * weaponData.CreateRadius.Value;
         Vector3 randomPoint = transform.position + new Vector3(randomCircle.x, randomCircle.y, 0);
 
         return randomPoint;
@@ -69,6 +69,6 @@ public class BombingWeapon : Weapon
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, weaponData.CreateRadius);
+        Gizmos.DrawWireSphere(transform.position, weaponData.CreateRadius.Value);
     }
 }

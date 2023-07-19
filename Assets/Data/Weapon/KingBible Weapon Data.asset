@@ -21,17 +21,37 @@ MonoBehaviour:
     _value: 30
     _multiple: 1
   DamageFrom: 3
-  Force: 3
-  DelayTime: 0.1
+  Force:
+    _value: 3
+    _multiple: 1
+  DelayTime:
+    _value: 0.1
+    _multiple: 1
   CoolDownTime:
     _value: 0.1
     _multiple: 1
-  AmmoScale: 1
-  OneShootAmmoCount: 3
-  AmmoFlySpeed: 100
-  AmmoPenetrationCount: 1
+  AmmoScale:
+    _value: 1
+    _multiple: 1
+  OneShootAmmoCount:
+    _value: 3
+    _multiple: 1
+  AmmoFlySpeed:
+    _value: 100
+    _multiple: 1
+  AmmoPenetrationCount:
+    _value: 1
+    _multiple: 1
   HavaPenetrationLimit: 1
-  AmmoFlyRange: 15
-  SkillTriggerInterval: 0.1
-  DamageRadius: 2
-  CreateRadius: 2
+  AmmoFlyRange:
+    _value: 15
+    _multiple: 1
+  SkillTriggerInterval:
+    _value: 0.1
+    _multiple: 1
+  DamageRadius:
+    _value: 2
+    _multiple: 1
+  CreateRadius:
+    _value: 2
+    _multiple: 1
