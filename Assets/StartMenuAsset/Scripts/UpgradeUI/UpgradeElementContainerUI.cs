@@ -7,7 +7,6 @@ public class UpgradeElementContainerUI : MonoBehaviour
 {
     [SerializeField] private UpgradeElementUI[] elements;
     [SerializeField] private UpgradeDescriptionUI descriptionUI;
-    [SerializeField] private ConfirmCheckBoxUI checkBoxUI;
 
     private List<Button> buttons;
     private UpgradeElementUI chosenElement;
@@ -37,22 +36,13 @@ public class UpgradeElementContainerUI : MonoBehaviour
                 DisableAllButtonsOutline(buttons);
                 EnableOutline(button);
                 descriptionUI.UpdateDescription();
-                UpdateCheckBoxVisual();
             });
         }
     }
 
     public void UpgradeChosenElement() {
         chosenElement.Upgrade();
-        UpdateCheckBoxVisual();
-    }
-
-    public void UpdateCheckBoxVisual() {
-        if (chosenElement.GetUpgradeElementSO().IsUpgradeAvailable()) {
-            checkBoxUI.ActiveCheckBox();
-        } else {
-            checkBoxUI.DeActiveChechBox();
-        }
+        descriptionUI.UpdateDescription();
     }
 
     public void DisableAllButtonsOutline(List<Button> buttons)

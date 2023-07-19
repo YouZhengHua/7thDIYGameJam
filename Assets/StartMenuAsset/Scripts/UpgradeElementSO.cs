@@ -11,17 +11,10 @@ public class UpgradeElementSO : ScriptableObject
     public int maxLevel;
     public Sprite Icon;
     public float cost;
-
-
 #if UNITY_EDITOR
     [Multiline]
     public string DescriptionOnUI = "";
 #endif
-
-    public enum effectType {
-        floatType,
-        intType
-    };
 
     [SerializeField] private float EffectPerLevel;
 
@@ -30,6 +23,10 @@ public class UpgradeElementSO : ScriptableObject
     }
 
     private void OnEnable() {
+        //Load();
+    }
+
+    public void Load() {
         if (DataSystem.Instance != null) {
             if (DataSystem.Instance.gameValueData.elementLevelDic.ContainsKey(name)) {
                 currentLevel = (DataSystem.Instance.gameValueData.elementLevelDic[name]);
@@ -44,9 +41,9 @@ public class UpgradeElementSO : ScriptableObject
     public bool IsUpgradeAvailable() {
         if (currentLevel == maxLevel) {
             return false;
+        } else {
+            return StaticPrefs.IsAffordable(cost);
         }
-
-        return StaticPrefs.IsAffordable(cost);
     }
 
     public void IncreaseCurrentLevel() {
@@ -58,7 +55,7 @@ public class UpgradeElementSO : ScriptableObject
         if (IsUpgradeAvailable()) {
             StaticPrefs.Cost(cost);
             currentLevel++;
-            Save();
+            //Save();
             Debug.Log(name + " has been upgrade to level " + currentLevel);
         }
     }
