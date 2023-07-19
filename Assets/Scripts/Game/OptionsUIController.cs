@@ -97,15 +97,14 @@ namespace Scripts.Game
         private void UpdateSelectedOptions()
         {
             _canSelectedOptionDatas.Clear();
+            // 將未達最大選取次數 及 不是最終選項的 升級選項加入選項清單中
             foreach(OptionData option in _optionDatas)
             {
-                if (!option.IsSelectedMax && !option.IsEndOption
-                        && (option.AttributeType != AttributeType.PlayerHeal 
-                            || (option.AttributeType == AttributeType.PlayerHeal && AttributeHandle.Instance.PlayerHealthPoint < AttributeHandle.Instance.PlayerMaxHealthPoint)
-                        )
-                    )
+                if (!option.IsSelectedMax && !option.IsEndOption)
                     _canSelectedOptionDatas.Add(option);
             }
+
+            // 如果選項清單的數量少於畫面可選的數量，就再把 未達最大選取次數 及 是最終選項 的升級選項加入清單中
             if(_canSelectedOptionDatas.Count < _options.Length)
             {
                 foreach (OptionData option in _optionDatas)
@@ -123,7 +122,14 @@ namespace Scripts.Game
 
         public void OptionOnClick(OptionData data)
         {
-            AttributeHandle.Instance.UpdateAttribute(data);
+            if (data.OptionType == OptionType.Attribute)
+            {
+                AttributeHandle.Instance.UpdateAttribute((AttributeOptionData)data);
+            }
+            else if(data.OptionType == OptionType.Weapon)
+            {
+                AttributeHandle.Instance.UpdateWeapon((WeaponOptionData)data);
+            }
             data.SelectedCount += 1;
             HideCanvas();
             GameStateMachine.Instance.SetNextState(GameState.InGame);

@@ -76,7 +76,7 @@ namespace Scripts.Game
         {
             if (!IsDead)
             {
-                if (collision.gameObject.layer == LayerMask.NameToLayer("玩家子彈") && collision.gameObject.GetComponent<IAmmoController>().IsActive)
+                if (collision.gameObject.layer == LayerMask.NameToLayer("玩家子彈"))
                 {
                     string ammoName = collision.gameObject.name.Split('_')[1];
                     try
@@ -92,7 +92,6 @@ namespace Scripts.Game
                         }
                         if(weapon != null)
                         {
-                            collision.gameObject.GetComponent<IAmmoController>().HitEmeny();
                             //子彈擊退力量
                             float repelForce = weapon.weaponData.Force;
                             //子彈擊退持續時間

@@ -13,8 +13,11 @@ namespace Scripts.Game
     {
         private TextMeshProUGUI _gameTime;
         private TextMeshProUGUI _hpText;
+        private TextMeshProUGUI _shieldText;
         private Image _expRateImage;
         private Image _hpRateImage;
+        private Image _shieldRateImage;
+        private GameObject _shieldContainer;
         private IOptionsUIController _optionsUI;
 
         public GameUIController(IOptionsUIController optionsUI, Canvas canvas) : base(canvas)
@@ -24,17 +27,23 @@ namespace Scripts.Game
             {
                 if (image.gameObject.name == "ExpRate")
                     _expRateImage = image;
-                if (image.gameObject.name == "HpRate")
+                else if (image.gameObject.name == "HpRate")
                     _hpRateImage = image;
+                else if (image.gameObject.name == "ShieldRate")
+                    _shieldRateImage = image;
             }
 
             foreach (TextMeshProUGUI text in GameObject.FindObjectsOfType<TextMeshProUGUI>())
             {
                 if (text.gameObject.name == "GameTime")
                     _gameTime = text;
-                if (text.gameObject.name == "HpText")
+                else if (text.gameObject.name == "HpText")
                     _hpText = text;
+                else if (text.gameObject.name == "ShieldText")
+                    _shieldText = text;
             }
+
+            _shieldContainer = GameObject.Find("ShieldContainer");
         }
 
         /// <summary>
@@ -44,6 +53,13 @@ namespace Scripts.Game
         {
             _hpText.text = $"{AttributeHandle.Instance.PlayerHealthPoint} / {AttributeHandle.Instance.PlayerMaxHealthPoint}";
             _hpRateImage.fillAmount = AttributeHandle.Instance.PlayerHealthPoint / AttributeHandle.Instance.PlayerMaxHealthPoint;
+
+            _shieldContainer.SetActive(AttributeHandle.Instance.PlayerShield > 0);
+            if (AttributeHandle.Instance.PlayerShield > 0)
+            {
+                _shieldText.text = $"{AttributeHandle.Instance.PlayerShield} / {AttributeHandle.Instance.PlayerMaxShield}";
+                _shieldRateImage.fillAmount = AttributeHandle.Instance.PlayerShield / AttributeHandle.Instance.PlayerMaxShield;
+            }
         }
 
         /// <summary>

@@ -4,15 +4,9 @@ using Scripts.Game;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MissileAmmoController : Projectile, IAmmoController, IAmmoEvent
+public class MissileAmmoController : Projectile, IAmmoEvent
 {
     public UnityEvent<Collider2D> OnHitEnemy { get => _onHitEnemyEvent; set => _onHitEnemyEvent = value; }
-    public Transform SetPlayerTransform { set => throw new System.NotImplementedException(); }
-    public IEndUIController SetEndUI { set => throw new System.NotImplementedException(); }
-
-    public bool IsActive => true;
-
-    public int AmmoGroup { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     private UnityEvent<Collider2D> _onHitEnemyEvent = new UnityEvent<Collider2D>();
 
@@ -68,11 +62,6 @@ public class MissileAmmoController : Projectile, IAmmoController, IAmmoEvent
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _onHitEnemyEvent?.Invoke(collision);
-    }
-
-    public void HitEmeny()
-    {
-        throw new System.NotImplementedException();
     }
 
     // * AOE Damage Implementation 2
