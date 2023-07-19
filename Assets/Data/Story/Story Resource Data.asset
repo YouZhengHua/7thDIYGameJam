@@ -14,7 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundList:
   - {fileID: 21300000, guid: 6cdae006ffbc8da47a4a2d46b089636e, type: 3}
-  - {fileID: 21300000, guid: 78bc8db714c3749cc8bd8c0b7e525b85, type: 3}
   characterList:
-  - {fileID: 21300000, guid: f7484a661774243b193bebc6e3ae5120, type: 3}
-  - {fileID: 21300000, guid: 3c64e30cbefbe4e768ef68d85c85061e, type: 3}
+  - {fileID: 21300000, guid: 4daed478094718a4db11df1f127c56aa, type: 3}

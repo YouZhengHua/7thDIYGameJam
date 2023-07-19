@@ -73,7 +73,7 @@ MonoBehaviour:
     action: ShowRole
     arg1: Left
     arg2: Show
-    arg3: ShayHead
+    arg3: "\u4EFF\u751F\u4EBAA"
     arg4: 
     arg5: Once
     arg6: Continue
@@ -81,8 +81,8 @@ MonoBehaviour:
   - index: 1
     action: Talk
     arg1: Left
-    arg2: "\u6211"
-    arg3: "\u6211\u56DE\u4F86\u4E86\u3002"
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F60\u73FE\u5728\u8981\u51FA\u767C\u53BB\u6536\u96C6\u7DAD\u4FEE\u98DB\u8239\u7684\u96F6\u4EF6\u4E86\uFF0C\u662F\u5427\uFF1F"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -126,8 +126,8 @@ MonoBehaviour:
   - index: 1
     action: Talk
     arg1: Left
-    arg2: "\u6211"
-    arg3: "\uFF08\u53C8\u662F\u500B\u4E00\u5982\u5F80\u5E38\uFF0C\u5FD9\u788C\u7684\u65E5\u5B50\u3002\uFF09"
+    arg2: "\u5C11\u5973"
+    arg3: "\u5C31\u7B97\u6211\u4E0D\u662FLambda-42\u7CFB\u5217\uFF0C\u6211\u4E5F\u770B\u5F97\u51FA\u4F86\uFF0C\u9019\u8258\u8239\u5728\u822A\u5165\u592A\u967D\u7CFB\u524D\u5C31\u6703\u81EA\u52D5\u89E3\u9AD4"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -144,170 +144,8 @@ MonoBehaviour:
   - index: 1
     action: Talk
     arg1: Left
-    arg2: "\u6211"
-    arg3: "\uFF08\u770B\u8457\u5C4B\u5167\u76F8\u540C\u7684\u64FA\u8A2D\uFF0C\u9084\u6709\u7A97\u5916\u4E00\u6210\u4E0D\u8B8A\u7684\u6C34\u6CE5\u53E2\u6797\u2026\u2026\uFF09"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: Talk
-    arg1: Left
-    arg2: "\u6211"
-    arg3: "\uFF08\u8166\u4E2D\u7A81\u7136\u6D6E\u73FE\u4E86\u4E00\u500B\u60F3\u50CF\u2014\u2014\uFF09"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: SetScreen
-    arg1: FadeIn
-    arg2: Dark
-    arg3: 1
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: ShowBackGround
-    arg1: start_story2
-    arg2: 1
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: SetScreen
-    arg1: FadeOut
-    arg2: White
-    arg3: 1
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: PlaySound
-    arg1: Act
-    arg2: countryside
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: Talk
-    arg1: Left
-    arg2: "\u6211"
-    arg3: "\uFF08\u9591\u975C\u8212\u9069\u7684\u7530\u91CE\u7A7F\u68AD\u8457\u53EF\u611B\u7684\u52D5\u7269\uFF0C\\n\u9084\u6709\u73FE\u6458\u7684\u65B0\u9BAE\u852C\u679C\u53EF\u4EE5\u54C1\u5690\u2026\u2026\uFF09"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: Talk
-    arg1: Left
-    arg2: "\u6211"
-    arg3: "\u771F\u60F3\u53BB\u5EA6\u5047\u554A\uFF5E"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: SetScreen
-    arg1: FadeIn
-    arg2: Dark
-    arg3: 1
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: PlaySound
-    arg1: Act
-    arg2: fairy
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: Talk
-    arg1: Left
-    arg2: "\uFF1F\uFF1F\uFF1F"
-    arg3: "\u6C92\u554F\u984C\uFF01"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: Talk
-    arg1: Left
-    arg2: "\u6211"
-    arg3: "\u54A6\uFF1F"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: PlaySound
-    arg1: Act
-    arg2: fairy
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: Talk
-    arg1: Left
-    arg2: "\uFF1F\uFF1F\uFF1F"
-    arg3: "\u4F60\u7684\u9858\u671B\uFF0C\u5C31\u8B93\u5049\u5927\u7684\u8FB2\u5834\u7CBE\u9748\u4F86\u5BE6\u73FE\u5427\uFF01"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: Talk
-    arg1: Left
-    arg2: "\u6211"
-    arg3: "\u7B49\u7B49\u3001\u6211\u6C92\u8A31\u9858\u2014\u2014"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: ShowBackGround
-    arg1: start_story3
-    arg2: 1
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: SetScreen
-    arg1: FadeOut
-    arg2: White
-    arg3: 1
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: PlaySound
-    arg1: Act
-    arg2: shake
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 1
-    action: Talk
-    arg1: Left
-    arg2: "\u6211"
-    arg3: "{vpunch=10,0.5}\u54C7\u554A\u554A\u554A\u554A\uFF5E\uFF5E"
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F60\u9084\u5728\u7B49\u4EC0\u9EBC\u5462\uFF1F\u6536\u6574\u597D\u88DD\u5099\u5F8C\u5C31\u51FA\u767C\u5427"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -316,12 +154,21 @@ MonoBehaviour:
     action: ShowRole
     arg1: Left
     arg2: Out
-    arg3: ShayHead
+    arg3: "\u4EFF\u751F\u4EBAA"
     arg4: 
     arg5: Once
     arg6: Continue
     arg7: 
-  - index: 1
+  - index: 2
+    action: Talk
+    arg1: Left
+    arg2: "\u6211"
+    arg3: "\uFF08\u8166\u4E2D\u7A81\u7136\u6D6E\u73FE\u4E86\u4E00\u500B\u60F3\u50CF\u2014\u2014\uFF09"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
     action: SetScreen
     arg1: FadeIn
     arg2: Dark
@@ -330,11 +177,164 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 0
-    action: 
-    arg1: 
-    arg2: 
+  - index: 2
+    action: ShowBackGround
+    arg1: start_story2
+    arg2: 1
     arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: SetScreen
+    arg1: FadeOut
+    arg2: White
+    arg3: 1
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: PlaySound
+    arg1: Act
+    arg2: countryside
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: Talk
+    arg1: Left
+    arg2: "\u6211"
+    arg3: "\uFF08\u9591\u975C\u8212\u9069\u7684\u7530\u91CE\u7A7F\u68AD\u8457\u53EF\u611B\u7684\u52D5\u7269\uFF0C\\n\u9084\u6709\u73FE\u6458\u7684\u65B0\u9BAE\u852C\u679C\u53EF\u4EE5\u54C1\u5690\u2026\u2026\uFF09"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: Talk
+    arg1: Left
+    arg2: "\u6211"
+    arg3: "\u771F\u60F3\u53BB\u5EA6\u5047\u554A\uFF5E"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: SetScreen
+    arg1: FadeIn
+    arg2: Dark
+    arg3: 1
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: PlaySound
+    arg1: Act
+    arg2: fairy
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: Talk
+    arg1: Left
+    arg2: "\uFF1F\uFF1F\uFF1F"
+    arg3: "\u6C92\u554F\u984C\uFF01"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: Talk
+    arg1: Left
+    arg2: "\u6211"
+    arg3: "\u54A6\uFF1F"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: PlaySound
+    arg1: Act
+    arg2: fairy
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: Talk
+    arg1: Left
+    arg2: "\uFF1F\uFF1F\uFF1F"
+    arg3: "\u4F60\u7684\u9858\u671B\uFF0C\u5C31\u8B93\u5049\u5927\u7684\u8FB2\u5834\u7CBE\u9748\u4F86\u5BE6\u73FE\u5427\uFF01"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: Talk
+    arg1: Left
+    arg2: "\u6211"
+    arg3: "\u7B49\u7B49\u3001\u6211\u6C92\u8A31\u9858\u2014\u2014"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: ShowBackGround
+    arg1: start_story3
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: SetScreen
+    arg1: FadeOut
+    arg2: White
+    arg3: 1
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: PlaySound
+    arg1: Act
+    arg2: shake
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: Talk
+    arg1: Left
+    arg2: "\u6211"
+    arg3: "{vpunch=10,0.5}\u54C7\u554A\u554A\u554A\u554A\uFF5E\uFF5E"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 2
+    action: ShowRole
+    arg1: Left
+    arg2: Out
+    arg3: ShayHead
+    arg4: 
+    arg5: Once
+    arg6: Continue
+    arg7: 
+  - index: 2
+    action: SetScreen
+    arg1: FadeIn
+    arg2: Dark
+    arg3: 1
     arg4: 
     arg5: 
     arg6: 
