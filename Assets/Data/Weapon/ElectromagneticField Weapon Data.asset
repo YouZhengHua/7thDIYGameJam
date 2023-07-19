@@ -17,9 +17,41 @@ MonoBehaviour:
   DefaultIsUnlocked: 0
   WeaponIndex: 2
   AmmoPrefab: {fileID: 9122088363933541223, guid: 99b666fd6c828d547a1dc09f5741ba96, type: 3}
-  Damage: 50
+  Damage:
+    _value: 50
+    _multiple: 1
   DamageFrom: 2
-  Force: 2
-  DelayTime: 0.1
-  CoolDownTime: 0.1
-  SkillTriggerInterval: 1
+  Force:
+    _value: 2
+    _multiple: 1
+  DelayTime:
+    _value: 0.1
+    _multiple: 1
+  CoolDownTime:
+    _value: 0.1
+    _multiple: 1
+  AmmoScale:
+    _value: 1
+    _multiple: 1
+  OneShootAmmoCount:
+    _value: 1
+    _multiple: 1
+  AmmoFlySpeed:
+    _value: 500
+    _multiple: 1
+  AmmoPenetrationCount:
+    _value: 1
+    _multiple: 1
+  HavaPenetrationLimit: 1
+  AmmoFlyRange:
+    _value: 15
+    _multiple: 1
+  SkillTriggerInterval:
+    _value: 1
+    _multiple: 1
+  DamageRadius:
+    _value: 2
+    _multiple: 1
+  CreateRadius:
+    _value: 2
+    _multiple: 1

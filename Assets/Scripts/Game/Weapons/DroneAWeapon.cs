@@ -37,7 +37,7 @@ public class DroneAWeapon : Weapon
 
         //每隔一段時間就觸發一次隨機對半徑圓周上某一點進行子彈射擊
         _timer += Time.deltaTime;
-        if (_timer >= weaponData.SkillTriggerInterval)
+        if (_timer >= weaponData.SkillTriggerInterval.Value)
         {
             _timer = 0f;
             //執行射擊 shootCount
@@ -100,7 +100,7 @@ public class DroneAWeapon : Weapon
         if (collision.TryGetComponent<EnemyController>(out enemyController))
         {
             Debug.Log("missileAmmo _hitEnemy");
-            enemyController.TakeDamage(weaponData.Damage, weaponData.DamageFrom, weaponData.Force, weaponData.DelayTime);
+            enemyController.TakeDamage(weaponData.Damage.Value, weaponData.DamageFrom, weaponData.Force.Value, weaponData.DelayTime.Value);
         }
     }
 

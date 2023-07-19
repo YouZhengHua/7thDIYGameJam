@@ -49,7 +49,7 @@ namespace Scripts.Game
 
             if (GameStateMachine.Instance.CurrectState == GameState.InGame && _state != EnemyState.Dead)
             {
-                if (_enemyData.AttackRange > 0 && (playerTransform.position - transform.position).magnitude <= _enemyData.AttackRange)
+                if (_enemyData.AttackRange.Value > 0 && (playerTransform.position - transform.position).magnitude <= _enemyData.AttackRange.Value)
                 {
                     PlayAttackAnimation();
                 }
@@ -93,11 +93,11 @@ namespace Scripts.Game
                         if(weapon != null)
                         {
                             //子彈擊退力量
-                            float repelForce = weapon.weaponData.Force;
+                            float repelForce = weapon.weaponData.Force.Value;
                             //子彈擊退持續時間
-                            float repelTime = weapon.weaponData.DelayTime;
+                            float repelTime = weapon.weaponData.DelayTime.Value;
                             //子彈傷害
-                            float damage = weapon.weaponData.Damage;
+                            float damage = weapon.weaponData.Damage.Value;
                             GotHit(repelForce, repelTime);
                             GetDamage(damage, DamageFrom.Gun);
                             ShowDamageText(damage, collision.gameObject.transform.position);
@@ -132,7 +132,7 @@ namespace Scripts.Game
 
         private float MoveSpeed
         {
-            get => _enemyData.MoveSpeedRate * _enemyData.BaseMoveSpeed;
+            get => _enemyData.MoveSpeed.Value;
         }
 
         public void LookAt(Vector3 targetPosition)
@@ -227,7 +227,7 @@ namespace Scripts.Game
 
         public void PlayAttackAnimation()
         {
-            if (_enemyData.AttackRange > 0 && _state == EnemyState.Run)
+            if (_enemyData.AttackRange.Value > 0 && _state == EnemyState.Run)
             {
                 _animator.SetTrigger(_enemyAttack);
                 _state = EnemyState.Attack;
@@ -236,7 +236,7 @@ namespace Scripts.Game
 
         public bool IsDead { get => _enemyData.HealthPoint <= 0; }
 
-        public float EnemyDamage { get => _enemyData.Damage; }
+        public float EnemyDamage { get => _enemyData.Damage.Value; }
 
         #region DI 設定
         public EnemyData SetEnemyData { set => _baseEnemyData = value; }

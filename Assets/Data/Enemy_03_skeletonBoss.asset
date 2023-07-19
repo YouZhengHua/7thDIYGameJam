@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: Enemy_03_skeletonBoss
   m_EditorClassIdentifier: 
   HealthPoint: 5000
-  BaseMoveSpeed: 4
-  MoveSpeedRate: 1
+  MoveSpeed:
+    _value: 4
+    _multiple: 1
   exp: 50
-  Damage: 2
+  Damage:
+    _value: 2
+    _multiple: 1
   IsBoss: 1
-  AttackRange: 2.5
+  AttackRange:
+    _value: 2.5
+    _multiple: 1

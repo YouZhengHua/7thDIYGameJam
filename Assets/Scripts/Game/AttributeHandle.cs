@@ -14,12 +14,15 @@ namespace Scripts.Game
         private IGameUIController _gameUI;
         private PlayerData _playerData;
 
-        private float _extendDropHealthMultiple = 0f;
+        /// <summary>
+        /// 額外最大生命
+        /// </summary>
+        private float _extendMaxHealthPoint = 0f;
 
-        private float _playerSpeedMultiple = 0f;
-        private float _extendDEF = 0f;
-        private float _expExtendMultiple = 0f;
-        private float _extendGetItemRadius = 0f;
+        /// <summary>
+        /// 額外分數比率
+        /// </summary>
+        private float _extendMoneyMuliple = 0f;
 
         private static readonly object padlock = new object();
         private static AttributeHandle _instance = null;
@@ -61,30 +64,30 @@ namespace Scripts.Game
             switch (data.AttributeType)
             {
                 case AttributeType.PlayerHeal:
-                    this.HealPlayer(data.Value * _playerData.MaxHealthPoint);
+                    this.HealPlayer(CalTool.Round(data.Value * this.PlayerMaxHealthPoint, 1));
                     break;
                 case AttributeType.PlayerMaxHealth:
-                    this.AddPlayerMaxHP(Mathf.RoundToInt(data.Value));
+                    this.AddPlayerMaxHP(CalTool.Round(data.Value, 1));
                     break;
                 case AttributeType.PlayerSpeed:
-                    _playerSpeedMultiple += data.Value;
+                    _playerData.MoveSpeed.AddValuePoint(data.Value);
                     break;
                 case AttributeType.ExtendExp:
-                    _expExtendMultiple += data.Value;
+                    _playerData.ExpRate.AddValueMultiple(data.Value);
                     break;
                 case AttributeType.GetDropItemRadius:
-                    _extendGetItemRadius += data.Value;
+                    _playerData.DropItemRadius.AddValuePoint(data.Value);
                     break;
                 case AttributeType.Score:
-                    StaticPrefs.Score += data.Value;
+                    this.AddScore(data.Value);
                     break;
                 case AttributeType.PlayerDef:
-                    _extendDEF += data.Value;
+                    _playerData.DEF.AddValuePoint(data.Value);
                     break;
                 case AttributeType.DamageMultiple:
                     foreach(Weapon weapon in _weapon.GetWeapons())
                     {
-                        weapon.weaponData.Damage *= 1f + data.Value;
+                        weapon.weaponData.Damage.AddValueMultiple(data.Value);
                     }
                     break;
             }
@@ -114,35 +117,35 @@ namespace Scripts.Game
                 switch (weaponAttribute.AttributeType)
                 {
                     case AttributeType.DamageMultiple:
-                        Debug.Log($"調整武器傷害(Damage): {weapon.weaponData.Damage} => {weapon.weaponData.Damage * (1f + weaponAttribute.Value)}");
-                        weapon.weaponData.Damage *= 1f + weaponAttribute.Value;
+                        Debug.Log($"調整武器傷害(Damage)");
+                        weapon.weaponData.Damage.AddValueMultiple(weaponAttribute.Value);
                         break;
                     case AttributeType.DamageRadius:
-                        Debug.Log($"調整武器傷害範圍(DamageRadius): {weapon.weaponData.DamageRadius} => {weapon.weaponData.DamageRadius * (1f + weaponAttribute.Value)}");
-                        weapon.weaponData.DamageRadius *= 1f + weaponAttribute.Value;
+                        Debug.Log($"調整武器傷害範圍(DamageRadius)");
+                        weapon.weaponData.DamageRadius.AddValueMultiple(weaponAttribute.Value);
                         break;
                     case AttributeType.ShootCountPreSecond:
-                        Debug.Log($"調整武器攻擊頻率(SkillTriggerInterval): {weapon.weaponData.SkillTriggerInterval} => {weapon.weaponData.SkillTriggerInterval * (1f + weaponAttribute.Value)}");
-                        Debug.Log($"調整武器攻擊頻率(CoolDownTime): {weapon.weaponData.CoolDownTime} => {weapon.weaponData.CoolDownTime * (1f + weaponAttribute.Value)}");
-                        weapon.weaponData.SkillTriggerInterval *= 1f + weaponAttribute.Value;
-                        weapon.weaponData.CoolDownTime *= 1f + weaponAttribute.Value;
+                        Debug.Log($"調整武器攻擊頻率(SkillTriggerInterval)");
+                        Debug.Log($"調整武器攻擊頻率(CoolDownTime)");
+                        weapon.weaponData.SkillTriggerInterval.AddValueMultiple(weaponAttribute.Value);
+                        weapon.weaponData.CoolDownTime.AddValueMultiple(weaponAttribute.Value);
                         break;
                     case AttributeType.AmmoFlySpeed:
-                        Debug.Log($"調整投射物的飛行速度(AmmoFlySpeed): {weapon.weaponData.AmmoFlySpeed} => {weapon.weaponData.AmmoFlySpeed * (1f + weaponAttribute.Value)}");
-                        weapon.weaponData.AmmoFlySpeed *= 1f + weaponAttribute.Value;
+                        Debug.Log($"調整投射物的飛行速度(AmmoFlySpeed)");
+                        weapon.weaponData.AmmoFlySpeed.AddValueMultiple(weaponAttribute.Value);
                         break;
                     case AttributeType.ShootCount:
-                        Debug.Log($"調整投射物數量(OneShootAmmoCount): {weapon.weaponData.OneShootAmmoCount} => {weapon.weaponData.OneShootAmmoCount + weaponAttribute.Value}");
-                        weapon.weaponData.OneShootAmmoCount += (int)weaponAttribute.Value;
+                        Debug.Log($"調整投射物數量(OneShootAmmoCount)");
+                        weapon.weaponData.OneShootAmmoCount.AddValuePoint((int)weaponAttribute.Value);
                         weapon.ReloadWeapon();
                         break;
                     case AttributeType.AmmoScale:
-                        Debug.Log($"調整投射物大小(AmmoScale): {weapon.weaponData.AmmoScale} => {weapon.weaponData.AmmoScale * (1f + weaponAttribute.Value)}");
-                        weapon.weaponData.AmmoScale *= 1f + weaponAttribute.Value;
+                        Debug.Log($"調整投射物大小(AmmoScale)");
+                        weapon.weaponData.AmmoScale.AddValueMultiple(weaponAttribute.Value);
                         break;
                     case AttributeType.PenetrationCount:
-                        Debug.Log($"調整投射物穿透數目(PenetrationCount): {weapon.weaponData.AmmoPenetrationCount} => {weapon.weaponData.AmmoPenetrationCount + weaponAttribute.Value}");
-                        weapon.weaponData.AmmoPenetrationCount += (int)weaponAttribute.Value;
+                        Debug.Log($"調整投射物穿透數目(PenetrationCount)");
+                        weapon.weaponData.AmmoPenetrationCount.AddValuePoint(weaponAttribute.Value);
                         break;
                     case AttributeType.SpecialOption:
                         Debug.Log($"武器特殊升級選項: {weapon.weaponData.WeaponIndex}");
@@ -155,11 +158,77 @@ namespace Scripts.Game
             }
         }
 
+        /// <summary>
+        /// 取得大廳的升級內容並整併至遊戲內
+        /// </summary>
+        /// <param name="upgradeManager"></param>
+        public void SetLobbyUpgrade(BaseUpgradeManager upgradeManager)
+        {
+            #region 人物數值調整
+            // 分數獲取率
+            _extendMoneyMuliple += upgradeManager.GetIncreaseMoneyQuantity();
+
+            // 移動速度
+            _playerData.MoveSpeed.AddValueMultiple(upgradeManager.GetMoveSpeed());
+
+            // 自動回復
+            _playerData.AutoRecoverPoint.AddValuePoint(upgradeManager.GetHPGeneratePerSec());
+
+            // 經驗值獲取率
+            _playerData.ExpRate.AddValueMultiple(upgradeManager.GetIncreaseExpQuantity());
+
+            // 防禦力
+            _playerData.DEF.AddValuePoint(upgradeManager.GetDefense());
+
+            // 最大生命
+            this.AddPlayerMaxHP(CalTool.Round(_playerData.MaxHealthPoint * upgradeManager.GetMaxHP(), 1));
+            #endregion
+
+            Debug.Log("武器素質調整");
+            
+            #region 武器素質調整
+            foreach (Weapon weapon in _weapon.GetWeapons())
+            {
+                // 力量
+                Debug.Log($"力量 {weapon.GetWeaponIndex}");
+                Debug.Log(upgradeManager.GetStrength());
+                weapon.weaponData.Damage.AddValueMultiple(upgradeManager.GetStrength());
+            }
+            #endregion
+
+            // 投射物大小
+            upgradeManager.GetProjectileSize();
+
+            // 攻擊持續時間
+            upgradeManager.GetAttackPersistTime();
+
+            // 投射物數量
+            upgradeManager.GetProjetileNumber();
+
+            // 技能欄位
+            upgradeManager.GetIncreaseSkillSlot();
+
+            // 攻擊範圍
+            upgradeManager.GetAttackRadius();
+
+            // 冷卻
+            upgradeManager.GetCoolDown();
+
+            // 投射物速度
+            upgradeManager.GetProjectileSpeed();
+
+            // 增加武器範圍
+            upgradeManager.GetIncreasePickingArea();
+
+            // 復活次數
+            upgradeManager.GetReviveTimes();
+        }
+
         #region 槍械
         /// <summary>
         /// 判斷是否需要掉落補品
         /// </summary>
-        public bool NeedDropHealth { get => (_playerData.DropHealthRate + _extendDropHealthMultiple) >= Random.value; }
+        public bool NeedDropHealth { get => (_playerData.DropHealthRate) >= Random.value; }
         #endregion
 
         #region 經驗值
@@ -182,7 +251,7 @@ namespace Scripts.Game
         /// <summary>
         /// 取得玩家的經驗值倍率
         /// </summary>
-        private float ExpMultiple { get => _playerData.ExpRate + _expExtendMultiple; }
+        private float ExpMultiple { get => _playerData.ExpRate.Value; }
         /// <summary>
         /// 判斷玩家是否升級
         /// </summary>
@@ -209,19 +278,19 @@ namespace Scripts.Game
         /// <summary>
         /// 取得拾取掉落物的範圍
         /// </summary>
-        public float GetDropItemRadius { get => _playerData.DropItemRadius + _extendGetItemRadius; }
+        public float GetDropItemRadius { get => _playerData.DropItemRadius.Value; }
         /// <summary>
         /// 取得玩家受創時的擊退範圍
         /// </summary>
-        public float PlayerRepelRadius { get => _playerData.Radius; }
+        public float PlayerRepelRadius { get => _playerData.Radius.Value; }
         /// <summary>
         /// 取得玩家受創時的擊退力道
         /// </summary>
-        public float PlayerRepelForce { get => _playerData.Force; }
+        public float PlayerRepelForce { get => _playerData.Force.Value; }
         /// <summary>
         /// 取得玩家受創時的擊退時間
         /// </summary>
-        public float PlayerRepelTime { get => _playerData.EnemyDelayTime; }
+        public float PlayerRepelTime { get => _playerData.EnemyDelayTime.Value; }
         /// <summary>
         /// 取得或設定玩家的血量
         /// </summary>
@@ -229,7 +298,7 @@ namespace Scripts.Game
         /// <summary>
         /// 取得或設定玩家的最大血量
         /// </summary>
-        public float PlayerMaxHealthPoint { get => CalTool.Round(_playerData.MaxHealthPoint, 1); }
+        public float PlayerMaxHealthPoint { get => CalTool.Round(_playerData.MaxHealthPoint + _extendMaxHealthPoint, 1); }
 
         /// <summary>
         /// 取得玩家的護盾值
@@ -244,7 +313,7 @@ namespace Scripts.Game
         /// </summary>
         public float PlayerMoveSpeed
         {
-            get => _playerData.BaseMoveSpeed * (_playerData.MoveSpeedRate + _playerSpeedMultiple);
+            get => _playerData.MoveSpeed.Value;
         }
         /// <summary>
         /// 取得玩家的無敵時間
@@ -253,7 +322,7 @@ namespace Scripts.Game
         /// <summary>
         /// 取得玩家的防禦力
         /// </summary>
-        private float PlayerDEF { get => _playerData.DEF + _extendDEF; }
+        private float PlayerDEF { get => _playerData.DEF.Value; }
         /// <summary>
         /// 玩家受到傷害
         /// 優先扣除護盾
@@ -300,18 +369,26 @@ namespace Scripts.Game
         /// <param name="value">增加量</param>
         public void AddPlayerMaxHP(float value)
         {
-            _playerData.MaxHealthPoint += value;
+            _extendMaxHealthPoint += value;
             _playerData.HealthPoint += value;
             _gameUI.UpdatePlayerHealth();
         }
         /// <summary>
         /// 玩家自動回復間隔
         /// </summary>
-        public float PlayerAutoRecoverTime { get => _playerData.AutoRecoverTime; }
+        public float PlayerAutoRecoverTime { get => _playerData.AutoRecoverTime.Value; }
         /// <summary>
         /// 玩家自動回復點數
         /// </summary>
-        public float PlayerAutoRecoverPoint { get => _playerData.AutoRecoverPoint; }
+        public float PlayerAutoRecoverPoint { get => CalTool.Round(_playerData.AutoRecoverPoint.Value, 1); }
+        /// <summary>
+        /// 增加分數
+        /// </summary>
+        /// <param name="score"></param>
+        public void AddScore(float score)
+        {
+            StaticPrefs.Score += CalTool.Round(score * (1f + _extendMoneyMuliple), 0);
+        }
         #endregion
     }
 }
