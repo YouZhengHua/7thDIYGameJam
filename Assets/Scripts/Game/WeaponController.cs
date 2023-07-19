@@ -16,25 +16,21 @@ namespace Scripts.Game
         [SerializeField, Header("武器根節點"), Tooltip("武器實例化的根節點")]
         private Transform weaponRoot;
 
-        private void Start()
+        private void Awake()
         {
-            foreach (Weapon weapon in this.GetComponentsInChildren<Weapon>())
+            foreach (GameObject weaponPrefab in weaponControllerData.weaponPrefabList)
             {
+                Weapon weapon = Instantiate(weaponPrefab, this.transform).GetComponent<Weapon>();
+                weapon.transform.SetParent(weaponRoot);
                 weapon.SetWeaponActive(false);
-                canUseWeapons.Add(weapon);
+                canUseWeapons.Add(weapon.GetComponent<Weapon>());
             }
         }
 
         public void LoadWeapon(WeaponIndex weaponIndex, bool active = true)
         {
-            GameObject weaponPrefab = weaponControllerData.weaponPrefabList.Find(x => x.name == weaponIndex.ToString());
-            if (weaponPrefab != null)
-            {
-                Weapon weapon = Instantiate(weaponPrefab, this.transform).GetComponent<Weapon>();
-                weapon.transform.SetParent(weaponRoot);
-                weapon.LoadWeapon(active);
-                canUseWeapons.Add(weapon);
-            }
+            Weapon weapon = this.GetWeapon(weaponIndex);
+            weapon.LoadWeapon(active);
         }
 
         public Weapon GetWeapon(WeaponIndex weaponIndex)

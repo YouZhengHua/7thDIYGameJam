@@ -17,11 +17,15 @@ MonoBehaviour:
   DefaultIsUnlocked: 0
   WeaponIndex: 0
   AmmoPrefab: {fileID: 348025601964002051, guid: ae907b2bfc3d70046b0fe83e2a38aded, type: 3}
-  Damage: 50
+  Damage:
+    _value: 50
+    _multiple: 1
   DamageFrom: 2
   Force: 3
   DelayTime: 0.1
-  CoolDownTime: 0.1
+  CoolDownTime:
+    _value: 0.1
+    _multiple: 1
   AmmoScale: 1
   OneShootAmmoCount: 1
   AmmoFlySpeed: 100

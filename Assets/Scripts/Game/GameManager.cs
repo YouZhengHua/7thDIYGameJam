@@ -79,6 +79,9 @@ namespace Scripts.Game
         private float _nowTime;
         private GameObject _playerContainer;
 
+        [SerializeField, Header("大廳升級管理工具")]
+        private BaseUpgradeManager _upgradeManager;
+
         /// <summary>
         /// 攝影機控制器
         /// </summary>
@@ -168,7 +171,6 @@ namespace Scripts.Game
             _enemyPool = new EnemyPool(_endUI, Levels, _expPool, _damagePool, _dropHealthPool, _playerContainer.transform);
             AttributeHandle.Instance.SetGameUIController(_gameUI);
             _playerDamageController.SetEndUI = _endUI;
-
             Debug.Log("GameManager Awake() End");
         }
         private void Start()
@@ -190,6 +192,7 @@ namespace Scripts.Game
             }
             AudioContoller.Instance.UpdateAudioVolume();
             _gameUI.UpdatePlayerHealth();
+            AttributeHandle.Instance.SetLobbyUpgrade(_upgradeManager);
             Debug.Log("GameManager Start() End");
         }
 

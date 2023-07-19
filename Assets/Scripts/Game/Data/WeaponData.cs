@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Scripts.Game;
@@ -14,11 +15,10 @@ public class WeaponData : BaseItemData
     public WeaponIndex WeaponIndex;
     [Header("子彈預製物")]
     public GameObject AmmoPrefab;
-    /// <summary>
-    /// 傷害值
-    /// </summary>
+
     [Header("傷害值")]
-    public float Damage = 1;
+    public FloatAttributeHandle Damage;
+
     [Header("傷害來源")]
     public DamageFrom DamageFrom = DamageFrom.Gun;
     /// <summary>
@@ -34,11 +34,10 @@ public class WeaponData : BaseItemData
     #endregion
 
     #region 投射物屬性
-    /// <summary>
-    /// 投射物武器射擊間隔
-    /// </summary>
-    [Header("投射物類武器射擊間隔")]
-    public float CoolDownTime = 0.1f;
+
+    [Header("投射物武器射擊間隔")]
+    public FloatAttributeHandle CoolDownTime;
+
     /// <summary>
     /// 投射物大小
     /// </summary>
@@ -88,4 +87,36 @@ public class WeaponData : BaseItemData
     [Header("範圍武器生成半徑")]
     public float CreateRadius = 2f;
     #endregion
+}
+
+[Serializable]
+public class FloatAttributeHandle
+{
+    [SerializeField, Header("基礎值")]
+    private float _value;
+    [SerializeField, Header("基礎倍率")]
+    private float _multiple = 1f;
+    private float _extendPoint = 0f;
+    private float _extendMultiple = 0f;
+    public float Value { get => (_value + _extendPoint) * (_multiple + _extendMultiple); }
+    /// <summary>
+    /// 增加固定值
+    /// </summary>
+    /// <param name="point"></param>
+    public void AddValuePoint(float point)
+    {
+        _extendPoint += point;
+    }
+    /// <summary>
+    /// 增加倍率
+    /// </summary>
+    /// <param name="point"></param>
+    public void AddValueMultiple(float multiple)
+    {
+        _extendMultiple += multiple;
+    }
+    public override string ToString()
+    {
+        return this.Value.ToString();
+    }
 }

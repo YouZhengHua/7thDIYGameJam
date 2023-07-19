@@ -28,7 +28,7 @@ public class PlasmaMachineGunWeapon : Weapon
     public override void Start()
     {
         base.Start();
-        _currentMainShootCooldownTime = weaponData.CoolDownTime;
+        _currentMainShootCooldownTime = weaponData.CoolDownTime.Value;
 
         _firePoint = this.GetComponentInChildren<Transform>();
         _gunEffect = _firePoint.gameObject.GetComponentInChildren<Animator>();
@@ -87,6 +87,6 @@ public class PlasmaMachineGunWeapon : Weapon
 
         _shotAmmo.Clear();
 
-        _currentMainShootCooldownTime = weaponData.CoolDownTime;
+        _currentMainShootCooldownTime = weaponData.CoolDownTime.Value;
     }
 }

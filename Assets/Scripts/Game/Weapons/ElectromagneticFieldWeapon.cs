@@ -66,7 +66,7 @@ public class ElectromagneticFieldWeapon : Weapon
             {
                 // 对敌人单位执行受伤的动作
                 Debug.Log("enemyUnit = " + enemyUnit.name);
-                enemyUnit.TakeDamage(weaponData.Damage, weaponData.DamageFrom, weaponData.Force, weaponData.DelayTime);
+                enemyUnit.TakeDamage(weaponData.Damage.Value, weaponData.DamageFrom, weaponData.Force, weaponData.DelayTime);
             }
         }
     }

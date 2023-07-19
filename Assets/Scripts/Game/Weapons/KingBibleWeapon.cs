@@ -36,7 +36,7 @@ public class KingBibleWeapon : Weapon
         EnemyController enemyController;
         if (TryGetComponent<EnemyController>(out enemyController))
         {
-            enemyController.TakeDamage(weaponData.Damage, weaponData.DamageFrom, weaponData.Force, weaponData.DelayTime);
+            enemyController.TakeDamage(weaponData.Damage.Value, weaponData.DamageFrom, weaponData.Force, weaponData.DelayTime);
         }
     }
 

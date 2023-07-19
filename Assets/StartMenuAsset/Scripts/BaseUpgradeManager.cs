@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,54 +7,148 @@ public class BaseUpgradeManager : MonoBehaviour
 
     [SerializeField] private BaseUpgradeInfo info;
 
-    public float GetAttackRadius() {
+    /// <summary>
+    /// <para>光環範圍</para>
+    /// <para>光環類武器增加一定範圍比率</para>
+    /// </summary>
+    /// <returns></returns>
+    public float GetAttackRadius()
+    {
         return info.GetEffect(BaseUpgradeInfo.Info.IncreaseAttackingRadius);
     }
-
-    public float GetCoolDown() {
+    /// <summary>
+    /// <para>冷卻時間</para>
+    /// <para>冷卻降低固定秒數</para>
+    /// </summary>
+    /// <returns></returns>
+    public float GetCoolDown()
+    {
         return info.GetEffect(BaseUpgradeInfo.Info.Cooldown);
     }
-
-    public float GetStrength() {
+    /// <summary>
+    /// <para>力量</para>
+    /// <para>所有武器傷害提升一定比率</para>
+    /// </summary>
+    /// <returns></returns>
+    public float GetStrength()
+    {
         return info.GetEffect(BaseUpgradeInfo.Info.Strength);
     }
-        public float GetIncreaseMoneyQuantity() {
+    /// <summary>
+    /// <para>金幣量增加</para>
+    /// <para>金幣獲取量增加一定比率</para>
+    /// </summary>
+    /// <returns></returns>
+    public float GetIncreaseMoneyQuantity()
+    {
         return info.GetEffect(BaseUpgradeInfo.Info.IncreaseMoneyQuantity);
     }
-        public float GetMoveSpeed() {
+    /// <summary>
+    /// <para>移動速度</para>
+    /// <para>移動速度提高一定比率</para>
+    /// </summary>
+    /// <returns></returns>
+    public float GetMoveSpeed()
+    {
         return info.GetEffect(BaseUpgradeInfo.Info.MoveSpeed);
     }
-        public int GetProjetileNumber() {
+    /// <summary>
+    /// <para>投射物數量</para>
+    /// <para>投射物數量增加固定數量</para>
+    /// </summary>
+    /// <returns></returns>
+    public int GetProjetileNumber()
+    {
         return (int)info.GetEffect(BaseUpgradeInfo.Info.ProjetileNumber);
     }
-        public int GetIncreaseSkillSlot() {
+    /// <summary>
+    /// <para>增加技能欄位</para>
+    /// <para>技能格欄位增加一定數量</para>
+    /// </summary>
+    /// <returns></returns>
+    public int GetIncreaseSkillSlot()
+    {
         return (int)info.GetEffect(BaseUpgradeInfo.Info.IncreaseSkillSlot);
     }
-        public float GetHPGeneratePerSec() {
+    /// <summary>
+    /// <para>生命恢復</para>
+    /// <para>生命回復增加固定數值</para>
+    /// </summary>
+    /// <returns></returns>
+    public float GetHPGeneratePerSec()
+    {
         return info.GetEffect(BaseUpgradeInfo.Info.HPGeneratePerSec);
     }
-        public float GetIncreaseExpQuantity() {
+    /// <summary>
+    /// <para>經驗值增加</para>
+    /// <para>經驗值獲取率增加一定比率</para>
+    /// </summary>
+    /// <returns></returns>
+    public float GetIncreaseExpQuantity()
+    {
         return info.GetEffect(BaseUpgradeInfo.Info.IncreaseExpQuantity);
     }
-        public float GetProjectileSize() {
+    /// <summary>
+    /// <para>投射物大小</para>
+    /// <para>投射物的體積增加一定比率</para>
+    /// </summary>
+    /// <returns></returns>
+    public float GetProjectileSize()
+    {
         return info.GetEffect(BaseUpgradeInfo.Info.ProjectileSize);
     }
-        public float GetAttackPersistTime() {
+    /// <summary>
+    /// <para>攻擊持續時間</para>
+    /// <para>攻擊持續時間增加一定比率</para>
+    /// </summary>
+    /// <returns></returns>
+    public float GetAttackPersistTime()
+    {
         return info.GetEffect(BaseUpgradeInfo.Info.AttackPersistTime);
     }
-        public int GetDefense() {
+    /// <summary>
+    /// <para>防禦力</para>
+    /// <para>防禦力增加固定點數</para>
+    /// </summary>
+    /// <returns></returns>
+    public int GetDefense()
+    {
         return (int)info.GetEffect(BaseUpgradeInfo.Info.Defense);
     }
-        public float GetMaxHP() {
+    /// <summary>
+    /// <para>生命上限</para>
+    /// <para>生命值上限增加一定比率</para>
+    /// </summary>
+    /// <returns></returns>
+    public float GetMaxHP()
+    {
         return info.GetEffect(BaseUpgradeInfo.Info.MaxHP);
     }
-        public float GetProjectileSpeed() {
+    /// <summary>
+    /// <para>投射物射擊速度</para>
+    /// <para>投射物射擊速度增加一定比率</para>
+    /// </summary>
+    /// <returns></returns>
+    public float GetProjectileSpeed()
+    {
         return info.GetEffect(BaseUpgradeInfo.Info.ProjectileSpeed);
     }
-        public float GetIncreasePickingArea() {
+    /// <summary>
+    /// <para>拾取範圍</para>
+    /// <para>拾取範圍增加一定比率</para>
+    /// </summary>
+    /// <returns></returns>
+    public float GetIncreasePickingArea()
+    {
         return info.GetEffect(BaseUpgradeInfo.Info.IncreasePickingArea);
     }
-        public int GetReviveTimes() {
+    /// <summary>
+    /// <para>復活次數</para>
+    /// <para>玩家增加固定的復活次數</para>
+    /// </summary>
+    /// <returns></returns>
+    public int GetReviveTimes()
+    {
         return (int)info.GetEffect(BaseUpgradeInfo.Info.ReviveTimes);
     }
 }

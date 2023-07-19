@@ -100,7 +100,7 @@ public class DroneAWeapon : Weapon
         if (collision.TryGetComponent<EnemyController>(out enemyController))
         {
             Debug.Log("missileAmmo _hitEnemy");
-            enemyController.TakeDamage(weaponData.Damage, weaponData.DamageFrom, weaponData.Force, weaponData.DelayTime);
+            enemyController.TakeDamage(weaponData.Damage.Value, weaponData.DamageFrom, weaponData.Force, weaponData.DelayTime);
         }
     }
 

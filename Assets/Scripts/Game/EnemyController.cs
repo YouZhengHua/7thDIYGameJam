@@ -97,7 +97,7 @@ namespace Scripts.Game
                             //子彈擊退持續時間
                             float repelTime = weapon.weaponData.DelayTime;
                             //子彈傷害
-                            float damage = weapon.weaponData.Damage;
+                            float damage = weapon.weaponData.Damage.Value;
                             GotHit(repelForce, repelTime);
                             GetDamage(damage, DamageFrom.Gun);
                             ShowDamageText(damage, collision.gameObject.transform.position);
