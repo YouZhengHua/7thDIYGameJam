@@ -9,17 +9,18 @@ public class UpgradeDescriptionUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI title;
     [SerializeField] private TextMeshProUGUI context;
     [SerializeField] private TextMeshProUGUI cost;
-    [SerializeField] private Button confirmCheckBox;
+    [SerializeField] private ConfirmCheckBoxUI confirmCheckBox;
     [SerializeField] private UpgradeElementContainerUI containerUI;
 
     private UpgradeElementSO chosenSO;
 
-    public void SetChosenSO() {
-        chosenSO = containerUI.GetElementSO();
+    public void SetChosenSO(UpgradeElementSO value) {
+        chosenSO = value;
     }
 
     public void UpdateDescription() {
-        SetChosenSO();
+        SetChosenSO(containerUI.GetElementSO());
+        UpdateCheckBoxVisual();
         UpdateTitle();
         UpdateCost();
         UpdateContext();
@@ -37,4 +38,11 @@ public class UpgradeDescriptionUI : MonoBehaviour
         context.text = chosenSO.DescriptionOnUI;
     }
 
+    public void UpdateCheckBoxVisual() {
+        if (chosenSO.IsUpgradeAvailable()) {
+            confirmCheckBox.ActiveCheckBox();
+        } else {
+            confirmCheckBox.DeActiveChechBox();
+        }
+    }
 }

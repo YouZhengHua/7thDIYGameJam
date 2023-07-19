@@ -57,7 +57,7 @@ MonoBehaviour:
   title: {fileID: 7078020902822679543}
   context: {fileID: 7078020903368546056}
   cost: {fileID: 7078020903067065279}
-  confirmCheckBox: {fileID: 7078020903858600230}
+  confirmCheckBox: {fileID: 5308777861372156591}
   containerUI: {fileID: 7078020903838538865}
 --- !u!1 &7078020902756559944
 GameObject:

@@ -14,6 +14,7 @@ public class CurrentMoney : MonoBehaviour
 
     private void Start() {
         StaticPrefs.OnScoreChange += UpdateVisual;
+
         UpdateVisual();
     }
 
