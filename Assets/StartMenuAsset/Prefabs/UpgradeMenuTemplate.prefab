@@ -362,7 +362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -295.37}
+  m_AnchoredPosition: {x: -52, y: -281.19}
   m_SizeDelta: {x: 230.2108, y: 64.1775}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7078020903067065278
@@ -762,7 +762,6 @@ MonoBehaviour:
   - {fileID: 3509502705636948695}
   - {fileID: 3509502705218550697}
   descriptionUI: {fileID: 7078020902652299108}
-  checkBoxUI: {fileID: 5308777861372156591}
 --- !u!1 &7078020903858600224
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,7 +799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -106.82, y: -288.28}
+  m_AnchoredPosition: {x: 117, y: -288.28}
   m_SizeDelta: {x: 80, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7078020903858600228
@@ -974,7 +973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
