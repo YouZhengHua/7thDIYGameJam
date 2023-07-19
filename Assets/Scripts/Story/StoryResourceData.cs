@@ -34,6 +34,7 @@ public class StoryResourceData : ScriptableObject
     /// <returns></returns>
     public Sprite GetCharacter(string name)
     {
+        if (characterList.Count == 0) return null;
         for (int i = 0; i < characterList.Count; i++)
         {
             if (characterList[i].name == name)
