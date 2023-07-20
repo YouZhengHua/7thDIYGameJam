@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6916597605973656170}
   - component: {fileID: 6916597605973656171}
   - component: {fileID: 6916597605973656165}
-  - component: {fileID: 7992561954818166547}
   - component: {fileID: 5119524495639554507}
   - component: {fileID: 7976728344035414318}
+  - component: {fileID: -1629728090083561961}
   m_Layer: 6
   m_Name: ammo06_PlasmaMachine
   m_TagString: Untagged
@@ -109,18 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7992561954818166547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6916597605973656168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eba500a334e433428f11d82b97cdd97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &5119524495639554507
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -167,3 +155,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1629728090083561961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6916597605973656168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c594bf71063e40d46adf3ebfc32365cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxRange: 15
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 4224

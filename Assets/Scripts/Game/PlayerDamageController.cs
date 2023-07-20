@@ -53,22 +53,34 @@ namespace Scripts.Game
             {
                 Debug.Log("玩家遭受碰撞", collision.gameObject);
                 BaseEnemyController collisionEnemy = collision.gameObject.GetComponent<BaseEnemyController>();
-                if (collisionEnemy != null && !collisionEnemy.IsDead)
-                {
-                    GetDamage(collisionEnemy.EnemyData.Damage.Value);
-                }
+                if (collisionEnemy == null || collisionEnemy.IsDead)
+                    return;
+                GetDamage(collisionEnemy.EnemyData.Damage.Value);
+                RepleEnemy();
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if ((((1 << collision.gameObject.layer) | _damageLayer) == _damageLayer) && _invincibleTime <= 0)
+            {
+                Debug.Log("玩家遭受碰撞", collision.gameObject);
                 BulletController bullet = collision.gameObject.GetComponent<BulletController>();
-                if(bullet != null)
+                if (bullet == null)
+                    return;
+                GetDamage(bullet.Damage);
+                RepleEnemy();
+            }
+        }
+
+        private void RepleEnemy()
+        {
+            foreach (var enemy in Physics2D.OverlapCircleAll(this.transform.position, AttributeHandle.Instance.PlayerRepelRadius, _enemyLayer))
+            {
+                Vector2 distance = enemy.transform.position - this.transform.position;
+                if (distance.magnitude < AttributeHandle.Instance.PlayerRepelRadius)
                 {
-                    GetDamage(bullet.Damage);
-                }
-                foreach (var enemy in Physics2D.OverlapCircleAll(this.transform.position, AttributeHandle.Instance.PlayerRepelRadius, _enemyLayer))
-                {
-                    Vector2 distance = enemy.transform.position - this.transform.position;
-                    if (distance.magnitude < AttributeHandle.Instance.PlayerRepelRadius)
-                    {
-                        enemy.GetComponent<BaseEnemyController>().AddForce(AttributeHandle.Instance.PlayerRepelForce, AttributeHandle.Instance.PlayerRepelTime);
-                    }
+                    enemy.GetComponent<BaseEnemyController>().AddForce(AttributeHandle.Instance.PlayerRepelForce, AttributeHandle.Instance.PlayerRepelTime);
                 }
             }
         }

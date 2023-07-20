@@ -38,7 +38,6 @@ namespace Scripts.Game
             if (_nowAttackTime <= 0)
             {
                 _nowAttackTime = _cooldownTime;
-                Debug.Log("遠程怪物攻擊!");
                 base.Attack();
                 if (_bullet == null)
                 {
@@ -47,18 +46,12 @@ namespace Scripts.Game
                 }
                 GameObject bullet = GameObject.Instantiate(_bullet);
                 bullet.transform.position = this.transform.position;
-                bullet.GetComponent<BulletController>().Init(this.transform.position, _playerTransform.position, _flySpeed, 1, EnemyData.Damage.Value, _onHitPlayer);
+                bullet.GetComponent<BulletController>().Init(this.transform.position, _playerTransform.position, _flySpeed, 1, EnemyData.Damage.Value);
             }
             else
             {
                 _nowAttackTime -= Time.deltaTime;
             }
-        }
-
-        protected override void OnHitPlayer()
-        {
-            base.OnHitPlayer();
-            Debug.Log("遠程子彈打到敵人");
         }
 
         public override EnemyData EnemyData => base.EnemyData;

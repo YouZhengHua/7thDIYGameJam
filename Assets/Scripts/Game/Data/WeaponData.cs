@@ -67,7 +67,7 @@ public class WeaponData : BaseItemData
     /// 投射物穿透次數
     /// </summary>
     [Header("投射物穿透次數")]
-    public FloatAttributeHandle AmmoPenetrationCount;
+    public IntAttributeHandle AmmoPenetrationCount;
     /// <summary>
     /// 投射物是否具有穿透上限
     /// </summary>

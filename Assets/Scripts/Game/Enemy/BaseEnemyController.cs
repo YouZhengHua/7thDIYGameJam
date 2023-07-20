@@ -54,8 +54,6 @@ namespace Scripts.Game
         protected Quaternion _lookLeft = Quaternion.Euler(0, 180, 0);
         protected Quaternion _lookRight = Quaternion.Euler(0, 0, 0);
 
-        protected UnityEvent _onHitPlayer = new UnityEvent();
-
         [SerializeField, Header("玩家子彈階層")]
         protected LayerMask _playerBulletLayer;
 
@@ -70,7 +68,6 @@ namespace Scripts.Game
                 _cloneEnemyData = Object.Instantiate(_enemyData);
             else
                 Debug.LogError("怪物未設定 EnemyData", this.gameObject);
-            _onHitPlayer.AddListener(OnHitPlayer);
         }
         protected virtual void Update()
         {
@@ -224,11 +221,6 @@ namespace Scripts.Game
         {
             if (_animator != null && !string.IsNullOrEmpty(_enemyAttack))
                 _animator.SetTrigger(_enemyAttack);
-        }
-
-        protected virtual void OnHitPlayer()
-        {
-            Debug.Log("OnHitPlayer");
         }
 
         /// <summary>

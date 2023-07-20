@@ -157,7 +157,7 @@ namespace Scripts.Game
                         break;
                     case AttributeType.PenetrationCount:
                         Debug.Log($"調整投射物穿透數目(PenetrationCount)");
-                        weapon.weaponData.AmmoPenetrationCount.AddValuePoint(weaponAttribute.Value);
+                        weapon.weaponData.AmmoPenetrationCount.AddValuePoint((int)weaponAttribute.Value);
                         break;
                     case AttributeType.SpecialOption:
                         Debug.Log($"武器特殊升級選項: {weapon.weaponData.WeaponIndex}");

@@ -15,7 +15,6 @@ namespace Scripts.Game
         private float _maxRange = 15f;
         [SerializeField, Header("目標碰撞圖層")]
         private LayerMask _targetLayer;
-        private UnityEvent _hitEvent;
         private Transform _playerContainer;
         private float _damage;
 
@@ -35,20 +34,17 @@ namespace Scripts.Game
             {
                 _rigidbody2D.velocity = Vector2.zero;
             }
-            if((transform.position - _playerContainer.position).magnitude > _maxRange)
+            if ((transform.position - _playerContainer.position).magnitude > _maxRange)
             {
                 Destroy(this.gameObject);
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("子彈控制器與目標圖層碰撞", collision.gameObject);
-            if((1 << collision.gameObject.layer | _targetLayer) == _targetLayer)
+            if ((1 << collision.gameObject.layer | _targetLayer) == _targetLayer)
             {
-                Debug.Log("擊中目標", gameObject);
-                //_hitEvent?.Invoke();
-                if(_penetrationCount > 0)
+                if (_penetrationCount > 0)
                 {
                     _penetrationCount--;
                     if (_penetrationCount == 0)
@@ -57,13 +53,12 @@ namespace Scripts.Game
             }
         }
 
-        public void Init(Vector3 from, Vector3 target, float speed, int penetrationCount, float damage, UnityEvent hitEvent = null)
+        public void Init(Vector3 from, Vector3 target, float speed, int penetrationCount, float damage)
         {
             _targetX = target.x - from.x;
             _targetY = target.y - from.y;
             _flySpeed = speed;
             _penetrationCount = penetrationCount;
-            //_hitEvent = hitEvent;
             _damage = damage;
         }
 
