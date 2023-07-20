@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 729aaef5521b7dd4483a55082915f1e6, type: 3}
-  m_Name: S_1_L_1_E_1
+  m_Name: S_1_L_1_E_2
   m_EditorClassIdentifier: 
-  Distance: 15
+  Distance: 5
   Intervals: 1
   Quantity: 2
-  Prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+  Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
   IsGroup: 0
   IsRound: 0
   PoolSize: 60

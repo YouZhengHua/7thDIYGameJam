@@ -22,11 +22,12 @@ MonoBehaviour:
     _multiple: 1
   DamageFrom: 1
   Force:
-    _value: 10
+    _value: 2
     _multiple: 1
   DelayTime:
-    _value: 0.1
+    _value: 0.5
     _multiple: 1
+  ShootAudios: []
   CoolDownTime:
     _value: 0.333
     _multiple: 1
@@ -37,12 +38,12 @@ MonoBehaviour:
     _value: 1
     _multiple: 1
   AmmoFlySpeed:
-    _value: 500
+    _value: 10
     _multiple: 1
   AmmoPenetrationCount:
     _value: 1
     _multiple: 1
-  HavaPenetrationLimit: 1
+  HavaPenetrationLimit: 0
   AmmoFlyRange:
     _value: 15
     _multiple: 1

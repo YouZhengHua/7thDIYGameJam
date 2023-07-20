@@ -31,6 +31,16 @@ public class WeaponData : BaseItemData
     /// </summary>
     [Header("怪物擊退持續時間")]
     public FloatAttributeHandle DelayTime;
+
+    /// <summary>
+    /// 攻擊音效清單
+    /// </summary>
+    [SerializeField, Header("攻擊音效清單")]
+    public AudioClip[] ShootAudios;
+    /// <summary>
+    /// 隨機取得攻擊音效清單中的一個音效
+    /// </summary>
+    public AudioClip ShootAudio { get => (ShootAudios.Length == 0 || ShootAudios == null) ? null : ShootAudios[UnityEngine.Random.Range(0, ShootAudios.Length)]; }
     #endregion
 
     #region 投射物屬性
@@ -57,7 +67,7 @@ public class WeaponData : BaseItemData
     /// 投射物穿透次數
     /// </summary>
     [Header("投射物穿透次數")]
-    public FloatAttributeHandle AmmoPenetrationCount;
+    public IntAttributeHandle AmmoPenetrationCount;
     /// <summary>
     /// 投射物是否具有穿透上限
     /// </summary>

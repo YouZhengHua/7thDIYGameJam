@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cde85b9e57723914ba037a2b1c82080f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _enemyData: {instanceID: 0}
+  - _damageTextPrefab: {fileID: 2538697934944276320, guid: 9ed005278162b0142b34764996fa485d, type: 3}
+  - _buttle: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
