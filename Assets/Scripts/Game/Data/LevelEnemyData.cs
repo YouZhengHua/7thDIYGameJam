@@ -12,7 +12,7 @@ namespace Scripts.Game.Data
             {
                 if (!_nextTime.HasValue)
                 {
-                    _nextTime = 0;
+                    _nextTime = 0f;
                 }
                 return _nextTime.Value;
             }
@@ -30,23 +30,6 @@ namespace Scripts.Game.Data
         public float Intervals = 1f;
         [Header("生成數量"), Min(1)]
         public int Quantity = 1;
-        [SerializeField, Header("怪物資料")]
-        private EnemyData _Data;
-        private EnemyData _data = null;
-        /// <summary>
-        /// 怪物資料
-        /// </summary>
-        public EnemyData Data 
-        {
-            get
-            {
-                if (_data == null)
-                {
-                    _data = Object.Instantiate(_Data);
-                }
-                return _data;
-            } 
-        }
         [Header("怪物預置物")]
         public GameObject Prefab;
         [Header("是否團聚生成")]

@@ -24,6 +24,12 @@ namespace Scripts.Game
         /// </summary>
         private float _extendMoneyMuliple = 0f;
 
+        private float _totalDamage = 0f;
+        private float _totalMoney = 0f;
+        private int _totalKill = 0;
+
+        private float _gameTime = 0f;
+
         private static readonly object padlock = new object();
         private static AttributeHandle _instance = null;
         public static AttributeHandle Instance
@@ -41,17 +47,23 @@ namespace Scripts.Game
 
         public AttributeHandle()
         {
+        }
 
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        public void Init()
+        {
+            _totalDamage = 0f;
+            _totalMoney = 0f;
+            _totalKill = 0;
+            _gameTime = 0f;
+            _weapon = GameObject.Find("PlayerContainer").GetComponent<IWeaponController>();
         }
 
         public void SetPlayerData(PlayerData playerData)
         {
             _playerData = playerData;
-        }
-
-        public void SetWeaponController(IWeaponController weaponController)
-        {
-            _weapon = weaponController;
         }
 
         public void SetGameUIController(IGameUIController gameUIController)
@@ -79,13 +91,13 @@ namespace Scripts.Game
                     _playerData.DropItemRadius.AddValuePoint(data.Value);
                     break;
                 case AttributeType.Score:
-                    this.AddScore(data.Value);
+                    this.AddTotalMoney(data.Value);
                     break;
                 case AttributeType.PlayerDef:
                     _playerData.DEF.AddValuePoint(data.Value);
                     break;
                 case AttributeType.DamageMultiple:
-                    foreach(Weapon weapon in _weapon.GetWeapons())
+                    foreach (Weapon weapon in _weapon.GetWeapons())
                     {
                         weapon.weaponData.Damage.AddValueMultiple(data.Value);
                     }
@@ -108,7 +120,7 @@ namespace Scripts.Game
                     return;
                 }
                 int attuributeIndex = data.SelectedCount - 1;
-                if(attuributeIndex > data.WeaponUpdateAttributes.Length)
+                if (attuributeIndex > data.WeaponUpdateAttributes.Length)
                 {
                     Debug.LogError("武器資料沒有足夠的升級選項", weapon.gameObject);
                     return;
@@ -149,7 +161,7 @@ namespace Scripts.Game
                         break;
                     case AttributeType.SpecialOption:
                         Debug.Log($"武器特殊升級選項: {weapon.weaponData.WeaponIndex}");
-                        if(weapon.weaponData.WeaponIndex == WeaponIndex.DroneA)
+                        if (weapon.weaponData.WeaponIndex == WeaponIndex.DroneA)
                         {
                             Debug.Log("每五秒玩家角色會增加最大生命的 10% 護盾值");
                         }
@@ -185,7 +197,7 @@ namespace Scripts.Game
             #endregion
 
             Debug.Log("武器素質調整");
-            
+
             #region 武器素質調整
             foreach (Weapon weapon in _weapon.GetWeapons())
             {
@@ -333,7 +345,7 @@ namespace Scripts.Game
             // 扣除防禦值
             damage = CalTool.CalDamage(damage, this.PlayerDEF);
             // 扣除護盾值
-            if(_playerData.Shield > 0)
+            if (_playerData.Shield > 0)
             {
                 // 剩餘護盾值
                 float shield = _playerData.Shield;
@@ -346,7 +358,7 @@ namespace Scripts.Game
             }
 
             // 扣除血量
-            if(damage > 0f)
+            if (damage > 0f)
                 _playerData.HealthPoint -= damage;
             _gameUI.UpdatePlayerHealth();
         }
@@ -381,14 +393,36 @@ namespace Scripts.Game
         /// 玩家自動回復點數
         /// </summary>
         public float PlayerAutoRecoverPoint { get => CalTool.Round(_playerData.AutoRecoverPoint.Value, 1); }
-        /// <summary>
-        /// 增加分數
-        /// </summary>
-        /// <param name="score"></param>
-        public void AddScore(float score)
+
+        public Weapon GetWeapon(WeaponIndex weaponIndex)
         {
-            StaticPrefs.Score += CalTool.Round(score * (1f + _extendMoneyMuliple), 0);
+            return _weapon.GetWeapon(weaponIndex);
         }
+
+        public IList<Weapon> GetWeapons()
+        {
+            return _weapon.GetWeapons();
+        }
+
+        public void AddTotalDamage(float damage)
+        {
+            _totalDamage = damage;
+        }
+
+        public void AddTotalMoney(float money)
+        {
+            _totalMoney = money * (1f + _extendMoneyMuliple);
+        }
+
+        public void AddTotalKill(int kill = 1)
+        {
+            _totalKill = kill;
+        }
+
+        /// <summary>
+        /// 取得/設定遊戲時間
+        /// </summary>
+        public float GameTime { get => _gameTime; set => _gameTime = value; }
         #endregion
     }
 }

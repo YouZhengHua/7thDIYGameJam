@@ -8,7 +8,7 @@ namespace Scripts.Game
     /// 移動控制器
     /// 賦予此 Script 的物件可以被玩家透過上下左右操控移動
     /// </summary>
-    public class MoveController : MonoBehaviour, IMoveController
+    public class MoveController : MonoBehaviour
     {
         [SerializeField, Header("動畫控制器")]
         private Animator animator;
@@ -48,7 +48,7 @@ namespace Scripts.Game
             // 遊戲進行中才能進行移動
             if(GameStateMachine.Instance.CurrectState == GameState.InGame)
             {
-                if (Input.GetKeyDown(KeyCode.L))
+                if (Input.GetKeyDown(KeyCode.LeftAlt))
                 {
                     IsLookMouse = !IsLookMouse;
                     if(IsLookMouse)

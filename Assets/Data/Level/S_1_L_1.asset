@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S_1_L_1
   m_EditorClassIdentifier: 
   LevelStartTime: 0
-  LevelEndTime: 180
+  LevelEndTime: 30
   EnemyDatas:
   - {fileID: 11400000, guid: 110f56e6d0cfaa04080cd235dbfc791b, type: 2}
+  - {fileID: 11400000, guid: 00ca6e64ae2a9e84b84ded0d64c37d12, type: 2}

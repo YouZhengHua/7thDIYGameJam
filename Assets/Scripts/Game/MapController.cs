@@ -16,10 +16,12 @@ namespace Scripts.Game
         /// 地圖資料
         /// </summary>
         private MapData _data;
+        private Transform _mapConainer;
 
         public MapController(MapData data)
         {
             _data = data;
+            _mapConainer = GameObject.Find("MapContainer").GetComponent<Transform>();
             MapInstantiate();
         }
 
@@ -35,25 +37,25 @@ namespace Scripts.Game
                     bool isRight = y > 0 && x + _data.floorHeight >= _data.mapHeight;
                     GameObject map;
                     if (isTop && isLeft && (_data.HaveTopBorder || _data.HaveLeftBorder))
-                        map = GameObject.Instantiate(_data.wallTopLeft);
+                        map = GameObject.Instantiate(_data.wallTopLeft, _mapConainer);
                     else if (isTop && isRight && (_data.HaveTopBorder || _data.HaveRightBorder))
-                        map = GameObject.Instantiate(_data.wallTopRight);
+                        map = GameObject.Instantiate(_data.wallTopRight, _mapConainer);
                     else if (isBot && isLeft && (_data.HaveBotBorder || _data.HaveLeftBorder))
-                        map = GameObject.Instantiate(_data.wallBotLeft);
+                        map = GameObject.Instantiate(_data.wallBotLeft, _mapConainer);
                     else if (isBot && isRight && (_data.HaveBotBorder || _data.HaveRightBorder))
-                        map = GameObject.Instantiate(_data.wallBotRight);
+                        map = GameObject.Instantiate(_data.wallBotRight, _mapConainer);
                     else if (isTop && _data.HaveTopBorder)
-                        map = GameObject.Instantiate(_data.wallTop);
+                        map = GameObject.Instantiate(_data.wallTop, _mapConainer);
                     else if (isBot && _data.HaveBotBorder)
-                        map = GameObject.Instantiate(_data.wallBot);
+                        map = GameObject.Instantiate(_data.wallBot, _mapConainer);
                     else if (isLeft && _data.HaveLeftBorder)
-                        map = GameObject.Instantiate(_data.wallLeft);
+                        map = GameObject.Instantiate(_data.wallLeft, _mapConainer);
                     else if (isRight && _data.HaveRightBorder)
-                        map = GameObject.Instantiate(_data.wallRight);
+                        map = GameObject.Instantiate(_data.wallRight, _mapConainer);
                     else
                     {
                         int floorIndex = Random.Range(0, _data.floorPrefabs.Length);
-                        map = GameObject.Instantiate(_data.floorPrefabs[floorIndex]);
+                        map = GameObject.Instantiate(_data.floorPrefabs[floorIndex], _mapConainer);
                     }
                     map.transform.localScale = new Vector3(_data.floorWidthScale, _data.floorHeightScale, 1);
                     map.transform.localPosition = new Vector3(_data.floorWidth * x - _data.mapWidth / 2, _data.floorHeight * y - _data.mapHeight / 2, 0);

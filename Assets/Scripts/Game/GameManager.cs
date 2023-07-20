@@ -13,12 +13,6 @@ namespace Scripts.Game
         [SerializeField, Header("地圖資料")]
         private MapData _mapData;
 
-        [SerializeField, Header("怪物池資料")]
-        private PoolData _enemyPoolData;
-
-        [SerializeField, Header("傷害文字資料")]
-        private PoolData _damagePoolData;
-
         [SerializeField, Header("補血包")]
         private PoolData _dropHealthPoolData;
 
@@ -35,9 +29,6 @@ namespace Scripts.Game
         private PlayerData defaultPlayerData;
         private PlayerData _playerData;
 
-        [SerializeField, Header("關卡資料")]
-        private LevelData[] Levels;
-
         [SerializeField, Header("武器選項")]
         private OptionData[] Weapons;
 
@@ -53,7 +44,7 @@ namespace Scripts.Game
         private UserSetting _defaultSetting;
 
         [SerializeField, Header("遊戲總時間(秒)"), Range(1, 1800)]
-        private float _gameTime = 1200f;
+        private float _totalGameTime = 1200f;
 
         [SerializeField, Header("勝利音效")]
         private AudioClip WinAudio;
@@ -76,11 +67,14 @@ namespace Scripts.Game
         [SerializeField, Header("設定介面 Canvas")]
         private Canvas _settingUICanvas;
 
-        private float _nowTime;
         private GameObject _playerContainer;
+        private GameObject _enemyContainer;
 
         [SerializeField, Header("大廳升級管理工具")]
         private BaseUpgradeManager _upgradeManager;
+
+        [SerializeField, Header("怪物階層")]
+        private LayerMask _enemyLayer;
 
         /// <summary>
         /// 攝影機控制器
@@ -115,60 +109,48 @@ namespace Scripts.Game
         /// </summary>
         private IDropHealthPool _dropHealthPool;
         /// <summary>
-        /// 怪物池
-        /// </summary>
-        private IEnemyPool _enemyPool;
-        /// <summary>
         /// 經驗值掉落物池
         /// </summary>
         private IExpPool _expPool;
         /// <summary>
-        /// 傷害文字池
-        /// </summary>
-        private IDamagePool _damagePool;
-        /// <summary>
         /// 玩家受傷控制器
         /// </summary>
         private IPlayerDamageController _playerDamageController;
-        /// <summary>
-        /// 玩家武器控制器
-        /// </summary>
-        private IWeaponController _weaponController;
 
         private void Awake()
         {
             Debug.Log("GameManager Awake() Start");
+            _playerContainer = GameObject.Find("PlayerContainer");
+            _enemyContainer = GameObject.Find("EnemyContainer");
+
             _playerData = Object.Instantiate(defaultPlayerData);
             _optionDatas = new List<OptionData>();
             foreach (OptionData optionData in _playerData.Options)
             {
-                if(optionData.IsAcitve)
+                if (optionData.IsAcitve)
                     _optionDatas.Add(Object.Instantiate(optionData));
             }
             foreach (OptionData optionData in Weapons)
             {
-                if(optionData.IsAcitve)
+                if (optionData.IsAcitve)
                     _optionDatas.Add(Object.Instantiate(optionData));
             }
 
             GameStateMachine.Instance.SetNextState(GameState.Loading);
+            AttributeHandle.Instance.Init();
             AttributeHandle.Instance.SetPlayerData(_playerData);
             AudioContoller.Instance.SetUserSetting(_userSetting);
-            _playerContainer = GameObject.Find("PlayerContainer");
+
             _playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
-            _weaponController = _playerContainer.GetComponent<IWeaponController>();
             _endUI = new EndUIController();
             _cameraController = new CameraController();
-            _damagePool = new DamagePool(_damagePoolData);
             _mapController = new MapController(_mapData);
             _settingUI = new SettingUIController(_settingUICanvas, _defaultSetting, _userSetting);
             _pauseUI = new PauseUIController(_settingUI);
             _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _playerContainer.transform);
             _optionsUI = new OptionsUIController(_optionPrefab, _optionDatas);
-            AttributeHandle.Instance.SetWeaponController(_weaponController);
             _gameUI = new GameUIController(_optionsUI, _gameUICanvas);
             _expPool = new ExpPool(_exp1, _exp2, _exp3, _gameUI, _playerContainer.transform);
-            _enemyPool = new EnemyPool(_endUI, Levels, _expPool, _damagePool, _dropHealthPool, _playerContainer.transform);
             AttributeHandle.Instance.SetGameUIController(_gameUI);
             _playerDamageController.SetEndUI = _endUI;
             Debug.Log("GameManager Awake() End");
@@ -177,19 +159,11 @@ namespace Scripts.Game
         {
             Debug.Log("GameManager Start() Start");
             GameStateMachine.Instance.SetNextState(GameState.GameStart);
-            _nowTime = 0;
             _pauseUI.HideCanvas();
             _optionsUI.HideCanvas();
             _endUI.HideCanvas();
             _settingUI.HideCanvas();
             PlayerStateMachine.Instance.SetNextState(PlayerState.Idle);
-            foreach (LevelData level in Levels)
-            {
-                foreach (LevelEnemyData enemyData in level.EnemyDatas)
-                {
-                        enemyData.NextTime = 0;
-                }
-            }
             AudioContoller.Instance.UpdateAudioVolume();
             _gameUI.UpdatePlayerHealth();
             AttributeHandle.Instance.SetLobbyUpgrade(_upgradeManager);
@@ -198,7 +172,7 @@ namespace Scripts.Game
 
         private void Update()
         {
-            if(GameStateMachine.Instance.CurrectState == GameState.GameStart)
+            if (GameStateMachine.Instance.CurrectState == GameState.GameStart)
             {
                 _optionsUI.ShowWeaponOptions();
             }
@@ -210,7 +184,6 @@ namespace Scripts.Game
                     GameStateMachine.Instance.SetNextState(GameState.GamePause);
                 }
                 UpdateGameTime();
-                EnemyHandel();
                 _cameraController.MoveMainCameraTo(_playerContainer.transform.position);
             }
             else if (GameStateMachine.Instance.CurrectState == GameState.GamePause)
@@ -228,99 +201,35 @@ namespace Scripts.Game
             }
             else if (GameStateMachine.Instance.CurrectState == GameState.GameEnd)
             {
-                bool isWin = IsTimeWin;
+                bool isWin = IsTimeWin && IsKillAllEnemy;
                 _endUI.ShowCanvas(isWin);
                 AudioContoller.Instance.PlayEffect(isWin ? WinAudio : LoseAudio, isWin ? 0.5f : 1.5f);
                 GameStateMachine.Instance.SetNextState(GameState.GameEnded);
             }
-            else if(GameStateMachine.Instance.CurrectState == GameState.Restart)
+            else if (GameStateMachine.Instance.CurrectState == GameState.Restart)
             {
                 GameStateMachine.Instance.SetNextState(GameState.Restarted);
                 LoadingScreen.instance.LoadScene(SceneManager.GetActiveScene().name, false);
             }
         }
 
-        private void EnemyHandel()
-        {
-            foreach(LevelData level in Levels)
-            {
-                if(_nowTime >= level.LevelStartTime && _nowTime <= level.LevelEndTime)
-                {
-                    foreach(LevelEnemyData enemyData in level.EnemyDatas)
-                    {
-                        if(_nowTime >= enemyData.NextTime)
-                        {
-                            if (enemyData.IsGroup)
-                            {
-                                Vector3 nextPosition = _playerContainer.transform.position + GetRandomPosition(enemyData.Distance);
-                                foreach (GameObject enemy in _enemyPool.GetEnemies(enemyData))
-                                {
-                                    enemy.transform.position = nextPosition + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
-                                    nextPosition = _playerContainer.transform.position + GetRandomPosition(enemyData.Distance);
-                                }
-                            }
-                            else if (enemyData.IsRound)
-                            {
-                                float angle = Random.Range(0f, 360f);
-                                IList<GameObject> enemies = _enemyPool.GetEnemies(enemyData);
-                                for (int i = 0; i < enemies.Count; i++)
-                                {
-                                    enemies[i].transform.position = _playerContainer.transform.position + GetAnglePosition(enemyData.Distance, angle);
-                                    angle += 360f / enemies.Count;
-                                }
-                            }
-                            else
-                            {
-                                foreach (GameObject enemy in _enemyPool.GetEnemies(enemyData))
-                                {
-                                    enemy.transform.position = _playerContainer.transform.position + GetRandomPosition(enemyData.Distance);
-                                }
-                            }
-                            if (enemyData.WarmingAudio != null)
-                            {
-                                AudioContoller.Instance.PlayEffect(enemyData.WarmingAudio, enemyData.ExtendVolume);
-                            }
-                            enemyData.NextTime = _nowTime + enemyData.Intervals;
-                        }
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// 取得指定距離、隨機角度的座標
-        /// </summary>
-        /// <param name="distance"></param>
-        /// <returns></returns>
-        private Vector3 GetRandomPosition(float distance)
-        {
-            return GetAnglePosition(distance, Random.value * 360f);
-        }
-
-        /// <summary>
-        /// 取得指定距離、指定角度的座標
-        /// </summary>
-        /// <param name="distance"></param>
-        /// <param name="angle"></param>
-        /// <returns></returns>
-        private Vector3 GetAnglePosition(float distance, float angle)
-        {
-            float radians = angle * Mathf.Deg2Rad;
-            float x = distance * Mathf.Cos(radians);
-            float y = distance * Mathf.Sin(radians);
-            return new Vector3(x, y);
-        }
-
         private void UpdateGameTime()
         {
-            _nowTime += Time.deltaTime;
-            _gameUI.UpdateGameTime(_gameTime - _nowTime);
-            if(IsTimeWin)
+            AttributeHandle.Instance.GameTime += Time.deltaTime;
+            _gameUI.UpdateGameTime(_totalGameTime - AttributeHandle.Instance.GameTime);
+            if (IsTimeWin && IsKillAllEnemy)
             {
                 GameStateMachine.Instance.SetNextState(GameState.GameEnd);
             }
         }
 
-        private bool IsTimeWin { get => _gameTime - _nowTime <= 0; }
+        /// <summary>
+        /// 判斷是否時間勝利
+        /// </summary>
+        private bool IsTimeWin { get => _totalGameTime - AttributeHandle.Instance.GameTime <= 0; }
+        /// <summary>
+        /// 判斷是否殺光所有怪物
+        /// </summary>
+        private bool IsKillAllEnemy { get => _enemyContainer.GetComponent<Transform>().childCount == 0; }
     }
 }

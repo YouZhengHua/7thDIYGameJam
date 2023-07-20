@@ -17,5 +17,8 @@ namespace Scripts.Game.Data
 
         [Header("攻擊範圍")]
         public FloatAttributeHandle AttackRange;
+
+        [Header("是否可以被擊退")]
+        public bool CanAddedForce = true;
     }
 }

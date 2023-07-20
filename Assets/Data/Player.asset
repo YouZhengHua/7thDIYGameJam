@@ -21,7 +21,7 @@ MonoBehaviour:
     _value: 3.5
     _multiple: 1
   Force:
-    _value: 85
+    _value: 6
     _multiple: 1
   EnemyDelayTime:
     _value: 1

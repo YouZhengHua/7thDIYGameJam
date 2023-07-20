@@ -14,21 +14,23 @@ namespace Scripts.Game
         /// </summary>
         private IEndUIController _endUI;
 
-        [SerializeField, Header("目標判定階層")]
-        private LayerMask enemyLayer;
+        [SerializeField, Header("傷害判定階層")]
+        private LayerMask _damageLayer;
+        [SerializeField, Header("怪物判定階層")]
+        private LayerMask _enemyLayer;
         [SerializeField, Header("動畫控制器")]
-        private Animator playerAni;
+        private Animator _playerAni;
 
         /// <summary>
         /// 全域空間動畫控制器
         /// 用於玩家受到傷害使鏡頭泛紅
         /// </summary>
         [SerializeField, Header("全域空間動畫控制器"), Tooltip("用於玩家受到傷害使鏡頭泛紅")]
-        private Animator globalVolumeAni;
+        private Animator _globalVolumeAni;
         [SerializeField, Header("玩家受傷時的動畫名稱")]
-        private string playerGetHitTriggerName = "Hit";
+        private string _playerGetHitTriggerName = "Hit";
         [SerializeField, Header("玩家死亡時的動畫名稱")]
-        private string playerDeadBoolName = "Dead";
+        private string _playerDeadBoolName = "Dead";
 
         /// <summary>
         /// 玩家無敵時間
@@ -47,25 +49,26 @@ namespace Scripts.Game
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if ((((1 << collision.gameObject.layer) & enemyLayer) != 0) && _invincibleTime <= 0)
+            if ((((1 << collision.gameObject.layer) | _damageLayer) == _damageLayer) && _invincibleTime <= 0)
             {
-                IEnemyController collisionEnemy = collision.gameObject.GetComponent<IEnemyController>();
+                Debug.Log("玩家遭受碰撞", collision.gameObject);
+                BaseEnemyController collisionEnemy = collision.gameObject.GetComponent<BaseEnemyController>();
                 if (collisionEnemy != null && !collisionEnemy.IsDead)
                 {
-                    GetDamage((int)collisionEnemy.EnemyDamage);
-                    playerAni.SetTrigger(playerGetHitTriggerName);
-                    globalVolumeAni.SetTrigger(playerGetHitTriggerName);
-                    collision.gameObject.GetComponent<IEnemyController>().PlayAttackAnimation();
-                    foreach (var enemy in Physics2D.OverlapCircleAll(this.transform.position, AttributeHandle.Instance.PlayerRepelRadius, enemyLayer))
+                    GetDamage(collisionEnemy.EnemyData.Damage.Value);
+                }
+                BulletController bullet = collision.gameObject.GetComponent<BulletController>();
+                if(bullet != null)
+                {
+                    GetDamage(bullet.Damage);
+                }
+                foreach (var enemy in Physics2D.OverlapCircleAll(this.transform.position, AttributeHandle.Instance.PlayerRepelRadius, _enemyLayer))
+                {
+                    Vector2 distance = enemy.transform.position - this.transform.position;
+                    if (distance.magnitude < AttributeHandle.Instance.PlayerRepelRadius)
                     {
-                        Vector2 distance = enemy.transform.position - this.transform.position;
-                        if (distance.magnitude < AttributeHandle.Instance.PlayerRepelRadius)
-                        {
-                            enemy.GetComponent<Rigidbody2D>().AddForce(distance.normalized * (AttributeHandle.Instance.PlayerRepelRadius - distance.magnitude) * AttributeHandle.Instance.PlayerRepelForce);
-                            enemy.GetComponent<IEnemyController>().AddVelocityTime(AttributeHandle.Instance.PlayerRepelTime);
-                        }
+                        enemy.GetComponent<BaseEnemyController>().AddForce(AttributeHandle.Instance.PlayerRepelForce, AttributeHandle.Instance.PlayerRepelTime);
                     }
-                    _endUI.AddGetHitTimes();
                 }
             }
         }
@@ -74,9 +77,12 @@ namespace Scripts.Game
         /// 受到傷害
         /// </summary>
         /// <param name="damage"></param>
-        public void GetDamage(int damage)
+        public void GetDamage(float damage)
         {
             AttributeHandle.Instance.PlayerGetDamage(damage);
+            _playerAni.SetTrigger(_playerGetHitTriggerName);
+            _globalVolumeAni.SetTrigger(_playerGetHitTriggerName);
+            _endUI.AddGetHitTimes();
             if (AttributeHandle.Instance.PlayerHealthPoint <= 0)
             {
                 Dead();
@@ -93,7 +99,7 @@ namespace Scripts.Game
         /// </summary>
         public void Dead()
         {
-            playerAni.SetBool(playerDeadBoolName, true);
+            _playerAni.SetBool(_playerDeadBoolName, true);
             gameObject.SetActive(false);
             GameStateMachine.Instance.SetNextState(GameState.GameEnd);
         }
