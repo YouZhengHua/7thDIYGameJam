@@ -3372,7 +3372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &791803327
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4249,7 +4249,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5400757243678475929, guid: 9091b09e824c28f4db566937dfbc3c26, type: 2}
-  m_audioClip: {fileID: 8300000, guid: fc5af015011ea3745b7f78ea1dd1049f, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4974,9 +4974,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mapData: {fileID: 11400000, guid: 107467d6feb96e3409cea469773d3ad1, type: 2}
   _dropHealthPoolData: {fileID: 11400000, guid: 8972677931d51ff43a5e06a1734c4ebe, type: 2}
-  _exp1: {fileID: 11400000, guid: 4ffaac57ce6e49d469ce1da475cd6634, type: 2}
-  _exp2: {fileID: 11400000, guid: d34fcf08a6d735440a675c9b688072f0, type: 2}
-  _exp3: {fileID: 11400000, guid: dbea8ab9ebefdf041bd1b7ab1d8010f2, type: 2}
   defaultPlayerData: {fileID: 11400000, guid: 2876ee8e33d8ec94ba2d4130b9a04466, type: 2}
   Weapons:
   - {fileID: 11400000, guid: 360916674f1003340b477b2b6d075daa, type: 2}
@@ -4990,9 +4987,9 @@ MonoBehaviour:
   _optionPrefab: {fileID: 8508617249987231611, guid: 35c9c9f08bae8af4790ddedbb8d5cc17, type: 3}
   _userSetting: {fileID: 11400000, guid: abb8e8f88633b11419d94df063a5d869, type: 2}
   _defaultSetting: {fileID: 11400000, guid: 6a85d2c901f7dac4190fa093fc640980, type: 2}
-  _totalGameTime: 30
-  WinAudio: {fileID: 8300000, guid: 88396652e99bcac46a54da63ac393968, type: 3}
-  LoseAudio: {fileID: 8300000, guid: 01c2a8fccc4b56f4e843df443e826786, type: 3}
+  _totalGameTime: 10
+  WinAudio: {fileID: 8300000, guid: 387528c62d6f7884a8a84fe16b962af7, type: 3}
+  LoseAudio: {fileID: 8300000, guid: 0bfe856bb7a487f46bc57f21f30102d8, type: 3}
   _gameUICanvas: {fileID: 939578880}
   _pauseUICanvas: {fileID: 1322322991}
   _gameOptionsUICanvas: {fileID: 907977015}
@@ -5002,6 +4999,7 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 0
+  _shieldIcon: {fileID: 7103687685363077321, guid: a1f45629391a3af49b3e77c3b563f15e, type: 3}
 --- !u!1 &1496897374
 GameObject:
   m_ObjectHideFlags: 0
@@ -5431,7 +5429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1681310538
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6412,7 +6410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2087984336
 RectTransform:
   m_ObjectHideFlags: 0

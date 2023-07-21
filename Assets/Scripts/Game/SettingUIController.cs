@@ -52,7 +52,7 @@ namespace Scripts.Game
             _userSetting.soundVolume = _sound.Value;
             _userSetting.musicVolume = _music.Value;
 
-            AudioContoller.Instance.UpdateAudioVolume();
+            AudioController.Instance.UpdateAudioVolume();
             this.HideCanvas();
         }
 
@@ -66,7 +66,7 @@ namespace Scripts.Game
             _userSetting.Reload = _tmpSetting.Reload;
             _userSetting.Shoot = _tmpSetting.Shoot;
 
-            AudioContoller.Instance.UpdateAudioVolume();
+            AudioController.Instance.UpdateAudioVolume();
             this.HideCanvas();
         }
 
@@ -87,7 +87,7 @@ namespace Scripts.Game
         private void OnMusicValueOnChange()
         {
             _userSetting.musicVolume = _music.Value;
-            AudioContoller.Instance.UpdateAudioVolume();
+            AudioController.Instance.UpdateAudioVolume();
         }
 
         public void ResetUserSetting()

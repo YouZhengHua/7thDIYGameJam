@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 
 namespace Scripts
 {
-    public class AudioContoller
+    public class AudioController
     {
         private AudioSource _musicAudio;
         private AudioSource _soundAudio;
@@ -13,20 +13,20 @@ namespace Scripts
         private readonly float maxDb = 0f;
         private readonly float minDb = -65f;
         private static readonly object padlock = new object();
-        public static AudioContoller _instance = null;
-        public static AudioContoller Instance
+        public static AudioController _instance = null;
+        public static AudioController Instance
         {
             get
             {
                 lock (padlock)
                 {
                     if (_instance == null)
-                        _instance = new AudioContoller();
+                        _instance = new AudioController();
                     return _instance;
                 }
             }
         }
-        public AudioContoller()
+        public AudioController()
         {
             _audioMixer = Resources.Load<AudioMixer>("Audio/AudioMixer");
         }

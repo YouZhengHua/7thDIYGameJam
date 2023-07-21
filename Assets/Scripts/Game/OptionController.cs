@@ -8,6 +8,7 @@ namespace Scripts.Game
     public class OptionController : MonoBehaviour, IOptionController
     {
         private Image _background;
+        private Image _icon;
         private Button _button;
         private TextMeshProUGUI _text;
         private IOptionsUIController _optionsUI;
@@ -16,6 +17,11 @@ namespace Scripts.Game
         private void Awake()
         {
             _background = gameObject.GetComponent<Image>();
+            foreach(Image image in gameObject.GetComponentsInChildren<Image>())
+            {
+                if (image.name == "Icon")
+                    _icon = image;
+            }
             _button = gameObject.GetComponent<Button>();
             _text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
             _button.onClick.AddListener(OnClick);
@@ -29,9 +35,12 @@ namespace Scripts.Game
         public void SetOptionData(OptionData data)
         {
             _data = data;
-            if(data.OptionType == OptionType.Weapon)
+            _icon.enabled = data.Image != null;
+            if (data.Image != null)
+                _icon.sprite = data.Image;
+            if (data.OptionType == OptionType.Weapon)
             {
-                if(data.SelectedCount > 0)
+                if (data.SelectedCount > 0)
                 {
                     _text.text = $"{data.Depiction}\n{((WeaponOptionData)data).WeaponUpdateAttributes[data.SelectedCount - 1].AttributeDepiction}";
                 }

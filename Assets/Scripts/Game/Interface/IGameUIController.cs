@@ -8,6 +8,6 @@ namespace Scripts.Game
 
         public void UpdatePlayerHealth();
 
-        public void GetExp(ExpNumber exp);
+        public void UpdateExpGUI();
     }
 }

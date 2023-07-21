@@ -76,7 +76,7 @@ namespace Scripts.Game
                             }
                             if (enemyData.WarmingAudio != null)
                             {
-                                AudioContoller.Instance.PlayEffect(enemyData.WarmingAudio, enemyData.ExtendVolume);
+                                AudioController.Instance.PlayEffect(enemyData.WarmingAudio, enemyData.ExtendVolume);
                             }
                             enemyData.NextTime = AttributeHandle.Instance.GameTime + enemyData.Intervals;
                         }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _optionType: 1
   _depiction: "\u76FE\u724C"
-  _image: {fileID: 0}
+  _image: {fileID: 21300000, guid: 5367ee3604e6e574595ac8979d91f1dd, type: 3}
   _maxSelectedCount: 9
   _isEndOption: 0
   _isLoopOption: 0

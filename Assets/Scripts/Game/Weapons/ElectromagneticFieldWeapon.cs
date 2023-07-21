@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Scripts;
 using Scripts.Game;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class ElectromagneticFieldWeapon : Weapon
 {
     //自轉速度
     public float rotateSpeed = 100f;
+    private float _soundDealy = 10f;
+    private float _nextSoundTime = 0f;
 
     private GameObject _ammoObj = null;
     public override void Start()
@@ -49,6 +52,13 @@ public class ElectromagneticFieldWeapon : Weapon
 
         //自動旋轉 _ammoObj
         _ammoObj.transform.Rotate(Vector3.forward * Time.deltaTime * rotateSpeed);
+
+        if(_nextSoundTime >= _soundDealy || _nextSoundTime == 0f)
+        {
+            PlaySound();
+            _nextSoundTime = 0f;
+        }
+        _nextSoundTime += Time.deltaTime;
         return true;
     }
 
@@ -57,17 +67,22 @@ public class ElectromagneticFieldWeapon : Weapon
         Debug.Log("觸發電磁");
         // 在半径范围内查找敌人单位
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, weaponData.DamageRadius.Value);
-
         foreach (Collider2D collider in colliders)
         {
             // 如果碰撞体属于敌人单位
-            EnemyController enemyUnit = collider.GetComponent<EnemyController>();
+            BaseEnemyController enemyUnit = collider.GetComponent<BaseEnemyController>();
             if (enemyUnit != null)
             {
                 // 对敌人单位执行受伤的动作
                 Debug.Log("enemyUnit = " + enemyUnit.name);
-                enemyUnit.TakeDamage(weaponData.Damage.Value, weaponData.DamageFrom, weaponData.Force.Value, weaponData.DelayTime.Value);
+                enemyUnit.TakeDamage(weaponData.Damage.Value);
+                enemyUnit.AddForce(weaponData.Force.Value, weaponData.DelayTime.Value);
             }
         }
+    }
+
+    private void PlaySound()
+    {
+        AudioController.Instance.PlayEffect(weaponData.ShootAudio);
     }
 }

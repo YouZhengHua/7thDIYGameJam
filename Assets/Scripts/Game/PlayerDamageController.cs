@@ -101,7 +101,7 @@ namespace Scripts.Game
             }
             else
             {
-                AudioContoller.Instance.PlayEffect(AttributeHandle.Instance.GetHitAudio);
+                AudioController.Instance.PlayEffect(AttributeHandle.Instance.GetHitAudio);
             }
             _invincibleTime = AttributeHandle.Instance.InvincibleTime;
         }
