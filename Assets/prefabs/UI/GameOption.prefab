@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1052583984911082243}
   - component: {fileID: 5178371823901820783}
   m_Layer: 5
-  m_Name: Select
+  m_Name: SelectCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

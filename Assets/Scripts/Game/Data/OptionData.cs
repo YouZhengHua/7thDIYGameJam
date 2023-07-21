@@ -11,6 +11,12 @@ namespace Scripts.Game.Data
 		/// </summary>
 		public OptionType OptionType { get => _optionType; }
 
+		[SerializeField, Header("選項標題")]
+		protected string _title;
+		/// <summary>
+		/// 選項敘述
+		/// </summary>
+		public string Title { get => _title; }
 		[SerializeField, Header("選項敘述")]
 		protected string _depiction;
 		/// <summary>
@@ -46,6 +52,11 @@ namespace Scripts.Game.Data
 		/// 被選取次數
 		/// </summary>
 		public int SelectedCount { get; set; }
+
+		/// <summary>
+		/// 被選取次數
+		/// </summary>
+		public int MaxSelectedCount { get => _maxSelectedCount; }
 
 		/// <summary>
 		/// 是否達到最大被選取次數

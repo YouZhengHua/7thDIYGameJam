@@ -10,7 +10,8 @@ namespace Scripts.Game
         private Image _background;
         private Image _icon;
         private Button _button;
-        private TextMeshProUGUI _text;
+        private TextMeshProUGUI _depiction;
+        private TextMeshProUGUI _selectCount;
         private IOptionsUIController _optionsUI;
         private OptionData _data;
 
@@ -23,7 +24,13 @@ namespace Scripts.Game
                     _icon = image;
             }
             _button = gameObject.GetComponent<Button>();
-            _text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+            foreach (TextMeshProUGUI text in gameObject.GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                if (text.name == "Depiction")
+                    _depiction = text;
+                else if (text.name == "SelectCount")
+                    _selectCount = text;
+            }
             _button.onClick.AddListener(OnClick);
         }
 
@@ -38,20 +45,23 @@ namespace Scripts.Game
             _icon.enabled = data.Image != null;
             if (data.Image != null)
                 _icon.sprite = data.Image;
+
+            _depiction.text = $"{data.Title}\n{data.Depiction}";
             if (data.OptionType == OptionType.Weapon)
             {
                 if (data.SelectedCount > 0)
                 {
-                    _text.text = $"{data.Depiction}\n{((WeaponOptionData)data).WeaponUpdateAttributes[data.SelectedCount - 1].AttributeDepiction}";
+                    _depiction.text = $"{data.Title}\n{((WeaponOptionData)data).WeaponUpdateAttributes[data.SelectedCount - 1].AttributeDepiction}";
                 }
-                else
-                {
-                    _text.text = $"解鎖武器\n{data.Depiction}";
-                }
+            }
+
+            if (data.IsLoopOption)
+            {
+                _selectCount.text = $"{data.SelectedCount}/-";
             }
             else
             {
-                _text.text = data.Depiction;
+                _selectCount.text = $"{data.SelectedCount}/{data.MaxSelectedCount}";
             }
         }
 

@@ -70,6 +70,12 @@ namespace Scripts.Game
         [SerializeField, Header("護盾值預置物")]
         private GameObject _shieldIcon;
 
+        [SerializeField, Header("有效護盾值")]
+        private Sprite _shieldActive;
+
+        [SerializeField, Header("失效護盾值")]
+        private Sprite _shieldUnactive;
+
         /// <summary>
         /// 攝影機控制器
         /// </summary>
@@ -138,7 +144,7 @@ namespace Scripts.Game
             _settingUI = new SettingUIController(_settingUICanvas, _defaultSetting, _userSetting);
             _pauseUI = new PauseUIController(_settingUI);
             _optionsUI = new OptionsUIController(_optionPrefab, _optionDatas);
-            _gameUI = new GameUIController(_optionsUI, _gameUICanvas, _shieldIcon);
+            _gameUI = new GameUIController(_optionsUI, _gameUICanvas, _shieldIcon, _shieldActive, _shieldUnactive);
             AttributeHandle.Instance.SetGameUIController(_gameUI);
             _playerDamageController.SetEndUI = _endUI;
             Debug.Log("GameManager Awake() End");
@@ -154,6 +160,8 @@ namespace Scripts.Game
             PlayerStateMachine.Instance.SetNextState(PlayerState.Idle);
             AudioController.Instance.UpdateAudioVolume();
             _gameUI.UpdatePlayerHealth();
+            _gameUI.UpdateMoneyGUI();
+            UpdateGameTime();
             AttributeHandle.Instance.SetLobbyUpgrade(_upgradeManager);
             Debug.Log("GameManager Start() End");
         }

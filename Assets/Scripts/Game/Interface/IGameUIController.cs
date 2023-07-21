@@ -9,5 +9,9 @@ namespace Scripts.Game
         public void UpdatePlayerHealth();
 
         public void UpdateExpGUI();
+        /// <summary>
+        /// 更新金錢量 UI
+        /// </summary>
+        public void UpdateMoneyGUI();
     }
 }

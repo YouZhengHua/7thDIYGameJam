@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Attribute 05
   m_EditorClassIdentifier: 
   _optionType: 0
-  _depiction: "\u6389\u843D\u7269\u62FE\u53D6\u7BC4\u570D\u589E\u52A0 50%"
+  _title: "\u6389\u843D\u7269\u62FE\u53D6\u7BC4\u570D"
+  _depiction: "\u589E\u52A0 50%"
   _image: {fileID: 0}
   _maxSelectedCount: 2
   _isEndOption: 0

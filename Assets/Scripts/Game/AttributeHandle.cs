@@ -408,11 +408,15 @@ namespace Scripts.Game
         public void AddTotalMoney(float money)
         {
             _totalMoney = money * (1f + _extendMoneyMuliple);
+            _gameUI.UpdateMoneyGUI();
         }
+
+        public float TotalMoney { get => _totalMoney + StaticPrefs.Score; }
 
         public void AddTotalKill(int kill = 1)
         {
             _totalKill = kill;
+            this.AddTotalMoney(kill);
         }
 
         /// <summary>
