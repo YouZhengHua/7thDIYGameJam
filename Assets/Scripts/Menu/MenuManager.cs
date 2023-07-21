@@ -6,8 +6,13 @@ namespace Scripts.Menu
     public class MenuManager : MonoBehaviour, IMenuManager
     {
         [SerializeField] private FadeEffectUI fadeEffect;
+        [SerializeField] private Transform disableAllUI;
         [SerializeField] private StoryManager storyManager;
         [SerializeField] private StageManager stageManager;
+        [SerializeField] private StoryDialogueSO storyDialogueSO;
+
+        private StageManager.stage currentStage;
+        private int dialogueIndex;
 
         private void Awake()
         {
@@ -16,7 +21,9 @@ namespace Scripts.Menu
         }
 
         private void Start() {
-            switch (stageManager.GetCurrentStage()) {
+            currentStage = stageManager.GetCurrentStage();
+
+            switch (currentStage) {
                 case StageManager.stage.firstStartGame:
                     Prologue();
                     break;
@@ -39,6 +46,12 @@ namespace Scripts.Menu
                     GameEnd();
                     break;
             }
+
+            foreach (StoryDialogueSO.stage_dialogue stage_Dialogue in storyDialogueSO.dialogues) {
+                if (stage_Dialogue.stage == currentStage) {
+                    dialogueIndex = stage_Dialogue.dialougeIndex[0];
+                }
+            }
         }
 
         private void FirstOpenGame()
@@ -57,7 +70,13 @@ namespace Scripts.Menu
         }
 
         public void TalkToGirl() {
-
+            foreach(StoryDialogueSO.stage_dialogue stage_Dialogue in storyDialogueSO.dialogues) {
+                if (stage_Dialogue.stage == currentStage) {
+                    DisableAllUI();
+                    storyManager.StartStory(dialogueIndex, EnableAllUI);
+                    dialogueIndex = ((dialogueIndex + 1) % stage_Dialogue.dialougeIndex.Count) + stage_Dialogue.dialougeIndex[0];
+                }
+            }
         }
 
         private void FadeIn() {
@@ -68,13 +87,23 @@ namespace Scripts.Menu
             fadeEffect.FadeOut();
         }
 
+        private void DisableAllUI() {
+            disableAllUI.gameObject.SetActive(true);
+        }
+
+        private void EnableAllUI() {
+            disableAllUI.gameObject.SetActive(false);
+        }
+
         private void Prologue() {
-            storyManager.StartStory(4, FadeIn);
+            storyManager.StartStory(4, Level_1);
             stageManager.SetCurrentStage(StageManager.stage.Level_1);
         }
 
         private void Level_1() {
             FadeIn();
+            DisableAllUI();
+            storyManager.StartStory(5, EnableAllUI);
         }
 
         private void Level_2() {
