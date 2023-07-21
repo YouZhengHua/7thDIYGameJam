@@ -8,7 +8,6 @@ public class UpgradeElementUI : MonoBehaviour
 {
     [SerializeField] private Transform progressUIContainer;
     [SerializeField] private UpgradeElementSO upgradeElementSO;
-    [SerializeField] private TextMeshProUGUI ButtonName;
     [SerializeField] private Button button;
     [SerializeField] private Sprite upgradedSprite;
     [SerializeField] private Sprite notUpgradedSprite;
@@ -26,8 +25,6 @@ public class UpgradeElementUI : MonoBehaviour
 
     private void Start()
     {
-        ButtonName.text = upgradeElementSO.elementName;
-
         if (progressUIs.Count != upgradeElementSO.maxLevel)
         {
             Debug.LogError("The length of UI checkbox of " + upgradeElementSO.name + " does not match");
