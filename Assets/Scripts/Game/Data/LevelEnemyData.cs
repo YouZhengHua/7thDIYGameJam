@@ -21,8 +21,10 @@ namespace Scripts.Game.Data
                 _nextTime = value;
             }
         }
-        [Header("生成距離"), Range(5, 20)]
+        [Header("生成距離"), Range(5f, 20f)]
         public float Distance = 15f;
+        [Header("生成距離區間"), Min(0f)]
+        public float DistanceRange = 0f;
         /// <summary>
         /// 怪物生成間隔
         /// </summary>
@@ -36,8 +38,6 @@ namespace Scripts.Game.Data
         public bool IsGroup = false;
         [Header("是否環形生成")]
         public bool IsRound = false;
-        [Header("怪物池大小"), Range(1, 150)]
-        public int PoolSize = 50;
         [Header("關卡怪物登場音效")]
         public AudioClip WarmingAudio;
         [Header("音效額外音量"), Range(0f, 3f)]

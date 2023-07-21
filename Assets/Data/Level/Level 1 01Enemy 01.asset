@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729aaef5521b7dd4483a55082915f1e6, type: 3}
+  m_Name: Level 1 01Enemy 01
+  m_EditorClassIdentifier: 
+  Distance: 15
+  Intervals: 1
+  Quantity: 1
+  Prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+  IsGroup: 0
+  IsRound: 0
+  PoolSize: 60
+  WarmingAudio: {fileID: 0}
+  ExtendVolume: 0

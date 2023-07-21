@@ -2,13 +2,10 @@
 
 namespace Scripts.Game.Data
 {
-    [CreateAssetMenu(menuName = "Game/DropItem")]
+    [CreateAssetMenu(menuName = "Game/DropItemData")]
     public class DropItemData : ScriptableObject
     {
-        [Header("掉落物回收速度")]
-        public float speed = 100;
-
-        [Header("預置物池資料")]
-        public PoolData poolData;
+        [Header("飛行速度")]
+        public float FlySpeed;
     }
 }

@@ -73,6 +73,7 @@ namespace Scripts.Game
         {
             if (IsDead || GameStateMachine.Instance.CurrectState != GameState.InGame)
             {
+                _rigidbody2D.velocity = Vector2.zero;
                 return;
             }
             Move();
@@ -178,6 +179,10 @@ namespace Scripts.Game
             _collider2D.enabled = false;
             if (_animator != null && !string.IsNullOrEmpty(_enemyDead))
                 _animator.SetTrigger(_enemyDead);
+            foreach(DropStruct drop in EnemyData.Drops)
+            {
+                drop.DropCheck(transform.position);
+            }
             StartCoroutine(DestroyEnemy());
         }
 

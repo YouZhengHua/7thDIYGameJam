@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Scripts;
 using Scripts.Game;
 using UnityEngine;
 
@@ -31,7 +32,7 @@ public class BombingWeapon : Weapon
     {
         Debug.Log("轰炸");
         Vector3 randomPoint = getRandomPointAroundPlayer();
-
+        AudioController.Instance.PlayEffect(weaponData.ShootAudio);
         // 播放轰炸特效
         //TODO 用架構的物件池 AmmoPool
         GameObject effect = Instantiate(weaponData.AmmoPrefab, randomPoint, Quaternion.identity);
@@ -43,12 +44,13 @@ public class BombingWeapon : Weapon
         foreach (Collider2D collider in colliders)
         {
             // 如果碰撞体属于敌人单位
-            EnemyController enemyUnit = collider.GetComponent<EnemyController>();
+            BaseEnemyController enemyUnit = collider.GetComponent<BaseEnemyController>();
             if (enemyUnit != null)
             {
                 // 对敌人单位执行受伤的动作
                 Debug.Log("enemyUnit = " + enemyUnit.name);
-                enemyUnit.TakeDamage(weaponData.Damage.Value, weaponData.DamageFrom, weaponData.Force.Value, weaponData.DelayTime.Value);
+                enemyUnit.TakeDamage(weaponData.Damage.Value);
+                enemyUnit.AddForce(weaponData.Force.Value, weaponData.DelayTime.Value);
             }
         }
 

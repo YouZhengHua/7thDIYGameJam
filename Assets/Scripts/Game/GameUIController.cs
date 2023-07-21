@@ -18,19 +18,23 @@ namespace Scripts.Game
         private Image _hpRateImage;
         private Image _shieldRateImage;
         private GameObject _shieldContainer;
+        private GameObject _shieldIcon;
         private IOptionsUIController _optionsUI;
+        private IList<GameObject> _shieldList;
 
-        public GameUIController(IOptionsUIController optionsUI, Canvas canvas) : base(canvas)
+        public GameUIController(IOptionsUIController optionsUI, Canvas canvas, GameObject shieldIcon) : base(canvas)
         {
             _optionsUI = optionsUI;
+            _shieldIcon = shieldIcon;
+            _shieldList = new List<GameObject>();
             foreach (Image image in GameObject.FindObjectsOfType<Image>())
             {
                 if (image.gameObject.name == "ExpRate")
                     _expRateImage = image;
                 else if (image.gameObject.name == "HpRate")
                     _hpRateImage = image;
-                else if (image.gameObject.name == "ShieldRate")
-                    _shieldRateImage = image;
+                /*else if (image.gameObject.name == "ShieldRate")
+                    _shieldRateImage = image;*/
             }
 
             foreach (TextMeshProUGUI text in GameObject.FindObjectsOfType<TextMeshProUGUI>())
@@ -39,8 +43,8 @@ namespace Scripts.Game
                     _gameTime = text;
                 else if (text.gameObject.name == "HpText")
                     _hpText = text;
-                else if (text.gameObject.name == "ShieldText")
-                    _shieldText = text;
+                /*else if (text.gameObject.name == "ShieldText")
+                    _shieldText = text;*/
             }
 
             _shieldContainer = GameObject.Find("ShieldContainer");
@@ -55,11 +59,26 @@ namespace Scripts.Game
             _hpRateImage.fillAmount = AttributeHandle.Instance.PlayerHealthPoint / AttributeHandle.Instance.PlayerMaxHealthPoint;
 
             _shieldContainer.SetActive(AttributeHandle.Instance.PlayerShield > 0);
-            if (AttributeHandle.Instance.PlayerShield > 0)
+            for(int i = 0; i < Mathf.Max(AttributeHandle.Instance.PlayerShield, _shieldList.Count); i++)
+            {
+                if(_shieldList.Count > i)
+                {
+                    GameObject shield = _shieldList[i];
+                    shield.SetActive(i < AttributeHandle.Instance.PlayerShield);
+                    Debug.Log($"{i}, {AttributeHandle.Instance.PlayerShield}, {i < AttributeHandle.Instance.PlayerShield}");
+                }
+                else
+                {
+                    GameObject shield = GameObject.Instantiate(_shieldIcon, _shieldContainer.transform);
+                    shield.transform.localPosition = new Vector3(i * 50f, -25f, 0f);
+                    _shieldList.Add(shield);
+                }
+            }
+            /*if (AttributeHandle.Instance.PlayerShield > 0)
             {
                 _shieldText.text = $"{AttributeHandle.Instance.PlayerShield} / {AttributeHandle.Instance.PlayerMaxShield}";
                 _shieldRateImage.fillAmount = AttributeHandle.Instance.PlayerShield / AttributeHandle.Instance.PlayerMaxShield;
-            }
+            }*/
         }
 
         /// <summary>
@@ -75,27 +94,17 @@ namespace Scripts.Game
         }
 
         /// <summary>
-        /// 取得經驗值
+        /// 更新 UI 的經驗條長度
         /// </summary>
-        /// <param name="exp"></param>
-        public void GetExp(ExpNumber exp)
+        public void UpdateExpGUI()
         {
-            AttributeHandle.Instance.AddExp((float)exp);
-            if(AttributeHandle.Instance.IsLevelUp)
+            if (AttributeHandle.Instance.IsLevelUp)
             {
                 AttributeHandle.Instance.NowExp -= AttributeHandle.Instance.NextLevelExp;
                 AttributeHandle.Instance.Level += 1;
-                AudioContoller.Instance.PlayEffect(AttributeHandle.Instance.LevelUpAudio, 0.5f);
+                AudioController.Instance.PlayEffect(AttributeHandle.Instance.LevelUpAudio, 0.5f);
                 _optionsUI.ShowCanvas();
             }
-            UpdateExpGUI();
-        }
-
-        /// <summary>
-        /// 更新 UI 的經驗條長度
-        /// </summary>
-        private void UpdateExpGUI()
-        {
             _expRateImage.fillAmount = AttributeHandle.Instance.ExpPercentage;
         }
     }

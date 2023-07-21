@@ -16,15 +16,6 @@ namespace Scripts.Game
         [SerializeField, Header("補血包")]
         private PoolData _dropHealthPoolData;
 
-        [SerializeField, Header("經驗值1")]
-        private ExpData _exp1;
-
-        [SerializeField, Header("經驗值2")]
-        private ExpData _exp2;
-
-        [SerializeField, Header("經驗值3")]
-        private ExpData _exp3;
-
         [SerializeField, Header("玩家資料")]
         private PlayerData defaultPlayerData;
         private PlayerData _playerData;
@@ -76,6 +67,9 @@ namespace Scripts.Game
         [SerializeField, Header("怪物階層")]
         private LayerMask _enemyLayer;
 
+        [SerializeField, Header("護盾值預置物")]
+        private GameObject _shieldIcon;
+
         /// <summary>
         /// 攝影機控制器
         /// </summary>
@@ -104,10 +98,6 @@ namespace Scripts.Game
         /// 遊戲設定UI
         /// </summary>
         private ISettingUIController _settingUI;
-        /// <summary>
-        /// 補包掉落物池
-        /// </summary>
-        private IDropHealthPool _dropHealthPool;
         /// <summary>
         /// 經驗值掉落物池
         /// </summary>
@@ -139,7 +129,7 @@ namespace Scripts.Game
             GameStateMachine.Instance.SetNextState(GameState.Loading);
             AttributeHandle.Instance.Init();
             AttributeHandle.Instance.SetPlayerData(_playerData);
-            AudioContoller.Instance.SetUserSetting(_userSetting);
+            AudioController.Instance.SetUserSetting(_userSetting);
 
             _playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
             _endUI = new EndUIController();
@@ -147,10 +137,8 @@ namespace Scripts.Game
             _mapController = new MapController(_mapData);
             _settingUI = new SettingUIController(_settingUICanvas, _defaultSetting, _userSetting);
             _pauseUI = new PauseUIController(_settingUI);
-            _dropHealthPool = new DropHealthPool(_dropHealthPoolData, _playerContainer.transform);
             _optionsUI = new OptionsUIController(_optionPrefab, _optionDatas);
-            _gameUI = new GameUIController(_optionsUI, _gameUICanvas);
-            _expPool = new ExpPool(_exp1, _exp2, _exp3, _gameUI, _playerContainer.transform);
+            _gameUI = new GameUIController(_optionsUI, _gameUICanvas, _shieldIcon);
             AttributeHandle.Instance.SetGameUIController(_gameUI);
             _playerDamageController.SetEndUI = _endUI;
             Debug.Log("GameManager Awake() End");
@@ -164,7 +152,7 @@ namespace Scripts.Game
             _endUI.HideCanvas();
             _settingUI.HideCanvas();
             PlayerStateMachine.Instance.SetNextState(PlayerState.Idle);
-            AudioContoller.Instance.UpdateAudioVolume();
+            AudioController.Instance.UpdateAudioVolume();
             _gameUI.UpdatePlayerHealth();
             AttributeHandle.Instance.SetLobbyUpgrade(_upgradeManager);
             Debug.Log("GameManager Start() End");
@@ -197,13 +185,13 @@ namespace Scripts.Game
             else if (GameStateMachine.Instance.CurrectState == GameState.BackToMenu)
             {
                 GameStateMachine.Instance.SetNextState(GameState.BackToMenued);
-                LoadingScreen.instance.LoadScene("01_MenuScene", true);
+                LoadingScreen.instance.LoadScene("01_MenuScene", false);
             }
             else if (GameStateMachine.Instance.CurrectState == GameState.GameEnd)
             {
                 bool isWin = IsTimeWin && IsKillAllEnemy;
                 _endUI.ShowCanvas(isWin);
-                AudioContoller.Instance.PlayEffect(isWin ? WinAudio : LoseAudio, isWin ? 0.5f : 1.5f);
+                AudioController.Instance.PlayEffect(isWin ? WinAudio : LoseAudio, isWin ? 0.5f : 1.5f);
                 GameStateMachine.Instance.SetNextState(GameState.GameEnded);
             }
             else if (GameStateMachine.Instance.CurrectState == GameState.Restart)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Scripts;
 using Scripts.Game;
 using UnityEngine;
 
@@ -61,6 +62,7 @@ public class DroneAWeapon : Weapon
         for (int i = 0; i < shootCount; i++)
         {
             launch(center);
+            AudioController.Instance.PlayEffect(weaponData.ShootAudio);
             yield return new WaitForSeconds(shootInterval);
         }
     }
@@ -96,12 +98,12 @@ public class DroneAWeapon : Weapon
 
     private void _hitEnemy(Collider2D collision)
     {
-        EnemyController enemyController;
-        if (collision.TryGetComponent<EnemyController>(out enemyController))
+        BaseEnemyController enemyController;
+        if (collision.TryGetComponent<BaseEnemyController>(out enemyController))
         {
             Debug.Log("missileAmmo _hitEnemy");
-            enemyController.TakeDamage(weaponData.Damage.Value, weaponData.DamageFrom, weaponData.Force.Value, weaponData.DelayTime.Value);
+            enemyController.TakeDamage(weaponData.Damage.Value);
+            enemyController.AddForce(weaponData.Force.Value, weaponData.DelayTime.Value);
         }
     }
-
 }

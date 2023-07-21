@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c50be2da776364a804db01ea359915, type: 3}
+  m_Name: Enemy 01
+  m_EditorClassIdentifier: 
+  HealthPoint: 10
+  MoveSpeed:
+    _value: 4.5
+    _multiple: 1
+  exp: 1
+  Damage:
+    _value: 8
+    _multiple: 1
+  IsBoss: 0
+  AttackRange:
+    _value: 0
+    _multiple: 1
+  CanAddedForce: 1
+  Drops:
+  - _chance:
+      _value: 1
+      _multiple: 1
+    _prefab: {fileID: 8428036453670287137, guid: d665baab86d22914989bcf09ad672847, type: 3}
+  - _chance:
+      _value: 0.01
+      _multiple: 1
+    _prefab: {fileID: 8926784309508359775, guid: 407e149f009c458459d5f32c12681718, type: 3}

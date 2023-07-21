@@ -27,7 +27,8 @@ MonoBehaviour:
   DelayTime:
     _value: 0.5
     _multiple: 1
-  ShootAudios: []
+  ShootAudios:
+  - {fileID: 8300000, guid: f03e019a5add4784ba6c30210a08334c, type: 3}
   CoolDownTime:
     _value: 0.333
     _multiple: 1

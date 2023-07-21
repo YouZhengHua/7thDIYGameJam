@@ -251,6 +251,7 @@ namespace Scripts.Game
         public void AddExp(float exp)
         {
             _playerData.NowExp += exp * ExpMultiple;
+            _gameUI.UpdateExpGUI();
         }
         /// <summary>
         /// 取得或設定玩家的經驗值
@@ -344,17 +345,12 @@ namespace Scripts.Game
         {
             // 扣除防禦值
             damage = CalTool.CalDamage(damage, this.PlayerDEF);
-            // 扣除護盾值
-            if (_playerData.Shield > 0)
+            // 扣除
+            if (_playerData.Shield > 0f)
             {
                 // 剩餘護盾值
-                float shield = _playerData.Shield;
-                shield -= damage;
-
-                // 剩餘傷害值
-                damage -= _playerData.Shield;
-
-                _playerData.Shield = Mathf.Max(shield, 0f);
+                _playerData.Shield--;
+                damage = 0f;
             }
 
             // 扣除血量

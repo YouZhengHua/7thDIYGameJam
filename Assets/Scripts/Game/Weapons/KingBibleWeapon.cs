@@ -33,10 +33,11 @@ public class KingBibleWeapon : Weapon
     private void _hitEnemy(Collider2D collision)
     {
         Debug.Log("KingBibleWeapon _hitEnemy");
-        EnemyController enemyController;
-        if (TryGetComponent<EnemyController>(out enemyController))
+        BaseEnemyController enemyController;
+        if (TryGetComponent<BaseEnemyController>(out enemyController))
         {
-            enemyController.TakeDamage(weaponData.Damage.Value, weaponData.DamageFrom, weaponData.Force.Value, weaponData.DelayTime.Value);
+            enemyController.TakeDamage(weaponData.Damage.Value);
+            enemyController.AddForce(weaponData.Force.Value, weaponData.DelayTime.Value);
         }
     }
 

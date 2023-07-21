@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Scripts;
 using Scripts.Game;
 using UnityEngine;
 
@@ -81,8 +82,7 @@ public class PlasmaMachineGunWeapon : Weapon
 
         _gunEffect.SetTrigger(playerShootFire);
 
-        //TODO 播放音效
-        // _audio.PlayEffect(_attributeHandle.ShootAudio);
+        AudioController.Instance.PlayEffect(weaponData.ShootAudio);
 
         _shotAmmo.Clear();
 

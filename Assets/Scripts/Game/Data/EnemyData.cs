@@ -20,5 +20,8 @@ namespace Scripts.Game.Data
 
         [Header("是否可以被擊退")]
         public bool CanAddedForce = true;
+
+        [Header("掉落物清單")]
+        public DropStruct[] Drops;
     }
 }

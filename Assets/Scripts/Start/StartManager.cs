@@ -24,7 +24,7 @@ namespace Scripts.Start
 
         private void Awake()
         {
-            AudioContoller.Instance.SetUserSetting(_userSetting);
+            AudioController.Instance.SetUserSetting(_userSetting);
             _menuUIController = new MenuUIController(this, _menuCanvas);
             _settingUIController = new SettingUIController(this, _settingCanvas, _defaultSetting, _userSetting);
             inputKeycodes = new List<KeyCode>();
@@ -34,7 +34,7 @@ namespace Scripts.Start
         private void Start()
         {
             ShowMenu();
-            AudioContoller.Instance.UpdateAudioVolume();
+            AudioController.Instance.UpdateAudioVolume();
         }
 
         private void Update()
