@@ -17,6 +17,7 @@ public class StageManager : ScriptableObject
     }
 
     public bool isPlayerDefeated;
+    public bool isSecInTheSameLevel;
     [SerializeField] private stage currentStage;
     private bool isLevelCleared;
 

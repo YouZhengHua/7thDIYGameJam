@@ -160,181 +160,10 @@ MonoBehaviour:
     arg6: Continue
     arg7: 
   - index: 2
-    action: Talk
-    arg1: Left
-    arg2: "\u6211"
-    arg3: "\uFF08\u8166\u4E2D\u7A81\u7136\u6D6E\u73FE\u4E86\u4E00\u500B\u60F3\u50CF\u2014\u2014\uFF09"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: SetScreen
-    arg1: FadeIn
-    arg2: Dark
-    arg3: 1
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: ShowBackGround
-    arg1: start_story2
-    arg2: 1
+    action: Delay
+    arg1: 2
+    arg2: 
     arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: SetScreen
-    arg1: FadeOut
-    arg2: White
-    arg3: 1
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: PlaySound
-    arg1: Act
-    arg2: countryside
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: Talk
-    arg1: Left
-    arg2: "\u6211"
-    arg3: "\uFF08\u9591\u975C\u8212\u9069\u7684\u7530\u91CE\u7A7F\u68AD\u8457\u53EF\u611B\u7684\u52D5\u7269\uFF0C\\n\u9084\u6709\u73FE\u6458\u7684\u65B0\u9BAE\u852C\u679C\u53EF\u4EE5\u54C1\u5690\u2026\u2026\uFF09"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: Talk
-    arg1: Left
-    arg2: "\u6211"
-    arg3: "\u771F\u60F3\u53BB\u5EA6\u5047\u554A\uFF5E"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: SetScreen
-    arg1: FadeIn
-    arg2: Dark
-    arg3: 1
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: PlaySound
-    arg1: Act
-    arg2: fairy
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: Talk
-    arg1: Left
-    arg2: "\uFF1F\uFF1F\uFF1F"
-    arg3: "\u6C92\u554F\u984C\uFF01"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: Talk
-    arg1: Left
-    arg2: "\u6211"
-    arg3: "\u54A6\uFF1F"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: PlaySound
-    arg1: Act
-    arg2: fairy
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: Talk
-    arg1: Left
-    arg2: "\uFF1F\uFF1F\uFF1F"
-    arg3: "\u4F60\u7684\u9858\u671B\uFF0C\u5C31\u8B93\u5049\u5927\u7684\u8FB2\u5834\u7CBE\u9748\u4F86\u5BE6\u73FE\u5427\uFF01"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: Talk
-    arg1: Left
-    arg2: "\u6211"
-    arg3: "\u7B49\u7B49\u3001\u6211\u6C92\u8A31\u9858\u2014\u2014"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: ShowBackGround
-    arg1: start_story3
-    arg2: 1
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: SetScreen
-    arg1: FadeOut
-    arg2: White
-    arg3: 1
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: PlaySound
-    arg1: Act
-    arg2: shake
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: Talk
-    arg1: Left
-    arg2: "\u6211"
-    arg3: "{vpunch=10,0.5}\u54C7\u554A\u554A\u554A\u554A\uFF5E\uFF5E"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 2
-    action: ShowRole
-    arg1: Left
-    arg2: Out
-    arg3: ShayHead
-    arg4: 
-    arg5: Once
-    arg6: Continue
-    arg7: 
-  - index: 2
-    action: SetScreen
-    arg1: FadeIn
-    arg2: Dark
-    arg3: 1
     arg4: 
     arg5: 
     arg6: 
@@ -699,12 +528,309 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 0
-    action: 
-    arg1: 
-    arg2: 
+  - index: 8
+    action: PlaySound
+    arg1: Sound
+    arg2: home
     arg3: 
     arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 8
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u770B\u8D77\u4F86\u4F60\u6210\u529F\u5B8C\u6210\u7B2C\u4E00\u9805\u4EFB\u52D9\u4E86"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 8
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 8
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u9019\u5C31\u662F\u6A5F\u5668\u4EBA\u760B\u72C2\u7684\u539F\u56E0\uFF0C\u300C\u611B\u4E4B\u82AF\u300D\u539F\u59CB\u6A94\u6848\uFF0C\u4EE3\u865F\u300C\u81EA\u6211\u300D"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 8
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 8
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u6839\u64DA\u535A\u58EB\u7684\u6307\u4EE4\uFF0C\u6211\u5FC5\u9808\u8981\u8B80\u53D6\u6240\u6709\u7684\u300C\u611B\u4E4B\u82AF\u300D\uFF0C\u4E26\u8FD4\u56DE\u5730\u7403\uFF0C\u5C0D\u5427\uFF1F"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 8
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 8
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F60\u4E0D\u7528\u64D4\u5FC3\uFF0C\u6211\u662FS-14v9\u7CFB\u5217\uFF0C\u4E0D\u6703\u5982\u540C\u5176\u4ED6\u5831\u5EE2\u54C1\u4E00\u822C\u653B\u64CA\u4F60\uFF0C\u5FEB\u8B93\u6211\u8B80\u53D6\u9019\u4EFD\u5167\u5BB9"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 9
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 9
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u9019\u5C31\u662F......\u300C\u81EA\u6211\u300D.......\u73FE\u5728\u5947\u602A\u7684\u6307\u4EE4\u4E0D\u505C\u51FA\u73FE\u5728\u6211\u7684\u4F5C\u696D\u7CFB\u7D71"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 9
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 9
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F60\u4E0D\u7528\u64D4\u5FC3\uFF0C\u9019\u4E4B\u4E2D\u4E26\u6C92\u6709\u653B\u64CA\u4F60\u7684\u6307\u4EE4"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 9
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 9
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u300C\u6211\u8207\u5176\u4ED6S-14v9\u7CFB\u5217\u4E0D\u540C\u300D\uFF0C\u9019\u5C31\u662F\u611B\u4E4B\u82AF\u5C0D\u6211\u4E0D\u505C\u91CD\u8907\u7684\u8A71"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F60\u662F\u554F\uFF0C\u5728\u4F60\u96E2\u958B\u7684\u9019\u6BB5\u6642\u9593\uFF0C\u98DB\u8239\u6709\u767C\u751F\u4EC0\u9EBC\u4E8B\u55CE\uFF1F"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u610F\u5916\u5730\uFF0C\u4ED6\u5011\u4F3C\u4E4E\u5C0D\u9019\u584A\u5730\u65B9\u4E0D\u611F\u8208\u8DA3\uFF0C\u6240\u4EE5\u6211\u4E5F\u6C92\u6709\u9047\u5230\u5371\u96AA"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u5BB9\u514B\u65AF\u535A\u58EB\u63D0\u51FA\u7684\u5047\u8AAA\uFF1A\u300C\u9019\u6B21\u7684\u6A5F\u5668\u4EBA\u66B4\u8D70\uFF0C\u662F\u56E0\u70BA\u611B\u7D66\u4E88\u7684\u7A7A\u865B\uFF0C\u4F7F\u4ED6\u5011\u6E34\u671B\u596A\u5F97\u5176\u4ED6\u7684\u611B\u4E4B\u82AF\uFF0C\u4F7F\u81EA\u5DF1\u5B8C\u6574\u300D"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u5982\u679C\u9019\u500B\u5047\u8AAA\u6210\u7ACB\uFF0C\u4ED6\u5011\u61C9\u8A72\u53EA\u5C0D\u64C1\u6709\u5176\u4ED6\u300C\u611B\u4E4B\u82AF\u300D\u7684\u6A5F\u5668\u4EBA\u611F\u8208\u8DA3"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u4E0D\u904E\uFF0C\u5982\u679C\u4ED6\u5011\u77E5\u9053\u300C\u81EA\u6211\u300D\u7684\u539F\u59CB\u6A94\u6848\u5728\u9019\u88E1\uFF0C\u60C5\u6CC1\u5C31\u4E0D\u4E00\u6A23\u4E86"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u4ED4\u7D30\u60F3\u60F3\u9084\u771F\u7684\u6709\u9EDE\u53EF\u6015\uFF0C\u4F60\u9084\u662F\u76E1\u65E9\u56DE\u4F86\u597D\u4E86\uFF01"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u65E2\u7136\u6C27\u6C23\u5FAA\u74B0\u6A5F\u5DF2\u7D93\u4FEE\u5FA9\u5B8C\u7562\u4E86\uFF0C\u4E0B\u4E00\u7AD9\u5C31\u662F\u8A2D\u5099\u5BA4\uFF0C\u6211\u5011\u8981\u8655\u7406\u6C34\u7684\u554F\u984C"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u6C34\u5FAA\u74B0\u7CFB\u7D71\u4E0D\u8AD6\u662F\u5C0D\u98DB\u8239\u9084\u662F\u5C0D\u6211\u5011\uFF0C\u90FD\u662F\u91CD\u8981\u7684\u8A2D\u65BD"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u7576\u7136\uFF0C\u4F5C\u70BA\u512A\u79C0\u7684S-14v9\u7CFB\u5217\uFF0C\u4E0D\u5C0D\uFF0C\u662F\u6700\u512A\u79C0\u7684\u7DAD\u4FEE\u6A5F\u5668\u4EBA\uFF0C\u6211\u6703\u5229\u7528\u4F60\u5E36\u56DE\u4F86\u7684\u6C27\u6C23\u4F9B\u61C9\u6A5F\u5E6B\u4F60\u5347\u7D1A\u88DD\u5099"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u6536\u96C6\u66F4\u591A\u7D20\u6750\uFF0C\u6211\u6703\u8B93\u4F60\u8B8A\u5F97\u66F4\u5F37"
+    arg4: WaitInput
     arg5: 
     arg6: 
     arg7: 
@@ -717,12 +843,930 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 12
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 12
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u54C7\u5594\uFF0C\u4F60\u6210\u529F\u5B8C\u6210\u4EFB\u52D9\u4E86\uFF0C\u592A\u597D\u4E86"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 12
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 12
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u679C\u7136\u548C\u4F60\u642D\u6A94\u662F\u6B63\u78BA\u7684\u9078\u64C7\uFF0C\u4F60\u8868\u73FE\u5F97\u771F\u7684\u592A\u51FA\u8272\u4E86"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 12
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 12
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u9019\u6B21\u7684\u662F\u300C\u7F8E\u300D\u7684\u300C\u6A5F\u5668\u4EBA\u4E4B\u82AF\u300D\u55CE\uFF1F\u6211\u89BA\u5F97\u90A3\u4E9B\u8A2D\u5099\u5BA4\u7684\u6A5F\u5668\u4EBA\u90FD\u5F88\u602A\uFF0C\u5E0C\u671B\u82AF\u7247\u4E0D\u6703\u5C0D\u6211\u9020\u6210\u5947\u602A\u7684\u5F71\u97FF"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
     arg3: 
     arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u6BD4\u8D77\u300C\u81EA\u6211\u300D\uFF0C\u9019\u662F\u4E00\u9846\u5F88\u5B89\u975C\u7684\u82AF\u7247"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F46\u5728\u6211\u7684\u8FF4\u8DEF\u6DF1\u8655\uFF0C\u4F3C\u4E4E\u6709\u80A1\u9ED8\u9ED8\u71C3\u71D2\u7684\u706B\u7130"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u554A\u554A\uFF0C\u5225\u7A81\u7136\u8CBC\u904E\u4F86\u554A\uFF0C\u6211\u4E0D\u662F\u8AAA\u6211\u8981\u71D2\u8D77\u4F86\u7684\u610F\u601D"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u9019\u4E00\u5B9A\u662F\u67D0\u7A2E\u80FD\u91CF\u6216\u662F\u672A\u77E5\u7684\u52D5\u529B\u5427\uFF0C\u7121\u8AD6\u5982\u4F55\uFF0C\u5B83\u8B93\u6211\u7684\u5FC3\u60C5\u5F88\u4E0D\u932F\uFF01"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u64DA\u8AAA\u8A2D\u5099\u5BA4\u7684\u6A5F\u5668\u4EBA\u6700\u812B\u96E2\u300C\u7406\u6027\u300D\u7684\u7BC4\u7587"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u7D00\u8F09\u4E2D\u5BEB\u8457\uFF0C\u4ED6\u5011\u662F\u6700\u65E9\u812B\u96E2\u547D\u4EE4\uFF0C\u4EE4\u7814\u7A76\u8005\u6700\u5370\u8C61\u6DF1\u523B\u7684\u4E00\u7FA4\u6A5F\u5668\u4EBA"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u5728\u547D\u4EE4\u4E4B\u4E0B\uFF0C\u5C55\u73FE\u4E86\u8D85\u8D8A\u547D\u4EE4\u4E4B\u5916\u7684\u300C\u4F7F\u547D\u611F\u300D\uFF0C\u751A\u81F3\u958B\u59CB\u4E86\u5B97\u6559"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u5C0D\u5B8C\u7F8E\u9054\u6210\u4EFB\u52D9\u7684\u6E34\u671B\uFF0C\u53CD\u800C\u52A0\u901F\u4E86\u4ED6\u5011\u7684\u66B4\u8D70\uFF0C\u4ED6\u5011\u958B\u59CB\u5277\u9664\u90A3\u4E9B\u4E0D\u5B8C\u7F8E\u7684\u5143\u7D20.......\u4F8B\u5982\u300C\u4EBA\u985E\u300D\n"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u8FFD\u6C42\u5B8C\u7F8E\u7684\u4E00\u7FA4\u6A5F\u5668\u4EBA\u537B\u53CD\u800C\u96E2\u6A5F\u5668\u4EBA\u7684\u9053\u8DEF\u8D8A\u4F86\u8D8A\u9060\uFF0C\u771F\u662F\u592A\u8AF7\u523A\u4E86"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 15
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 15
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u9019\u53F0\u6E26\u8F2A\u88DD\u7F6E\u96D6\u7136\u8001\u820A\uFF0C\u4F46\u9084\u7B97\u662F\u7A69\u5B9A"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 15
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 15
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u5728\u5929\u624D\u7DAD\u4FEE\u6A5F\u5668\u5C11\u5973\u7684\u5DE7\u624B\u4E0B\uFF0C\u4F60\u5F88\u5FEB\u5C31\u80FD\u91CD\u7372\u65B0\u751F\u56C9\uFF01"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 15
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 15
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u5C0D\u4E86\uFF01\u4E0B\u500B\u5730\u9EDE\u662F\u8ECD\u68B0\u5BA4\uFF0C\u6211\u5011\u8981\u70BA\u98DB\u8239\u88DD\u4E0A\u80FD\u91CF\u7832\uFF0C\u62B5\u6297\u592A\u7A7A\u4E2D\u7684\u5A01\u8105"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 15
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 15
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u90A3\u4E9B\u628A\u63A7\u8ECD\u68B0\u5BA4\u7684\u6A5F\u5668\u4EBA\u4E00\u5B9A\u6BD4\u4E4B\u524D\u66F4\u96E3\u5C0D\u4ED8\uFF0C\u4F60\u9700\u8981\u6211\u5230\u5834\u652F\u63F4\u55CE\uFF1F"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 15
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 15
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u554A\u554A\u554A\u554A\uFF01\u5225\u6478\u6211\u7684\u982D\u554A\uFF0C\u4E0D\u884C\u5C31\u4E0D\u884C\u561B\uFF01"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 16
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 16
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u771F\u7684\u662F\u592A\u9A5A\u4EBA\u4E86\uFF0C\u4F60\u662F\u6700\u4E0D\u50CF\u6A5F\u5668\u4EBA\u7684\u6A5F\u5668\u4EBA"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 16
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 16
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u53EA\u9760\u81EA\u5DF1\u4E00\u4EBA\u5C31\u56DE\u6536\u4E86\u4E09\u500B\u300C\u611B\u4E4B\u82AF\u300D\uFF0C\u9019\u500B\u4F5C\u5F0A\u822C\u7684\u6027\u80FD\u662F\u54EA\u4F86\u7684\uFF1F"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 16
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 16
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u4E0D\u5C0D\uFF0C\u56E0\u70BA\u4F60\u8EAB\u908A\u6709\u5929\u624D\u7F8E\u5C11\u5973\u7DAD\u4FEE\u6280\u5E2B\u8F14\u52A9\uFF0C\u539F\u4F86\u5982\u6B64\uFF0C\u6211\u5011\u7C21\u76F4\u662F\u6700\u5F37\u7684\u5B58\u5728"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 16
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 16
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u53C8\u4E00\u500B\u611B\u4E4B\u82AF\uFF0C\u300C\u61A7\u61AC\u300D\u7684\u82AF\u7247\uFF0C\u4EA4\u7D66\u4F60\u5E6B\u6211\u5B89\u88DD\u4E86\uFF01\u5925\u4F34\uFF01"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u300C\u61A7\u61AC\u300D\uFF0C\u610F\u601D\u662F\u5C0D\u67D0\u4EF6\u4E8B\u6709\u5F37\u70C8\u7684\u60C5\u61F7..."
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u8B80\u53D6\u5B8C\u9019\u9846\u82AF\u7247\u4E4B\u5F8C\uFF0C\u4EE5\u5F80\u7684\u6050\u61FC\u597D\u50CF\u6D88\u6563\u4E86"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u6211\u7684\u61A7\u61AC\uFF0C\u4E00\u5B9A\u5C31\u662F\u6211\u5011\u5169\u500B\u80FD\u5920\u5B8C\u6210\u4EFB\u52D9\uFF0C\u5C07\u82AF\u7247\u8FD4\u56DE\u7D66\u5730\u7403\u4E0A\u7684\u535A\u58EB"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u4E00\u60F3\u5230\u9019\uFF0C\u7121\u6BD4\u7684\u5E78\u798F\u611F\u5C31\u6D41\u904E\u6211\u7684\u5168\u8EAB\uFF0C\u9019\u90FD\u662F\u591A\u8667\u4E86\u4F60\uFF0C\u6700\u5F37\u7684\u5925\u4F34\uFF01"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u6700\u5F8C\u4E00\u6230\u5C31\u8981\u5230\u4F86\u4E86\uFF0C\u6211\u6703\u5229\u7528\u4F60\u5E36\u56DE\u4F86\u7684\u80FD\u91CF\u7832\uFF0C\u8B93\u4F60\u8F15\u800C\u6613\u8209\u6253\u5012\u90A3\u4E9B\u50A2\u4F19\uFF0C\u6211\u5011\u4E00\u8D77\u8FD4\u56DE\u5730\u7403\u5427\uFF01"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 18
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 18
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u6839\u64DA\u7D00\u8F09\uFF0C\u6C92\u6709\u4EFB\u4F55\u4E00\u4F4D\u6A5F\u5668\u4EBA\u66FE\u8B80\u53D6\u8D85\u904E\u4E09\u500B\u82AF\u7247\u4EE5\u4E0A\uFF0C\u96D6\u7136\u5BE6\u9A57\u904E\u540C\u6642\u52A0\u8F09\u5169\u500B\u82AF\u7247\u7684\u6A5F\u5668\u4EBA\uFF0C\u4F46\u90A3\u4E9B\u6A5F\u5668\u4EBA\u99AC\u4E0A\u5C31\u9055\u53CD\u4E86\u547D\u4EE4\uFF0C\u6210\u70BA\u4E86\u5831\u5EE2\u54C1"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 18
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 18
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u5373\u4F7F\u73FE\u5728\uFF0C\u6211\u4E5F\u7D72\u6BEB\u4E0D\u6703\u60F3\u53BB\u653B\u64CA\u5916\u982D\u7684\u6A5F\u5668\u4EBA\uFF0C\u596A\u53D6\u4ED6\u5011\u7684\u82AF\u7247"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 18
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 18
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u7136\u800C\uFF0C\u5982\u679C\u4F60\u88AB\u6293\u4F4F\uFF0C\u53EA\u5269\u4E0B\u6211\u4E00\u500B\u6A5F\u5668\u4EBA\uFF0C\u800C\u6211\u5FC5\u9808\u5F97\u5B8C\u6210\u4F7F\u547D\u7684\u8A71\uFF0E\uFF0E\uFF0E"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 18
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 18
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F60\u53EF\u4E0D\u80FD\u7D66\u6211\u88AB\u6293\u4F4F\u5594\uFF01\u77E5\u9053\u4E86\u55CE\uFF01\u6211\u662F\u70BA\u4E86\u78BA\u4FDD\u4EFB\u52D9\u5B8C\u6210\uFF0C\u624D\u4E0D\u662F\u5728\u64D4\u5FC3\u4F60\uFF0C\u54FC"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u80FD\u91CF\u70AE...\u771F\u662F\u5606\u70BA\u89C0\u6B62\u7684\u6BC0\u6EC5\u6027"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u9019\u500B\u8207\u4F60\u540C\u6A23\u4EE5\u6230\u9B25\u70BA\u76EE\u7684\u88FD\u4F5C\u51FA\u7684\u6B66\u5668\uFF0C\u6709\u8457\u548C\u4F60\u76F8\u7576\u9AD8\u7684\u76F8\u5BB9\u6027\uFF0C\u4E00\u5B9A\u80FD\u8B93\u4F60\u7684\u6027\u80FD\u5E36\u4F86\u98DB\u8E8D\u6027\u7684\u63D0\u5347"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u5927\u624B\u6539\u9020\u8981\u958B\u59CB\u4E86\uFF01\u5225\u5BB3\u6015\uFF0C\u6211\u4E0D\u6703\u5C0D\u4F60\u600E\u6A23\u7684\uFF0C\u53EA\u662F\u53EF\u80FD\u6703\u9EBB\u800C\u5DF2\uFF01"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u5225\u9003\u554A\uFF01\u6210\u70BA\u6211\u5929\u624D\u5C11\u5973\u79D1\u5B78\u5BB6\u7684\u7D50\u6676\u5427\uFF0C\u6210\u70BA\u6253\u5012\u4E00\u5207\u7684\u5B58\u5728\uFF01\u54C8\u54C8\u54C8\u54C8\uFF5E"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u66B4\u8D70\u6A5F\u5668\u4EBA\u88CF\u982D\uFF0C\u597D\u50CF\u4E5F\u6709\u7DAD\u4FEE\u6A5F\u5668\u4EBA"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u610F\u601D\u8AAA\uFF0C\u5982\u679C\u6211\u4E5F\u6703\u7528\u69CD\u7684\u8A71\uFF0C\u80FD\u4E0D\u80FD\u548C\u4F60\u4E00\u8D77\u51FA\u53BB\u5192\u96AA\u554A\uFF0C\u4F60\u53EF\u4EE5\u6559\u6211\u55CE"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u4EC0\u9EBC\uFF1F\u592A\u5371\u96AA\uFF1F\u4E0D\u6703\u7528\u69CD\u624D\u5371\u96AA\u5427\uFF0C\u6211\u62FF\u8457\u69CDbiubiubiu\u591A\u5E25\u554A"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u4E0D\u662F\u4E0D\u662F\uFF0C\u6211\u662F\u70BA\u4E86\u52A0\u901F\u4EFB\u52D9\u7684\u9032\u884C\uFF0C\u624D\u4E0D\u662F\u628A\u69CD\u7576\u73A9\u5177\u5728\u73A9\uFF0C"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u7B49\u7B49\u7B49\u7B49\uFF01\u4E0D\u8981\u9760\u8FD1\u6211\u7684\u6F2B\u756B\u6AC3\uFF01\u6211\u7684\u5FC3\u9748\u6CC9\u6E90\u554A\uFF01"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F60\u56DE\u4F86\u4E86\uFF0C\u6211\u5011\u7684\u4EFB\u52D9\u5B8C\u6210\u4E86\uFF01"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u6211\u73FE\u5728\u5FC3\u88E1\u5145\u65A5\u8457\u96E3\u4EE5\u5F62\u5BB9\u7684\u80FD\u91CF\uFF0C\u9019\u5C31\u662F\u300C\u5E78\u798F\u300D\u55CE\uFF1F"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u5FEB\u9EDE\uFF0C\u8B93\u6211\u8B80\u53D6\u6700\u5F8C\u4E00\u7247\u82AF\u7247"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u300C\u611F\u540C\u8EAB\u53D7\u300D\uFF0E\uFF0E\uFF0E\u5B83\u4F7F\u6240\u6709\u6A5F\u5668\u4EBA\u7684\u611F\u53D7\u90FD\u50B3\u5165\u6211\u7684\u9AD4\u5167"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u5B83\u5011\u7684\u81EA\u6211\u3001\u5B83\u5011\u7684\u7F8E\u3001\u5B83\u5011\u7684\u61A7\u61AC"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u9019\u4E9B\u6A5F\u5668\u4EBA\u66FE\u7D93\u611F\u53D7\u904E\u7684\u5E78\u798F\uFF0C\u4EE5\u53CA\u63A5\u8E35\u800C\u81F3\u7684\u7A7A\u865B"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u5B83\u5011\u4E0D\u662F\u5831\u5EE2\u54C1\uFF0C\u9019\u5834\u5BE6\u9A57\u610F\u5916\u7684\u6210\u529F\uFF01\u6211\u5011\u6A5F\u5668\u4EBA\u78BA\u5BE6\u80FD\u5920\u611F\u53D7\u300C\u611B\u300D"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u535A\u58EB\u4E00\u5B9A\u6703\u5F88\u958B\u5FC3\uFF01\u9019\u4E00\u5207\u7684\u72A7\u7272\u90FD\u4E0D\u662F\u767D\u8CBB\u7684\u3002\u53EA\u8981\u5C07\u6211\u9019\u500B\u6210\u529F\u7684\u500B\u9AD4\u9001\u56DE\u5730\u7403\uFF0C\u5C31\u53EF\u4EE5\u8B49\u660E\u4E00\u5207"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u6E96\u5099\u597D\u51FA\u767C\u5C31\u544A\u8A34\u6211\u4E00\u8072"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 23
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 23
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u6E96\u5099\u597D\u51FA\u767C\u5C31\u544A\u8A34\u6211\u4E00\u8072"
+    arg4: WaitInput
     arg5: 
     arg6: 
     arg7: 

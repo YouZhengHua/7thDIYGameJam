@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 37273069}
   - component: {fileID: 37273068}
   - component: {fileID: 37273067}
+  - component: {fileID: 37273070}
   m_Layer: 5
   m_Name: EnergeCanon
   m_TagString: Untagged
@@ -256,6 +257,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37273065}
   m_CullTransparentMesh: 1
+--- !u!114 &37273070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37273065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1abcfa802ed0c499dac1795f66202b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  critirionStage: 3
+  stageManager: {fileID: 11400000, guid: 2d81b05e1469a23479bcd1a9ecb12bbe, type: 2}
 --- !u!1 &153001175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2885,7 +2900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &739480439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7088,6 +7103,7 @@ GameObject:
   - component: {fileID: 1505473749}
   - component: {fileID: 1505473748}
   - component: {fileID: 1505473747}
+  - component: {fileID: 1505473750}
   m_Layer: 5
   m_Name: WaterCirculationSystem
   m_TagString: Untagged
@@ -7209,6 +7225,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505473745}
   m_CullTransparentMesh: 1
+--- !u!114 &1505473750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505473745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1abcfa802ed0c499dac1795f66202b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  critirionStage: 2
+  stageManager: {fileID: 11400000, guid: 2d81b05e1469a23479bcd1a9ecb12bbe, type: 2}
 --- !u!1 &1645746023
 GameObject:
   m_ObjectHideFlags: 0
@@ -7849,6 +7879,7 @@ GameObject:
   - component: {fileID: 1819142591}
   - component: {fileID: 1819142590}
   - component: {fileID: 1819142589}
+  - component: {fileID: 1819142592}
   m_Layer: 5
   m_Name: OxygenSupplier
   m_TagString: Untagged
@@ -7901,7 +7932,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9098039, g: 1, b: 0.21176471, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -7970,6 +8001,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819142587}
   m_CullTransparentMesh: 1
+--- !u!114 &1819142592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819142587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1abcfa802ed0c499dac1795f66202b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  critirionStage: 1
+  stageManager: {fileID: 11400000, guid: 2d81b05e1469a23479bcd1a9ecb12bbe, type: 2}
 --- !u!1 &1836382041
 GameObject:
   m_ObjectHideFlags: 0

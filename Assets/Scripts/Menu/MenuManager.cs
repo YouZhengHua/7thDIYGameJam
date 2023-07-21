@@ -11,8 +11,8 @@ namespace Scripts.Menu
         [SerializeField] private StageManager stageManager;
         [SerializeField] private StoryDialogueSO storyDialogueSO;
 
-        private StageManager.stage currentStage;
         private int dialogueIndex;
+        private int dialogueCycleIndex;
 
         private void Awake()
         {
@@ -21,9 +21,9 @@ namespace Scripts.Menu
         }
 
         private void Start() {
-            currentStage = stageManager.GetCurrentStage();
+            Debug.Log("MenuManager being called");
 
-            switch (currentStage) {
+            switch (stageManager.GetCurrentStage()) {
                 case StageManager.stage.firstStartGame:
                     Prologue();
                     break;
@@ -48,10 +48,12 @@ namespace Scripts.Menu
             }
 
             foreach (StoryDialogueSO.stage_dialogue stage_Dialogue in storyDialogueSO.dialogues) {
-                if (stage_Dialogue.stage == currentStage) {
+                if (stage_Dialogue.stage == stageManager.GetCurrentStage()) {
                     dialogueIndex = stage_Dialogue.dialougeIndex[0];
                 }
             }
+
+            dialogueCycleIndex = 0;
         }
 
         private void FirstOpenGame()
@@ -70,15 +72,18 @@ namespace Scripts.Menu
         }
 
         public void TalkToGirl() {
-            foreach(StoryDialogueSO.stage_dialogue stage_Dialogue in storyDialogueSO.dialogues) {
-                if (stage_Dialogue.stage == currentStage) {
-                    DisableAllUI();
-                    storyManager.StartStory(dialogueIndex, EnableAllUI);
-                    dialogueIndex = ((dialogueIndex + 1) % stage_Dialogue.dialougeIndex.Count) + stage_Dialogue.dialougeIndex[0];
+            Debug.Log("Talk to girl with dialogue index " + dialogueIndex);
+            DisableAllUI();
+            storyManager.StartStory(dialogueIndex, EnableAllUI);
+
+            foreach (StoryDialogueSO.stage_dialogue stage_Dialogue in storyDialogueSO.dialogues) {
+                if (stage_Dialogue.stage == stageManager.GetCurrentStage()) {
+                    Debug.Log("Cycle Index: " + dialogueCycleIndex);
+                    dialogueCycleIndex = (dialogueCycleIndex + 1) % stage_Dialogue.dialougeIndex.Count;
+                    dialogueIndex = dialogueCycleIndex + stage_Dialogue.dialougeIndex[0];
                 }
             }
         }
-
         private void FadeIn() {
             fadeEffect.FadeIn();
         }
@@ -95,31 +100,91 @@ namespace Scripts.Menu
             disableAllUI.gameObject.SetActive(false);
         }
 
+        private void SetCurrentState(StageManager.stage stage) {
+            stageManager.SetCurrentStage(stage);
+        }
+
         private void Prologue() {
+            stageManager.isSecInTheSameLevel = false;
             storyManager.StartStory(4, Level_1);
-            stageManager.SetCurrentStage(StageManager.stage.Level_1);
+            SetCurrentState(StageManager.stage.Level_1);
         }
 
         private void Level_1() {
-            FadeIn();
-            DisableAllUI();
-            storyManager.StartStory(5, EnableAllUI);
+            if (stageManager.isSecInTheSameLevel) {
+                FadeIn();
+            } else {
+                FadeIn();
+                DisableAllUI();
+                storyManager.StartStory(5, EnableAllUI);
+                dialogueIndex = 6;
+                stageManager.isSecInTheSameLevel = true;
+            }
         }
 
         private void Level_2() {
-            FadeIn();
+            if (stageManager.isSecInTheSameLevel) {
+                FadeIn();
+            } else {
+                FadeIn();
+                stageManager.isSecInTheSameLevel = true;
+                DisableAllUI();
+                storyManager.StartStory(8, () => { FadeOut();
+                    storyManager.StartStory(2, () => { FadeIn();
+                        storyManager.StartStory(9, EnableAllUI);
+                    }); });
+            }
         }
 
         private void Level_3() {
-            FadeIn();
+            if (stageManager.isSecInTheSameLevel) {
+                FadeIn();
+            } else {
+                FadeIn();
+                stageManager.isSecInTheSameLevel = true;
+                DisableAllUI();
+                storyManager.StartStory(12, () => {
+                    FadeOut();
+                    storyManager.StartStory(2, () => {
+                        FadeIn();
+                        storyManager.StartStory(13, EnableAllUI);
+                    });
+                });
+            }
         }
 
         private void Level_4() {
-            FadeIn();
+            if (stageManager.isSecInTheSameLevel) {
+                FadeIn();
+            } else {
+                FadeIn();
+                stageManager.isSecInTheSameLevel = true;
+                DisableAllUI();
+                storyManager.StartStory(16, () => {
+                    FadeOut();
+                    storyManager.StartStory(2, () => {
+                        FadeIn();
+                        storyManager.StartStory(17, EnableAllUI);
+                    });
+                });
+            }
         }
 
         private void GameEnd() {
-            FadeIn();
+            if (stageManager.isSecInTheSameLevel) {
+                FadeIn();
+            } else {
+                FadeIn();
+                stageManager.isSecInTheSameLevel = true;
+                DisableAllUI();
+                storyManager.StartStory(21, () => {
+                    FadeOut();
+                    storyManager.StartStory(2, () => {
+                        FadeIn();
+                        storyManager.StartStory(22, EnableAllUI);
+                    });
+                });
+            }
         }
     }
 }
