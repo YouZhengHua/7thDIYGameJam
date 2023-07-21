@@ -71,7 +71,7 @@ MonoBehaviour:
     arg7: 
   - index: 1
     action: ShowRole
-    arg1: Left
+    arg1: Right
     arg2: Show
     arg3: "\u4EFF\u751F\u4EBAA"
     arg4: 
@@ -80,7 +80,7 @@ MonoBehaviour:
     arg7: 
   - index: 1
     action: Talk
-    arg1: Left
+    arg1: Right
     arg2: "\u5C11\u5973"
     arg3: "\u4F60\u73FE\u5728\u8981\u51FA\u767C\u53BB\u6536\u96C6\u7DAD\u4FEE\u98DB\u8239\u7684\u96F6\u4EF6\u4E86\uFF0C\u662F\u5427\uFF1F"
     arg4: WaitInput
@@ -89,7 +89,7 @@ MonoBehaviour:
     arg7: 
   - index: 1
     action: ShowBackGround
-    arg1: Background
+    arg1: 0709
     arg2: 1
     arg3: 
     arg4: 
@@ -335,6 +335,186 @@ MonoBehaviour:
     arg1: FadeIn
     arg2: Dark
     arg3: 1
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 3
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 3
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F60\u73FE\u5728\u8981\u51FA\u767C\u53BB\u6536\u96C6\u7DAD\u4FEE\u98DB\u8239\u7684\u96F6\u4EF6\u4E86\uFF0C\u662F\u5427\uFF1F"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 3
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 3
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u5C31\u7B97\u6211\u4E0D\u662FLambda-42\u7CFB\u5217\uFF0C\u6211\u4E5F\u770B\u5F97\u51FA\u4F86\uFF0C\u9019\u8258\u8239\u5728\u822A\u5165\u592A\u967D\u7CFB\u524D\u5C31\u6703\u81EA\u52D5\u89E3\u9AD4"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 3
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 3
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F60\u9084\u5728\u7B49\u4EC0\u9EBC\u5462\uFF1F\u6536\u6574\u597D\u88DD\u5099\u5F8C\u5C31\u51FA\u767C\u5427"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 4
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 4
+    action: Talk
+    arg1: Right
+    arg2: ???
+    arg3: "\u8A72\u6B7B\u7684....\u9019\u5834\u5BE6\u9A57\u5DF2\u7D93\u5FB9\u5E95\u5931\u63A7\u4E86"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 4
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 4
+    action: Talk
+    arg1: Left
+    arg2: ???
+    arg3: "\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\u4E92\u76F8\u6B98\u6BBA\uFF0C\u800C\u6211\u53EF\u6190\u7684\u540C\u50DA\u4F86\u4E0D\u53CA\u9003\u96E2\u90A3\u5834\u5730\u7344"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 4
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 4
+    action: Talk
+    arg1: Left
+    arg2: ???
+    arg3: "\u81F3\u5C11\uFF0C\u5BE6\u9A57\u7684\u771F\u76F8\u4E0D\u80FD\u516C\u958B\u65BC\u773E"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 4
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 4
+    action: Talk
+    arg1: Left
+    arg2: ???
+    arg3: "\u300C\u611B\u4E4B\u82AF\u300D\uFF0C\u4E00\u5B9A\u5F97\u56DE\u6536\u65BC\u5730\u7403"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
     arg4: 
     arg5: 
     arg6: 
