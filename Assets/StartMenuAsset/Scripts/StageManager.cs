@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StageManager : MonoBehaviour
+[CreateAssetMenu]
+public class StageManager : ScriptableObject
 {
+    [Serializable]
     public enum stage {
         firstStartGame, // OpenScene, Prologue
         Level_1, // The next level is level_1 and etc.
@@ -14,7 +17,9 @@ public class StageManager : MonoBehaviour
     }
 
     public bool isPlayerDefeated;
-    private stage currentStage;
+    public bool isSecInTheSameLevel;
+    [SerializeField] private stage currentStage;
+    private bool isLevelCleared;
 
     public stage GetCurrentStage() {
         return currentStage;
@@ -22,5 +27,6 @@ public class StageManager : MonoBehaviour
 
     public void SetCurrentStage(stage value) {
         currentStage = value;
+        Debug.Log("Current Stage is set to be " + currentStage);
     }
 }
