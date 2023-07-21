@@ -15,7 +15,7 @@ MonoBehaviour:
   elementName: "\u589E\u52A0\u6280\u80FD\u6B04\u4F4D"
   currentLevel: 0
   maxLevel: 4
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 54d731ca0516c984aa95178cd5e7e0ae, type: 3}
   cost: 0
   DescriptionOnUI: "\u6BCF\u4E0A\u5347\u4E00\u7D1A\uFF0C\n\u5C07\u6280\u80FD\u7684\u6B04\u4F4D\u589E\u52A01\u683C"
   EffectPerLevel: 1
