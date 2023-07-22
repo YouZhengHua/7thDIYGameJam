@@ -123,6 +123,8 @@ namespace Scripts.Menu
         }
 
         private void Level_2() {
+            Debug.Log("Entering Level2");
+
             if (stageManager.isSecInTheSameLevel) {
                 FadeIn();
             } else {
