@@ -106,7 +106,7 @@ namespace Scripts.Game
                     _playerData.DropItemRadius.AddValuePoint(data.Value);
                     break;
                 case AttributeType.RecoverShield:
-                    this.RecoverShield(data.Value);
+                    this.RecoverShield((int)data.Value);
                     break;
                 case AttributeType.ShootCount:
                     foreach (Weapon weapon in _weapon.GetWeapons())

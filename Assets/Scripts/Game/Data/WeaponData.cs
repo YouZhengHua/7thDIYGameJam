@@ -108,5 +108,7 @@ public class WeaponData : BaseItemData
     public BoolAttributeHandle BuffSpawnActive;
     [Header("Buff 觸發間隔")]
     public FloatAttributeHandle BuffCoolDownTime;
+    [Header("Buff 存在時間")]
+    public FloatAttributeHandle BuffLifeTime;
     #endregion
 }

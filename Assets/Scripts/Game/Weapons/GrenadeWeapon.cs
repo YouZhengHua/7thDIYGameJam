@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class GrenadeWeapon : Weapon
 {
-    public float LifeTime = 1f;
     public float Force = 1f;
     public override void Start()
     {
@@ -45,10 +44,11 @@ public class GrenadeWeapon : Weapon
         grenadeAmmoController.Init(
             randomPoint,
             Force,
-            LifeTime,
             weaponData.Damage.Value,
             weaponData.DamageRadius.Value,
-            LifeTime
+            weaponData.AmmoFlyTime.Value,
+            weaponData.BuffCoolDownTime.Value,
+            weaponData.BuffLifeTime.Value
         );
 
     }

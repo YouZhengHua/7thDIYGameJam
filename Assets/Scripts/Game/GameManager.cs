@@ -201,7 +201,7 @@ namespace Scripts.Game
                 _endUI.ShowCanvas(isWin);
                 if (isWin)
                 {
-                    _stageManager.GoingToNextStage(_stageManager.GetCurrentStage() + 1);
+                    if (_stageManager) _stageManager.GoingToNextStage(_stageManager.GetCurrentStage() + 1);
                 }
                 AudioController.Instance.PlayEffect(isWin ? WinAudio : LoseAudio, isWin ? 0.5f : 1.5f);
                 GameStateMachine.Instance.SetNextState(GameState.GameEnded);

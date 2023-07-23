@@ -136,3 +136,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplosionEffect: {fileID: 8856039785276908840, guid: 1c9a2e712c66a5e46af6245dd6f1eb05, type: 3}
+  FireBullet: {fileID: 708855264015575873, guid: 9c42293cf238f374280762a1fc32d52a, type: 3}
+  rotateSpeed: 10
