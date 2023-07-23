@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Scripts.Game
 {
@@ -13,6 +14,8 @@ namespace Scripts.Game
         private float _extendPoint = 0f;
         private float _extendMultiple = 0f;
         public float Value { get => (_value + _extendPoint) * (_multiple + _extendMultiple); }
+        //倍率改變事件
+        public UnityEvent<float> OnMultipleChangedEvent = new UnityEvent<float>();
         /// <summary>
         /// 增加固定值
         /// </summary>
@@ -28,6 +31,10 @@ namespace Scripts.Game
         public void AddValueMultiple(float multiple)
         {
             _extendMultiple += multiple;
+            if (OnMultipleChangedEvent != null)
+            {
+                OnMultipleChangedEvent.Invoke(_extendMultiple);
+            }
         }
         public override string ToString()
         {

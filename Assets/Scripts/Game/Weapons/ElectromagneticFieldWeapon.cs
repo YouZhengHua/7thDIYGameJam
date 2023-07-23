@@ -29,7 +29,13 @@ public class ElectromagneticFieldWeapon : Weapon
             return;
         }
         _ammoObj.transform.SetParent(this.transform);
-        //TODO 電磁範圍要影響特效大小
+        //電磁傷害範圍要影響_ammoObj scale大小
+        _ammoObj.transform.localScale = new Vector3(weaponData.DamageRadius.Value, weaponData.DamageRadius.Value, weaponData.DamageRadius.Value);
+
+        weaponData.DamageRadius.OnMultipleChangedEvent.AddListener((float multiple) =>
+                {
+                    _ammoObj.transform.localScale = new Vector3(weaponData.DamageRadius.Value, weaponData.DamageRadius.Value, weaponData.DamageRadius.Value);
+                });
     }
 
     public override void UnloadWeapon()
