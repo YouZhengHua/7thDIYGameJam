@@ -58,5 +58,13 @@ namespace Scripts
         {
             return minDb + ((maxDb - minDb) * volume / 10f);
         }
+
+        public void SetBGM(AudioClip bgm, float? volumn = null)
+        {
+            _musicAudio.clip = bgm;
+            if (volumn.HasValue)
+                _musicAudio.volume = volumn.Value;
+            _musicAudio.Play();
+        }
     }
 }

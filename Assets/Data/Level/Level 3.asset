@@ -269,3 +269,7 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
+  BGMs:
+  - Audio: {fileID: 8300000, guid: af1db253889d05a488aa754178015750, type: 3}
+    IsNeedVolumn: 0
+    Volumn: 0.5

@@ -24,7 +24,6 @@ namespace Scripts.Game
 
         private void Start()
         {
-            Debug.Log(_level);
             AttributeHandle.Instance.TotalGameTime = _level.GameTime;
             foreach (LevelRound level in _level.LevelRounds)
             {
@@ -33,6 +32,8 @@ namespace Scripts.Game
                     enemyData.NextTime = 0;
                 }
             }
+            BGMData bgm = _level.BGMs[0];
+            AudioController.Instance.SetBGM(bgm.Audio, bgm.IsNeedVolumn ? bgm.Volumn : null);
         }
 
         private void Update()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0903891f6c8d14a90c988ae551196a, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: Assembly-CSharp:Scripts.Game.Data:Level
-  GameTime: 10
+  GameTime: 480
   LevelRounds:
   - LevelStartTime: 0
     LevelEndTime: 20
@@ -269,3 +269,7 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
+  BGMs:
+  - Audio: {fileID: 8300000, guid: af1db253889d05a488aa754178015750, type: 3}
+    IsNeedVolumn: 1
+    Volumn: 0.5
