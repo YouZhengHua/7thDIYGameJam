@@ -73,6 +73,9 @@ namespace Scripts.Game
         [SerializeField, Header("失效護盾值")]
         private Sprite _shieldUnactive;
 
+        [SerializeField, Header("進度管理")]
+        private StageManager _stageManager;
+
         /// <summary>
         /// 攝影機控制器
         /// </summary>
@@ -196,6 +199,10 @@ namespace Scripts.Game
             {
                 bool isWin = AttributeHandle.Instance.IsTimeWin && IsKillAllEnemy;
                 _endUI.ShowCanvas(isWin);
+                if (isWin)
+                {
+                    _stageManager.GoingToNextStage(_stageManager.GetCurrentStage() + 1);
+                }
                 AudioController.Instance.PlayEffect(isWin ? WinAudio : LoseAudio, isWin ? 0.5f : 1.5f);
                 GameStateMachine.Instance.SetNextState(GameState.GameEnded);
             }

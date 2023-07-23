@@ -4563,7 +4563,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c33a4c0ecf10d4191829101065210b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: {fileID: 11400000, guid: 77d1404ec442c7d499d91c2b0ef7fc67, type: 2}
+  _levels:
+  - {fileID: 11400000, guid: 77d1404ec442c7d499d91c2b0ef7fc67, type: 2}
+  - {fileID: 11400000, guid: e6aede52bb1c3cf41850b95dd8f6df51, type: 2}
+  - {fileID: 11400000, guid: 4867db26bf2bd2b4987828e12ff41e8c, type: 2}
+  - {fileID: 11400000, guid: d2645aaf71088744bbdfa929294f4d8c, type: 2}
+  _stageManager: {fileID: 11400000, guid: 2d81b05e1469a23479bcd1a9ecb12bbe, type: 2}
 --- !u!4 &1390464301
 Transform:
   m_ObjectHideFlags: 0
@@ -4766,6 +4771,7 @@ MonoBehaviour:
   _shieldIcon: {fileID: 7103687685363077321, guid: a1f45629391a3af49b3e77c3b563f15e, type: 3}
   _shieldActive: {fileID: 21300000, guid: 9696beddd238213468edb0c0e4297488, type: 3}
   _shieldUnactive: {fileID: 21300000, guid: 552ebdc21d1eff74b889f4e637c4fe83, type: 3}
+  _stageManager: {fileID: 11400000, guid: 2d81b05e1469a23479bcd1a9ecb12bbe, type: 2}
 --- !u!1 &1496897374
 GameObject:
   m_ObjectHideFlags: 0
