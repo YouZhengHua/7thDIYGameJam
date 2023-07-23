@@ -38,13 +38,13 @@ MonoBehaviour:
     _value: 1
     _multiple: 1
   OneShootAmmoCount:
-    _value: 3
+    _value: 1
     _multiple: 1
   AmmoFlySpeed:
     _value: 30
     _multiple: 1
   AmmoPenetrationCount:
-    _value: 0
+    _value: 1
     _multiple: 1
   HavaPenetrationLimit: 1
   AmmoFlyRange:

@@ -39,7 +39,7 @@ MonoBehaviour:
     _value: 1
     _multiple: 1
   AmmoFlySpeed:
-    _value: 10
+    _value: 15
     _multiple: 1
   AmmoPenetrationCount:
     _value: 1
