@@ -406,7 +406,7 @@ namespace Scripts.Game
 
         public void AddTotalMoney(float money)
         {
-            _totalMoney = money * (1f + _extendMoneyMuliple);
+            _totalMoney += money * (1f + _extendMoneyMuliple);
             _gameUI.UpdateMoneyGUI();
         }
 
