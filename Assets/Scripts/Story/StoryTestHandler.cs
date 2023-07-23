@@ -1,6 +1,8 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Scripts;
+using Scripts.Game.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +12,15 @@ public class StoryTestHandler : MonoBehaviour
     public GameObject testBtn;
     public GameObject loadingTextObj;
     public Text stateText;
+
+    [SerializeField, Header("使用者設定")]
+    private UserSetting _userSetting;
+
     private int _index = 0;
+    void Awake()
+    {
+        AudioController.Instance.SetUserSetting(_userSetting);
+    }
     void Start()
     {
         loadingTextObj.SetActive(false);

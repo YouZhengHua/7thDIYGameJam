@@ -1,5 +1,6 @@
 ﻿// using DG.Tweening;
 using Fungus;
+using Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -473,12 +474,16 @@ public class FungusStoryProcessor : MonoBehaviour, IStoryProcessor
 
     public void PlaySound(string categoryName, string soundName)
     {
-        // AudioManager.Instance.PlayCustomSound(categoryName, soundName);
+        AudioClip _ac = storyResourceData.GetAudio(soundName);
+        if (_ac != null)
+            AudioController.Instance.PlayEffect(_ac);
     }
 
     public void PlayMusic(string musicName)
     {
-        // AudioManager.Instance.SetBGM(musicName);
+        AudioClip _ac = storyResourceData.GetAudio(musicName);
+        if (_ac != null)
+            AudioController.Instance.PlayEffect(_ac);
     }
 
     public void SetDelay(float duration)

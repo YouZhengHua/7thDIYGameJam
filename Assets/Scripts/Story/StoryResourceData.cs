@@ -9,6 +9,8 @@ public class StoryResourceData : ScriptableObject
     public List<Sprite> backgroundList;
     [Header("角色圖片")]
     public List<Sprite> characterList;
+    [Header("音樂音效")]
+    public List<AudioClip> audioList;
 
     /// <summary>
     /// 用名稱取得背景圖片
@@ -40,6 +42,24 @@ public class StoryResourceData : ScriptableObject
             if (characterList[i].name == name)
             {
                 return characterList[i];
+            }
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// 用名稱取得音樂音效
+    /// </summary>
+    /// <param name="name">音樂音效名稱</param>
+    /// <returns></returns>
+    public AudioClip GetAudio(string name)
+    {
+        if (audioList.Count == 0) return null;
+        for (int i = 0; i < audioList.Count; i++)
+        {
+            if (audioList[i].name == name)
+            {
+                return audioList[i];
             }
         }
         return null;

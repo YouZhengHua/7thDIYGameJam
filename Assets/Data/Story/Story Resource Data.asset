@@ -16,3 +16,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6cdae006ffbc8da47a4a2d46b089636e, type: 3}
   characterList:
   - {fileID: 21300000, guid: 4daed478094718a4db11df1f127c56aa, type: 3}
+  audioList:
+  - {fileID: 8300000, guid: 1de2d13df0ebb864a91d281ce6a54c24, type: 3}
