@@ -33,7 +33,7 @@ namespace Scripts.Game
         protected override void ChangeState(GameState value)
         {
             base.ChangeState(value);
-            if(value == GameState.InGame || value == GameState.SelectOption)
+            if(value == GameState.InGame)
             {
                 Time.timeScale = 1f;
             }

@@ -2,8 +2,8 @@
 
 namespace Scripts.Game.Data
 {
-    [CreateAssetMenu(menuName = "Game/LevelEnemy")]
-    public class LevelEnemyData : ScriptableObject
+    [System.Serializable]
+    public class LevelEnemyData
     {
         private float? _nextTime = null;
         public float NextTime

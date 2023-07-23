@@ -8,7 +8,7 @@ namespace Scripts.Game
     public class GameLevelManager : MonoBehaviour
     {
         [SerializeField, Header("關卡資料")]
-        private LevelData[] Levels;
+        private LevelData _level;
         private Transform _playerContainer;
         private Transform _enemyContainer;
 
@@ -20,7 +20,8 @@ namespace Scripts.Game
 
         private void Start()
         {
-            foreach (LevelData level in Levels)
+            AttributeHandle.Instance.TotalGameTime = _level.GameTime;
+            foreach (LevelRound level in _level.LevelRounds)
             {
                 foreach (LevelEnemyData enemyData in level.EnemyDatas)
                 {
@@ -38,9 +39,9 @@ namespace Scripts.Game
         }
         private void EnemyHandel()
         {
-            foreach (LevelData level in Levels)
+            foreach (LevelRound level in _level.LevelRounds)
             {
-                if (AttributeHandle.Instance.GameTime >= level.LevelStartTime && AttributeHandle.Instance.GameTime <= level.LevelEndTime)
+                if (AttributeHandle.Instance.GameTime >= level.LevelStartTime && AttributeHandle.Instance.GameTime <= level.LevelEndTime && !AttributeHandle.Instance.IsTimeWin)
                 {
                     foreach (LevelEnemyData enemyData in level.EnemyDatas)
                     {

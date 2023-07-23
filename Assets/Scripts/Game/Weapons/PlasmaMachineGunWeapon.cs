@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class PlasmaMachineGunWeapon : Weapon
 {
-    public string FirePointName;
     public string playerShootFire = "Fire";
     /// <summary>
     /// 玩家面對方向
@@ -72,12 +71,14 @@ public class PlasmaMachineGunWeapon : Weapon
             _shotAmmo.Add(effect);
         }
 
+        Debug.Log($"電漿機槍子彈數目: {weaponData.OneShootAmmoCount.Value}");
+
         for(int i = 0; i < _shotAmmo.Count; i++)
         {
             _shotAmmo[i].transform.position = _firePoint.position;
             _offset = Quaternion.Euler(0f, 0f, weaponData.OneShootAmmoCount.Value == 1 ? 0f : (_angleRange / 2f) - (_angleRange / (weaponData.OneShootAmmoCount.Value - 1) * i));
             _shotAmmo[i].transform.localRotation = Quaternion.Euler(_playerRotation.localRotation.eulerAngles + _shotAmmo[i].transform.rotation.eulerAngles);
-            _shotAmmo[i].GetComponent<BulletController>().Init(Vector3.zero, _playerRotation.up, weaponData.AmmoFlySpeed.Value, weaponData.HavaPenetrationLimit ? weaponData.AmmoPenetrationCount.Value : -1, weaponData.Damage.Value);
+            _shotAmmo[i].GetComponent<BulletController>().Init(Vector3.zero, _offset * _playerRotation.up, weaponData.AmmoFlySpeed.Value, weaponData.HavaPenetrationLimit ? weaponData.AmmoPenetrationCount.Value : -1, weaponData.Damage.Value);
         }
 
         _gunEffect.SetTrigger(playerShootFire);

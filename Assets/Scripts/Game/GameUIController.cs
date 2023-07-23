@@ -12,39 +12,37 @@ namespace Scripts.Game
     public class GameUIController : BaseUIController, IGameUIController
     {
         private TextMeshProUGUI _gameTime;
-        private TextMeshProUGUI _hpText;
-        private TextMeshProUGUI _shieldText;
+        private TextMeshProUGUI _money;
         private Image _expRateImage;
         private Image _hpRateImage;
-        private Image _shieldRateImage;
         private GameObject _shieldContainer;
         private GameObject _shieldIcon;
+        private Sprite _shieldActive;
+        private Sprite _shieldUnactive;
         private IOptionsUIController _optionsUI;
         private IList<GameObject> _shieldList;
 
-        public GameUIController(IOptionsUIController optionsUI, Canvas canvas, GameObject shieldIcon) : base(canvas)
+        public GameUIController(IOptionsUIController optionsUI, Canvas canvas, GameObject shieldIcon, Sprite shieldActive, Sprite shieldUnactive) : base(canvas)
         {
             _optionsUI = optionsUI;
             _shieldIcon = shieldIcon;
             _shieldList = new List<GameObject>();
+            _shieldActive = shieldActive;
+            _shieldUnactive = shieldUnactive;
             foreach (Image image in GameObject.FindObjectsOfType<Image>())
             {
                 if (image.gameObject.name == "ExpRate")
                     _expRateImage = image;
                 else if (image.gameObject.name == "HpRate")
                     _hpRateImage = image;
-                /*else if (image.gameObject.name == "ShieldRate")
-                    _shieldRateImage = image;*/
             }
 
             foreach (TextMeshProUGUI text in GameObject.FindObjectsOfType<TextMeshProUGUI>())
             {
                 if (text.gameObject.name == "GameTime")
                     _gameTime = text;
-                else if (text.gameObject.name == "HpText")
-                    _hpText = text;
-                /*else if (text.gameObject.name == "ShieldText")
-                    _shieldText = text;*/
+                else if (text.gameObject.name == "MoneyText")
+                    _money = text;
             }
 
             _shieldContainer = GameObject.Find("ShieldContainer");
@@ -55,30 +53,22 @@ namespace Scripts.Game
         /// </summary>
         public void UpdatePlayerHealth()
         {
-            _hpText.text = $"{AttributeHandle.Instance.PlayerHealthPoint} / {AttributeHandle.Instance.PlayerMaxHealthPoint}";
             _hpRateImage.fillAmount = AttributeHandle.Instance.PlayerHealthPoint / AttributeHandle.Instance.PlayerMaxHealthPoint;
 
-            _shieldContainer.SetActive(AttributeHandle.Instance.PlayerShield > 0);
             for(int i = 0; i < Mathf.Max(AttributeHandle.Instance.PlayerShield, _shieldList.Count); i++)
             {
                 if(_shieldList.Count > i)
                 {
                     GameObject shield = _shieldList[i];
-                    shield.SetActive(i < AttributeHandle.Instance.PlayerShield);
-                    Debug.Log($"{i}, {AttributeHandle.Instance.PlayerShield}, {i < AttributeHandle.Instance.PlayerShield}");
+                    shield.GetComponent<Image>().sprite = i < AttributeHandle.Instance.PlayerShield ? _shieldActive : _shieldUnactive;
                 }
                 else
                 {
                     GameObject shield = GameObject.Instantiate(_shieldIcon, _shieldContainer.transform);
-                    shield.transform.localPosition = new Vector3(i * 50f, -25f, 0f);
+                    shield.transform.localPosition = new Vector3(-400f + i * 80f, -64f, 0f) * StaticPrefs.Scale;
                     _shieldList.Add(shield);
                 }
             }
-            /*if (AttributeHandle.Instance.PlayerShield > 0)
-            {
-                _shieldText.text = $"{AttributeHandle.Instance.PlayerShield} / {AttributeHandle.Instance.PlayerMaxShield}";
-                _shieldRateImage.fillAmount = AttributeHandle.Instance.PlayerShield / AttributeHandle.Instance.PlayerMaxShield;
-            }*/
         }
 
         /// <summary>
@@ -106,6 +96,11 @@ namespace Scripts.Game
                 _optionsUI.ShowCanvas();
             }
             _expRateImage.fillAmount = AttributeHandle.Instance.ExpPercentage;
+        }
+
+        public void UpdateMoneyGUI()
+        {
+            _money.text = CalTool.Round(AttributeHandle.Instance.TotalMoney).ToString();
         }
     }
 }

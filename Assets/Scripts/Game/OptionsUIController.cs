@@ -31,7 +31,7 @@ namespace Scripts.Game
             for(int i = 0; i < _options.Length; i++)
             {
                 _options[i] = GameObject.Instantiate(prefab, _canvas.transform).GetComponent<IOptionController>();
-                _options[i].transform.position = _options[i].transform.position + new Vector3((-400f + i * 400f) * StaticPrefs.Scale, 0, 0);
+                _options[i].transform.localPosition = new Vector3((-520f + i * 520f), 60f, 0) * StaticPrefs.Scale;
                 _options[i].SetOptionsUI = this;
             }
 

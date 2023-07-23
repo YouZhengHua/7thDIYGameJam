@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Weapon 08
   m_EditorClassIdentifier: 
   _optionType: 1
-  _depiction: "\u7121\u4EBA\u6A5F B"
+  _title: "\u7121\u4EBA\u6A5F B"
+  _depiction: "\u89E3\u9396\u6B66\u5668"
   _image: {fileID: 21300000, guid: 7460a38069d3b574bb5f0527484b7ace, type: 3}
   _maxSelectedCount: 9
   _isEndOption: 0

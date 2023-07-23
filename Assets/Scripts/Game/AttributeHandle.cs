@@ -109,7 +109,7 @@ namespace Scripts.Game
         {
             if (data.SelectedCount == 0)
             {
-                _weapon.LoadWeapon(data.WeaponIndex, true);
+                _weapon.LoadWeapon(data.WeaponIndex, data.Image, true);
             }
             else
             {
@@ -366,8 +366,8 @@ namespace Scripts.Game
         public void HealPlayer(float value)
         {
             _playerData.HealthPoint += value;
-            if (_playerData.HealthPoint > _playerData.MaxHealthPoint)
-                _playerData.HealthPoint = _playerData.MaxHealthPoint;
+            if (_playerData.HealthPoint > this.PlayerMaxHealthPoint)
+                _playerData.HealthPoint = this.PlayerMaxHealthPoint;
             _gameUI.UpdatePlayerHealth();
         }
 
@@ -378,8 +378,7 @@ namespace Scripts.Game
         public void AddPlayerMaxHP(float value)
         {
             _extendMaxHealthPoint += value;
-            _playerData.HealthPoint += value;
-            _gameUI.UpdatePlayerHealth();
+            this.HealPlayer(value);
         }
         /// <summary>
         /// 玩家自動回復間隔
@@ -407,18 +406,28 @@ namespace Scripts.Game
 
         public void AddTotalMoney(float money)
         {
-            _totalMoney = money * (1f + _extendMoneyMuliple);
+            _totalMoney += money * (1f + _extendMoneyMuliple);
+            _gameUI.UpdateMoneyGUI();
         }
+
+        public float TotalMoney { get => _totalMoney + StaticPrefs.Score; }
 
         public void AddTotalKill(int kill = 1)
         {
             _totalKill = kill;
+            this.AddTotalMoney(kill);
         }
 
         /// <summary>
         /// 取得/設定遊戲時間
         /// </summary>
         public float GameTime { get => _gameTime; set => _gameTime = value; }
+        /// <summary>
+        /// 取得/設定遊戲總時間
+        /// </summary>
+        public float TotalGameTime { get; set; }
+
+        public bool IsTimeWin { get => this.TotalGameTime - this.GameTime <= 0f; }
         #endregion
     }
 }

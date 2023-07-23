@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace Scripts.Game
 {
-    public class BulletController : MonoBehaviour
+    public class BulletController : MonoBehaviour, IBulletEvent
     {
         private float _targetX = 0f;
         private float _targetY = 0f;
@@ -17,6 +17,7 @@ namespace Scripts.Game
         private LayerMask _targetLayer;
         private Transform _playerContainer;
         private float _damage;
+        private UnityEvent<Collider2D> _onHitEvenet = new UnityEvent<Collider2D>();
 
         private void Awake()
         {
@@ -30,10 +31,6 @@ namespace Scripts.Game
             {
                 _rigidbody2D.velocity = Vector2.ClampMagnitude(new Vector2(_targetX, _targetY), 1f) * _flySpeed;
             }
-            else
-            {
-                _rigidbody2D.velocity = Vector2.zero;
-            }
             if ((transform.position - _playerContainer.position).magnitude > _maxRange)
             {
                 Destroy(this.gameObject);
@@ -44,6 +41,7 @@ namespace Scripts.Game
         {
             if ((1 << collision.gameObject.layer | _targetLayer) == _targetLayer)
             {
+                OnHitEvent?.Invoke(collision);
                 if (_penetrationCount > 0)
                 {
                     _penetrationCount--;
@@ -63,5 +61,6 @@ namespace Scripts.Game
         }
 
         public float Damage { get => _damage; }
+        public UnityEvent<Collider2D> OnHitEvent { get => _onHitEvenet; }
     }
 }

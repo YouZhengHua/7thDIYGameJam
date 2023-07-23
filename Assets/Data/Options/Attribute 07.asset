@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Attribute 07
   m_EditorClassIdentifier: 
   _optionType: 0
+  _title: "\u7DAD\u4FEE\u5DE5\u5177"
   _depiction: "\u6062\u5FA9 20% \u8840\u91CF"
   _image: {fileID: 0}
   _maxSelectedCount: 1

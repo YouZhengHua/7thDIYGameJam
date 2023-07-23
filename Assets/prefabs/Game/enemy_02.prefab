@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8312892398627385318}
   - component: {fileID: 8312892398627385313}
-  - component: {fileID: 6032809805062502560}
   - component: {fileID: 8312892398627385312}
-  - component: {fileID: 8896406020327418539}
+  - component: {fileID: 3684039371919112240}
   - component: {fileID: 8312892398627385319}
+  - component: {fileID: -8037898896537392074}
   m_Layer: 7
-  m_Name: enemy_01_skeleton01
+  m_Name: enemy_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2092964637, guid: 4104ee12b4d54f54b91b3ba875787837, type: 3}
+  m_Sprite: {fileID: 1544975445, guid: d33598d781682e049a53a0a13104ef29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,27 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6032809805062502560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8312892398627385315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59815975cf0ff74458e18732b659ee19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyData: {fileID: 11400000, guid: 937148b7f3d2bc84f9198f3b3504378a, type: 2}
-  _damageTextPrefab: {fileID: 2538697934944276320, guid: 9ed005278162b0142b34764996fa485d, type: 3}
-  _textShowTime: 0.3
-  _enemyGetHit: Hit
-  _enemyDead: Dead
-  _enemyAttack: Attack
-  _playerBulletLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!95 &8312892398627385312
 Animator:
   serializedVersion: 4
@@ -119,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 8312892398627385315}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 12cfc8b2360c2fc4499d4f6f6607671a, type: 2}
+  m_Controller: {fileID: 22100000, guid: 8d1d920724ffb8a409ce0e458dc4b7a9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -129,7 +108,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &8896406020327418539
+--- !u!70 &3684039371919112240
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +122,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6, y: 0.85}
+  m_Size: {x: 0.55, y: 0.85}
   m_Direction: 0
 --- !u!50 &8312892398627385319
 Rigidbody2D:
@@ -166,3 +145,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-8037898896537392074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312892398627385315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59815975cf0ff74458e18732b659ee19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyData: {fileID: 11400000, guid: 983fec2fd5900004f8ee59d0da0f041f, type: 2}
+  _damageTextPrefab: {fileID: 2538697934944276320, guid: 9ed005278162b0142b34764996fa485d, type: 3}
+  _textShowTime: 0.3
+  _enemyGetHit: Hit
+  _enemyDead: Dead
+  _enemyAttack: Attack
+  _playerBulletLayer:
+    serializedVersion: 2
+    m_Bits: 64

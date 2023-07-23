@@ -34,9 +34,6 @@ namespace Scripts.Game
         [SerializeField, Header("預設使用者設定")]
         private UserSetting _defaultSetting;
 
-        [SerializeField, Header("遊戲總時間(秒)"), Range(1, 1800)]
-        private float _totalGameTime = 1200f;
-
         [SerializeField, Header("勝利音效")]
         private AudioClip WinAudio;
 
@@ -69,6 +66,12 @@ namespace Scripts.Game
 
         [SerializeField, Header("護盾值預置物")]
         private GameObject _shieldIcon;
+
+        [SerializeField, Header("有效護盾值")]
+        private Sprite _shieldActive;
+
+        [SerializeField, Header("失效護盾值")]
+        private Sprite _shieldUnactive;
 
         /// <summary>
         /// 攝影機控制器
@@ -138,7 +141,7 @@ namespace Scripts.Game
             _settingUI = new SettingUIController(_settingUICanvas, _defaultSetting, _userSetting);
             _pauseUI = new PauseUIController(_settingUI);
             _optionsUI = new OptionsUIController(_optionPrefab, _optionDatas);
-            _gameUI = new GameUIController(_optionsUI, _gameUICanvas, _shieldIcon);
+            _gameUI = new GameUIController(_optionsUI, _gameUICanvas, _shieldIcon, _shieldActive, _shieldUnactive);
             AttributeHandle.Instance.SetGameUIController(_gameUI);
             _playerDamageController.SetEndUI = _endUI;
             Debug.Log("GameManager Awake() End");
@@ -154,6 +157,8 @@ namespace Scripts.Game
             PlayerStateMachine.Instance.SetNextState(PlayerState.Idle);
             AudioController.Instance.UpdateAudioVolume();
             _gameUI.UpdatePlayerHealth();
+            _gameUI.UpdateMoneyGUI();
+            UpdateGameTime();
             AttributeHandle.Instance.SetLobbyUpgrade(_upgradeManager);
             Debug.Log("GameManager Start() End");
         }
@@ -189,7 +194,7 @@ namespace Scripts.Game
             }
             else if (GameStateMachine.Instance.CurrectState == GameState.GameEnd)
             {
-                bool isWin = IsTimeWin && IsKillAllEnemy;
+                bool isWin = AttributeHandle.Instance.IsTimeWin && IsKillAllEnemy;
                 _endUI.ShowCanvas(isWin);
                 AudioController.Instance.PlayEffect(isWin ? WinAudio : LoseAudio, isWin ? 0.5f : 1.5f);
                 GameStateMachine.Instance.SetNextState(GameState.GameEnded);
@@ -204,17 +209,13 @@ namespace Scripts.Game
         private void UpdateGameTime()
         {
             AttributeHandle.Instance.GameTime += Time.deltaTime;
-            _gameUI.UpdateGameTime(_totalGameTime - AttributeHandle.Instance.GameTime);
-            if (IsTimeWin && IsKillAllEnemy)
+            _gameUI.UpdateGameTime(AttributeHandle.Instance.TotalGameTime - AttributeHandle.Instance.GameTime);
+            if (AttributeHandle.Instance.IsTimeWin && IsKillAllEnemy)
             {
                 GameStateMachine.Instance.SetNextState(GameState.GameEnd);
             }
         }
 
-        /// <summary>
-        /// 判斷是否時間勝利
-        /// </summary>
-        private bool IsTimeWin { get => _totalGameTime - AttributeHandle.Instance.GameTime <= 0; }
         /// <summary>
         /// 判斷是否殺光所有怪物
         /// </summary>

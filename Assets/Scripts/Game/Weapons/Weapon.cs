@@ -59,3 +59,8 @@ public interface IAmmoEvent
 {
     public UnityEvent<Collider2D> OnHitEnemy { get; set; }
 }
+
+public interface IBulletEvent
+{
+    public UnityEvent<Collider2D> OnHitEvent { get; }
+}

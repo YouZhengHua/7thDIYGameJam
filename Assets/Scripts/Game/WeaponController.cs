@@ -16,6 +16,10 @@ namespace Scripts.Game
         [SerializeField, Header("武器根節點"), Tooltip("武器實例化的根節點")]
         private Transform weaponRoot;
 
+        [SerializeField, Header("武器貼圖")]
+        private WeaponColumnController[] _weaponColumns;
+        private int _nextWeaponColumn = 0;
+
         private void Awake()
         {
             foreach (GameObject weaponPrefab in weaponControllerData.weaponPrefabList)
@@ -27,10 +31,13 @@ namespace Scripts.Game
             }
         }
 
-        public void LoadWeapon(WeaponIndex weaponIndex, bool active = true)
+        public void LoadWeapon(WeaponIndex weaponIndex, Sprite weaponIcon, bool active = true)
         {
+
             Weapon weapon = this.GetWeapon(weaponIndex);
             weapon.LoadWeapon(active);
+            _weaponColumns[_nextWeaponColumn].AddWeaponIcon(weaponIcon);
+            _nextWeaponColumn++;
         }
 
         public Weapon GetWeapon(WeaponIndex weaponIndex)

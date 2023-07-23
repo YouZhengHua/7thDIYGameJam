@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Attribute 01
   m_EditorClassIdentifier: 
   _optionType: 0
-  _depiction: "\u7D50\u7B97\u5206\u6578\u589E\u52A0 100 \u5206"
+  _title: "\u91D1\u5E63"
+  _depiction: "\u589E\u52A0 100 \u91D1"
   _image: {fileID: 0}
   _maxSelectedCount: 1
   _isEndOption: 0

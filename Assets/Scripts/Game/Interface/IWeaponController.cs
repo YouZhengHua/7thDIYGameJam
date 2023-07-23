@@ -9,8 +9,9 @@ namespace Scripts.Game
         /// 載入並設定指定的武器編號是否激活
         /// </summary>
         /// <param name="weaponIndex"></param>
+        /// <param name="weaponIcon"></param>
         /// <param name="active"></param>
-        public void LoadWeapon(WeaponIndex weaponIndex, bool active = true);
+        public void LoadWeapon(WeaponIndex weaponIndex, Sprite weaponIcon, bool active = true);
         /// <summary>
         /// 取得武器編號對應的武器資料
         /// </summary>
