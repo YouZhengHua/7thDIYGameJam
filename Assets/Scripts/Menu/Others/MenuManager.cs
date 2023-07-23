@@ -31,6 +31,7 @@ namespace Scripts.Menu
             if (settingUI == null)
                 settingUI = new Game.SettingUIController(_settingCanvas, _defaultSetting, _nowSetting);
             settingUI.HideCanvas();
+            AudioController.Instance.SetUserSetting(_nowSetting);
         }
 
         public void InvokeSettingUICanvas() {
@@ -67,6 +68,8 @@ namespace Scripts.Menu
 
             currentDialogueList = GetDialogueIndexList();
             dialogueCycleIndex = 0;
+
+            AudioController.Instance.UpdateAudioVolume();
         }
 
         private void FirstOpenGame()
