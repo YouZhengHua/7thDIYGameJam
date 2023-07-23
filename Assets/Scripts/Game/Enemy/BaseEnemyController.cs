@@ -57,6 +57,9 @@ namespace Scripts.Game
         [SerializeField, Header("玩家子彈階層")]
         protected LayerMask _playerBulletLayer;
 
+        //死亡事件
+        public UnityEvent OnDeadEvent = new UnityEvent();
+
         protected virtual void Awake()
         {
             _animator = gameObject.GetComponent<Animator>();
@@ -153,6 +156,11 @@ namespace Scripts.Game
             this.LookAt(_playerTransform.position);
         }
 
+        public void SetMoveSpeedMultiple(float speed)
+        {
+            _cloneEnemyData.MoveSpeed.AddValueMultiple(speed);
+        }
+
         /// <summary>
         /// 使怪物看向指定方向
         /// </summary>
@@ -174,6 +182,12 @@ namespace Scripts.Game
         /// </summary>
         protected virtual void Dead()
         {
+            //如果有死亡事件，執行死亡事件，然後初始化死亡事件
+            if (OnDeadEvent != null)
+            {
+                OnDeadEvent.Invoke();
+                OnDeadEvent.RemoveAllListeners();
+            }
             AttributeHandle.Instance.AddTotalKill();
             _rigidbody2D.velocity = Vector2.zero;
             _collider2D.enabled = false;

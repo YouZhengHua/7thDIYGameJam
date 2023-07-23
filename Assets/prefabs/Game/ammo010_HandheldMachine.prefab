@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3626254014405645760}
   - component: {fileID: 3072455878366641774}
   - component: {fileID: 1999789358476514292}
+  - component: {fileID: 4067847541703070202}
   m_Layer: 6
   m_Name: ammo010_HandheldMachine
   m_TagString: Untagged
@@ -150,3 +151,16 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 4224
+--- !u!114 &4067847541703070202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3626254014405645773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6084f14e0f9442b4fb9f64ae598b15ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buffPrefab: {fileID: 2085155888788105249, guid: abc3532d92c79de498314bbdc34d39b7, type: 3}

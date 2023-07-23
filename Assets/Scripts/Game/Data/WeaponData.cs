@@ -97,4 +97,12 @@ public class WeaponData : BaseItemData
     [Header("範圍武器生成半徑")]
     public FloatAttributeHandle CreateRadius;
     #endregion
+
+    #region Buff屬性
+    /// <summary>
+    /// 是否啟動Buff
+    /// </summary>
+    [Header("是否啟動Buff功能"), Tooltip("彈藥是否具有Buff效果")]
+    public bool BuffSpawnActive = false;
+    #endregion
 }
