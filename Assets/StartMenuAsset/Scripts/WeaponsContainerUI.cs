@@ -13,7 +13,9 @@ public class WeaponsContainerUI : MonoBehaviour
 
     public void DisplayInfo() {
         weaponsName.text = descriptionSO.weaponName;
+#if UNITY_EDITOR
         weaponsDescription.text = descriptionSO.weaponDescription;
+#endif
     }
 
 }

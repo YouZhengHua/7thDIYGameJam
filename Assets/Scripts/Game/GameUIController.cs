@@ -65,7 +65,7 @@ namespace Scripts.Game
                 else
                 {
                     GameObject shield = GameObject.Instantiate(_shieldIcon, _shieldContainer.transform);
-                    shield.transform.localPosition = new Vector3(-400f + i * 80f, -64f, 0f) * StaticPrefs.Scale;
+                    shield.transform.localPosition = new Vector3(-400f + i * 80f, -64f, 0f);
                     _shieldList.Add(shield);
                 }
             }
