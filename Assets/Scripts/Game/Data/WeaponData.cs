@@ -78,6 +78,8 @@ public class WeaponData : BaseItemData
     /// </summary>
     [Header("投射物飛行距離上限")]
     public FloatAttributeHandle AmmoFlyRange;
+    [Header("投射物持續飛行時間")]
+    public FloatAttributeHandle AmmoFlyTime;
     #endregion
 
     #region 範圍武器屬性

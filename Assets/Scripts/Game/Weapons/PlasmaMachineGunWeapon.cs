@@ -73,12 +73,14 @@ public class PlasmaMachineGunWeapon : Weapon
 
         Debug.Log($"電漿機槍子彈數目: {weaponData.OneShootAmmoCount.Value}");
 
-        for(int i = 0; i < _shotAmmo.Count; i++)
+        for (int i = 0; i < _shotAmmo.Count; i++)
         {
             _shotAmmo[i].transform.position = _firePoint.position;
             _offset = Quaternion.Euler(0f, 0f, weaponData.OneShootAmmoCount.Value == 1 ? 0f : (_angleRange / 2f) - (_angleRange / (weaponData.OneShootAmmoCount.Value - 1) * i));
             _shotAmmo[i].transform.localRotation = Quaternion.Euler(_playerRotation.localRotation.eulerAngles + _shotAmmo[i].transform.rotation.eulerAngles);
             _shotAmmo[i].GetComponent<BulletController>().Init(Vector3.zero, _offset * _playerRotation.up, weaponData.AmmoFlySpeed.Value, weaponData.HavaPenetrationLimit ? weaponData.AmmoPenetrationCount.Value : -1, weaponData.Damage.Value);
+            //設定體積
+            _shotAmmo[i].transform.localScale = new Vector3(weaponData.AmmoScale.Value, weaponData.AmmoScale.Value, weaponData.AmmoScale.Value);
         }
 
         _gunEffect.SetTrigger(playerShootFire);
