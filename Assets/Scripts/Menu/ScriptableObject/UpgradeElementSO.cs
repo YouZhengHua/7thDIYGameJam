@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "UI/UpgradeElementSO")]
 public class UpgradeElementSO : ScriptableObject
 {
     public string elementName;

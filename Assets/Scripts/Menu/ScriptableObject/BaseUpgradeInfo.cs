@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "UI/BaseUpgradeInfo")]
 public class BaseUpgradeInfo : ScriptableObject
 {
     [Serializable]
