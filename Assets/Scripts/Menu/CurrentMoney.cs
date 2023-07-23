@@ -19,10 +19,10 @@ public class CurrentMoney : MonoBehaviour
     }
 
     public void UpdateVisual(float money) {
-        moneyText.text = "Money: " + money;
+        moneyText.text = money.ToString();
     }
 
     public void UpdateVisual() {
-        moneyText.text = "Money: " + StaticPrefs.Score;
+        moneyText.text = StaticPrefs.Score.ToString();
     }
 }

@@ -15,11 +15,16 @@ MonoBehaviour:
   dialogues:
   - stage: 1
     dialougeIndex: 0600000007000000
+    defeatedDialogueIndex: 08000000
   - stage: 2
-    dialougeIndex: 0a0000000b000000
+    dialougeIndex: 0b0000000c0000000d0000000e000000
+    defeatedDialogueIndex: 
   - stage: 3
-    dialougeIndex: 0e0000000f000000
+    dialougeIndex: 110000001200000013000000
+    defeatedDialogueIndex: 140000001500000016000000
   - stage: 4
-    dialougeIndex: 1200000013000000
+    dialougeIndex: 190000001a0000001b0000001c0000001d0000001e000000
+    defeatedDialogueIndex: 
   - stage: 5
-    dialougeIndex: 17000000
+    dialougeIndex: 21000000
+    defeatedDialogueIndex: 

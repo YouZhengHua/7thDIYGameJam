@@ -12,6 +12,7 @@ public class StoryDialogueSO : ScriptableObject
 
         [Tooltip("Need consecutive numbers!")]
         public List<int> dialougeIndex;
+        public List<int> defeatedDialogueIndex;
     }
 
     public stage_dialogue[] dialogues;
