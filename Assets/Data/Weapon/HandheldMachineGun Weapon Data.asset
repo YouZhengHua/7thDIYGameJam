@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5caa92a1a9607a541a59e022267313ac, type: 3}
+  m_Name: HandheldMachineGun Weapon Data
+  m_EditorClassIdentifier: 
+  Name: 
+  Price: 0
+  DefaultIsUnlocked: 0
+  WeaponIndex: 1
+  AmmoPrefab: {fileID: 3626254014405645773, guid: 691d720c7c6d03a47a10bf9181c192e5, type: 3}
+  Damage:
+    _value: 10
+    _multiple: 1
+  DamageFrom: 1
+  Force:
+    _value: 1
+    _multiple: 1
+  DelayTime:
+    _value: 0.1
+    _multiple: 1
+  ShootAudios:
+  - {fileID: 8300000, guid: dfd606f7e6f7ee44eb2d733b0435e51b, type: 3}
+  - {fileID: 8300000, guid: ec41e8b341ed70841ab8652d3c4db23b, type: 3}
+  - {fileID: 8300000, guid: 81c3cd84e89a95e439db5186ad737cec, type: 3}
+  CoolDownTime:
+    _value: 0.2
+    _multiple: 1
+  AmmoScale:
+    _value: 1
+    _multiple: 1
+  OneShootAmmoCount:
+    _value: 3
+    _multiple: 1
+  AmmoFlySpeed:
+    _value: 15
+    _multiple: 1
+  AmmoPenetrationCount:
+    _value: 0
+    _multiple: 1
+  HavaPenetrationLimit: 1
+  AmmoFlyRange:
+    _value: 20
+    _multiple: 1
+  SkillTriggerInterval:
+    _value: 0
+    _multiple: 1
+  DamageRadius:
+    _value: 0
+    _multiple: 1
+  CreateRadius:
+    _value: 0
+    _multiple: 1
