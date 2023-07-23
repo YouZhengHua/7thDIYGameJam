@@ -37,6 +37,9 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    //設定飛行速度
+    public void SetMoveSpeed(float moveSpeed) => this.moveSpeed = moveSpeed;
+
     public void SetTarget(Vector3 targetPos) => this.targetPos = targetPos;
 
     public void SetMoveDirection(Vector2 moveDirection) => this.moveDirection = moveDirection;

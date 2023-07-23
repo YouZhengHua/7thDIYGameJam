@@ -4,7 +4,7 @@ using Scripts;
 using Scripts.Game;
 using UnityEngine;
 
-public class DroneAWeapon : Weapon
+public class DroneBWeapon : Weapon
 {
     public GameObject missileAmmoPrefab;
     public Vector3 offset;
@@ -73,7 +73,8 @@ public class DroneAWeapon : Weapon
         Vector3 pos = new Vector3(_ammoObj.transform.position.x, _ammoObj.transform.position.y, 0);
         GameObject missileAmmo = Instantiate(missileAmmoPrefab, _ammoObj.transform.position, Quaternion.identity);
         missileAmmo.GetComponent<IAmmoEvent>().OnHitEnemy.AddListener(_hitEnemy);
-        missileAmmo.GetComponent<MissileAmmoController>().SetTarget(getRandomPointInCircle(center, targetRadius));
+        missileAmmo.GetComponent<MissileAmmoController>().SetMoveSpeed(weaponData.AmmoFlySpeed.Value);
+        missileAmmo.GetComponent<MissileAmmoController>().SetTarget(getRandomPointOnCircle(center, weaponData.CreateRadius.Value));
         missileAmmo.GetComponent<MissileAmmoController>().StartHoming();
     }
 
@@ -86,11 +87,11 @@ public class DroneAWeapon : Weapon
         return randomPoint;
     }
 
-    //以一點為圓心，半徑為 shootRadius，取出圓內隨機一點的世界座標
-    private Vector3 getRandomPointInCircle(Vector3 center, float radius)
+    //以一點為圓心，半徑為 shootRadius，取出圓周上隨機一點的世界座標
+    private Vector3 getRandomPointOnCircle(Vector3 center, float radius)
     {
-        // 在半径范围内生成随机点
-        Vector2 randomCircle = Random.insideUnitCircle * radius;
+        // 在半径的圓周上讓取得一個随机点
+        Vector2 randomCircle = Random.insideUnitCircle.normalized * radius;
         Vector3 randomPoint = center + new Vector3(randomCircle.x, randomCircle.y, 0);
 
         return randomPoint;

@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5caa92a1a9607a541a59e022267313ac, type: 3}
-  m_Name: DroneA Weapon Data
+  m_Name: DroneB Weapon Data
   m_EditorClassIdentifier: 
   Name: 
   Price: 0
   DefaultIsUnlocked: 0
-  WeaponIndex: 6
-  AmmoPrefab: {fileID: 5963066614265696250, guid: 9d09fd569ece3a6449e5095f1e25c439, type: 3}
+  WeaponIndex: 7
+  AmmoPrefab: {fileID: 5963066614265696250, guid: 71d80b1a07e8df045bd97e0f7f1b99b5, type: 3}
   Damage:
-    _value: 30
+    _value: 5
     _multiple: 1
   DamageFrom: 1
   Force:
-    _value: 20
+    _value: 10
     _multiple: 1
   DelayTime:
     _value: 0.1
@@ -30,16 +30,16 @@ MonoBehaviour:
   ShootAudios:
   - {fileID: 8300000, guid: cbf7a5e010a0f9d44a64368a2bd5daf4, type: 3}
   CoolDownTime:
-    _value: 0.1
+    _value: 0.05
     _multiple: 1
   AmmoScale:
     _value: 1
     _multiple: 1
   OneShootAmmoCount:
-    _value: 10
+    _value: 20
     _multiple: 1
   AmmoFlySpeed:
-    _value: 500
+    _value: 30
     _multiple: 1
   AmmoPenetrationCount:
     _value: 1
@@ -49,11 +49,11 @@ MonoBehaviour:
     _value: 15
     _multiple: 1
   SkillTriggerInterval:
-    _value: 3
+    _value: 2.5
     _multiple: 1
   DamageRadius:
     _value: 2
     _multiple: 1
   CreateRadius:
-    _value: 2
+    _value: 20
     _multiple: 1
