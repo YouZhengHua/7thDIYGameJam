@@ -318,6 +318,15 @@ namespace Scripts.Game
         /// </summary>
         public float PlayerShield { get => CalTool.Round(_playerData.Shield, 1); }
         /// <summary>
+        /// 恢復玩家的護盾值
+        /// </summary>
+        public void RecoverShield(float value) {
+            _playerData.Shield += value;
+            if(_playerData.Shield > this.PlayerMaxShield)
+                _playerData.Shield = this.PlayerMaxShield;
+            _gameUI.UpdatePlayerHealth();
+        }
+        /// <summary>
         /// 取得玩家的最大護盾值
         /// </summary>
         public float PlayerMaxShield { get => CalTool.Round(_playerData.MaxShield, 1); }
