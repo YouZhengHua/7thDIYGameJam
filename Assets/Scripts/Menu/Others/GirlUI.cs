@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -17,7 +17,7 @@ public class GirlUI : MonoBehaviour
         SetGirlImage();
     }
 
-    public void SetGirlImage(string imageName = "��ͤHA") {
+    public void SetGirlImage(string imageName = "仿生人A") {
         foreach(ImageNameAndSpriteSO.name_Sprite name_Sprite in imageDictSO.nameSpriteDict) {
             if (imageName == name_Sprite.name) {
                 girlImage.sprite = name_Sprite.sprite;
