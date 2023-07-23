@@ -13,7 +13,6 @@ namespace Scripts.Menu
         [SerializeField] private StoryDialogueSO storyDialogueSO;
 
         private List<int> currentDialogueList;
-        private int dialogueIndex;
         private int dialogueCycleIndex;
 
         private void Awake()
@@ -22,6 +21,10 @@ namespace Scripts.Menu
                 FirstOpenGame();
         }
 
+
+        public void InvokeSettingUICanvas() {
+
+        }
         private void Start() {
             Debug.Log("MenuManager being called");
             Time.timeScale = 1.0f;
@@ -52,7 +55,6 @@ namespace Scripts.Menu
 
             currentDialogueList = GetDialogueIndexList();
             dialogueCycleIndex = 0;
-            dialogueIndex = currentDialogueList[0];
         }
 
         private void FirstOpenGame()
