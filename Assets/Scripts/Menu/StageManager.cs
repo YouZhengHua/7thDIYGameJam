@@ -29,4 +29,10 @@ public class StageManager : ScriptableObject
         currentStage = value;
         Debug.Log("Current Stage is set to be " + currentStage);
     }
+
+    public void GoingToNextStage(stage value) {
+        SetCurrentStage(value);
+        isPlayerDefeated = false;
+        isSecInTheSameLevel = false;
+    }
 }
