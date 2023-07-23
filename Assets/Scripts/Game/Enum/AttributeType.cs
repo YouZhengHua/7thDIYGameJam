@@ -85,6 +85,14 @@
 		/// <summary>
 		/// 特殊升級項目
 		/// </summary>
-		SpecialOption
+		SpecialOption,
+		/// <summary>
+		/// 恢復護盾值
+		/// </summary>
+		RecoverShield,
+		/// <summary>
+		/// 補品掉落率
+		/// </summary>
+		HealItemRate
     }
 }

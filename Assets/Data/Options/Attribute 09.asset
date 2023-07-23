@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65a4e6b62432c66478c1e510e45980cd, type: 3}
-  m_Name: Attribute 07
+  m_Name: Attribute 09
   m_EditorClassIdentifier: 
   _optionType: 0
-  _title: "\u6389\u843D\u7269\u62FE\u53D6\u7BC4\u570D"
-  _depiction: "\u589E\u52A0 50%"
-  _image: {fileID: 21300000, guid: d393a76920f4a8f44a5ae03e93ca70bb, type: 3}
-  _maxSelectedCount: 2
+  _title: "\u6295\u5C04\u7269\u6578\u91CF"
+  _depiction: "\u984D\u5916\u589E\u52A0 1 \u5B50\u5F48"
+  _image: {fileID: 21300000, guid: 7f7311e34ea36e644acb859872bd5880, type: 3}
+  _maxSelectedCount: 1
   _isEndOption: 0
   _isLoopOption: 0
   _isActive: 1
-  _attributeType: 11
-  _value: 0.5
+  _attributeType: 5
+  _value: 1
   _isNegative: 0

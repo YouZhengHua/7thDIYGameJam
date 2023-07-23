@@ -8,7 +8,10 @@ namespace Scripts.Game
     public class GameLevelManager : MonoBehaviour
     {
         [SerializeField, Header("關卡資料")]
+        private LevelData[] _levels;
         private LevelData _level;
+        [SerializeField, Header("進度管理")]
+        private StageManager _stageManager;
         private Transform _playerContainer;
         private Transform _enemyContainer;
 
@@ -16,6 +19,7 @@ namespace Scripts.Game
         {
             _playerContainer = GameObject.Find("PlayerContainer").GetComponent<Transform>();
             _enemyContainer = GameObject.Find("EnemyContainer").GetComponent<Transform>();
+            _level = _levels[(int)_stageManager.GetCurrentStage() - 1];
         }
 
         private void Start()
@@ -28,6 +32,8 @@ namespace Scripts.Game
                     enemyData.NextTime = 0;
                 }
             }
+            BGMData bgm = _level.BGMs[0];
+            AudioController.Instance.SetBGM(bgm.Audio, bgm.IsNeedVolumn ? bgm.Volumn : null);
         }
 
         private void Update()
@@ -37,6 +43,7 @@ namespace Scripts.Game
                 EnemyHandel();
             }
         }
+
         private void EnemyHandel()
         {
             foreach (LevelRound level in _level.LevelRounds)

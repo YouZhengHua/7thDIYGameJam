@@ -24,6 +24,11 @@ namespace Scripts.Game
         /// </summary>
         private float _extendMoneyMuliple = 0f;
 
+        /// <summary>
+        /// 額外補品掉落率
+        /// </summary>
+        private float _extendHealItemRate = 0f;
+
         private float _totalDamage = 0f;
         private float _totalMoney = 0f;
         private int _totalKill = 0;
@@ -58,6 +63,7 @@ namespace Scripts.Game
             _totalMoney = 0f;
             _totalKill = 0;
             _gameTime = 0f;
+            _extendHealItemRate = 0f;
             _weapon = GameObject.Find("PlayerContainer").GetComponent<IWeaponController>();
         }
 
@@ -75,32 +81,41 @@ namespace Scripts.Game
         {
             switch (data.AttributeType)
             {
-                case AttributeType.PlayerHeal:
-                    this.HealPlayer(CalTool.Round(data.Value * this.PlayerMaxHealthPoint, 1));
-                    break;
-                case AttributeType.PlayerMaxHealth:
-                    this.AddPlayerMaxHP(CalTool.Round(data.Value, 1));
-                    break;
-                case AttributeType.PlayerSpeed:
-                    _playerData.MoveSpeed.AddValuePoint(data.Value);
-                    break;
-                case AttributeType.ExtendExp:
-                    _playerData.ExpRate.AddValueMultiple(data.Value);
-                    break;
-                case AttributeType.GetDropItemRadius:
-                    _playerData.DropItemRadius.AddValuePoint(data.Value);
-                    break;
                 case AttributeType.Score:
                     this.AddTotalMoney(data.Value);
-                    break;
-                case AttributeType.PlayerDef:
-                    _playerData.DEF.AddValuePoint(data.Value);
                     break;
                 case AttributeType.DamageMultiple:
                     foreach (Weapon weapon in _weapon.GetWeapons())
                     {
                         weapon.weaponData.Damage.AddValueMultiple(data.Value);
                     }
+                    break;
+                case AttributeType.PlayerMaxHealth:
+                    this.AddPlayerMaxHP(CalTool.Round(data.Value, 1));
+                    break;
+                case AttributeType.ExtendExp:
+                    _playerData.ExpRate.AddValueMultiple(data.Value);
+                    break;
+                case AttributeType.PlayerSpeed:
+                    _playerData.MoveSpeed.AddValuePoint(data.Value);
+                    break;
+                case AttributeType.PlayerHeal:
+                    this.HealPlayer(CalTool.Round(data.Value * this.PlayerMaxHealthPoint, 1));
+                    break;
+                case AttributeType.GetDropItemRadius:
+                    _playerData.DropItemRadius.AddValuePoint(data.Value);
+                    break;
+                case AttributeType.RecoverShield:
+                    this.RecoverShield(data.Value);
+                    break;
+                case AttributeType.ShootCount:
+                    foreach (Weapon weapon in _weapon.GetWeapons())
+                    {
+                        weapon.weaponData.OneShootAmmoCount.AddValuePoint((int)data.Value);
+                    }
+                    break;
+                case AttributeType.HealItemRate:
+                    _extendHealItemRate += data.Value;
                     break;
             }
         }
@@ -438,6 +453,8 @@ namespace Scripts.Game
         public float TotalGameTime { get; set; }
 
         public bool IsTimeWin { get => this.TotalGameTime - this.GameTime <= 0f; }
+
+        public float GetExtendHealItemRate { get => _extendHealItemRate; }
         #endregion
     }
 }
