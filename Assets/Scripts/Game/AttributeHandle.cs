@@ -109,7 +109,7 @@ namespace Scripts.Game
         {
             if (data.SelectedCount == 0)
             {
-                _weapon.LoadWeapon(data.WeaponIndex, true);
+                _weapon.LoadWeapon(data.WeaponIndex, data.Image, true);
             }
             else
             {
@@ -422,6 +422,12 @@ namespace Scripts.Game
         /// 取得/設定遊戲時間
         /// </summary>
         public float GameTime { get => _gameTime; set => _gameTime = value; }
+        /// <summary>
+        /// 取得/設定遊戲總時間
+        /// </summary>
+        public float TotalGameTime { get; set; }
+
+        public bool IsTimeWin { get => this.TotalGameTime - this.GameTime <= 0f; }
         #endregion
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -3966636218771693462}
   - component: {fileID: 7648682765437548972}
   m_Layer: 7
-  m_Name: enemy_03_skeletonBoss
+  m_Name: boss 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59815975cf0ff74458e18732b659ee19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyData: {fileID: 11400000, guid: 6c61289e3d9b3934398ec3c77122adb8, type: 2}
+  _enemyData: {fileID: 11400000, guid: 4fa061001681fc04cbe027e44a061a2c, type: 2}
   _damageTextPrefab: {fileID: 2538697934944276320, guid: 9ed005278162b0142b34764996fa485d, type: 3}
   _textShowTime: 0.3
   _enemyGetHit: Hit

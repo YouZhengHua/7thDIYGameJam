@@ -18,15 +18,16 @@ MonoBehaviour:
   WeaponIndex: 5
   AmmoPrefab: {fileID: 2891923082296894308, guid: bed6fc8dd9878494189a39022da7f368, type: 3}
   Damage:
-    _value: 30
+    _value: 2
     _multiple: 1
   DamageFrom: 3
   Force:
-    _value: 3
+    _value: 4
     _multiple: 1
   DelayTime:
-    _value: 0.1
+    _value: 0.5
     _multiple: 1
+  ShootAudios: []
   CoolDownTime:
     _value: 0.1
     _multiple: 1

@@ -21,7 +21,8 @@ public class KingBibleWeapon : Weapon
         for (int i = 0; i < weaponData.OneShootAmmoCount.Value; i++)
         {
             GameObject _ammoObj = Instantiate(weaponData.AmmoPrefab, this.transform.position, Quaternion.identity);
-            _ammoObj.GetComponent<IAmmoEvent>().OnHitEnemy.AddListener(_hitEnemy);
+            _ammoObj.GetComponent<IBulletEvent>().OnHitEvent.AddListener(_hitEnemy);
+            _ammoObj.GetComponent<BulletController>().Init(Vector3.zero, Vector3.zero, 0f, -1, weaponData.Damage.Value);
             _ammoObj.transform.SetParent(this.transform);
             _ammoObjList.Add(_ammoObj);
             float angle = i * angleOffset;
