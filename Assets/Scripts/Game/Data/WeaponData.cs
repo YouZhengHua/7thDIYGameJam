@@ -104,7 +104,9 @@ public class WeaponData : BaseItemData
     /// <summary>
     /// 是否啟動Buff
     /// </summary>
-    [Header("是否啟動Buff功能"), Tooltip("彈藥是否具有Buff效果")]
-    public bool BuffSpawnActive = false;
+    [Header("是否啟動 Buff 功能"), Tooltip("彈藥是否具有 Buff 效果")]
+    public BoolAttributeHandle BuffSpawnActive;
+    [Header("Buff 觸發間隔")]
+    public FloatAttributeHandle BuffCoolDownTime;
     #endregion
 }

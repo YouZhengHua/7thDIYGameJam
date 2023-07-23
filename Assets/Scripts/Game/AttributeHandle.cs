@@ -316,20 +316,21 @@ namespace Scripts.Game
         /// <summary>
         /// 取得玩家的護盾值
         /// </summary>
-        public float PlayerShield { get => CalTool.Round(_playerData.Shield, 1); }
+        public int PlayerShield { get => (int)CalTool.Round(_playerData.Shield, 1); }
         /// <summary>
         /// 恢復玩家的護盾值
         /// </summary>
-        public void RecoverShield(float value) {
+        public void RecoverShield(int value)
+        {
             _playerData.Shield += value;
-            if(_playerData.Shield > this.PlayerMaxShield)
+            if (_playerData.Shield > this.PlayerMaxShield)
                 _playerData.Shield = this.PlayerMaxShield;
             _gameUI.UpdatePlayerHealth();
         }
         /// <summary>
         /// 取得玩家的最大護盾值
         /// </summary>
-        public float PlayerMaxShield { get => CalTool.Round(_playerData.MaxShield, 1); }
+        public int PlayerMaxShield { get => (int)CalTool.Round(_playerData.MaxShield, 1); }
         /// <summary>
         /// 取得玩家的移動速度
         /// </summary>
@@ -355,7 +356,7 @@ namespace Scripts.Game
             // 扣除防禦值
             damage = CalTool.CalDamage(damage, this.PlayerDEF);
             // 扣除
-            if (_playerData.Shield > 0f)
+            if (_playerData.Shield > 0)
             {
                 // 剩餘護盾值
                 _playerData.Shield--;

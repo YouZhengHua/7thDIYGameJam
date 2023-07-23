@@ -4,8 +4,8 @@ using Scripts.Game.Base;
 namespace Scripts.Game.Data
 {
     [CreateAssetMenu(menuName = "Game/Player")]
-	public class PlayerData : BaseData
-	{
+    public class PlayerData : BaseData
+    {
         /// <summary>
         /// 血量最大值
         /// </summary>
@@ -30,23 +30,23 @@ namespace Scripts.Game.Data
         }
 
         [Header("護盾值"), Min(0)]
-        public float Shield = 0f;
+        public int Shield = 0;
 
         /// <summary>
         /// 護盾最大值
         /// </summary>
-        private float? _MaxShield;
+        private int? _MaxShield;
 
         /// <summary>
         /// 護盾最大值
         /// </summary>
-        public float MaxShield
+        public int MaxShield
         {
             get
             {
                 if (!_MaxShield.HasValue)
                 {
-                    _MaxShield = CalTool.Round(Shield, 1);
+                    _MaxShield = (int?)CalTool.Round(Shield, 1);
                 }
                 return _MaxShield.Value;
             }
@@ -89,8 +89,8 @@ namespace Scripts.Game.Data
         /// 計算公式
         /// Level N = Min((N * 基礎經驗值) * (經驗值指數 ^ (N - 1)), 經驗值上限)
         /// </summary>
-        public float NextLevelExp 
-        { 
+        public float NextLevelExp
+        {
             get
             {
                 return Mathf.Min(((float)Level * _levelExp) * Mathf.Pow(_levelPow, (Level - 1)), _levelExpMax);

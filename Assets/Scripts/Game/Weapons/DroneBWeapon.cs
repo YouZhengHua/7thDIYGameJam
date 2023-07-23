@@ -8,23 +8,45 @@ public class DroneBWeapon : Weapon
 {
     public GameObject missileAmmoPrefab;
     public Vector3 offset;
+    public ShieldBuff shieldBuff;
     public float shootRadius = 5f;
     public float targetRadius = 5f;
     public float shootInterval = 0.1f;
     public int shootCount = 5;
     private GameObject _ammoObj;
 
+    private bool alreadyActiveBuff = false;
+
     public override void Start()
     {
         base.Start();
-        //Testing code
-        // LoadWeapon();
     }
     public override void LoadWeapon(bool active = true)
     {
         base.LoadWeapon(active);
         _ammoObj = Instantiate(weaponData.AmmoPrefab, this.transform.position, Quaternion.identity);
-        // _ammoObj.transform.SetParent(this.transform);
+        weaponData.BuffSpawnActive.OnBoolChangedEvent.AddListener(OnBuffSpawnActiveChanged);
+        OnBuffSpawnActiveChanged(weaponData.BuffSpawnActive.Value);
+    }
+
+    private void OnBuffSpawnActiveChanged(bool value)
+    {
+        if (value && !alreadyActiveBuff)
+        {
+            alreadyActiveBuff = true;
+            StartCoroutine(_spawnBuff());
+        }
+    }
+
+    //每隔 x 秒，對玩家增加 x 點護盾的常駐 buff
+    IEnumerator _spawnBuff()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(weaponData.BuffCoolDownTime.Value);
+            Debug.Log("DroneBWeapon _spawnBuff");
+            AttributeHandle.Instance.RecoverShield(shieldBuff.shield);
+        }
     }
 
     public override bool Update()
@@ -44,6 +66,7 @@ public class DroneBWeapon : Weapon
             //執行射擊 shootCount
             _triggerShoot();
         }
+
 
         return true;
     }

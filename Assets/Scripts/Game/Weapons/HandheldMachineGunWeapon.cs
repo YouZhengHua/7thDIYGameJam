@@ -78,7 +78,7 @@ public class HandheldMachineGunWeapon : Weapon
             _offset = Quaternion.Euler(0f, 0f, weaponData.OneShootAmmoCount.Value == 1 ? 0f : (_angleRange / 2f) - (_angleRange / (weaponData.OneShootAmmoCount.Value - 1) * i));
             _shotAmmo[i].transform.localRotation = Quaternion.Euler(_playerRotation.localRotation.eulerAngles + _shotAmmo[i].transform.rotation.eulerAngles);
             _shotAmmo[i].GetComponent<BulletController>().Init(Vector3.zero, _offset * _playerRotation.up, weaponData.AmmoFlySpeed.Value, weaponData.HavaPenetrationLimit ? weaponData.AmmoPenetrationCount.Value : -1, weaponData.Damage.Value);
-            _shotAmmo[i].GetComponent<BuffSpawner>().SetSpawnActive(weaponData.BuffSpawnActive);
+            _shotAmmo[i].GetComponent<BuffSpawner>().SetSpawnActive(weaponData.BuffSpawnActive.Value);
         }
 
         _gunEffect.SetTrigger(playerShootFire);
