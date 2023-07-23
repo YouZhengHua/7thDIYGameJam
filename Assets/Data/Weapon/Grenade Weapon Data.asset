@@ -10,52 +10,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5caa92a1a9607a541a59e022267313ac, type: 3}
-  m_Name: HandheldMachineGun Weapon Data
+  m_Name: Grenade Weapon Data
   m_EditorClassIdentifier: 
   Name: 
   Price: 0
   DefaultIsUnlocked: 0
-  WeaponIndex: 1
-  AmmoPrefab: {fileID: 3626254014405645773, guid: 691d720c7c6d03a47a10bf9181c192e5, type: 3}
+  WeaponIndex: 4
+  AmmoPrefab: {fileID: 4824317457725271445, guid: 5e2c772ff84ac184fac33fb5d7a53644, type: 3}
   Damage:
-    _value: 10
+    _value: 70
     _multiple: 1
-  DamageFrom: 1
+  DamageFrom: 2
   Force:
-    _value: 1
+    _value: 0
     _multiple: 1
   DelayTime:
     _value: 0.1
     _multiple: 1
   ShootAudios:
-  - {fileID: 8300000, guid: dfd606f7e6f7ee44eb2d733b0435e51b, type: 3}
-  - {fileID: 8300000, guid: ec41e8b341ed70841ab8652d3c4db23b, type: 3}
-  - {fileID: 8300000, guid: 81c3cd84e89a95e439db5186ad737cec, type: 3}
+  - {fileID: 8300000, guid: f36eb3e2688a1b3439d22c70fec43cf0, type: 3}
   CoolDownTime:
-    _value: 0.2
+    _value: 0.1
     _multiple: 1
   AmmoScale:
     _value: 1
     _multiple: 1
   OneShootAmmoCount:
-    _value: 3
+    _value: 1
     _multiple: 1
   AmmoFlySpeed:
-    _value: 30
+    _value: 100
     _multiple: 1
   AmmoPenetrationCount:
-    _value: 0
+    _value: 1
     _multiple: 1
   HavaPenetrationLimit: 1
   AmmoFlyRange:
-    _value: 20
+    _value: 15
     _multiple: 1
   SkillTriggerInterval:
-    _value: 0
+    _value: 2
     _multiple: 1
   DamageRadius:
-    _value: 0
+    _value: 2
     _multiple: 1
   CreateRadius:
-    _value: 0
+    _value: 4
     _multiple: 1

@@ -22,7 +22,7 @@ public enum WeaponIndex
     /// <summary>
     /// 炸彈
     /// </summary>
-    TempColliderAmmo,
+    Grenade,
     /// <summary>
     /// 盾牌
     /// </summary>
