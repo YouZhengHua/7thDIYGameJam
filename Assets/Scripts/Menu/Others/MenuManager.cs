@@ -12,6 +12,14 @@ namespace Scripts.Menu
         [SerializeField] private StageManager stageManager;
         [SerializeField] private StoryDialogueSO storyDialogueSO;
 
+        [SerializeField, Header("使用者設定UI")]
+        private Canvas _settingCanvas;
+        [SerializeField, Header("使用者設定")]
+        private UserSetting _nowSetting;
+        [SerializeField, Header("預設設定")]
+        private UserSetting _defaultSetting;
+        private Scripts.Game.SettingUIController settingUI;
+
         private List<int> currentDialogueList;
         private int dialogueCycleIndex;
 
@@ -19,11 +27,15 @@ namespace Scripts.Menu
         {
             if (StaticPrefs.IsFirstIn)
                 FirstOpenGame();
+
+            if (settingUI == null)
+                settingUI = new Game.SettingUIController(_settingCanvas, _defaultSetting, _nowSetting);
+            settingUI.HideCanvas();
         }
 
-
         public void InvokeSettingUICanvas() {
-
+            
+            settingUI.ShowCanvas();
         }
         private void Start() {
             Debug.Log("MenuManager being called");
