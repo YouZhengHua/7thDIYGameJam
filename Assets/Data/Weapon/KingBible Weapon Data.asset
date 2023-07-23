@@ -18,28 +18,46 @@ MonoBehaviour:
   WeaponIndex: 5
   AmmoPrefab: {fileID: 2891923082296894308, guid: bed6fc8dd9878494189a39022da7f368, type: 3}
   Damage:
-    _value: 2
+    _value: 10
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   DamageFrom: 3
   Force:
-    _value: 4
+    _value: 6
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   DelayTime:
     _value: 0.5
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   ShootAudios: []
   CoolDownTime:
-    _value: 0.1
+    _value: 3
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   AmmoScale:
     _value: 1
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   OneShootAmmoCount:
     _value: 3
     _multiple: 1
   AmmoFlySpeed:
     _value: 100
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   AmmoPenetrationCount:
     _value: 1
     _multiple: 1
@@ -47,12 +65,31 @@ MonoBehaviour:
   AmmoFlyRange:
     _value: 15
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  AmmoFlyTime:
+    _value: 3
+    _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   SkillTriggerInterval:
     _value: 0.1
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   DamageRadius:
     _value: 2
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   CreateRadius:
     _value: 2
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  BuffSpawnActive: 0
