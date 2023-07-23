@@ -61,11 +61,6 @@ namespace Scripts.Game
             _userSetting.soundVolume = _tmpSetting.soundVolume;
             _userSetting.musicVolume = _tmpSetting.musicVolume;
 
-            _userSetting.ChangeShootType = _tmpSetting.ChangeShootType;
-            _userSetting.MeleeAttack = _tmpSetting.MeleeAttack;
-            _userSetting.Reload = _tmpSetting.Reload;
-            _userSetting.Shoot = _tmpSetting.Shoot;
-
             AudioController.Instance.UpdateAudioVolume();
             this.HideCanvas();
         }
@@ -94,11 +89,6 @@ namespace Scripts.Game
         {
             _userSetting.soundVolume = _defaultSetting.soundVolume;
             _userSetting.musicVolume = _defaultSetting.musicVolume;
-
-            _userSetting.ChangeShootType = _defaultSetting.ChangeShootType;
-            _userSetting.MeleeAttack = _defaultSetting.MeleeAttack;
-            _userSetting.Reload = _defaultSetting.Reload;
-            _userSetting.Shoot = _defaultSetting.Shoot;
         }
     }
 }
