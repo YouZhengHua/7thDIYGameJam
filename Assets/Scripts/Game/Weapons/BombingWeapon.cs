@@ -36,7 +36,14 @@ public class BombingWeapon : Weapon
         // 播放轰炸特效
         //TODO 用架構的物件池 AmmoPool
         GameObject effect = Instantiate(weaponData.AmmoPrefab, randomPoint, Quaternion.identity);
-        //TODO 轟炸範圍要影響特效大小
+        //轟炸範圍影響特效大小裡面所有Particle System 的scale
+        ParticleSystem[] particleSystems = effect.GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem particleSystem in particleSystems)
+        {
+            particleSystem.startSize = weaponData.DamageRadius.Value;
+        }
+
+
 
         // 在半径范围内查找敌人单位
         Collider2D[] colliders = Physics2D.OverlapCircleAll(randomPoint, weaponData.DamageRadius.Value);
