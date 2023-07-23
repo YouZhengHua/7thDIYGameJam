@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerDefeated: 0
   isSecInTheSameLevel: 1
-  currentStage: 5
+  currentStage: 1

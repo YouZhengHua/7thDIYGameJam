@@ -23,7 +23,7 @@ MonoBehaviour:
     dialougeIndex: 110000001200000013000000
     defeatedDialogueIndex: 140000001500000016000000
   - stage: 4
-    dialougeIndex: 190000001a0000001b0000001c0000001d0000001e000000
+    dialougeIndex: 1a0000001e0000001b0000001c0000001d00000019000000
     defeatedDialogueIndex: 
   - stage: 5
     dialougeIndex: 21000000
