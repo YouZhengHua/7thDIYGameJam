@@ -15,9 +15,9 @@ public class UnlockUpgrade : MonoBehaviour
 
     private void Start() {
         if (critirionStage < stageManager.GetCurrentStage()) {
-            button.enabled = true;
+            button.interactable = true;
         } else {
-            button.enabled = false;
+            button.interactable = false;
         }
     }
 }
