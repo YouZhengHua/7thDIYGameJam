@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Attribute 08
   m_EditorClassIdentifier: 
   _optionType: 0
-  _title: "\u9632\u79A6\u529B"
-  _depiction: "\u589E\u52A0 1 \u9EDE"
-  _image: {fileID: 0}
-  _maxSelectedCount: 5
+  _title: "\u8B77\u76FE"
+  _depiction: "\u6062\u5FA9 1 \u9EDE\u8B77\u76FE"
+  _image: {fileID: 21300000, guid: 928d3070e4951a447a656f1bf65dc7d9, type: 3}
+  _maxSelectedCount: 0
   _isEndOption: 0
-  _isLoopOption: 0
+  _isLoopOption: 1
   _isActive: 1
-  _attributeType: 9
+  _attributeType: 17
   _value: 1
   _isNegative: 0

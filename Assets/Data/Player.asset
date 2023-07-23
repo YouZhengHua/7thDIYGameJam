@@ -16,24 +16,42 @@ MonoBehaviour:
   MoveSpeed:
     _value: 5.5
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   Shield: 5
   Radius:
     _value: 3.5
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   Force:
     _value: 6
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   EnemyDelayTime:
     _value: 1
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   Level: 1
   NowExp: 0
   DropItemRadius:
     _value: 2
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   ExpRate:
     _value: 1
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   _levelExpMax: 100
   _levelExp: 3
   _levelPow: 1.2
@@ -46,6 +64,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 976572972f64c4c49abe3709659854ee, type: 2}
   - {fileID: 11400000, guid: 5c8837b8db3ce1c46ab9e192c4394672, type: 2}
   - {fileID: 11400000, guid: 68b21f485631f6046a9fabcd616b03a7, type: 2}
+  - {fileID: 11400000, guid: 64f103988204dee4594233f27138dde6, type: 2}
+  - {fileID: 11400000, guid: ac021ca37921ca74a85641f5f1585aee, type: 2}
   LevelUpAudio: {fileID: 8300000, guid: 17036ef0ba4b8494bb8f3b5660f033cc, type: 3}
   GetHitAudio: {fileID: 8300000, guid: ce40b8fb4c022834fb95f41fb9568f03, type: 3}
   DropHealthRate: 0.01
@@ -53,9 +73,18 @@ MonoBehaviour:
   DEF:
     _value: 0
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   AutoRecoverPoint:
     _value: 0
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   AutoRecoverTime:
     _value: 1
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []

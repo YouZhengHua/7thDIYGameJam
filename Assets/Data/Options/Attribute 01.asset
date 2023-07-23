@@ -15,7 +15,7 @@ MonoBehaviour:
   _optionType: 0
   _title: "\u91D1\u5E63"
   _depiction: "\u589E\u52A0 100 \u91D1"
-  _image: {fileID: 0}
+  _image: {fileID: 21300000, guid: 65c80203a4b6fe748b3da9cbc3817634, type: 3}
   _maxSelectedCount: 1
   _isEndOption: 0
   _isLoopOption: 1
