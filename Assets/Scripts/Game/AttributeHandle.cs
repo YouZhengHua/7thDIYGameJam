@@ -366,8 +366,8 @@ namespace Scripts.Game
         public void HealPlayer(float value)
         {
             _playerData.HealthPoint += value;
-            if (_playerData.HealthPoint > _playerData.MaxHealthPoint)
-                _playerData.HealthPoint = _playerData.MaxHealthPoint;
+            if (_playerData.HealthPoint > this.PlayerMaxHealthPoint)
+                _playerData.HealthPoint = this.PlayerMaxHealthPoint;
             _gameUI.UpdatePlayerHealth();
         }
 
@@ -378,8 +378,7 @@ namespace Scripts.Game
         public void AddPlayerMaxHP(float value)
         {
             _extendMaxHealthPoint += value;
-            _playerData.HealthPoint += value;
-            _gameUI.UpdatePlayerHealth();
+            this.HealPlayer(value);
         }
         /// <summary>
         /// 玩家自動回復間隔
