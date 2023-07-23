@@ -12,11 +12,9 @@ public class FadeEffectUI : MonoBehaviour
 
     public void FadeIn() {
         animator.Play("FadeIn");
-        animator.Play("Idle");
     }
 
     public void FadeOut() {
         animator.Play("FadeOut");
-        animator.Play("Idle");
     }
 }

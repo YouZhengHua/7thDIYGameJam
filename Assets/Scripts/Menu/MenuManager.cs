@@ -1,4 +1,5 @@
 ﻿using Scripts.Game.Data;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Scripts.Menu
@@ -11,6 +12,7 @@ namespace Scripts.Menu
         [SerializeField] private StageManager stageManager;
         [SerializeField] private StoryDialogueSO storyDialogueSO;
 
+        private List<int> currentDialogueList;
         private int dialogueIndex;
         private int dialogueCycleIndex;
 
@@ -22,6 +24,7 @@ namespace Scripts.Menu
 
         private void Start() {
             Debug.Log("MenuManager being called");
+            Time.timeScale = 1.0f;
 
             switch (stageManager.GetCurrentStage()) {
                 case StageManager.stage.firstStartGame:
@@ -47,13 +50,9 @@ namespace Scripts.Menu
                     break;
             }
 
-            foreach (StoryDialogueSO.stage_dialogue stage_Dialogue in storyDialogueSO.dialogues) {
-                if (stage_Dialogue.stage == stageManager.GetCurrentStage()) {
-                    dialogueIndex = stage_Dialogue.dialougeIndex[0];
-                }
-            }
-
+            currentDialogueList = GetDialogueIndexList();
             dialogueCycleIndex = 0;
+            dialogueIndex = currentDialogueList[0];
         }
 
         private void FirstOpenGame()
@@ -72,17 +71,9 @@ namespace Scripts.Menu
         }
 
         public void TalkToGirl() {
-            Debug.Log("Talk to girl with dialogue index " + dialogueIndex);
             DisableAllUI();
-            storyManager.StartStory(dialogueIndex, EnableAllUI);
-
-            foreach (StoryDialogueSO.stage_dialogue stage_Dialogue in storyDialogueSO.dialogues) {
-                if (stage_Dialogue.stage == stageManager.GetCurrentStage()) {
-                    Debug.Log("Cycle Index: " + dialogueCycleIndex);
-                    dialogueCycleIndex = (dialogueCycleIndex + 1) % stage_Dialogue.dialougeIndex.Count;
-                    dialogueIndex = dialogueCycleIndex + stage_Dialogue.dialougeIndex[0];
-                }
-            }
+            storyManager.StartStory(currentDialogueList[dialogueCycleIndex], EnableAllUI);
+            dialogueCycleIndex = (dialogueCycleIndex + 1) % currentDialogueList.Count;
         }
         private void FadeIn() {
             fadeEffect.FadeIn();
@@ -117,21 +108,23 @@ namespace Scripts.Menu
                 FadeIn();
                 DisableAllUI();
                 storyManager.StartStory(5, EnableAllUI);
-                dialogueIndex = 6;
+                currentDialogueList = GetDialogueIndexList();
                 stageManager.isSecInTheSameLevel = true;
             }
         }
 
         private void Level_2() {
+            Debug.Log("Entering Level2");
+
             if (stageManager.isSecInTheSameLevel) {
                 FadeIn();
             } else {
                 FadeIn();
                 stageManager.isSecInTheSameLevel = true;
                 DisableAllUI();
-                storyManager.StartStory(8, () => { FadeOut();
+                storyManager.StartStory(9, () => { FadeOut();
                     storyManager.StartStory(2, () => { FadeIn();
-                        storyManager.StartStory(9, EnableAllUI);
+                        storyManager.StartStory(10, EnableAllUI);
                     }); });
             }
         }
@@ -143,11 +136,11 @@ namespace Scripts.Menu
                 FadeIn();
                 stageManager.isSecInTheSameLevel = true;
                 DisableAllUI();
-                storyManager.StartStory(12, () => {
+                storyManager.StartStory(15, () => {
                     FadeOut();
                     storyManager.StartStory(2, () => {
                         FadeIn();
-                        storyManager.StartStory(13, EnableAllUI);
+                        storyManager.StartStory(16, EnableAllUI);
                     });
                 });
             }
@@ -160,11 +153,11 @@ namespace Scripts.Menu
                 FadeIn();
                 stageManager.isSecInTheSameLevel = true;
                 DisableAllUI();
-                storyManager.StartStory(16, () => {
+                storyManager.StartStory(23, () => {
                     FadeOut();
                     storyManager.StartStory(2, () => {
                         FadeIn();
-                        storyManager.StartStory(17, EnableAllUI);
+                        storyManager.StartStory(24, EnableAllUI);
                     });
                 });
             }
@@ -177,14 +170,29 @@ namespace Scripts.Menu
                 FadeIn();
                 stageManager.isSecInTheSameLevel = true;
                 DisableAllUI();
-                storyManager.StartStory(21, () => {
+                storyManager.StartStory(31, () => {
                     FadeOut();
                     storyManager.StartStory(2, () => {
                         FadeIn();
-                        storyManager.StartStory(22, EnableAllUI);
+                        storyManager.StartStory(32, EnableAllUI);
                     });
                 });
             }
+        }
+
+        private List<int> GetDialogueIndexList() {
+            List<int> returnList = new List<int>();
+
+            foreach (StoryDialogueSO.stage_dialogue stage_Dialogue in storyDialogueSO.dialogues) {
+                if (stage_Dialogue.stage == stageManager.GetCurrentStage()) {
+                    if (stageManager.isPlayerDefeated) {
+                        returnList.AddRange(stage_Dialogue.defeatedDialogueIndex);
+                    }
+                    returnList.AddRange(stage_Dialogue.dialougeIndex);
+                }
+            }
+
+            return returnList;
         }
     }
 }
