@@ -1,3 +1,4 @@
+using Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class UpgradeElementContainerUI : MonoBehaviour
 {
     [SerializeField] private UpgradeElementUI[] elements;
     [SerializeField] private UpgradeDescriptionUI descriptionUI;
+    [SerializeField] private AudioClip upgradeSE;
 
     private List<Button> buttons;
     private UpgradeElementUI chosenElement;
@@ -43,6 +45,7 @@ public class UpgradeElementContainerUI : MonoBehaviour
     public void UpgradeChosenElement() {
         chosenElement.Upgrade();
         descriptionUI.UpdateDescription();
+        AudioController.Instance.PlayEffect(upgradeSE);
     }
 
     public void DisableAllButtonsOutline(List<Button> buttons)

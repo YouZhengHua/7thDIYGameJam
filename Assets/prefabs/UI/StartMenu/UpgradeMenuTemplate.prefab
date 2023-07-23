@@ -762,6 +762,7 @@ MonoBehaviour:
   - {fileID: 3509502705636948695}
   - {fileID: 3509502705218550697}
   descriptionUI: {fileID: 7078020902652299108}
+  upgradeSE: {fileID: 8300000, guid: 1d9c0f24abc34f949ad46e387d6dd14d, type: 3}
 --- !u!1 &7078020903858600224
 GameObject:
   m_ObjectHideFlags: 0
