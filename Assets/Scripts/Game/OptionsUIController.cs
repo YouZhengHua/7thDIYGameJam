@@ -100,8 +100,13 @@ namespace Scripts.Game
             // 將未達最大選取次數 及 不是最終選項的 升級選項加入選項清單中
             foreach(OptionData option in _optionDatas)
             {
-                if (!option.IsSelectedMax && !option.IsEndOption)
-                    _canSelectedOptionDatas.Add(option);
+                if (option.IsSelectedMax)
+                    continue;
+                else if (option.IsEndOption)
+                    continue;
+                else if (option.OptionType == OptionType.Weapon && AttributeHandle.Instance.ActiveWeapons.Count >= AttributeHandle.Instance.WeaponColumnActiveCount && !AttributeHandle.Instance.ActiveWeapons.Contains(((WeaponOptionData)option).WeaponIndex))
+                    continue;
+                _canSelectedOptionDatas.Add(option);
             }
 
             // 如果選項清單的數量少於畫面可選的數量，就再把 未達最大選取次數 及 是最終選項 的升級選項加入清單中

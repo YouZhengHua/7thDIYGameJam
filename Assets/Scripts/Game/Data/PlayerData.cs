@@ -115,5 +115,17 @@ namespace Scripts.Game.Data
         public FloatAttributeHandle AutoRecoverPoint;
         [Header("自動回復間隔")]
         public FloatAttributeHandle AutoRecoverTime;
+        [SerializeField, Header("有效武器欄位數量")]
+        private IntAttributeHandle _weaponColumnActiveCount;
+        [SerializeField, Header("最大武器欄位數量")]
+        private IntAttributeHandle _weaponColumnMaxCount;
+        /// <summary>
+        /// 有效的武器欄位
+        /// </summary>
+        public int WeaponColumnActiveCount { get => Mathf.Min(_weaponColumnMaxCount.Value, _weaponColumnActiveCount.Value); }
+        /// <summary>
+        /// 總武器欄位數量
+        /// </summary>
+        public int WeaponColumnMaxCount { get => _weaponColumnMaxCount.Value; }
     }
 }

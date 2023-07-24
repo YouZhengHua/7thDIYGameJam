@@ -16,12 +16,16 @@ namespace Scripts.Game
         [SerializeField, Header("武器根節點"), Tooltip("武器實例化的根節點")]
         private Transform weaponRoot;
 
-        [SerializeField, Header("武器貼圖")]
-        private WeaponColumnController[] _weaponColumns;
+        private IList<WeaponColumnController> _weaponColumns = new List<WeaponColumnController>();
         private int _nextWeaponColumn = 0;
+        [SerializeField, Header("武器欄位預置物")]
+        private GameObject _weaponColumnPrefab;
+        private Transform _weaponColumnContainer;
 
         private void Awake()
         {
+            _weaponColumnContainer = GameObject.Find("WeaponUIContainer").GetComponent<Transform>();
+
             foreach (GameObject weaponPrefab in weaponControllerData.weaponPrefabList)
             {
                 Weapon weapon = Instantiate(weaponPrefab, this.transform).GetComponent<Weapon>();
@@ -31,13 +35,28 @@ namespace Scripts.Game
             }
         }
 
+        private void Start()
+        {
+            for (int i = 0; i < AttributeHandle.Instance.WeaponColumnMaxCount; i++)
+            {
+                GameObject weaponColumnPrefab = GameObject.Instantiate(_weaponColumnPrefab, _weaponColumnContainer);
+                weaponColumnPrefab.transform.localPosition = new Vector3(i * -128f, 64f, 0f);
+                WeaponColumnController weaponColumn = weaponColumnPrefab.GetComponent<WeaponColumnController>();
+                weaponColumn.SetActive(i >= (AttributeHandle.Instance.WeaponColumnMaxCount - AttributeHandle.Instance.WeaponColumnActiveCount));
+                _weaponColumns.Add(weaponColumn);
+            }
+            _nextWeaponColumn = AttributeHandle.Instance.WeaponColumnMaxCount - 1;
+        }
+
         public void LoadWeapon(WeaponIndex weaponIndex, Sprite weaponIcon, bool active = true)
         {
-
             Weapon weapon = this.GetWeapon(weaponIndex);
+            Debug.Log(weapon);
             weapon.LoadWeapon(active);
             _weaponColumns[_nextWeaponColumn].AddWeaponIcon(weaponIcon);
-            _nextWeaponColumn++;
+            _nextWeaponColumn--;
+            _nextWeaponColumn = Mathf.Max(AttributeHandle.Instance.WeaponColumnMaxCount - AttributeHandle.Instance.WeaponColumnActiveCount, _nextWeaponColumn);
+            _nextWeaponColumn = Mathf.Min(AttributeHandle.Instance.WeaponColumnMaxCount - 1, _nextWeaponColumn);
         }
 
         public Weapon GetWeapon(WeaponIndex weaponIndex)

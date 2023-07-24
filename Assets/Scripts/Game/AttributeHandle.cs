@@ -125,6 +125,7 @@ namespace Scripts.Game
             if (data.SelectedCount == 0)
             {
                 _weapon.LoadWeapon(data.WeaponIndex, data.Image, true);
+                this.ActiveWeapons.Add(data.WeaponIndex);
             }
             else
             {
@@ -455,6 +456,22 @@ namespace Scripts.Game
         public bool IsTimeWin { get => this.TotalGameTime - this.GameTime <= 0f; }
 
         public float GetExtendHealItemRate { get => _extendHealItemRate; }
+        /// <summary>
+        /// 有效武器欄位數量
+        /// </summary>
+        public int WeaponColumnActiveCount { get => _playerData.WeaponColumnActiveCount; }
+        /// <summary>
+        /// 最大武器欄位數量
+        /// </summary>
+        public int WeaponColumnMaxCount { get => _playerData.WeaponColumnMaxCount; }
+        /// <summary>
+        /// 生效的武器清單
+        /// </summary>
+        private IList<WeaponIndex> _activeWeapons = new List<WeaponIndex>();
+        /// <summary>
+        /// 取得生效的武器清單
+        /// </summary>
+        public IList<WeaponIndex> ActiveWeapons { get => _activeWeapons; }
         #endregion
     }
 }
