@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: StageManager
   m_EditorClassIdentifier: 
   isPlayerDefeated: 0
-  isSecInTheSameLevel: 1
-  currentStage: 1
+  isSecInTheSameLevel: 0
+  currentStage: 0
