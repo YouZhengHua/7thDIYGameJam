@@ -104,7 +104,7 @@ namespace Scripts.Game
                     continue;
                 else if (option.IsEndOption)
                     continue;
-                else if (option.OptionType == OptionType.Weapon && AttributeHandle.Instance.ActiveWeapons.Count >= AttributeHandle.Instance.WeaponColumnActiveCount && !AttributeHandle.Instance.ActiveWeapons.Contains(((WeaponOptionData)option).WeaponIndex))
+                else if (option.OptionType == OptionType.Weapon && AttributeHandle.Instance.ActiveWeapons.Count >= AttributeHandle.Instance.WeaponColumnActiveCount && !AttributeHandle.Instance.ActiveWeaponIndexs.Contains(((WeaponOptionData)option).WeaponIndex))
                     continue;
                 _canSelectedOptionDatas.Add(option);
             }
