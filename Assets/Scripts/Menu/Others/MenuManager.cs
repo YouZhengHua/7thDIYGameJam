@@ -1,6 +1,7 @@
 ﻿using Scripts.Game.Data;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Scripts.Menu
 {
@@ -11,6 +12,7 @@ namespace Scripts.Menu
         [SerializeField] private StoryManager storyManager;
         [SerializeField] private StageManager stageManager;
         [SerializeField] private StoryDialogueSO storyDialogueSO;
+        [SerializeField] private Transform endGameCheckBox;
 
         [SerializeField, Header("使用者設定UI")]
         private Canvas _settingCanvas;
@@ -91,6 +93,10 @@ namespace Scripts.Menu
             DisableAllUI();
             storyManager.StartStory(currentDialogueList[dialogueCycleIndex], EnableAllUI);
             dialogueCycleIndex = (dialogueCycleIndex + 1) % currentDialogueList.Count;
+
+            if (stageManager.GetCurrentStage() == StageManager.stage.gameEnd) {
+                endGameCheckBox.gameObject.SetActive(true);
+            }
         }
         private void FadeIn() {
             fadeEffect.FadeIn();
@@ -191,7 +197,10 @@ namespace Scripts.Menu
                     FadeOut();
                     storyManager.StartStory(2, () => {
                         FadeIn();
-                        storyManager.StartStory(32, EnableAllUI);
+                        storyManager.StartStory(32, () => {
+                            EnableAllUI();
+                            endGameCheckBox.gameObject.SetActive(true);
+                        });
                     });
                 });
             }
