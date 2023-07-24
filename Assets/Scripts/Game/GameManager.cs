@@ -13,9 +13,6 @@ namespace Scripts.Game
         [SerializeField, Header("地圖資料")]
         private MapData _mapData;
 
-        [SerializeField, Header("補血包")]
-        private PoolData _dropHealthPoolData;
-
         [SerializeField, Header("玩家資料")]
         private PlayerData defaultPlayerData;
         private PlayerData _playerData;
@@ -61,11 +58,11 @@ namespace Scripts.Game
         [SerializeField, Header("大廳升級管理工具")]
         private BaseUpgradeManager _upgradeManager;
 
-        [SerializeField, Header("怪物階層")]
-        private LayerMask _enemyLayer;
-
         [SerializeField, Header("護盾值預置物")]
         private GameObject _shieldIcon;
+
+        [SerializeField, Header("結算武器 ICON 預置物")]
+        private GameObject _activeWeaponIconPrefab;
 
         [SerializeField, Header("有效護盾值")]
         private Sprite _shieldActive;
@@ -138,7 +135,7 @@ namespace Scripts.Game
             AudioController.Instance.SetUserSetting(_userSetting);
 
             _playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
-            _endUI = new EndUIController();
+            _endUI = new EndUIController(_activeWeaponIconPrefab);
             _cameraController = new CameraController();
             _mapController = new MapController(_mapData);
             _settingUI = new SettingUIController(_settingUICanvas, _defaultSetting, _userSetting);

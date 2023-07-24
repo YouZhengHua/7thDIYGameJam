@@ -94,7 +94,6 @@ namespace Scripts.Game
             AttributeHandle.Instance.PlayerGetDamage(damage);
             _playerAni.SetTrigger(_playerGetHitTriggerName);
             _globalVolumeAni.SetTrigger(_playerGetHitTriggerName);
-            _endUI.AddGetHitTimes();
             if (AttributeHandle.Instance.PlayerHealthPoint <= 0)
             {
                 Dead();

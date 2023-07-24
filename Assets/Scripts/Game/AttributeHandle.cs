@@ -125,6 +125,7 @@ namespace Scripts.Game
             if (data.SelectedCount == 0)
             {
                 _weapon.LoadWeapon(data.WeaponIndex, data.Image, true);
+                this.ActiveWeapons.Add(data);
             }
             else
             {
@@ -435,13 +436,15 @@ namespace Scripts.Game
             _gameUI.UpdateMoneyGUI();
         }
 
-        public float TotalMoney { get => _totalMoney + StaticPrefs.Score; }
+        public float TotalMoney { get => _totalMoney; }
 
         public void AddTotalKill(int kill = 1)
         {
-            _totalKill = kill;
+            _totalKill += kill;
             this.AddTotalMoney(kill);
         }
+
+        public int TotalKillCount { get => _totalKill; }
 
         /// <summary>
         /// 取得/設定遊戲時間
@@ -455,6 +458,41 @@ namespace Scripts.Game
         public bool IsTimeWin { get => this.TotalGameTime - this.GameTime <= 0f; }
 
         public float GetExtendHealItemRate { get => _extendHealItemRate; }
+        /// <summary>
+        /// 有效武器欄位數量
+        /// </summary>
+        public int WeaponColumnActiveCount { get => _playerData.WeaponColumnActiveCount; }
+        /// <summary>
+        /// 最大武器欄位數量
+        /// </summary>
+        public int WeaponColumnMaxCount { get => _playerData.WeaponColumnMaxCount; }
+        /// <summary>
+        /// 生效的武器清單
+        /// </summary>
+        private IList<WeaponOptionData> _activeWeapons = new List<WeaponOptionData>();
+        /// <summary>
+        /// 生效的武器清單
+        /// </summary>
+        private IList<WeaponIndex> _activeWeaponIndexs = new List<WeaponIndex>();
+        /// <summary>
+        /// 取得生效的武器清單
+        /// </summary>
+        public IList<WeaponOptionData> ActiveWeapons { get => _activeWeapons; }
+        public IList<WeaponIndex> ActiveWeaponIndexs 
+        { 
+            get
+            {
+                if(_activeWeaponIndexs.Count != _activeWeapons.Count)
+                {
+                    _activeWeaponIndexs.Clear();
+                    foreach(WeaponOptionData weaponOption in _activeWeapons)
+                    {
+                        _activeWeaponIndexs.Add(weaponOption.WeaponIndex);
+                    }
+                }
+                return _activeWeaponIndexs;
+            } 
+        }
         #endregion
     }
 }

@@ -88,3 +88,9 @@ MonoBehaviour:
     OnMultipleChangedEvent:
       m_PersistentCalls:
         m_Calls: []
+  _weaponColumnActiveCount:
+    _value: 3
+    _multiple: 1
+  _weaponColumnMaxCount:
+    _value: 6
+    _multiple: 1
