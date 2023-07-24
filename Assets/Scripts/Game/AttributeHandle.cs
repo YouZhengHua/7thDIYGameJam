@@ -192,6 +192,9 @@ namespace Scripts.Game
                     case AttributeType.BuffTime:
                         weapon.weaponData.BuffLifeTime.AddValuePoint(weaponAttribute.Value);
                         break;
+                    case AttributeType.AmmoFlyTime:
+                        weapon.weaponData.AmmoFlyTime.AddValuePoint(weaponAttribute.Value);
+                        break;
                 }
             }
         }
@@ -239,6 +242,7 @@ namespace Scripts.Game
                 weapon.weaponData.AmmoScale.AddValueMultiple(upgradeManager.GetProjectileSize());
 
                 // 攻擊持續時間
+                weapon.weaponData.AmmoFlyTime.AddValueMultiple(upgradeManager.GetAttackPersistTime());
                 weapon.weaponData.BuffLifeTime.AddValueMultiple(upgradeManager.GetAttackPersistTime());
 
                 // 投射物數量
@@ -248,7 +252,7 @@ namespace Scripts.Game
                 weapon.weaponData.DamageRadius.AddValueMultiple(upgradeManager.GetAttackRadius());
 
                 // 冷卻時間
-                weapon.weaponData.CoolDownTime.AddValuePoint(upgradeManager.GetCoolDown());
+                weapon.weaponData.SkillTriggerInterval.AddValuePoint(upgradeManager.GetCoolDown() * -1f);
 
                 // 投射物速度
                 weapon.weaponData.AmmoFlySpeed.AddValueMultiple(upgradeManager.GetProjectileSpeed());

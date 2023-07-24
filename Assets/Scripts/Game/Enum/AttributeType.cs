@@ -101,6 +101,10 @@
 		/// <summary>
 		/// Buff 持續時間
 		/// </summary>
-		BuffTime
+		BuffTime,
+		/// <summary>
+		/// 盾牌迴旋持續時間
+		/// </summary>
+		AmmoFlyTime
     }
 }
