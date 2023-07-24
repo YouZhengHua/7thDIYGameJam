@@ -179,8 +179,18 @@ namespace Scripts.Game
                         Debug.Log($"武器特殊升級選項: {weapon.weaponData.WeaponIndex}");
                         if (weapon.weaponData.WeaponIndex == WeaponIndex.DroneA)
                         {
-                            Debug.Log("每五秒玩家角色會增加最大生命的 10% 護盾值");
+                            weapon.weaponData.BuffSpawnActive.ChangeValue(true);
                         }
+                        else if(weapon.weaponData.WeaponIndex == WeaponIndex.TempGunAmmo)
+                        {
+                            weapon.weaponData.BuffSpawnActive.ChangeValue(true);
+                        }
+                        break;
+                    case AttributeType.PushForce:
+                        weapon.weaponData.Force.AddValueMultiple(weaponAttribute.Value);
+                        break;
+                    case AttributeType.BuffTime:
+                        weapon.weaponData.BuffLifeTime.AddValuePoint(weaponAttribute.Value);
                         break;
                 }
             }
