@@ -17,7 +17,7 @@ namespace Scripts.Game
         /// </summary>
         private new Rigidbody2D rigidbody;
 
-        private bool IsLookMouse = false;
+        private bool IsLookMouse = true;
 
         #region 玩家轉向參數
         [SerializeField, Header("玩家面對方向的物件")]
@@ -50,7 +50,7 @@ namespace Scripts.Game
             {
                 if (Input.GetKeyDown(KeyCode.LeftAlt))
                 {
-                    IsLookMouse = !IsLookMouse;
+                    //IsLookMouse = !IsLookMouse;
                     if(IsLookMouse)
                         Debug.Log("瞄準模式變更為: 跟隨滑鼠位置");
                     else
