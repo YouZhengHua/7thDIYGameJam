@@ -10,11 +10,13 @@ public class EndGameManager : MonoBehaviour
     [SerializeField] private CreditManager credit;
 
     private void Start() {
+        StartCoroutine(waitForSec(1));
         storyManager.StartStory(34, EndingAnimation);
     }
 
     private void EndingAnimation() {
-        FadeOut();
+        StartCoroutine(waitForSec(1));
+        credit.gameObject.SetActive(true);
     }
 
     private IEnumerator waitForSec(float second) {
