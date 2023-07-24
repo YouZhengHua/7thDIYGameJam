@@ -144,6 +144,7 @@ namespace Scripts.Game
             _gameUI = new GameUIController(_optionsUI, _gameUICanvas, _shieldIcon, _shieldActive, _shieldUnactive);
             AttributeHandle.Instance.SetGameUIController(_gameUI);
             _playerDamageController.SetEndUI = _endUI;
+            AttributeHandle.Instance.SetLobbyUpgrade(_upgradeManager);
             Debug.Log("GameManager Awake() End");
         }
         private void Start()
@@ -159,7 +160,6 @@ namespace Scripts.Game
             _gameUI.UpdatePlayerHealth();
             _gameUI.UpdateMoneyGUI();
             UpdateGameTime();
-            AttributeHandle.Instance.SetLobbyUpgrade(_upgradeManager);
             Debug.Log("GameManager Start() End");
         }
 

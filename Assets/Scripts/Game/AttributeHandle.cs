@@ -97,7 +97,7 @@ namespace Scripts.Game
                     _playerData.ExpRate.AddValueMultiple(data.Value);
                     break;
                 case AttributeType.PlayerSpeed:
-                    _playerData.MoveSpeed.AddValuePoint(data.Value);
+                    _playerData.MoveSpeed.AddValueMultiple(data.Value);
                     break;
                 case AttributeType.PlayerHeal:
                     this.HealPlayer(CalTool.Round(data.Value * this.PlayerMaxHealthPoint, 1));
@@ -208,45 +208,42 @@ namespace Scripts.Game
             // 防禦力
             _playerData.DEF.AddValuePoint(upgradeManager.GetDefense());
 
+            // 武器欄位
+            _playerData.AddWeaponColumn(upgradeManager.GetIncreaseSkillSlot());
+            _playerData.AddWeaponColumn(1);
+
+            // 增加拾取範圍
+            _playerData.DropItemRadius.AddValueMultiple(upgradeManager.GetIncreasePickingArea());
+
             // 最大生命
             this.AddPlayerMaxHP(CalTool.Round(_playerData.MaxHealthPoint * upgradeManager.GetMaxHP(), 1));
             #endregion
-
-            Debug.Log("武器素質調整");
 
             #region 武器素質調整
             foreach (Weapon weapon in _weapon.GetWeapons())
             {
                 // 力量
-                Debug.Log($"力量 {weapon.GetWeaponIndex}");
-                Debug.Log(upgradeManager.GetStrength());
                 weapon.weaponData.Damage.AddValueMultiple(upgradeManager.GetStrength());
+
+                // 投射物大小
+                weapon.weaponData.AmmoScale.AddValueMultiple(upgradeManager.GetProjectileSize());
+
+                // 攻擊持續時間
+                weapon.weaponData.BuffLifeTime.AddValueMultiple(upgradeManager.GetAttackPersistTime());
+
+                // 投射物數量
+                weapon.weaponData.OneShootAmmoCount.AddValuePoint(upgradeManager.GetProjetileNumber());
+
+                // 攻擊範圍
+                weapon.weaponData.DamageRadius.AddValueMultiple(upgradeManager.GetAttackRadius());
+
+                // 冷卻時間
+                weapon.weaponData.CoolDownTime.AddValuePoint(upgradeManager.GetCoolDown());
+
+                // 投射物速度
+                weapon.weaponData.AmmoFlySpeed.AddValueMultiple(upgradeManager.GetProjectileSpeed());
             }
             #endregion
-
-            // 投射物大小
-            upgradeManager.GetProjectileSize();
-
-            // 攻擊持續時間
-            upgradeManager.GetAttackPersistTime();
-
-            // 投射物數量
-            upgradeManager.GetProjetileNumber();
-
-            // 技能欄位
-            upgradeManager.GetIncreaseSkillSlot();
-
-            // 攻擊範圍
-            upgradeManager.GetAttackRadius();
-
-            // 冷卻
-            upgradeManager.GetCoolDown();
-
-            // 投射物速度
-            upgradeManager.GetProjectileSpeed();
-
-            // 增加武器範圍
-            upgradeManager.GetIncreasePickingArea();
 
             // 復活次數
             upgradeManager.GetReviveTimes();

@@ -16,21 +16,38 @@ MonoBehaviour:
   MoveSpeed:
     _value: 4
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   exp: 1
   Damage:
     _value: 12
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   IsBoss: 0
   AttackRange:
     _value: 0
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   CanAddedForce: 0
   Drops:
-  - _chance:
+  - _dropType: 3
+    _chance:
       _value: 1
       _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
     _prefab: {fileID: 8428036453670287137, guid: d665baab86d22914989bcf09ad672847, type: 3}
-  - _chance:
+  - _dropType: 2
+    _chance:
       _value: 0.01
       _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
     _prefab: {fileID: 8926784309508359775, guid: 407e149f009c458459d5f32c12681718, type: 3}

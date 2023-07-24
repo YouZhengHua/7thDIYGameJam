@@ -127,5 +127,10 @@ namespace Scripts.Game.Data
         /// 總武器欄位數量
         /// </summary>
         public int WeaponColumnMaxCount { get => _weaponColumnMaxCount.Value; }
+
+        public void AddWeaponColumn(int count)
+        {
+            _weaponColumnActiveCount.AddValuePoint(count);
+        }
     }
 }
