@@ -483,7 +483,7 @@ public class FungusStoryProcessor : MonoBehaviour, IStoryProcessor
     {
         AudioClip _ac = storyResourceData.GetAudio(musicName);
         if (_ac != null)
-            AudioController.Instance.PlayEffect(_ac);
+            AudioController.Instance.SetBGM(_ac);
     }
 
     public void SetDelay(float duration)
