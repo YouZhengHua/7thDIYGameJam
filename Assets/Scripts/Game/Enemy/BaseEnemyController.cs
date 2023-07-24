@@ -195,6 +195,10 @@ namespace Scripts.Game
                 _animator.SetTrigger(_enemyDead);
             foreach(DropStruct drop in EnemyData.Drops)
             {
+                if (drop.DropType == DropType.HealItem)
+                {
+                    drop.Chance.AddValuePoint(AttributeHandle.Instance.GetExtendHealItemRate);
+                }
                 drop.DropCheck(transform.position);
             }
             StartCoroutine(DestroyEnemy());
