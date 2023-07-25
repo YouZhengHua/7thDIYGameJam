@@ -18,6 +18,7 @@ public class EndGameManager : MonoBehaviour
     private void EndingAnimation() {
         FadeOut();
         StartCoroutine(waitForSec(3));
+        fadeEffect.gameObject.SetActive(false);
         credit.gameObject.SetActive(true);
     }
 
