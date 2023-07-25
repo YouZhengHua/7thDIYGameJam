@@ -239,7 +239,7 @@ MonoBehaviour:
       IsRound: 1
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 360
+  - LevelStartTime: 363
     LevelEndTime: 480
     EnemyDatas:
     - Distance: 15
