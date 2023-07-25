@@ -102,7 +102,7 @@ namespace Scripts.Start
 
         public void ShowGameOptions()
         {
-            LoadingScreen.instance.LoadScene("01_MenuScene", false, false);
+            LoadingScreen.instance.LoadScene("01_MenuScene");
         }
 
         public void ShowSetting()

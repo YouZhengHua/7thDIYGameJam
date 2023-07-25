@@ -9,51 +9,75 @@ namespace Scripts
 {
     public class LoadingScreen : MonoBehaviour
     {
-        public static LoadingScreen instance; // 當前載入畫面實例
-        public Image loadingImage; // 載入圖片
-        public TextMeshProUGUI loadText;
-        public TextMeshProUGUI readyText;
-        public TextMeshProUGUI tipText;
-        public AudioMixer audioMixer;
-        public Canvas canvas;
-        private bool _needDestory = false;
+        private static readonly object padlock = new object();
+        private static LoadingScreen _instance;
+        public static LoadingScreen instance 
+        {
+            get 
+            {
+                lock (padlock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new GameObject("LoadingScreen").AddComponent<LoadingScreen>();
+                    }
+                    return _instance;
+                }
+            }
+        } // 當前載入畫面實例
+
+        private GameObject _canvasPrefab;
+        private Canvas _canvas;
+
+        private Image _loadingImage; // 載入圖片
+        private Image _tipBackground; // 載入圖片
+        private TextMeshProUGUI _loadText;
+        private TextMeshProUGUI _tipText;
+        private TextMeshProUGUI _readyText;
         private bool _autoContinue = false;
         private AsyncOperation _operation;
         private LoadState _state = LoadState.Idle;
 
         private void Awake()
         {
-            DontDestroyOnLoad(canvas.gameObject);
-            DontDestroyOnLoad(gameObject); // 保證載入畫面在場景切換時不被銷毀
-            if (instance == null)
-            {
-                instance = this;
-            }
+            _canvasPrefab = Resources.Load<GameObject>("Prefab/LoadingCanvas");
+            _canvas = GameObject.Instantiate(_canvasPrefab).GetComponent<Canvas>();
+            DontDestroyOnLoad(_canvas);
+            DontDestroyOnLoad(this); // 保證載入畫面在場景切換時不被銷毀
             SetVolume(0f);
 
-            canvas.enabled = false;
+            foreach(Image image in _canvas.GetComponentsInChildren<Image>())
+            {
+                if (image.name == "LoadingImage")
+                    _loadingImage = image;
+                else if (image.name == "TipBackground")
+                    _tipBackground = image;
+            }
+            foreach (TextMeshProUGUI text in _canvas.GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                if (text.name == "LoadText")
+                    _loadText = text;
+                else if (text.name == "ReadyText")
+                    _readyText = text;
+                else if (text.name == "TipText")
+                    _tipText = text;
+            }
+
+            _canvas.enabled = false;
         }
 
-        public void LoadScene(string sceneName, bool needDestory)
-        {
-            _autoContinue = false;
-            LoadSceneAsync(sceneName);
-            _needDestory = needDestory;
-        }
-
-        public void LoadScene(string sceneName, bool needDestory, bool needAutoContinue)
+        public void LoadScene(string sceneName, bool needAutoContinue = false)
         {
             _autoContinue = needAutoContinue;
             LoadSceneAsync(sceneName);
-            _needDestory = needDestory;
         }
 
         private void LoadSceneAsync(string sceneName)
         {
             _state = LoadState.Load;
-            canvas.enabled = true;
-            loadText.enabled = true;
-            readyText.enabled = false;
+            _canvas.enabled = true;
+            _loadText.enabled = true;
+            _readyText.enabled = false;
             SetVolume(-80f);
             // 載入資源
             _operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
@@ -66,13 +90,11 @@ namespace Scripts
             {
                 if (_operation.progress >= 0.9f)
                 {
-                    loadText.enabled = false;
-                    readyText.enabled = true;
+                    _loadText.enabled = false;
+                    _readyText.enabled = true;
 
                     if (Input.anyKeyDown || _autoContinue)
                     {
-                        if(_needDestory)
-                            instance = null;
                         _operation.allowSceneActivation = true;
                         _state = LoadState.Loaded;
                     }
@@ -87,22 +109,15 @@ namespace Scripts
             {
                 if (_operation.isDone)
                 {
-                    canvas.enabled = false;
+                    _canvas.enabled = false;
                     _state = LoadState.Idle;
                     SetVolume(0f);
-                    // 銷毀載入畫面
-                    if (_needDestory)
-                    {
-                        Destroy(canvas.gameObject);
-                        Destroy(gameObject);
-                    }
                 }
             }
         }
 
         private void SetVolume(float value)
         {
-            audioMixer.SetFloat("Master", value);
         }
 
         private enum LoadState
