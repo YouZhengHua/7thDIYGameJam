@@ -46,6 +46,13 @@ namespace Scripts.Game
             }
 
             _shieldContainer = GameObject.Find("ShieldContainer");
+
+            for(int i = 0; i < AttributeHandle.Instance.PlayerMaxShield; i++)
+            {
+                GameObject shield = GameObject.Instantiate(_shieldIcon, _shieldContainer.transform);
+                shield.transform.localPosition = new Vector3(-400f + i * 80f, -64f, 0f);
+                _shieldList.Add(shield);
+            }
         }
 
         /// <summary>

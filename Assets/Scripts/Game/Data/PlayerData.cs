@@ -46,13 +46,9 @@ namespace Scripts.Game.Data
             {
                 if (!_MaxShield.HasValue)
                 {
-                    _MaxShield = (int?)CalTool.Round(Shield, 1);
+                    _MaxShield = (int)CalTool.Round(Shield, 0);
                 }
                 return _MaxShield.Value;
-            }
-            set
-            {
-                _MaxShield = value;
             }
         }
 

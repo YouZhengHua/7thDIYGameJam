@@ -343,7 +343,7 @@ namespace Scripts.Game
         /// <summary>
         /// 取得玩家的護盾值
         /// </summary>
-        public int PlayerShield { get => (int)CalTool.Round(_playerData.Shield, 1); }
+        public int PlayerShield { get => (int)CalTool.Round(_playerData.Shield); }
         /// <summary>
         /// 恢復玩家的護盾值
         /// </summary>
@@ -357,7 +357,7 @@ namespace Scripts.Game
         /// <summary>
         /// 取得玩家的最大護盾值
         /// </summary>
-        public int PlayerMaxShield { get => (int)CalTool.Round(_playerData.MaxShield, 1); }
+        public int PlayerMaxShield { get => (int)CalTool.Round(_playerData.MaxShield); }
         /// <summary>
         /// 取得玩家的移動速度
         /// </summary>
