@@ -4596,8 +4596,16 @@ PrefabInstance:
       value: 4224
       objectReference: {fileID: 0}
     - target: {fileID: 3234624635136564717, guid: f7a0bf95b12b8fa4ea9a4c4d0c0b1434, type: 3}
+      propertyPath: _bulletLayer.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
+    - target: {fileID: 3234624635136564717, guid: f7a0bf95b12b8fa4ea9a4c4d0c0b1434, type: 3}
       propertyPath: _damageLayer.m_Bits
-      value: 12416
+      value: 4224
+      objectReference: {fileID: 0}
+    - target: {fileID: 3234624635136564717, guid: f7a0bf95b12b8fa4ea9a4c4d0c0b1434, type: 3}
+      propertyPath: _damageAmmoLayer.m_Bits
+      value: 8192
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7a0bf95b12b8fa4ea9a4c4d0c0b1434, type: 3}

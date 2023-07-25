@@ -94,3 +94,6 @@ MonoBehaviour:
   _weaponColumnMaxCount:
     _value: 6
     _multiple: 1
+  ReviveTimes:
+    _value: 0
+    _multiple: 1

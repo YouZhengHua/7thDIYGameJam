@@ -7,17 +7,14 @@ namespace Scripts.Game
     /// <summary>
     /// 玩家受傷控制器
     /// </summary>
-    public class PlayerDamageController : MonoBehaviour, IPlayerDamageController
+    public class PlayerDamageController : MonoBehaviour
     {
-        /// <summary>
-        /// 結算UI控制器
-        /// </summary>
-        private IEndUIController _endUI;
+        private IWeaponController _weapon;
 
-        [SerializeField, Header("傷害判定階層")]
-        private LayerMask _damageLayer;
         [SerializeField, Header("怪物判定階層")]
         private LayerMask _enemyLayer;
+        [SerializeField, Header("怪物子彈判定階層")]
+        private LayerMask _bulletLayer;
         [SerializeField, Header("動畫控制器")]
         private Animator _playerAni;
 
@@ -37,6 +34,11 @@ namespace Scripts.Game
         /// </summary>
         private float _invincibleTime;
 
+        private void Awake()
+        {
+            _weapon = GetComponent<IWeaponController>();
+        }
+
         private void Update()
         {
             if(_invincibleTime > 0f)
@@ -49,39 +51,35 @@ namespace Scripts.Game
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if ((((1 << collision.gameObject.layer) | _damageLayer) == _damageLayer) && _invincibleTime <= 0)
+            if ((((1 << collision.gameObject.layer) | _enemyLayer) == _enemyLayer) && _invincibleTime <= 0)
             {
                 Debug.Log("玩家遭受碰撞", collision.gameObject);
                 BaseEnemyController collisionEnemy = collision.gameObject.GetComponent<BaseEnemyController>();
                 if (collisionEnemy == null || collisionEnemy.IsDead)
                     return;
                 GetDamage(collisionEnemy.EnemyData.Damage.Value);
-                RepleEnemy();
+                RepleEnemy(AttributeHandle.Instance.PlayerRepelRadius, AttributeHandle.Instance.PlayerRepelForce, AttributeHandle.Instance.PlayerRepelTime);
             }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if ((((1 << collision.gameObject.layer) | _damageLayer) == _damageLayer) && _invincibleTime <= 0)
+            if ((((1 << collision.gameObject.layer) | _bulletLayer) == _bulletLayer) && _invincibleTime <= 0)
             {
                 Debug.Log("玩家遭受碰撞", collision.gameObject);
                 BulletController bullet = collision.gameObject.GetComponent<BulletController>();
                 if (bullet == null)
                     return;
                 GetDamage(bullet.Damage);
-                RepleEnemy();
+                RepleEnemy(AttributeHandle.Instance.PlayerRepelRadius, AttributeHandle.Instance.PlayerRepelForce, AttributeHandle.Instance.PlayerRepelTime);
             }
         }
 
-        private void RepleEnemy()
+        private void RepleEnemy(float radius, float repelForce, float repelTime)
         {
-            foreach (var enemy in Physics2D.OverlapCircleAll(this.transform.position, AttributeHandle.Instance.PlayerRepelRadius, _enemyLayer))
+            foreach (var enemy in Physics2D.OverlapCircleAll(this.transform.position, radius, _enemyLayer))
             {
-                Vector2 distance = enemy.transform.position - this.transform.position;
-                if (distance.magnitude < AttributeHandle.Instance.PlayerRepelRadius)
-                {
-                    enemy.GetComponent<BaseEnemyController>().AddForce(AttributeHandle.Instance.PlayerRepelForce, AttributeHandle.Instance.PlayerRepelTime);
-                }
+                enemy.GetComponent<BaseEnemyController>().AddForce(repelForce, repelTime);
             }
         }
 
@@ -111,9 +109,45 @@ namespace Scripts.Game
         public void Dead()
         {
             _playerAni.SetBool(_playerDeadBoolName, true);
-            gameObject.SetActive(false);
-            GameStateMachine.Instance.SetNextState(GameState.GameEnd);
+            GetComponent<Collider2D>().enabled = false;
+            foreach(Weapon weapon in _weapon.ActiveWeapons)
+            {
+                weapon.SetWeaponActive(false);
+            }
+            if(AttributeHandle.Instance.PlayerReviveTime.Value > 0)
+            {
+                PlayerStateMachine.Instance.SetNextState(PlayerState.Revive);
+                StartCoroutine(Riveve());
+            }
+            else
+            {
+                PlayerStateMachine.Instance.SetNextState(PlayerState.Die);
+                GameStateMachine.Instance.SetNextState(GameState.GameEnd);
+            }
         }
-        public IEndUIController SetEndUI { set => _endUI = value; }
+
+        private IEnumerator Riveve()
+        {
+            yield return new WaitForSeconds(2f);
+            AttributeHandle.Instance.HealPlayer(AttributeHandle.Instance.PlayerMaxHealthPoint);
+            RepleEnemy(5f, 7f, 0.5f);
+            ClearBuller(5f);
+            PlayerStateMachine.Instance.SetNextState(PlayerState.Life);
+            _playerAni.SetBool(_playerDeadBoolName, false);
+            GetComponent<Collider2D>().enabled = true;
+            AttributeHandle.Instance.PlayerReviveTime.AddValuePoint(-1);
+            foreach (Weapon weapon in _weapon.ActiveWeapons)
+            {
+                weapon.SetWeaponActive(true);
+            }
+        }
+
+        public void ClearBuller(float radius)
+        {
+            foreach (var bullet in Physics2D.OverlapCircleAll(this.transform.position, radius, _bulletLayer))
+            {
+                Destroy(bullet.gameObject);
+            }
+        }
     }
 }
