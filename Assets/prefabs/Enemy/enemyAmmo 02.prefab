@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4502984423735984025}
   - component: {fileID: -7154030526947812113}
   m_Layer: 13
-  m_Name: enemyAmmo 01
+  m_Name: enemyAmmo 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 0cec95111c194214182156362565133f, type: 3}
-  m_Color: {r: 0.754717, g: 0.41651833, b: 0.41651833, a: 1}
+  m_Color: {r: 0.4156863, g: 0.24313727, b: 0.3254902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

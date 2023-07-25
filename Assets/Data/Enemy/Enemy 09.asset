@@ -51,3 +51,83 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
     _prefab: {fileID: 8926784309508359775, guid: 407e149f009c458459d5f32c12681718, type: 3}
+  - _dropType: 1
+    _chance:
+      _value: 1
+      _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    _prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+  - _dropType: 1
+    _chance:
+      _value: 1
+      _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    _prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+  - _dropType: 1
+    _chance:
+      _value: 1
+      _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    _prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+  - _dropType: 1
+    _chance:
+      _value: 1
+      _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    _prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+  - _dropType: 1
+    _chance:
+      _value: 1
+      _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    _prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+  - _dropType: 1
+    _chance:
+      _value: 1
+      _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    _prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+  - _dropType: 1
+    _chance:
+      _value: 1
+      _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    _prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+  - _dropType: 1
+    _chance:
+      _value: 1
+      _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    _prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+  - _dropType: 1
+    _chance:
+      _value: 1
+      _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    _prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+  - _dropType: 1
+    _chance:
+      _value: 1
+      _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    _prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
