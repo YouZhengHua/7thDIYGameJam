@@ -33,6 +33,7 @@ namespace Scripts.Start
 
         private void Start()
         {
+            CheckerUtility.startInt++;
             ShowMenu();
             AudioController.Instance.UpdateAudioVolume();
         }

@@ -25,6 +25,7 @@ public class UpgradeElementUI : MonoBehaviour
 
     private void Start()
     {
+        upgradeElementSO.Load();
         if (progressUIs.Count != upgradeElementSO.maxLevel)
         {
             Debug.LogError("The length of UI checkbox of " + upgradeElementSO.name + " does not match");

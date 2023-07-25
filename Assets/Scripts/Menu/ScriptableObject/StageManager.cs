@@ -25,9 +25,19 @@ public class StageManager : ScriptableObject
         return currentStage;
     }
 
-    public void SetCurrentStage(stage value) {
+    public void Load()
+    {
+        if (DataSystem.Instance != null)
+        {
+            currentStage = DataSystem.Instance.gameValueData.currentStage;
+        }
+    }
+
+    public void SetCurrentStage(stage value)
+    {
         currentStage = value;
         Debug.Log("Current Stage is set to be " + currentStage);
+        DataSystem.Instance.SaveCurrentStage(currentStage);
     }
 
     public void GoingToNextStage(stage value) {

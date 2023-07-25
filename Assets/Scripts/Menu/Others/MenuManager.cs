@@ -27,6 +27,7 @@ namespace Scripts.Menu
 
         private void Awake()
         {
+            CheckerUtility.SceneLoadChecker();
             if (StaticPrefs.IsFirstIn)
                 FirstOpenGame();
 
@@ -43,6 +44,7 @@ namespace Scripts.Menu
         private void Start() {
             Debug.Log("MenuManager being called");
             Time.timeScale = 1.0f;
+            stageManager.Load();
 
             switch (stageManager.GetCurrentStage()) {
                 case StageManager.stage.firstStartGame:

@@ -104,6 +104,7 @@ namespace Scripts.Game
 
         private void Awake()
         {
+            CheckerUtility.SceneLoadChecker();
             Debug.Log("GameManager Awake() Start");
             _playerContainer = GameObject.Find("PlayerContainer");
             _enemyContainer = GameObject.Find("EnemyContainer");

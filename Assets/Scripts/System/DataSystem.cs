@@ -16,6 +16,7 @@ public class DataSystem : Singleton<DataSystem>
     /// <param name="currentLevel">當前等級</param>
     public void SaveElementData(string elementName, int currentLevel)
     {
+        if (_gameValueData == null) return;
         if (_gameValueData.elementLevelDic.ContainsKey(elementName))
         {
             _gameValueData.elementLevelDic[elementName] = currentLevel;
@@ -24,6 +25,13 @@ public class DataSystem : Singleton<DataSystem>
         {
             _gameValueData.elementLevelDic.Add(elementName, currentLevel);
         }
+        OnSaveData();
+    }
+
+    public void SaveCurrentStage(StageManager.stage currentStage)
+    {
+        if (_gameValueData == null) return;
+        _gameValueData.currentStage = currentStage;
         OnSaveData();
     }
 
@@ -36,15 +44,18 @@ public class DataSystem : Singleton<DataSystem>
     public void OnLoadData(Dictionary<string, object> message = null)
     {
         _gameValueData = ES3.Load(PLAYER_GAME_VALUE_DATA, new GameValueData());
+        //顯示 _gameValueData 的資料
+        Debug.Log(_gameValueData.ToJson());
     }
 }
 
 [System.Serializable]
 public class GameValueData
 {
+    //這裡可以加入其他需要儲存的資料
     public long id = 0;
     public Dictionary<string, int> elementLevelDic = new Dictionary<string, int>();
-    //TODO 這裡可以加入其他需要儲存的資料
+    public StageManager.stage currentStage = StageManager.stage.firstStartGame;
 
     public GameValueData()
     {
@@ -59,6 +70,13 @@ public class GameValueData
         GameValueData cloneData = new GameValueData();
         cloneData.id = data.id;
         cloneData.elementLevelDic = new Dictionary<string, int>(data.elementLevelDic);
+        cloneData.currentStage = data.currentStage;
         return cloneData;
+    }
+
+    //將資料轉換成Json格式，並回傳
+    public string ToJson()
+    {
+        return JsonUtility.ToJson(this);
     }
 }
