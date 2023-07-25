@@ -2,10 +2,8 @@
 {
     public enum PlayerState
     {
-        Idle,
-        Shoot,
-        MeleeAttack,
-        Reload,
-        Die
+        Life,
+        Die,
+        Revive
     }
 }

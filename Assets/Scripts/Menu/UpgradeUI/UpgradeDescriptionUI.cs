@@ -23,9 +23,7 @@ public class UpgradeDescriptionUI : MonoBehaviour
         UpdateCheckBoxVisual();
         UpdateTitle();
         UpdateCost();
-#if UNITY_EDITOR
         UpdateContext();
-#endif
     }
 
     public void UpdateTitle() {
@@ -35,11 +33,9 @@ public class UpgradeDescriptionUI : MonoBehaviour
     public void UpdateCost() {
         cost.text = "花費："　+ chosenSO.cost.ToString();
     }
-#if UNITY_EDITOR
     public void UpdateContext() {
         context.text = chosenSO.DescriptionOnUI;
     }
-#endif
 
     public void UpdateCheckBoxVisual() {
         if (chosenSO.IsUpgradeAvailable()) {

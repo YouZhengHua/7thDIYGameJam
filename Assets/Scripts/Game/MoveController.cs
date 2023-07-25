@@ -46,7 +46,7 @@ namespace Scripts.Game
         private void Update()
         {
             // 遊戲進行中才能進行移動
-            if(GameStateMachine.Instance.CurrectState == GameState.InGame)
+            if(GameStateMachine.Instance.CurrectState == GameState.InGame && PlayerStateMachine.Instance.CurrectState == PlayerState.Life)
             {
                 if (Input.GetKeyDown(KeyCode.LeftAlt))
                 {

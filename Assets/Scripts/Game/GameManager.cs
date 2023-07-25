@@ -101,14 +101,6 @@ namespace Scripts.Game
         /// 遊戲設定UI
         /// </summary>
         private ISettingUIController _settingUI;
-        /// <summary>
-        /// 經驗值掉落物池
-        /// </summary>
-        private IExpPool _expPool;
-        /// <summary>
-        /// 玩家受傷控制器
-        /// </summary>
-        private IPlayerDamageController _playerDamageController;
 
         private void Awake()
         {
@@ -134,7 +126,6 @@ namespace Scripts.Game
             AttributeHandle.Instance.SetPlayerData(_playerData);
             AudioController.Instance.SetUserSetting(_userSetting);
 
-            _playerDamageController = _playerContainer.GetComponent<IPlayerDamageController>();
             _endUI = new EndUIController(_activeWeaponIconPrefab);
             _cameraController = new CameraController();
             _mapController = new MapController(_mapData);
@@ -143,7 +134,6 @@ namespace Scripts.Game
             _optionsUI = new OptionsUIController(_optionPrefab, _optionDatas);
             _gameUI = new GameUIController(_optionsUI, _gameUICanvas, _shieldIcon, _shieldActive, _shieldUnactive);
             AttributeHandle.Instance.SetGameUIController(_gameUI);
-            _playerDamageController.SetEndUI = _endUI;
             AttributeHandle.Instance.SetLobbyUpgrade(_upgradeManager);
             Debug.Log("GameManager Awake() End");
         }
@@ -155,11 +145,11 @@ namespace Scripts.Game
             _optionsUI.HideCanvas();
             _endUI.HideCanvas();
             _settingUI.HideCanvas();
-            PlayerStateMachine.Instance.SetNextState(PlayerState.Idle);
             AudioController.Instance.UpdateAudioVolume();
             _gameUI.UpdatePlayerHealth();
             _gameUI.UpdateMoneyGUI();
             UpdateGameTime();
+            PlayerStateMachine.Instance.SetNextState(PlayerState.Life);
             Debug.Log("GameManager Start() End");
         }
 

@@ -21,6 +21,7 @@ namespace Scripts.Game
         [SerializeField, Header("武器欄位預置物")]
         private GameObject _weaponColumnPrefab;
         private Transform _weaponColumnContainer;
+        private IList<Weapon> _activeWeapons = new List<Weapon>();
 
         private void Awake()
         {
@@ -51,8 +52,8 @@ namespace Scripts.Game
         public void LoadWeapon(WeaponIndex weaponIndex, Sprite weaponIcon, bool active = true)
         {
             Weapon weapon = this.GetWeapon(weaponIndex);
-            Debug.Log(weapon);
             weapon.LoadWeapon(active);
+            _activeWeapons.Add(weapon);
             _weaponColumns[_nextWeaponColumn].AddWeaponIcon(weaponIcon);
             _nextWeaponColumn--;
             _nextWeaponColumn = Mathf.Max(AttributeHandle.Instance.WeaponColumnMaxCount - AttributeHandle.Instance.WeaponColumnActiveCount, _nextWeaponColumn);
@@ -77,5 +78,7 @@ namespace Scripts.Game
         {
             return canUseWeapons;
         }
+
+        public IList<Weapon> ActiveWeapons { get => _activeWeapons; }
     }
 }

@@ -23,5 +23,9 @@ namespace Scripts.Game
         /// </summary>
         /// <returns></returns>
         public IList<Weapon> GetWeapons();
+        /// <summary>
+        /// 取得已生效的武器清單
+        /// </summary>
+        public IList<Weapon> ActiveWeapons { get; }
     }
 }

@@ -12,89 +12,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0903891f6c8d14a90c988ae551196a, type: 3}
   m_Name: Level 4
   m_EditorClassIdentifier: Assembly-CSharp:Scripts.Game.Data:Level
-  GameTime: 40
+  GameTime: 840
   LevelRounds:
   - LevelStartTime: 0
-    LevelEndTime: 20
+    LevelEndTime: 3
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
-      Intervals: 1
-      Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+      Intervals: 3
+      Quantity: 5
+      Prefab: {fileID: 8312892398627385315, guid: 1a42d7d7d1ed7c54284b9e456db5e52f, type: 3}
       IsGroup: 0
-      IsRound: 0
+      IsRound: 1
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 20
+  - LevelStartTime: 3
     LevelEndTime: 40
-    EnemyDatas:
-    - Distance: 15
-      DistanceRange: 0
-      Intervals: 0.6
-      Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
-      IsGroup: 0
-      IsRound: 0
-      WarmingAudio: {fileID: 0}
-      ExtendVolume: 0
-  - LevelStartTime: 40
-    LevelEndTime: 60
-    EnemyDatas:
-    - Distance: 15
-      DistanceRange: 0
-      Intervals: 0.6
-      Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
-      IsGroup: 0
-      IsRound: 0
-      WarmingAudio: {fileID: 0}
-      ExtendVolume: 0
-  - LevelStartTime: 60
-    LevelEndTime: 90
-    EnemyDatas:
-    - Distance: 15
-      DistanceRange: 0
-      Intervals: 0.6
-      Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
-      IsGroup: 0
-      IsRound: 0
-      WarmingAudio: {fileID: 0}
-      ExtendVolume: 0
-    - Distance: 15
-      DistanceRange: 0
-      Intervals: 0.6
-      Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
-      IsGroup: 0
-      IsRound: 0
-      WarmingAudio: {fileID: 0}
-      ExtendVolume: 0
-  - LevelStartTime: 90
-    LevelEndTime: 120
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
       Intervals: 0.4
       Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
       IsGroup: 0
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 120
-    LevelEndTime: 140
+  - LevelStartTime: 40
+    LevelEndTime: 50
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
-      Intervals: 0.5
+      Intervals: 2
       Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+      Prefab: {fileID: 8312892398627385315, guid: c7dcd997fb32933449e562c77560c980, type: 3}
       IsGroup: 0
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
+  - LevelStartTime: 50
+    LevelEndTime: 80
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.4
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 80
+    LevelEndTime: 120
+    EnemyDatas:
     - Distance: 15
       DistanceRange: 0
       Intervals: 0.5
@@ -104,38 +74,65 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 140
-    LevelEndTime: 143
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.5
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 120
+    LevelEndTime: 130
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
-      Intervals: 3
-      Quantity: 30
-      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      Intervals: 1
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 0042fef6df1dc86419738d98d217b350, type: 3}
       IsGroup: 0
-      IsRound: 1
+      IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 143
-    LevelEndTime: 180
+  - LevelStartTime: 130
+    LevelEndTime: 170
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
       Intervals: 0.3
       Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
       IsGroup: 0
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 180
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 170
     LevelEndTime: 210
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
       Intervals: 0.3
       Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
+      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 51e60dbecefa498438c3ae2f6eba916c, type: 3}
       IsGroup: 0
       IsRound: 0
       WarmingAudio: {fileID: 0}
@@ -145,18 +142,9 @@ MonoBehaviour:
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
-      Intervals: 0.45
+      Intervals: 0.2
       Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
-      IsGroup: 0
-      IsRound: 0
-      WarmingAudio: {fileID: 0}
-      ExtendVolume: 0
-    - Distance: 15
-      DistanceRange: 0
-      Intervals: 0.45
-      Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
+      Prefab: {fileID: 8312892398627385315, guid: aad4fb2630688754ea682cf4b03a3b84, type: 3}
       IsGroup: 0
       IsRound: 0
       WarmingAudio: {fileID: 0}
@@ -167,104 +155,608 @@ MonoBehaviour:
     - Distance: 15
       DistanceRange: 0
       Intervals: 3
+      Quantity: 8
+      Prefab: {fileID: 8312892398627385315, guid: 1a42d7d7d1ed7c54284b9e456db5e52f, type: 3}
+      IsGroup: 0
+      IsRound: 1
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 243
+    LevelEndTime: 246
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 3
+      Quantity: 8
+      Prefab: {fileID: 8312892398627385315, guid: c7dcd997fb32933449e562c77560c980, type: 3}
+      IsGroup: 0
+      IsRound: 1
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 246
+    LevelEndTime: 300
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 3
+      Quantity: 8
+      Prefab: {fileID: 8312892398627385315, guid: 0042fef6df1dc86419738d98d217b350, type: 3}
+      IsGroup: 0
+      IsRound: 1
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 300
+    LevelEndTime: 330
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.2
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.2
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: aad4fb2630688754ea682cf4b03a3b84, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 330
+    LevelEndTime: 350
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 1.5
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 1a42d7d7d1ed7c54284b9e456db5e52f, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 15
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: c7dcd997fb32933449e562c77560c980, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 350
+    LevelEndTime: 390
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 51e60dbecefa498438c3ae2f6eba916c, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 390
+    LevelEndTime: 393
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 3
+      Quantity: 40
+      Prefab: {fileID: 8312892398627385315, guid: aad4fb2630688754ea682cf4b03a3b84, type: 3}
+      IsGroup: 0
+      IsRound: 1
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 393
+    LevelEndTime: 420
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 51e60dbecefa498438c3ae2f6eba916c, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 420
+    LevelEndTime: 440
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 1.5
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: c7dcd997fb32933449e562c77560c980, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 1.5
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 0042fef6df1dc86419738d98d217b350, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 440
+    LevelEndTime: 480
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.5
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.5
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.5
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 51e60dbecefa498438c3ae2f6eba916c, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.5
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: aad4fb2630688754ea682cf4b03a3b84, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 480
+    LevelEndTime: 483
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 3
       Quantity: 50
       Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
       IsGroup: 0
       IsRound: 1
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 243
-    LevelEndTime: 300
+  - LevelStartTime: 483
+    LevelEndTime: 520
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
-      Intervals: 0.45
-      Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
-      IsGroup: 0
-      IsRound: 0
-      WarmingAudio: {fileID: 0}
-      ExtendVolume: 0
-    - Distance: 15
-      DistanceRange: 0
-      Intervals: 0.45
+      Intervals: 0.5
       Quantity: 1
       Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
       IsGroup: 0
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 300
-    LevelEndTime: 303
-    EnemyDatas:
     - Distance: 15
       DistanceRange: 0
-      Intervals: 3
+      Intervals: 0.5
       Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: e2d7c9021447074428e9f6bc4f36be5f, type: 3}
-      IsGroup: 0
-      IsRound: 0
-      WarmingAudio: {fileID: 0}
-      ExtendVolume: 0
-  - LevelStartTime: 303
-    LevelEndTime: 360
-    EnemyDatas:
-    - Distance: 15
-      DistanceRange: 0
-      Intervals: 0.4
-      Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
       IsGroup: 0
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
     - Distance: 15
       DistanceRange: 0
-      Intervals: 0.4
+      Intervals: 0.5
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 51e60dbecefa498438c3ae2f6eba916c, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.5
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: aad4fb2630688754ea682cf4b03a3b84, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 520
+    LevelEndTime: 540
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 1.5
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 1a42d7d7d1ed7c54284b9e456db5e52f, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 1.5
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 0042fef6df1dc86419738d98d217b350, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 540
+    LevelEndTime: 570
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: aad4fb2630688754ea682cf4b03a3b84, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 570
+    LevelEndTime: 600
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
       Quantity: 1
       Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
       IsGroup: 0
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 360
-    LevelEndTime: 363
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 51e60dbecefa498438c3ae2f6eba916c, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: aad4fb2630688754ea682cf4b03a3b84, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 600
+    LevelEndTime: 630
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 51e60dbecefa498438c3ae2f6eba916c, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: aad4fb2630688754ea682cf4b03a3b84, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 630
+    LevelEndTime: 633
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
       Intervals: 3
-      Quantity: 70
+      Quantity: 5
+      Prefab: {fileID: 8312892398627385315, guid: 1a42d7d7d1ed7c54284b9e456db5e52f, type: 3}
+      IsGroup: 0
+      IsRound: 1
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 3
+      Quantity: 5
+      Prefab: {fileID: 8312892398627385315, guid: c7dcd997fb32933449e562c77560c980, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 3
+      Quantity: 5
+      Prefab: {fileID: 8312892398627385315, guid: 0042fef6df1dc86419738d98d217b350, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 633
+    LevelEndTime: 660
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 51e60dbecefa498438c3ae2f6eba916c, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 0.3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: aad4fb2630688754ea682cf4b03a3b84, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 660
+    LevelEndTime: 663
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 3
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 8379f9a25af593b45b305060eb786202, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 663
+    LevelEndTime: 673
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 1
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 1a42d7d7d1ed7c54284b9e456db5e52f, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 673
+    LevelEndTime: 683
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 1
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: c7dcd997fb32933449e562c77560c980, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 683
+    LevelEndTime: 693
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 1
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 0042fef6df1dc86419738d98d217b350, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 693
+    LevelEndTime: 696
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 3
+      Quantity: 40
+      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
+      IsGroup: 0
+      IsRound: 1
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 3
+      Quantity: 40
       Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
       IsGroup: 0
       IsRound: 1
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 360
-    LevelEndTime: 480
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 3
+      Quantity: 40
+      Prefab: {fileID: 8312892398627385315, guid: 51e60dbecefa498438c3ae2f6eba916c, type: 3}
+      IsGroup: 0
+      IsRound: 1
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 696
+    LevelEndTime: 706
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
-      Intervals: 0.6
+      Intervals: 1
       Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: a429067980dd4434398fd97c74f7e2dd, type: 3}
+      Prefab: {fileID: 8312892398627385315, guid: 1a42d7d7d1ed7c54284b9e456db5e52f, type: 3}
       IsGroup: 0
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
     - Distance: 15
       DistanceRange: 0
-      Intervals: 0.6
+      Intervals: 1
       Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: 5343281922f03f340b617acaddafd325, type: 3}
+      Prefab: {fileID: 8312892398627385315, guid: c7dcd997fb32933449e562c77560c980, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 706
+    LevelEndTime: 716
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 1
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: c7dcd997fb32933449e562c77560c980, type: 3}
       IsGroup: 0
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
     - Distance: 15
       DistanceRange: 0
-      Intervals: 0.6
+      Intervals: 1
       Quantity: 1
-      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      Prefab: {fileID: 8312892398627385315, guid: 0042fef6df1dc86419738d98d217b350, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 716
+    LevelEndTime: 726
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 1
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 1a42d7d7d1ed7c54284b9e456db5e52f, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 1
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 0042fef6df1dc86419738d98d217b350, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+  - LevelStartTime: 726
+    LevelEndTime: 840
+    EnemyDatas:
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 2
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 1a42d7d7d1ed7c54284b9e456db5e52f, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 2
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: c7dcd997fb32933449e562c77560c980, type: 3}
+      IsGroup: 0
+      IsRound: 0
+      WarmingAudio: {fileID: 0}
+      ExtendVolume: 0
+    - Distance: 15
+      DistanceRange: 0
+      Intervals: 2
+      Quantity: 1
+      Prefab: {fileID: 8312892398627385315, guid: 0042fef6df1dc86419738d98d217b350, type: 3}
       IsGroup: 0
       IsRound: 0
       WarmingAudio: {fileID: 0}

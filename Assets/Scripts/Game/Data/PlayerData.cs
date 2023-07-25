@@ -132,5 +132,7 @@ namespace Scripts.Game.Data
         {
             _weaponColumnActiveCount.AddValuePoint(count);
         }
+        [SerializeField, Header("復活次數")]
+        public IntAttributeHandle ReviveTimes;
     }
 }

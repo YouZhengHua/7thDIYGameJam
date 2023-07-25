@@ -223,13 +223,15 @@ namespace Scripts.Game
 
             // 武器欄位
             _playerData.AddWeaponColumn(upgradeManager.GetIncreaseSkillSlot());
-            _playerData.AddWeaponColumn(1);
 
             // 增加拾取範圍
             _playerData.DropItemRadius.AddValueMultiple(upgradeManager.GetIncreasePickingArea());
 
             // 最大生命
             this.AddPlayerMaxHP(CalTool.Round(_playerData.MaxHealthPoint * upgradeManager.GetMaxHP(), 1));
+
+            // 復活次數
+            _playerData.ReviveTimes.AddValuePoint(upgradeManager.GetReviveTimes());
             #endregion
 
             #region 武器素質調整
@@ -259,8 +261,6 @@ namespace Scripts.Game
             }
             #endregion
 
-            // 復活次數
-            upgradeManager.GetReviveTimes();
         }
 
         #region 槍械
@@ -504,6 +504,8 @@ namespace Scripts.Game
                 return _activeWeaponIndexs;
             } 
         }
+
+        public IntAttributeHandle PlayerReviveTime { get => _playerData.ReviveTimes; }
         #endregion
     }
 }
