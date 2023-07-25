@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8014281159910156033}
   - component: {fileID: 6531903912347020230}
-  - component: {fileID: 408641934927484065}
   m_Layer: 3
   m_Name: DroneB
   m_TagString: Untagged
@@ -48,23 +47,7 @@ MonoBehaviour:
   _weaponData: {fileID: 11400000, guid: 0354c145cb8c78e48903886d0fee8635, type: 2}
   missileAmmoPrefab: {fileID: 2435465102209507531, guid: 7c1ee3b3d03b93e4f853c1550ef5c156, type: 3}
   offset: {x: -2, y: -2, z: 0}
-  shieldBuff: {fileID: 408641934927484065}
   shootRadius: 5
   targetRadius: 3
   shootInterval: 0.1
   shootCount: 5
---- !u!114 &408641934927484065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8062669811002155462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02e759b7dfb7dc84ea4675e157b1c43f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: -1
-  isAutoDestroy: 0
-  shield: 1

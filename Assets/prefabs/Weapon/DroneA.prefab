@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 660050825504521249}
   - component: {fileID: 2608107654164407165}
+  - component: {fileID: 6453483179366244770}
   m_Layer: 3
   m_Name: DroneA
   m_TagString: Untagged
@@ -46,8 +47,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponData: {fileID: 11400000, guid: f936ff2e054814d4882db0c2378d1279, type: 2}
   missileAmmoPrefab: {fileID: 2435465102209507531, guid: 6fd3e390891e47640b36d748a70f77f0, type: 3}
+  shieldBuff: {fileID: 6453483179366244770}
   offset: {x: 2, y: 2, z: 0}
   shootRadius: 5
   targetRadius: 3
   shootInterval: 0.1
   shootCount: 10
+--- !u!114 &6453483179366244770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717428604507929318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e759b7dfb7dc84ea4675e157b1c43f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: -1
+  isAutoDestroy: 0
+  shield: 1
