@@ -38,6 +38,7 @@ public class PlasmaMachineGunWeapon : Weapon
     public override bool Update()
     {
         if (!base.Update()) return false;
+        _firePoint.rotation = _playerRotation.rotation;
         MainShootHandel();
         return true;
     }
