@@ -6,9 +6,7 @@ using UnityEngine;
 public class WeaponsDescriptionSO : ScriptableObject
 {
     public string weaponName;
-#if UNITY_EDITOR
     [Multiline]
     public string weaponDescription = "";
-#endif
 
 }

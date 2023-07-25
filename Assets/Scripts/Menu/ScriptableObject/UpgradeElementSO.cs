@@ -11,10 +11,8 @@ public class UpgradeElementSO : ScriptableObject
     public int maxLevel;
     public Sprite Icon;
     public float cost;
-#if UNITY_EDITOR
     [Multiline]
     public string DescriptionOnUI = "";
-#endif
 
     [SerializeField] private float EffectPerLevel;
 
