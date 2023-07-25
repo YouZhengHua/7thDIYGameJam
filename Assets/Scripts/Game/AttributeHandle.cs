@@ -112,6 +112,7 @@ namespace Scripts.Game
                     foreach (Weapon weapon in _weapon.GetWeapons())
                     {
                         weapon.weaponData.OneShootAmmoCount.AddValuePoint((int)data.Value);
+                        weapon.ReloadWeapon();
                     }
                     break;
                 case AttributeType.HealItemRate:
@@ -196,6 +197,7 @@ namespace Scripts.Game
                         weapon.weaponData.AmmoFlyTime.AddValuePoint(weaponAttribute.Value);
                         break;
                 }
+                weapon.ReloadWeapon();
             }
         }
 

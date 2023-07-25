@@ -20,6 +20,8 @@ public class KingBibleWeapon : Weapon
     public override void LoadWeapon(bool active = true)
     {
         base.LoadWeapon(active);
+        if (!active)
+            return;
         angleOffset = 360f / (float)weaponData.OneShootAmmoCount.Value;
         _ammoFlyTime = weaponData.AmmoFlyTime.Value;
         radius = weaponData.DamageRadius.Value;
@@ -100,7 +102,7 @@ public class KingBibleWeapon : Weapon
         base.ReloadWeapon();
         _ammoObjList.ForEach(col => Destroy(col));
         _ammoObjList.Clear();
-        LoadWeapon();
+        LoadWeapon(_weaponActive);
     }
 
     private Vector3 GetPositionOnCircle(float angle)
