@@ -130,7 +130,7 @@ namespace Scripts.Game
         {
             yield return new WaitForSeconds(2f);
             AttributeHandle.Instance.HealPlayer(AttributeHandle.Instance.PlayerMaxHealthPoint);
-            RepleEnemy(5f, 7f, 0.5f);
+            RepleEnemy(5f, 6f, 1.5f);
             ClearBuller(5f);
             PlayerStateMachine.Instance.SetNextState(PlayerState.Life);
             _playerAni.SetBool(_playerDeadBoolName, false);
