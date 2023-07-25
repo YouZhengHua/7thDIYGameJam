@@ -186,7 +186,7 @@ namespace Scripts.Menu
 
         private void ExitButtonOnClick()
         {
-            LoadingScreen.instance.LoadScene("00_StartScene", false, true);
+            LoadingScreen.instance.LoadScene("00_StartScene");
         }
     }
 }

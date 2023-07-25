@@ -130,7 +130,7 @@ public class KingBibleWeapon : Weapon
             yield return null;
         }
         //等待一段時間後
-        yield return new WaitForSeconds(weaponData.CoolDownTime.Value);
+        yield return new WaitForSeconds(weaponData.SkillTriggerInterval.Value);
 
         //逐漸快速放大物件繞著玩家旋轉的半徑與 _ammoObjList 裡面所有子彈的大小從 0 到 weaponData.AmmoScale.Value
         time = 0f;

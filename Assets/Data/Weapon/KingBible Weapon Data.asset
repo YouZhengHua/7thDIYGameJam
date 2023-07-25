@@ -75,7 +75,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   SkillTriggerInterval:
-    _value: 0.1
+    _value: 3
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:
@@ -92,4 +92,20 @@ MonoBehaviour:
     OnMultipleChangedEvent:
       m_PersistentCalls:
         m_Calls: []
-  BuffSpawnActive: 0
+  BuffSpawnActive:
+    _value: 0
+    OnBoolChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  BuffCoolDownTime:
+    _value: 0
+    _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  BuffLifeTime:
+    _value: 0
+    _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []

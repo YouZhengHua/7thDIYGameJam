@@ -93,6 +93,18 @@
 		/// <summary>
 		/// 補品掉落率
 		/// </summary>
-		HealItemRate
+		HealItemRate,
+		/// <summary>
+		/// 擊退力量
+		/// </summary>
+		PushForce,
+		/// <summary>
+		/// Buff 持續時間
+		/// </summary>
+		BuffTime,
+		/// <summary>
+		/// 盾牌迴旋持續時間
+		/// </summary>
+		AmmoFlyTime
     }
 }

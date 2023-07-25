@@ -18,6 +18,7 @@ namespace Scripts.Game
         private Transform _playerContainer;
         private float _damage;
         private UnityEvent<Collider2D> _onHitEvenet = new UnityEvent<Collider2D>();
+        private Vector3 _startPostion;
 
         private void Awake()
         {
@@ -31,7 +32,7 @@ namespace Scripts.Game
             {
                 _rigidbody2D.velocity = Vector2.ClampMagnitude(new Vector2(_targetX, _targetY), 1f) * _flySpeed;
             }
-            if ((transform.position - _playerContainer.position).magnitude > _maxRange)
+            if ((transform.position - _startPostion).magnitude > _maxRange)
             {
                 Destroy(this.gameObject);
             }
@@ -58,6 +59,7 @@ namespace Scripts.Game
             _flySpeed = speed;
             _penetrationCount = penetrationCount;
             _damage = damage;
+            _startPostion = transform.position;
         }
 
         public float Damage { get => _damage; }
