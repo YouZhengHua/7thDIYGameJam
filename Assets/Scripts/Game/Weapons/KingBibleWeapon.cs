@@ -27,7 +27,7 @@ public class KingBibleWeapon : Weapon
         {
             GameObject _ammoObj = Instantiate(weaponData.AmmoPrefab, this.transform.position, Quaternion.identity);
             _ammoObj.GetComponent<IBulletEvent>().OnHitEvent.AddListener(_hitEnemy);
-            _ammoObj.GetComponent<BulletController>().Init(Vector3.zero, Vector3.zero, 0f, -1, weaponData.Damage.Value);
+            _ammoObj.GetComponent<BulletController>().Init(Vector3.zero, Vector3.zero, 0f, weaponData.Damage.Value);
             _ammoObj.GetComponent<BulletController>().NeedAutoDestory = false;
             _ammoObj.transform.SetParent(this.transform);
             _ammoObjList.Add(_ammoObj);

@@ -46,7 +46,7 @@ namespace Scripts.Game
                 }
                 GameObject bullet = GameObject.Instantiate(_bullet);
                 bullet.transform.position = this.transform.position;
-                bullet.GetComponent<BulletController>().Init(this.transform.position, _playerTransform.position, _flySpeed, 1, EnemyData.Damage.Value);
+                bullet.GetComponent<BulletController>().Init(this.transform.position, _playerTransform.position, _flySpeed, EnemyData.Damage.Value, 1);
             }
             else
             {

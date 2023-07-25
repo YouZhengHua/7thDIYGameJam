@@ -52,11 +52,12 @@ namespace Scripts.Game
             }
         }
 
-        public void Init(Vector3 from, Vector3 target, float speed, int penetrationCount, float damage)
+        public void Init(Vector3 from, Vector3 target, float speed, float damage, int penetrationCount = -1)
         {
             _targetX = target.x - from.x;
             _targetY = target.y - from.y;
             _flySpeed = speed;
+            _havePenetrationLimit = penetrationCount > 0;
             _penetrationCount = penetrationCount;
             _damage = damage;
             _startPostion = transform.position;
