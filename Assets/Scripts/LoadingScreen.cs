@@ -40,8 +40,14 @@ namespace Scripts
 
         private void Awake()
         {
-            _canvasPrefab = Resources.Load<GameObject>("Prefab/LoadingCanvas");
-            _canvas = GameObject.Instantiate(_canvasPrefab).GetComponent<Canvas>();
+            if (_canvasPrefab == null)
+            {
+                _canvasPrefab = Resources.Load<GameObject>("Prefab/LoadingCanvas");
+            }
+            if (_canvas == null)
+            {
+                _canvas = GameObject.Instantiate(_canvasPrefab).GetComponent<Canvas>();
+            }
             DontDestroyOnLoad(_canvas);
             DontDestroyOnLoad(this); // 保證載入畫面在場景切換時不被銷毀
             SetVolume(0f);
@@ -66,9 +72,11 @@ namespace Scripts
             _canvas.enabled = false;
         }
 
-        public void LoadScene(string sceneName, bool needAutoContinue = false)
+        public void LoadScene(string sceneName, Sprite loadingImage, string tipText, bool needAutoContinue = false)
         {
             _autoContinue = needAutoContinue;
+            _loadingImage.sprite = loadingImage;
+            _tipText.text = tipText.Replace("\\n", "\n");
             LoadSceneAsync(sceneName);
         }
 
