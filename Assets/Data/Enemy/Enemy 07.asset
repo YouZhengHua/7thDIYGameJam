@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthPoint: 15
   MoveSpeed:
-    _value: 5.5
+    _value: 4.5
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:
