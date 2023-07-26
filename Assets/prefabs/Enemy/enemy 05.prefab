@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8312892398627385318}
   - component: {fileID: 8312892398627385313}
-  - component: {fileID: 6032809805062502560}
+  - component: {fileID: -5295099400513241602}
   - component: {fileID: 8312892398627385312}
   - component: {fileID: 8896406020327418539}
   - component: {fileID: 8312892398627385319}
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6032809805062502560
+--- !u!114 &-5295099400513241602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8312892398627385315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59815975cf0ff74458e18732b659ee19, type: 3}
+  m_Script: {fileID: 11500000, guid: af886303ff90a0f438bd01413bf0be59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 34ab6ff39a0e6794a861f88b45e05f16, type: 2}
@@ -112,6 +112,10 @@ MonoBehaviour:
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls: []
+  _radius: 1.5
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!95 &8312892398627385312
 Animator:
   serializedVersion: 4
