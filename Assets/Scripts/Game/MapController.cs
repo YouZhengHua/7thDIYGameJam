@@ -10,19 +10,52 @@ namespace Scripts.Game
     /// 地圖控制器
     /// 初始化時會依照傳入的地圖資料生成地圖
     /// </summary>
-    public class MapController : IMapController
+    public class MapController : MonoBehaviour
     {
         /// <summary>
         /// 地圖資料
         /// </summary>
+        [SerializeField, Header("地圖資料")]
+        private MapData[] _datas;
+        [SerializeField, Header("進度管理")]
+        private StageManager _stageManager;
+        private Transform _playerContainer;
         private MapData _data;
         private Transform _mapConainer;
+        private IList<Transform> _maps = new List<Transform>();
+        private Vector3 _postition = Vector3.zero;
 
-        public MapController(MapData data)
+        private void Awake()
         {
-            _data = data;
+            _data = _datas[(int)_stageManager.GetCurrentStage() - 1];
             _mapConainer = GameObject.Find("MapContainer").GetComponent<Transform>();
+            _playerContainer = GameObject.Find("PlayerContainer").GetComponent<Transform>();
             MapInstantiate();
+        }
+
+        private void Update()
+        {
+            foreach(Transform map in _maps)
+            {
+                _postition = map.position;
+                if (map.position.x - _playerContainer.position.x > _data.mapWidth / 2f)
+                {
+                    _postition.x -= _data.mapWidth;
+                }
+                else if(map.position.x - _playerContainer.position.x < _data.mapWidth / 2f * -1)
+                {
+                    _postition.x += _data.mapWidth;
+                }
+                if(map.position.y - _playerContainer.position.y > _data.mapHeight / 2f)
+                {
+                    _postition.y -= _data.mapWidth;
+                }
+                else if(map.position.y - _playerContainer.position.y < _data.mapHeight / 2f * -1)
+                {
+                    _postition.y += _data.mapWidth;
+                }
+                map.position = _postition;
+            }
         }
 
         private void MapInstantiate()
@@ -31,34 +64,12 @@ namespace Scripts.Game
             {
                 for (int y = 0; y < _data.mapHeight; y += _data.floorHeight)
                 {
-                    bool isLeft = x == 0;
-                    bool isBot = y == 0;
-                    bool isTop = x > 0 && y + _data.floorWidth >= _data.mapWidth;
-                    bool isRight = y > 0 && x + _data.floorHeight >= _data.mapHeight;
                     GameObject map;
-                    if (isTop && isLeft && (_data.HaveTopBorder || _data.HaveLeftBorder))
-                        map = GameObject.Instantiate(_data.wallTopLeft, _mapConainer);
-                    else if (isTop && isRight && (_data.HaveTopBorder || _data.HaveRightBorder))
-                        map = GameObject.Instantiate(_data.wallTopRight, _mapConainer);
-                    else if (isBot && isLeft && (_data.HaveBotBorder || _data.HaveLeftBorder))
-                        map = GameObject.Instantiate(_data.wallBotLeft, _mapConainer);
-                    else if (isBot && isRight && (_data.HaveBotBorder || _data.HaveRightBorder))
-                        map = GameObject.Instantiate(_data.wallBotRight, _mapConainer);
-                    else if (isTop && _data.HaveTopBorder)
-                        map = GameObject.Instantiate(_data.wallTop, _mapConainer);
-                    else if (isBot && _data.HaveBotBorder)
-                        map = GameObject.Instantiate(_data.wallBot, _mapConainer);
-                    else if (isLeft && _data.HaveLeftBorder)
-                        map = GameObject.Instantiate(_data.wallLeft, _mapConainer);
-                    else if (isRight && _data.HaveRightBorder)
-                        map = GameObject.Instantiate(_data.wallRight, _mapConainer);
-                    else
-                    {
-                        int floorIndex = Random.Range(0, _data.floorPrefabs.Length);
-                        map = GameObject.Instantiate(_data.floorPrefabs[floorIndex], _mapConainer);
-                    }
+                    int floorIndex = Random.Range(0, _data.floorPrefabs.Length);
+                    map = GameObject.Instantiate(_data.floorPrefabs[floorIndex], _mapConainer);
                     map.transform.localScale = new Vector3(_data.floorWidthScale, _data.floorHeightScale, 1);
                     map.transform.localPosition = new Vector3(_data.floorWidth * x - _data.mapWidth / 2, _data.floorHeight * y - _data.mapHeight / 2, 0);
+                    _maps.Add(map.transform);
                 }
             }
         }
