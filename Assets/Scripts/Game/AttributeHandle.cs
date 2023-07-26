@@ -29,11 +29,20 @@ namespace Scripts.Game
         /// </summary>
         private float _extendHealItemRate = 0f;
 
-        private float _totalDamage = 0f;
         private float _totalMoney = 0f;
         private int _totalKill = 0;
 
         private float _gameTime = 0f;
+
+        /// <summary>
+        /// 生效的武器清單
+        /// </summary>
+        private IList<WeaponOptionData> _activeWeapons = new List<WeaponOptionData>();
+
+        /// <summary>
+        /// 生效的武器清單
+        /// </summary>
+        private IList<WeaponIndex> _activeWeaponIndexs = new List<WeaponIndex>();
 
         private static readonly object padlock = new object();
         private static AttributeHandle _instance = null;
@@ -59,12 +68,13 @@ namespace Scripts.Game
         /// </summary>
         public void Init()
         {
-            _totalDamage = 0f;
             _totalMoney = 0f;
             _totalKill = 0;
             _gameTime = 0f;
             _extendHealItemRate = 0f;
             _weapon = GameObject.Find("PlayerContainer").GetComponent<IWeaponController>();
+            _activeWeapons.Clear();
+            _activeWeaponIndexs.Clear();
         }
 
         public void SetPlayerData(PlayerData playerData)
@@ -428,21 +438,6 @@ namespace Scripts.Game
         /// </summary>
         public float PlayerAutoRecoverPoint { get => CalTool.Round(_playerData.AutoRecoverPoint.Value, 1); }
 
-        public Weapon GetWeapon(WeaponIndex weaponIndex)
-        {
-            return _weapon.GetWeapon(weaponIndex);
-        }
-
-        public IList<Weapon> GetWeapons()
-        {
-            return _weapon.GetWeapons();
-        }
-
-        public void AddTotalDamage(float damage)
-        {
-            _totalDamage = damage;
-        }
-
         public void AddTotalMoney(float money)
         {
             _totalMoney += money * (1f + _extendMoneyMuliple);
@@ -479,14 +474,6 @@ namespace Scripts.Game
         /// 最大武器欄位數量
         /// </summary>
         public int WeaponColumnMaxCount { get => _playerData.WeaponColumnMaxCount; }
-        /// <summary>
-        /// 生效的武器清單
-        /// </summary>
-        private IList<WeaponOptionData> _activeWeapons = new List<WeaponOptionData>();
-        /// <summary>
-        /// 生效的武器清單
-        /// </summary>
-        private IList<WeaponIndex> _activeWeaponIndexs = new List<WeaponIndex>();
         /// <summary>
         /// 取得生效的武器清單
         /// </summary>
