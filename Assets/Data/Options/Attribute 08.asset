@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _optionType: 0
   _title: "\u8B77\u76FE"
-  _depiction: "\u6062\u5FA9 1 \u9EDE\u8B77\u76FE"
+  _depiction: "\u6062\u5FA9 2 \u9EDE\u8B77\u76FE"
   _image: {fileID: 21300000, guid: 928d3070e4951a447a656f1bf65dc7d9, type: 3}
   _maxSelectedCount: 0
   _isEndOption: 0

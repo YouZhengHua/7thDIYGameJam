@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fe4650b15dbfb3448b1a5e899fb791e, type: 3}
-  m_Name: "\u589E\u52A0\u6280\u80FD\u6B04\u4F4D"
+  m_Name: "\u589E\u52A0\u6B66\u5668\u6B04\u4F4D"
   m_EditorClassIdentifier: 
-  elementName: "\u589E\u52A0\u6280\u80FD\u6B04\u4F4D"
+  elementName: "\u589E\u52A0\u6B66\u5668\u6B04\u4F4D"
   currentLevel: 0
-  maxLevel: 4
+  maxLevel: 3
   Icon: {fileID: 21300000, guid: 54d731ca0516c984aa95178cd5e7e0ae, type: 3}
-  cost: 0
-  DescriptionOnUI: "\u6BCF\u4E0A\u5347\u4E00\u7D1A\uFF0C\n\u5C07\u6280\u80FD\u7684\u6B04\u4F4D\u589E\u52A01\u683C"
+  cost: 600
+  DescriptionOnUI: "\u6BCF\u4E0A\u5347\u4E00\u7D1A\uFF0C\n\u5C07\u6B66\u5668\u7684\u6B04\u4F4D\u589E\u52A01\u683C"
   EffectPerLevel: 1

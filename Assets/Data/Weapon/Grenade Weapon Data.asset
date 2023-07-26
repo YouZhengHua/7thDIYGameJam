@@ -18,7 +18,7 @@ MonoBehaviour:
   WeaponIndex: 4
   AmmoPrefab: {fileID: 4824317457725271445, guid: 5e2c772ff84ac184fac33fb5d7a53644, type: 3}
   Damage:
-    _value: 70
+    _value: 20
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:

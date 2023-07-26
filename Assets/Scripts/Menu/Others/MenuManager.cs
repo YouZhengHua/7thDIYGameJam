@@ -44,7 +44,7 @@ namespace Scripts.Menu
         private void Start() {
             Debug.Log("MenuManager being called");
             Time.timeScale = 1.0f;
-            stageManager.Load();
+            //stageManager.Load();
 
             switch (stageManager.GetCurrentStage()) {
                 case StageManager.stage.firstStartGame:

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthPoint: 25
   MoveSpeed:
-    _value: 4.5
+    _value: 4
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:
         m_Calls: []
-  exp: 1
+  exp: 2
   Damage:
     _value: 12
     _multiple: 1

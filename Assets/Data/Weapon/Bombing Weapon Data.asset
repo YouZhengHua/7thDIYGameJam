@@ -18,29 +18,47 @@ MonoBehaviour:
   WeaponIndex: 0
   AmmoPrefab: {fileID: 348025601964002051, guid: ae907b2bfc3d70046b0fe83e2a38aded, type: 3}
   Damage:
-    _value: 50
+    _value: 30
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   DamageFrom: 2
   Force:
     _value: 3
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   DelayTime:
     _value: 0.1
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   ShootAudios:
   - {fileID: 8300000, guid: f36eb3e2688a1b3439d22c70fec43cf0, type: 3}
   CoolDownTime:
     _value: 0.1
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   AmmoScale:
     _value: 1
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   OneShootAmmoCount:
     _value: 1
     _multiple: 1
   AmmoFlySpeed:
     _value: 100
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   AmmoPenetrationCount:
     _value: 1
     _multiple: 1
@@ -48,12 +66,47 @@ MonoBehaviour:
   AmmoFlyRange:
     _value: 15
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  AmmoFlyTime:
+    _value: 0
+    _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   SkillTriggerInterval:
     _value: 2
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   DamageRadius:
     _value: 2
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
   CreateRadius:
     _value: 2
     _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  BuffSpawnActive:
+    _value: 0
+    OnBoolChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  BuffCoolDownTime:
+    _value: 0
+    _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  BuffLifeTime:
+    _value: 0
+    _multiple: 1
+    OnMultipleChangedEvent:
+      m_PersistentCalls:
+        m_Calls: []

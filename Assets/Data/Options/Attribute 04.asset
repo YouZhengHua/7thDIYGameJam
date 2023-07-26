@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _optionType: 0
   _title: "\u7D93\u9A57\u503C\u500D\u7387"
-  _depiction: "\u589E\u52A0 50%"
+  _depiction: "\u589E\u52A0 20%"
   _image: {fileID: 21300000, guid: 42710e1f178a85b4eb3e955a0e298ffa, type: 3}
-  _maxSelectedCount: 2
+  _maxSelectedCount: 5
   _isEndOption: 0
   _isLoopOption: 0
   _isActive: 1
   _attributeType: 10
-  _value: 0.5
+  _value: 0.2
   _isNegative: 0
