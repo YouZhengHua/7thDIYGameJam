@@ -48,6 +48,7 @@ public class ActionKey
     public const string PLAY_MUSIC = "PlayMusic";
     public const string PLAY_SOUND = "PlaySound";
     public const string DELAY = "Delay";
+    public const string SEND_EVENT = "SendEvent";
 }
 
 public class OperationKey
