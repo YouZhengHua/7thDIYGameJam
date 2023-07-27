@@ -13,6 +13,7 @@ namespace Scripts.Menu
         [SerializeField] private StageManager stageManager;
         [SerializeField] private StoryDialogueSO storyDialogueSO;
         [SerializeField] private Transform endGameCheckBox;
+        [SerializeField] private Animator prologueEffect;
 
         [SerializeField, Header("使用者設定UI")]
         private Canvas _settingCanvas;
@@ -88,7 +89,7 @@ namespace Scripts.Menu
         /// <param name="sceneName">場景名稱</param>
         public void LoadScene(string sceneName)
         {
-            LoadingScreen.instance.LoadScene(sceneName, false);
+            LoadingScreen.instance.LoadScene(sceneName, stageManager.LoadingImage, stageManager.LoadingTip);
         }
 
         public void TalkToGirl() {
@@ -108,6 +109,10 @@ namespace Scripts.Menu
             fadeEffect.FadeOut();
         }
 
+        private void PrologueFadeIn() {
+            fadeEffect.PrologueFadeIn();
+        }
+
         private void DisableAllUI() {
             disableAllUI.gameObject.SetActive(true);
         }
@@ -116,13 +121,20 @@ namespace Scripts.Menu
             disableAllUI.gameObject.SetActive(false);
         }
 
+        private void PrologueEffect() {
+            prologueEffect.Play("PrologueFadeOut");
+            Invoke("Level_1", 7.5f);
+        }
+
         private void SetCurrentState(StageManager.stage stage) {
             stageManager.SetCurrentStage(stage);
         }
 
         private void Prologue() {
             stageManager.isSecInTheSameLevel = false;
-            storyManager.StartStory(4, Level_1);
+            storyManager.StartStory(4, () => {
+                Invoke("PrologueEffect", 2f);
+            });
             SetCurrentState(StageManager.stage.Level_1);
         }
 
@@ -130,7 +142,7 @@ namespace Scripts.Menu
             if (stageManager.isSecInTheSameLevel) {
                 FadeIn();
             } else {
-                FadeIn();
+                PrologueFadeIn();
                 DisableAllUI();
                 storyManager.StartStory(5, EnableAllUI);
                 currentDialogueList = GetDialogueIndexList();
@@ -144,7 +156,6 @@ namespace Scripts.Menu
             if (stageManager.isSecInTheSameLevel) {
                 FadeIn();
             } else {
-                FadeIn();
                 stageManager.isSecInTheSameLevel = true;
                 DisableAllUI();
                 storyManager.StartStory(9, () => { FadeOut();

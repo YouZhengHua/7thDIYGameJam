@@ -19,6 +19,10 @@ public class StageManager : ScriptableObject
     public bool isPlayerDefeated;
     public bool isSecInTheSameLevel;
     [SerializeField] private stage currentStage;
+    [SerializeField]
+    private Sprite[] _loadImages;
+    [SerializeField]
+    private string[] _loadTips;
     private bool isLevelCleared;
 
     public stage GetCurrentStage() {
@@ -44,5 +48,23 @@ public class StageManager : ScriptableObject
         SetCurrentStage(value);
         isPlayerDefeated = false;
         isSecInTheSameLevel = false;
+    }
+
+    public Sprite LoadingImage 
+    {
+        get
+        {
+            int index = Mathf.Min(Mathf.Max((int)currentStage-1, 0), _loadImages.Length-1);
+            return _loadImages[index];
+        }
+    }
+
+    public string LoadingTip
+    {
+        get
+        {
+            int index = Mathf.Min(Mathf.Max((int)currentStage-1, 0), _loadTips.Length-1);
+            return _loadTips[index];
+        }
     }
 }

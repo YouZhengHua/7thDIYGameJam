@@ -1147,6 +1147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 596856301}
+  - component: {fileID: 596856302}
   m_Layer: 0
   m_Name: MapContainer
   m_TagString: Untagged
@@ -1169,6 +1170,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &596856302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596856300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f52c9911236f546b595017451b73fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _datas:
+  - {fileID: 11400000, guid: 107467d6feb96e3409cea469773d3ad1, type: 2}
+  - {fileID: 11400000, guid: 69c508d16f144d046a4dddc76f3fda65, type: 2}
+  - {fileID: 11400000, guid: 94a799a5ec79cb0488f868a8ad8d6cb2, type: 2}
+  - {fileID: 11400000, guid: 57bc9793c93bbaa429c88bff72e33866, type: 2}
+  _stageManager: {fileID: 11400000, guid: 2d81b05e1469a23479bcd1a9ecb12bbe, type: 2}
 --- !u!224 &610594160 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5351924043396952421, guid: 420152d13939b8240a9269cb2974818b, type: 3}

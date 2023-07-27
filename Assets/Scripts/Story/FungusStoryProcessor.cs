@@ -8,6 +8,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using William.Tool.Event;
 
 public class FungusStoryProcessor : MonoBehaviour, IStoryProcessor
 {
@@ -178,7 +179,7 @@ public class FungusStoryProcessor : MonoBehaviour, IStoryProcessor
 
     public void SendEvent(string key, string value)
     {
-
+        EventManager.TriggerEvent(key, new Dictionary<string, object>() { { "value", value } });
     }
 
     public void SetBooleanVariable(string key, bool value)

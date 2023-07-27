@@ -1,13 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class WeaponColumnController : MonoBehaviour
 {
-    [SerializeField, Header("¦³®ÄªZ¾¹Äæ¦ì®Ø")]
+    [SerializeField, Header("æœ‰æ•ˆæ­¦å™¨æ¬„ä½æ¡†")]
     private Sprite _activeBackground;
-    [SerializeField, Header("µL®ÄªZ¾¹Äæ¦ì®Ø")]
+    [SerializeField, Header("ç„¡æ•ˆæ­¦å™¨æ¬„ä½æ¡†")]
     private Sprite _unactiveBackground;
     private Image _background;
     private Image _weaponIcon;

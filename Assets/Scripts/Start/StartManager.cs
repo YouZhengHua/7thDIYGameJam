@@ -14,6 +14,8 @@ namespace Scripts.Start
         private UserSetting _defaultSetting;
         [SerializeField]
         private UserSetting _userSetting;
+        [SerializeField]
+        private StageManager _stageManager;
         ISettingUIController _settingUIController;
         IMenuUIController _menuUIController;
         private float DebugTime = 0f;
@@ -103,7 +105,7 @@ namespace Scripts.Start
 
         public void ShowGameOptions()
         {
-            LoadingScreen.instance.LoadScene("01_MenuScene");
+            LoadingScreen.instance.LoadScene("01_MenuScene", _stageManager.LoadingImage, _stageManager.LoadingTip);
         }
 
         public void ShowSetting()

@@ -78,10 +78,6 @@ namespace Scripts.Game
         /// </summary>
         private ICameraController _cameraController;
         /// <summary>
-        /// 地圖控制器
-        /// </summary>
-        private IMapController _mapController;
-        /// <summary>
         /// 遊戲UI
         /// </summary>
         private IGameUIController _gameUI;
@@ -129,7 +125,6 @@ namespace Scripts.Game
 
             _endUI = new EndUIController(_activeWeaponIconPrefab);
             _cameraController = new CameraController();
-            _mapController = new MapController(_mapData);
             _settingUI = new SettingUIController(_settingUICanvas, _defaultSetting, _userSetting);
             _pauseUI = new PauseUIController(_settingUI);
             _optionsUI = new OptionsUIController(_optionPrefab, _optionDatas);
@@ -181,7 +176,8 @@ namespace Scripts.Game
             else if (GameStateMachine.Instance.CurrectState == GameState.BackToMenu)
             {
                 GameStateMachine.Instance.SetNextState(GameState.BackToMenued);
-                LoadingScreen.instance.LoadScene("01_MenuScene", false);
+                StaticPrefs.Score += CalTool.Round(AttributeHandle.Instance.TotalMoney);
+                LoadingScreen.instance.LoadScene("01_MenuScene", _stageManager.LoadingImage, _stageManager.LoadingTip);
             }
             else if (GameStateMachine.Instance.CurrectState == GameState.GameEnd)
             {
@@ -197,7 +193,8 @@ namespace Scripts.Game
             else if (GameStateMachine.Instance.CurrectState == GameState.Restart)
             {
                 GameStateMachine.Instance.SetNextState(GameState.Restarted);
-                LoadingScreen.instance.LoadScene(SceneManager.GetActiveScene().name, false);
+                StaticPrefs.Score += CalTool.Round(AttributeHandle.Instance.TotalMoney);
+                LoadingScreen.instance.LoadScene(SceneManager.GetActiveScene().name, _stageManager.LoadingImage, _stageManager.LoadingTip);
             }
         }
 

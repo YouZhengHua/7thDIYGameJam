@@ -3037,6 +3037,7 @@ MonoBehaviour:
   storyManager: {fileID: 1712005814}
   fadeEffect: {fileID: 1311400901}
   credit: {fileID: 1876542285}
+  stageManager: {fileID: 11400000, guid: 2d81b05e1469a23479bcd1a9ecb12bbe, type: 2}
 --- !u!4 &1217772156
 Transform:
   m_ObjectHideFlags: 0

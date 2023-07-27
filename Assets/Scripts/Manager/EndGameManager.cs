@@ -8,6 +8,7 @@ public class EndGameManager : MonoBehaviour
     [SerializeField] private StoryManager storyManager;
     [SerializeField] private FadeEffectUI fadeEffect;
     [SerializeField] private CreditManager credit;
+    [SerializeField] private StageManager stageManager;
 
     private void Start() {
         FadeIn();
@@ -35,6 +36,6 @@ public class EndGameManager : MonoBehaviour
     }
 
     public void LoadScene(string sceneName) {
-        LoadingScreen.instance.LoadScene(sceneName, false);
+        LoadingScreen.instance.LoadScene(sceneName, stageManager.LoadingImage, stageManager.LoadingTip);
     }
 }

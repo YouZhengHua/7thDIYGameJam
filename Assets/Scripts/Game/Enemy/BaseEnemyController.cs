@@ -252,8 +252,6 @@ namespace Scripts.Game
         /// <param name="damage">傷害值</param>
         public virtual void TakeDamage(float damage)
         {
-            AttributeHandle.Instance.AddTotalDamage(damage);
-
             _cloneEnemyData.HealthPoint -= damage;
             if (_cloneEnemyData.HealthPoint <= 0)
             {

@@ -1326,6 +1326,7 @@ MonoBehaviour:
   _settingCanvas: {fileID: 1792388635}
   _defaultSetting: {fileID: 11400000, guid: 6a85d2c901f7dac4190fa093fc640980, type: 2}
   _userSetting: {fileID: 11400000, guid: abb8e8f88633b11419d94df063a5d869, type: 2}
+  _stageManager: {fileID: 11400000, guid: 2d81b05e1469a23479bcd1a9ecb12bbe, type: 2}
 --- !u!1001 &982475600
 PrefabInstance:
   m_ObjectHideFlags: 0
