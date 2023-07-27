@@ -156,6 +156,7 @@ namespace Scripts.Menu
             if (stageManager.isSecInTheSameLevel) {
                 FadeIn();
             } else {
+                FadeIn();
                 stageManager.isSecInTheSameLevel = true;
                 DisableAllUI();
                 storyManager.StartStory(9, () => { FadeOut();
