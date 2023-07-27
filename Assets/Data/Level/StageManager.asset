@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerDefeated: 0
   isSecInTheSameLevel: 1
-  currentStage: 3
+  currentStage: 1
   _loadImages:
   - {fileID: 21300000, guid: a6ee6262163c69244b46d396aa8e4fd9, type: 3}
   - {fileID: 21300000, guid: c4e39f5b346b74841b47796275049734, type: 3}
