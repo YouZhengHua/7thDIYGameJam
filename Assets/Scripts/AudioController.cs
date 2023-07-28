@@ -59,12 +59,15 @@ namespace Scripts
             return minDb + ((maxDb - minDb) * volume / 10f);
         }
 
-        public void SetBGM(AudioClip bgm, float? volumn = null)
+        public void SetBGM(AudioClip bgm, float? volumn = null, bool isLoop = true)
         {
             _musicAudio.clip = bgm;
             if (volumn.HasValue)
                 _musicAudio.volume = volumn.Value;
             _musicAudio.Play();
+            _musicAudio.loop = isLoop;
         }
+
+        public bool BGMisPlaying { get => _musicAudio.isPlaying; }
     }
 }
