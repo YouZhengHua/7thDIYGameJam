@@ -11,6 +11,8 @@ public class KingBibleWeapon : Weapon
     private float _ammoFlyTime = 0f;
     //旋轉半徑
     private float radius = 1f;
+    private Coroutine _coroutineShrink = null;
+    private bool _isShrinkOn = false;
     public override void Start()
     {
         base.Start();
@@ -70,10 +72,15 @@ public class KingBibleWeapon : Weapon
 
         //持續一段時間後，逐漸快速縮小旋轉半徑與 _ammoObjList 裡面所有子彈的大小到 0
         _ammoFlyTime -= Time.deltaTime;
-        if (_ammoFlyTime <= 0f)
+        if (_ammoFlyTime <= 0f && !_isShrinkOn)
         {
+            _isShrinkOn = true;
             _ammoFlyTime = 0f;
-            StartCoroutine(Shrink());
+            if (_coroutineShrink != null)
+            {
+                StopCoroutine(_coroutineShrink);
+            }
+            _coroutineShrink = StartCoroutine(Shrink());
         }
 
         // 使物件繞著玩家旋轉
@@ -100,6 +107,10 @@ public class KingBibleWeapon : Weapon
     public override void ReloadWeapon()
     {
         base.ReloadWeapon();
+        if (_coroutineShrink != null)
+        {
+            StopCoroutine(_coroutineShrink);
+        }
         _ammoObjList.ForEach(col => Destroy(col));
         _ammoObjList.Clear();
         LoadWeapon(_weaponActive);
@@ -116,6 +127,7 @@ public class KingBibleWeapon : Weapon
 
     IEnumerator Shrink()
     {
+        Debug.Log("KingBibleWeapon Shrink start");
         _ammoFlyTime = -1f;
         //逐漸快速縮小物件繞著玩家旋轉的半徑與 _ammoObjList 裡面所有子彈的大小到 0
         float time = 0f;
@@ -152,5 +164,7 @@ public class KingBibleWeapon : Weapon
         }
 
         _ammoFlyTime = weaponData.AmmoFlyTime.Value;
+        _isShrinkOn = false;
+        Debug.Log("KingBibleWeapon Shrink end");
     }
 }
