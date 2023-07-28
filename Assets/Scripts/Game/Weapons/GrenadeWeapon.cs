@@ -31,13 +31,10 @@ public class GrenadeWeapon : Weapon
 
     private void _throwingGrenade()
     {
-        Debug.Log("投擲手榴彈");
         Vector3 randomPoint = getRandomPointAroundPlayer();
         AudioController.Instance.PlayEffect(weaponData.ShootAudio);
         // 播放投擲手榴彈特效
-        //TODO 用架構的物件池 AmmoPool
         GameObject effect = Instantiate(weaponData.AmmoPrefab, transform.position, Quaternion.identity);
-        //TODO 投擲手榴彈範圍要影響特效大小
 
         //從effect上拿到 GrenadeAmmoController並進行Init
         GrenadeAmmoController grenadeAmmoController = effect.GetComponent<GrenadeAmmoController>();
@@ -50,7 +47,7 @@ public class GrenadeWeapon : Weapon
             weaponData.BuffCoolDownTime.Value,
             weaponData.BuffLifeTime.Value
         );
-
+        grenadeAmmoController.HitEnemy.AddListener(GrenadeHitEnemy);
     }
 
     private Vector3 getRandomPointAroundPlayer()
@@ -60,5 +57,11 @@ public class GrenadeWeapon : Weapon
         Vector3 randomPoint = transform.position + new Vector3(randomCircle.x, randomCircle.y, 0);
 
         return randomPoint;
+    }
+
+    private void GrenadeHitEnemy(BaseEnemyController baseEnemyController)
+    {
+        baseEnemyController.TakeDamage(weaponData.Damage.Value);
+        baseEnemyController.AddForce(weaponData.Force.Value, weaponData.DelayTime.Value);
     }
 }

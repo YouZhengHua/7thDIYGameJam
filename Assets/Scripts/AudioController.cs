@@ -10,7 +10,7 @@ namespace Scripts
         private AudioSource _soundAudio;
         private UserSetting _userSetting;
         private AudioMixer _audioMixer;
-        private readonly float maxDb = 0f;
+        private readonly float maxDb = 20f;
         private readonly float minDb = -65f;
         private static readonly object padlock = new object();
         public static AudioController _instance = null;
