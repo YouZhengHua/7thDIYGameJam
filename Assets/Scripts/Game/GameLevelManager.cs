@@ -14,12 +14,14 @@ namespace Scripts.Game
         private StageManager _stageManager;
         private Transform _playerContainer;
         private Transform _enemyContainer;
+        private int bgmIndex = 0;
+        private BGMData _nowBGM;
 
         private void Awake()
         {
             _playerContainer = GameObject.Find("PlayerContainer").GetComponent<Transform>();
             _enemyContainer = GameObject.Find("EnemyContainer").GetComponent<Transform>();
-            _level = _levels[(int)_stageManager.GetCurrentStage() - 1];
+            _level = _levels[Mathf.Max(Mathf.Min((int)_stageManager.GetCurrentStage() - 1, _levels.Length - 1), 0)];
         }
 
         private void Start()
@@ -32,8 +34,8 @@ namespace Scripts.Game
                     enemyData.NextTime = 0;
                 }
             }
-            BGMData bgm = _level.BGMs[0];
-            AudioController.Instance.SetBGM(bgm.Audio, bgm.IsNeedVolumn ? bgm.Volumn : null);
+            _nowBGM = _level.BGMs[bgmIndex];
+            AudioController.Instance.SetBGM(_nowBGM.Audio, _nowBGM.IsNeedVolumn ? _nowBGM.Volumn : null);
         }
 
         private void Update()
@@ -41,6 +43,13 @@ namespace Scripts.Game
             if(GameStateMachine.Instance.CurrectState == GameState.InGame)
             {
                 EnemyHandel();
+            }
+            if (!AudioController.Instance.BGMisPlaying && !_nowBGM.IsLoop)
+            {
+                bgmIndex++;
+                bgmIndex %= _level.BGMs.Length;
+                _nowBGM = _level.BGMs[bgmIndex];
+                AudioController.Instance.SetBGM(_nowBGM.Audio, _nowBGM.IsNeedVolumn ? _nowBGM.Volumn : null, _nowBGM.IsLoop);
             }
         }
 

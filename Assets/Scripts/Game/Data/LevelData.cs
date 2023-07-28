@@ -33,5 +33,7 @@ namespace Scripts.Game.Data
         public bool IsNeedVolumn;
         [Header("調整音量"), Range(0f, 1f)]
         public float Volumn;
+        [Header("是否需要循環")]
+        public bool IsLoop;
     }
 }

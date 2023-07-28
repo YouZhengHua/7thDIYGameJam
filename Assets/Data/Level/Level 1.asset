@@ -272,4 +272,13 @@ MonoBehaviour:
   BGMs:
   - Audio: {fileID: 8300000, guid: af1db253889d05a488aa754178015750, type: 3}
     IsNeedVolumn: 1
-    Volumn: 0.5
+    Volumn: 0.22
+    IsLoop: 1
+  - Audio: {fileID: 8300000, guid: af1db253889d05a488aa754178015750, type: 3}
+    IsNeedVolumn: 1
+    Volumn: 0.22
+    IsLoop: 0
+  - Audio: {fileID: 8300000, guid: 54d9ceff4dd37c64bb653fb9f117f831, type: 3}
+    IsNeedVolumn: 1
+    Volumn: 0.3
+    IsLoop: 0
