@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Scripts.Game;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GrenadeAmmoController : MonoBehaviour
 {
@@ -11,9 +12,11 @@ public class GrenadeAmmoController : MonoBehaviour
     public float rotateSpeed = 10f;
     Rigidbody2D _rigidbody2D;
     private float buffCoolDownTime = 1f;
+    public UnityEvent<BaseEnemyController> HitEnemy;
     void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        HitEnemy = new UnityEvent<BaseEnemyController>();
     }
     // Start is called before the first frame update
     void Start()
@@ -60,10 +63,7 @@ public class GrenadeAmmoController : MonoBehaviour
             BaseEnemyController enemyUnit = collider.GetComponent<BaseEnemyController>();
             if (enemyUnit != null)
             {
-                // 对敌人单位执行受伤的动作
-                Debug.Log("enemyUnit = " + enemyUnit.name);
-                enemyUnit.TakeDamage(damage);
-                enemyUnit.AddForce(damage, 0.1f);
+                HitEnemy?.Invoke(enemyUnit);
             }
         }
 
