@@ -66,30 +66,35 @@ public class PlasmaMachineGunWeapon : Weapon
     /// </summary>
     public void MainShoot()
     {
+        _shotAmmo.Clear();
         for (int i = 0; i < weaponData.OneShootAmmoCount.Value; i++)
         {
             GameObject effect = Instantiate(weaponData.AmmoPrefab);
+            effect.SetActive(false);
             _shotAmmo.Add(effect);
         }
-
-        Debug.Log($"電漿機槍子彈數目: {weaponData.OneShootAmmoCount.Value}");
+        Vector3 playerAngle = _playerRotation.localRotation.eulerAngles;
+        Vector3 playerUp = _playerRotation.up;
 
         for (int i = 0; i < _shotAmmo.Count; i++)
         {
-            _shotAmmo[i].transform.position = _firePoint.position;
-            _offset = Quaternion.Euler(0f, 0f, weaponData.OneShootAmmoCount.Value == 1 ? 0f : (_angleRange / 2f) - (_angleRange / (weaponData.OneShootAmmoCount.Value - 1) * i));
-            _shotAmmo[i].transform.localRotation = Quaternion.Euler(_playerRotation.localRotation.eulerAngles + _shotAmmo[i].transform.rotation.eulerAngles);
-            _shotAmmo[i].GetComponent<BulletController>().Init(Vector3.zero, _offset * _playerRotation.up, weaponData.AmmoFlySpeed.Value, weaponData.Damage.Value, weaponData.HavaPenetrationLimit ? weaponData.AmmoPenetrationCount.Value : -1);
-            //設定體積
-            _shotAmmo[i].transform.localScale = new Vector3(weaponData.AmmoScale.Value, weaponData.AmmoScale.Value, weaponData.AmmoScale.Value);
+            StartCoroutine(Shoot(0.05f, i, playerAngle, playerUp));
         }
-
-        _gunEffect.SetTrigger(playerShootFire);
-
         AudioController.Instance.PlayEffect(weaponData.ShootAudio);
-
-        _shotAmmo.Clear();
-
         _currentMainShootCooldownTime = weaponData.CoolDownTime.Value;
+    }
+
+    private IEnumerator Shoot(float delayTime, int i, Vector3 playerAngle, Vector3 playerUp)
+    {
+        yield return new WaitForSeconds(delayTime * i);
+        _shotAmmo[i].SetActive(true);
+        _shotAmmo[i].transform.position = _firePoint.position;
+        _offset = Quaternion.Euler(0f, 0f, weaponData.OneShootAmmoCount.Value == 1 ? 0f : (_angleRange / 2f) - (_angleRange / (weaponData.OneShootAmmoCount.Value - 1) * i));
+        _shotAmmo[i].transform.localRotation = Quaternion.Euler(playerAngle + _shotAmmo[i].transform.rotation.eulerAngles);
+        _shotAmmo[i].GetComponent<BulletController>().Init(Vector3.zero, _offset * playerUp, weaponData.AmmoFlySpeed.Value, weaponData.Damage.Value, weaponData.HavaPenetrationLimit ? weaponData.AmmoPenetrationCount.Value : -1);
+        //設定體積
+        _shotAmmo[i].transform.localScale = new Vector3(weaponData.AmmoScale.Value, weaponData.AmmoScale.Value, weaponData.AmmoScale.Value);
+        _currentMainShootCooldownTime = weaponData.CoolDownTime.Value;
+        _gunEffect.SetTrigger(playerShootFire);
     }
 }

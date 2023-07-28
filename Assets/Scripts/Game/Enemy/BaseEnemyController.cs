@@ -268,7 +268,7 @@ namespace Scripts.Game
         /// <param name="time"></param>
         public virtual void AddForce(float force = 0f, float time = 0f)
         {
-            if (!_cloneEnemyData.CanAddedForce)
+            if (!_cloneEnemyData.CanAddedForce || force == 0f || time == 0f)
                 return;
 
             _targetX = transform.position.x - _playerTransform.position.x;

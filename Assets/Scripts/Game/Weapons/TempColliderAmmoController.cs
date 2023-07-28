@@ -24,7 +24,6 @@ public class TempColliderAmmoController : MonoBehaviour, IAmmoEvent
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("TempColliderAmmoController OnTriggerEnter2D", this.gameObject);
         _onHitEnemyEvent?.Invoke(collision);
     }
 }
