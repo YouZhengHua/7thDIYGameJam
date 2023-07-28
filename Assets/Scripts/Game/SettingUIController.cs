@@ -10,7 +10,6 @@ namespace Scripts.Game
     public class SettingUIController : BaseUIController, ISettingUIController
     {
         private Button _defaultButton;
-        private Button _backToMenuButton;
         private Button _saveButton;
         private UserSetting _defaultSetting;
         private UserSetting _userSetting;
@@ -29,14 +28,11 @@ namespace Scripts.Game
             {
                 if (obj.name == "DefaultButton")
                     _defaultButton = obj;
-                else if (obj.name == "BackToMenuButton")
-                    _backToMenuButton = obj;
                 else if (obj.name == "SaveButton")
                     _saveButton = obj;
             }
 
             _defaultButton.onClick.AddListener(DefaultButtonOnClick);
-            _backToMenuButton.onClick.AddListener(BackToMenuButtonOnClick);
             _saveButton.onClick.AddListener(SaveButtonOnClick);
             _music.SetListiner(OnMusicValueOnChange);
         }
@@ -51,15 +47,6 @@ namespace Scripts.Game
         {
             _userSetting.soundVolume = _sound.Value;
             _userSetting.musicVolume = _music.Value;
-
-            AudioController.Instance.UpdateAudioVolume();
-            this.HideCanvas();
-        }
-
-        private void BackToMenuButtonOnClick()
-        {
-            _userSetting.soundVolume = _tmpSetting.soundVolume;
-            _userSetting.musicVolume = _tmpSetting.musicVolume;
 
             AudioController.Instance.UpdateAudioVolume();
             this.HideCanvas();

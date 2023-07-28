@@ -11,7 +11,6 @@ namespace Scripts.Start
     {
         private IStartManager _menuManager;
         private Button _defaultButton;
-        private Button _backToMenuButton;
         private Button _saveButton;
         private UserSetting _defaultSetting;
         private UserSetting _userSetting;
@@ -31,14 +30,11 @@ namespace Scripts.Start
             {
                 if (obj.name == "DefaultButton")
                     _defaultButton = obj;
-                else if (obj.name == "BackToMenuButton")
-                    _backToMenuButton = obj;
                 else if (obj.name == "SaveButton")
                     _saveButton = obj;
             }
 
             _defaultButton.onClick.AddListener(DefaultButtonOnClick);
-            _backToMenuButton.onClick.AddListener(BackToMenuButtonOnClick);
             _saveButton.onClick.AddListener(SaveButtonOnClick);
             _music.SetListiner(OnMusicValueOnChange);
         }
@@ -56,16 +52,6 @@ namespace Scripts.Start
 
             AudioController.Instance.UpdateAudioVolume();
             _menuManager.ShowMenu();
-        }
-
-        private void BackToMenuButtonOnClick()
-        {
-            _menuManager.ShowMenu();
-
-            _userSetting.soundVolume = _tmpSetting.soundVolume;
-            _userSetting.musicVolume = _tmpSetting.musicVolume;
-
-            AudioController.Instance.UpdateAudioVolume();
         }
 
         public override void ShowCanvas()
