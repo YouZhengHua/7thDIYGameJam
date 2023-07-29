@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 350}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 51
+  controlID: 142
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 88
+  controlID: 48
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -585,9 +585,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 840.7591, y: 510.92285, z: 179.48932}
+    m_Target: {x: 912.8409, y: 490.6913, z: 181.49907}
     speed: 2
-    m_Value: {x: 840.7591, y: 510.92285, z: 179.48932}
+    m_Value: {x: 912.8409, y: 490.6913, z: 181.49907}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -638,9 +638,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1127.5255
+    m_Target: 625.63464
     speed: 2
-    m_Value: 1127.5255
+    m_Value: 625.63464
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -737,7 +737,7 @@ MonoBehaviour:
       y: 21
       width: 1077
       height: 525
-    m_Scale: {x: 0.48611107, y: 0.4861111}
+    m_Scale: {x: 0.4861111, y: 0.4861111}
     m_Translation: {x: 538.5, y: 262.5}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -913,11 +913,11 @@ MonoBehaviour:
     - e00: 0.8168421
       e01: 0
       e02: 0
-      e03: -25.842102
+      e03: -263.8421
       e10: 0
       e11: 0.8168421
       e12: 0
-      e13: 90.13159
+      e13: 37.310547
       e20: 0
       e21: 0
       e22: 1
@@ -959,9 +959,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 077443bdd4d55db46ad051172fd4e964, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 013cdb59436ec4449b211e918497b686, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 629036608277245362, guid: 077443bdd4d55db46ad051172fd4e964, type: 2}
+  - m_Target: {fileID: -9129024126485725675, guid: 013cdb59436ec4449b211e918497b686, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1032,7 +1032,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 30726
+  m_LastSelectedObjectID: -6324
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1066,7 +1066,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 22fbffff0a780000
+      m_ExpandedIDs: 2afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1131,22 +1131,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ExcelData
+    - Assets/Scripts/Game/Enemy
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/ExcelData
+  - Assets/Scripts/Game/Enemy
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Unity\7thDIYGameJam
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d4800000
-    m_LastClickedID: 32980
-    m_ExpandedIDs: 00000000a2800000a4800000a6800000a880000000ca9a3b
+    scrollPos: {x: 0, y: 19}
+    m_SelectedIDs: b0810000
+    m_LastClickedID: 33200
+    m_ExpandedIDs: 00000000c27e0000c47e0000c67e0000c87e0000dc7e0000ec7e0000f27e0000b281000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1174,7 +1174,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a2800000a4800000a6800000a8800000
+    m_ExpandedIDs: 00000000c27e0000c47e0000c67e0000c87e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

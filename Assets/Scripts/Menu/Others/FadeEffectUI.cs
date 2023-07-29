@@ -21,4 +21,8 @@ public class FadeEffectUI : MonoBehaviour
     public void PrologueFadeIn() {
         animator.Play("PrologueFadeIn");
     }
+
+    public void SlowFadeOut() {
+        animator.Play("SlowFadeOut");
+    }
 }

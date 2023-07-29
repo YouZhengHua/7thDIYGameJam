@@ -12,19 +12,18 @@ public class EndGameManager : MonoBehaviour
 
     private void Start() {
         FadeIn();
-        StartCoroutine(waitForSec(1));
         storyManager.StartStory(34, EndingAnimation);
     }
 
     private void EndingAnimation() {
-        FadeOut();
-        StartCoroutine(waitForSec(3));
-        fadeEffect.gameObject.SetActive(false);
-        credit.gameObject.SetActive(true);
+        fadeEffect.SlowFadeOut();
+        StartCoroutine(Credit(5));
     }
 
-    private IEnumerator waitForSec(float second) {
+    private IEnumerator Credit(float second) {
         yield return new WaitForSeconds(second);
+        fadeEffect.gameObject.SetActive(false);
+        credit.gameObject.SetActive(true);
     }
 
     private void FadeIn() {
