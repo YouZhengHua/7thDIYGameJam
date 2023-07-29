@@ -14,6 +14,7 @@ namespace Scripts.Menu
         [SerializeField] private StoryDialogueSO storyDialogueSO;
         [SerializeField] private Transform endGameCheckBox;
         [SerializeField] private Animator prologueEffect;
+        [SerializeField] private bool isDebug = false;
 
         [SerializeField, Header("使用者設定UI")]
         private Canvas _settingCanvas;
@@ -25,6 +26,7 @@ namespace Scripts.Menu
 
         private List<int> currentDialogueList;
         private int dialogueCycleIndex;
+        
 
         private void Awake()
         {
@@ -45,7 +47,9 @@ namespace Scripts.Menu
         private void Start() {
             Debug.Log("MenuManager being called");
             Time.timeScale = 1.0f;
-            //stageManager.Load();
+            if (isDebug) {
+                stageManager.Load();
+            }
 
             switch (stageManager.GetCurrentStage()) {
                 case StageManager.stage.firstStartGame:
