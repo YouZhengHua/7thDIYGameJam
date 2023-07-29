@@ -23,6 +23,6 @@ public class CurrentMoney : MonoBehaviour
     }
 
     public void UpdateVisual() {
-        moneyText.text = Mathf.Round(StaticPrefs.Score).ToString();
+        moneyText.text = Mathf.FloorToInt(StaticPrefs.Score).ToString();
     }
 }
