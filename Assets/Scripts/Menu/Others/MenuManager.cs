@@ -47,7 +47,7 @@ namespace Scripts.Menu
         private void Start() {
             Debug.Log("MenuManager being called");
             Time.timeScale = 1.0f;
-            if (isDebug) {
+            if (!isDebug) {
                 stageManager.Load();
             }
 
