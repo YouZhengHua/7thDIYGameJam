@@ -12,28 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c50be2da776364a804db01ea359915, type: 3}
   m_Name: Boss 02
   m_EditorClassIdentifier: 
-  HealthPoint: 11111
+  HealthPoint: 5000
   MoveSpeed:
-    _value: 3.5
+    _value: 5
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:
         m_Calls: []
   exp: 1
   Damage:
-    _value: 16
+    _value: 25
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:
         m_Calls: []
-  IsBoss: 0
+  IsBoss: 1
   AttackRange:
     _value: 7.5
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:
         m_Calls: []
-  CanAddedForce: 1
+  CanAddedForce: 0
   Drops:
   - _dropType: 3
     _chance:

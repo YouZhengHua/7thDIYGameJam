@@ -18,7 +18,7 @@ MonoBehaviour:
   WeaponIndex: 6
   AmmoPrefab: {fileID: 5963066614265696250, guid: 9d09fd569ece3a6449e5095f1e25c439, type: 3}
   Damage:
-    _value: 8
+    _value: 15
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:
@@ -76,7 +76,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   SkillTriggerInterval:
-    _value: 3
+    _value: 2.5
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:

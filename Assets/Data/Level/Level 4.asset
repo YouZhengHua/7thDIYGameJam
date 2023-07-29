@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0903891f6c8d14a90c988ae551196a, type: 3}
   m_Name: Level 4
   m_EditorClassIdentifier: Assembly-CSharp:Scripts.Game.Data:Level
-  GameTime: 840
+  GameTime: 366
   LevelRounds:
   - LevelStartTime: 0
     LevelEndTime: 3
@@ -27,7 +27,7 @@ MonoBehaviour:
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
   - LevelStartTime: 3
-    LevelEndTime: 40
+    LevelEndTime: 20
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -38,8 +38,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 40
-    LevelEndTime: 50
+  - LevelStartTime: 20
+    LevelEndTime: 25
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -50,8 +50,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 50
-    LevelEndTime: 80
+  - LevelStartTime: 25
+    LevelEndTime: 40
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 80
-    LevelEndTime: 120
+  - LevelStartTime: 40
+    LevelEndTime: 60
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -83,8 +83,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 120
-    LevelEndTime: 130
+  - LevelStartTime: 60
+    LevelEndTime: 65
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -95,8 +95,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 130
-    LevelEndTime: 170
+  - LevelStartTime: 65
+    LevelEndTime: 85
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -116,8 +116,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 170
-    LevelEndTime: 210
+  - LevelStartTime: 85
+    LevelEndTime: 105
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -137,8 +137,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 210
-    LevelEndTime: 240
+  - LevelStartTime: 105
+    LevelEndTime: 120
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -149,8 +149,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 240
-    LevelEndTime: 243
+  - LevelStartTime: 120
+    LevelEndTime: 123
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -161,8 +161,8 @@ MonoBehaviour:
       IsRound: 1
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 243
-    LevelEndTime: 246
+  - LevelStartTime: 123
+    LevelEndTime: 126
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -173,8 +173,8 @@ MonoBehaviour:
       IsRound: 1
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 246
-    LevelEndTime: 300
+  - LevelStartTime: 126
+    LevelEndTime: 150
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -185,8 +185,8 @@ MonoBehaviour:
       IsRound: 1
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 300
-    LevelEndTime: 330
+  - LevelStartTime: 150
+    LevelEndTime: 165
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -206,8 +206,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 330
-    LevelEndTime: 350
+  - LevelStartTime: 165
+    LevelEndTime: 175
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -227,8 +227,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 350
-    LevelEndTime: 390
+  - LevelStartTime: 175
+    LevelEndTime: 195
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -257,8 +257,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 390
-    LevelEndTime: 393
+  - LevelStartTime: 195
+    LevelEndTime: 196.5
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -269,8 +269,8 @@ MonoBehaviour:
       IsRound: 1
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 393
-    LevelEndTime: 420
+  - LevelStartTime: 196.5
+    LevelEndTime: 210
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -299,8 +299,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 420
-    LevelEndTime: 440
+  - LevelStartTime: 210
+    LevelEndTime: 220
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -320,8 +320,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 440
-    LevelEndTime: 480
+  - LevelStartTime: 220
+    LevelEndTime: 240
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -359,8 +359,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 480
-    LevelEndTime: 483
+  - LevelStartTime: 240
+    LevelEndTime: 241.5
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -371,8 +371,8 @@ MonoBehaviour:
       IsRound: 1
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 483
-    LevelEndTime: 520
+  - LevelStartTime: 241.5
+    LevelEndTime: 260
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -410,8 +410,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 520
-    LevelEndTime: 540
+  - LevelStartTime: 260
+    LevelEndTime: 270
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -431,8 +431,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 540
-    LevelEndTime: 570
+  - LevelStartTime: 270
+    LevelEndTime: 285
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -452,8 +452,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 570
-    LevelEndTime: 600
+  - LevelStartTime: 285
+    LevelEndTime: 300
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -482,8 +482,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 600
-    LevelEndTime: 630
+  - LevelStartTime: 300
+    LevelEndTime: 315
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -521,8 +521,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 630
-    LevelEndTime: 633
+  - LevelStartTime: 315
+    LevelEndTime: 316.5
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -551,8 +551,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 633
-    LevelEndTime: 660
+  - LevelStartTime: 316.5
+    LevelEndTime: 330
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -590,8 +590,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 660
-    LevelEndTime: 663
+  - LevelStartTime: 330
+    LevelEndTime: 331.5
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -602,8 +602,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 663
-    LevelEndTime: 673
+  - LevelStartTime: 331.5
+    LevelEndTime: 336.5
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -614,8 +614,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 673
-    LevelEndTime: 683
+  - LevelStartTime: 336.5
+    LevelEndTime: 341.5
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -626,8 +626,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 683
-    LevelEndTime: 693
+  - LevelStartTime: 341.5
+    LevelEndTime: 346.5
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -638,8 +638,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 693
-    LevelEndTime: 696
+  - LevelStartTime: 346.5
+    LevelEndTime: 348
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -668,8 +668,8 @@ MonoBehaviour:
       IsRound: 1
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 696
-    LevelEndTime: 706
+  - LevelStartTime: 348
+    LevelEndTime: 353
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -689,8 +689,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 706
-    LevelEndTime: 716
+  - LevelStartTime: 353
+    LevelEndTime: 358
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -710,8 +710,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 716
-    LevelEndTime: 726
+  - LevelStartTime: 358
+    LevelEndTime: 363
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
@@ -731,8 +731,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 726
-    LevelEndTime: 840
+  - LevelStartTime: 363
+    LevelEndTime: 366
     EnemyDatas:
     - Distance: 15
       DistanceRange: 0
