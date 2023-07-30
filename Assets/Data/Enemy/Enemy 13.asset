@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9c50be2da776364a804db01ea359915, type: 3}
-  m_Name: Enemy 08
+  m_Name: Enemy 13
   m_EditorClassIdentifier: 
-  HealthPoint: 250
+  HealthPoint: 300
   MoveSpeed:
-    _value: 4
+    _value: 15
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:
         m_Calls: []
   exp: 1
   Damage:
-    _value: 18
+    _value: 8
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:
         m_Calls: []
   IsBoss: 0
   AttackRange:
-    _value: 5
+    _value: 0
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:

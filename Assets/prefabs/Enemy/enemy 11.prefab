@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 9461c4a68ca795f49b3b8a0f630ed789, type: 2}
   _damageTextPrefab: {fileID: 2538697934944276320, guid: 9ed005278162b0142b34764996fa485d, type: 3}
-  _textShowTime: 0.3
+  _textShowTime: 0.5
   _enemyGetHit: Hit
   _enemyDead: Dead
   _enemyAttack: 
@@ -113,8 +113,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _bullet: {fileID: 3626254014405645773, guid: 8659e3a1dcd91c846a8315453d86f447, type: 3}
-  _flySpeed: 4
-  _cooldownTime: 2
+  _flySpeed: 6
+  _cooldownTime: 1.5
 --- !u!95 &8312892398627385312
 Animator:
   serializedVersion: 4

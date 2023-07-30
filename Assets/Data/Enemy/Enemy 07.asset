@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c50be2da776364a804db01ea359915, type: 3}
   m_Name: Enemy 07
   m_EditorClassIdentifier: 
-  HealthPoint: 15
+  HealthPoint: 200
   MoveSpeed:
     _value: 4
     _multiple: 1
@@ -21,7 +21,7 @@ MonoBehaviour:
         m_Calls: []
   exp: 1
   Damage:
-    _value: 8
+    _value: 15
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:

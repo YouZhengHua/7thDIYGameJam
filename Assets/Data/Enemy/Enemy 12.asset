@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c50be2da776364a804db01ea359915, type: 3}
   m_Name: Enemy 12
   m_EditorClassIdentifier: 
-  HealthPoint: 120
+  HealthPoint: 1200
   MoveSpeed:
-    _value: 3
+    _value: 5.5
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:
         m_Calls: []
   exp: 1
   Damage:
-    _value: 16
+    _value: 40
     _multiple: 1
     OnMultipleChangedEvent:
       m_PersistentCalls:
@@ -51,3 +51,19 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
     _prefab: {fileID: 8926784309508359775, guid: 407e149f009c458459d5f32c12681718, type: 3}
+  - _dropType: 1
+    _chance:
+      _value: 1
+      _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    _prefab: {fileID: 8312892398627385315, guid: 0590e15099c68d74b87a94b4f71fda0a, type: 3}
+  - _dropType: 1
+    _chance:
+      _value: 1
+      _multiple: 1
+      OnMultipleChangedEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    _prefab: {fileID: 8312892398627385315, guid: 0590e15099c68d74b87a94b4f71fda0a, type: 3}

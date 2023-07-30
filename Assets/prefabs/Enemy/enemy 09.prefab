@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 76acd8a6dde131a4687d0a8c1a2691f5, type: 2}
   _damageTextPrefab: {fileID: 2538697934944276320, guid: 9ed005278162b0142b34764996fa485d, type: 3}
-  _textShowTime: 0.3
+  _textShowTime: 0.5
   _enemyGetHit: Hit
   _enemyDead: Dead
   _enemyAttack: Attack
