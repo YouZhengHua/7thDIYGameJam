@@ -110,6 +110,7 @@ public class KingBibleWeapon : Weapon
         if (_coroutineShrink != null)
         {
             StopCoroutine(_coroutineShrink);
+            _isShrinkOn = false;
         }
         _ammoObjList.ForEach(col => Destroy(col));
         _ammoObjList.Clear();
