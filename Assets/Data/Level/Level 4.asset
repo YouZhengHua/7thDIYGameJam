@@ -593,7 +593,7 @@ MonoBehaviour:
   - LevelStartTime: 330
     LevelEndTime: 331.5
     EnemyDatas:
-    - Distance: 15
+    - Distance: 11
       DistanceRange: 0
       Intervals: 3
       Quantity: 1
