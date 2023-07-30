@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u767C\u5C04\u6578\u91CF"
   m_EditorClassIdentifier: 
   elementName: "\u767C\u5C04\u6578\u91CF"
-  currentLevel: 2
+  currentLevel: 0
   maxLevel: 2
   Icon: {fileID: 21300000, guid: 4cb73fbcda7a3fc45b7ade3463bbee44, type: 3}
   cost: 3000

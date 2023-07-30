@@ -18,4 +18,4 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: bf795be941ea98a428557ffd47741f38, type: 3}
   cost: 1000
   DescriptionOnUI: "\u6BCF\u4E0A\u5347\u4E00\u7D1A\uFF0C\n\u53EF\u63D0\u9AD8\u56FA\u5B9A\u9632\u79A6\u529B"
-  EffectPerLevel: 2
+  EffectPerLevel: 4
