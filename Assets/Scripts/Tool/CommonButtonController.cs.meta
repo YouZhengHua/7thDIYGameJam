@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 456405a284570e2479797bcd20cd4967
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ClickSound: {fileID: 8300000, guid: 47d95ae0680411743a38ff2021d8bc89, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
