@@ -13,6 +13,7 @@ public class DroneBWeapon : Weapon
     public float shootInterval = 0.1f;
     public int shootCount = 5;
     private GameObject _ammoObj;
+    private bool _firstLoad = true;
 
     public override void Start()
     {
@@ -22,7 +23,7 @@ public class DroneBWeapon : Weapon
     {
         base.LoadWeapon(active);
         _ammoObj = Instantiate(weaponData.AmmoPrefab, this.transform.position, Quaternion.identity);
-        
+        _firstLoad = _firstLoad && true;
     }
 
     public override bool Update()
@@ -36,8 +37,9 @@ public class DroneBWeapon : Weapon
 
         //每隔一段時間就觸發一次隨機對半徑圓周上某一點進行子彈射擊
         _timer += Time.deltaTime;
-        if (_timer >= weaponData.SkillTriggerInterval.Value)
+        if (_firstLoad || _timer >= weaponData.SkillTriggerInterval.Value)
         {
+            _firstLoad = false;
             _timer = 0f;
             //執行射擊 shootCount
             _triggerShoot();
@@ -61,6 +63,7 @@ public class DroneBWeapon : Weapon
         for (int i = 0; i < weaponData.OneShootAmmoCount.Value; i++)
         {
             launch(center);
+            _timer = 0f;
             AudioController.Instance.PlayEffect(weaponData.ShootAudio, weaponData.ExtendVolume);
             yield return new WaitForSeconds(shootInterval);
         }
