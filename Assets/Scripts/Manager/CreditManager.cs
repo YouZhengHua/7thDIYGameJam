@@ -7,6 +7,7 @@ public class CreditManager : MonoBehaviour
     [SerializeField] EndGameManager endGameManager;
     [SerializeField] RectTransform staffList;
     [SerializeField] Transform pressKeyToContinue;
+    [SerializeField] StageManager stageManager;
 
     private bool isGoingToTitle;
 
@@ -20,6 +21,7 @@ public class CreditManager : MonoBehaviour
     {
         if (isGoingToTitle) {
             if (Input.anyKeyDown) {
+                stageManager.SetCurrentStage(StageManager.stage.firstStartGame);
                 endGameManager.LoadScene("00_StartScene");
             }
         }
