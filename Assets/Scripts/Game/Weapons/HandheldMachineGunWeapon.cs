@@ -84,7 +84,7 @@ public class HandheldMachineGunWeapon : Weapon
 
         _gunEffect.SetTrigger(playerShootFire);
 
-        AudioController.Instance.PlayEffect(weaponData.ShootAudio);
+        AudioController.Instance.PlayEffect(weaponData.ShootAudio, weaponData.ExtendVolume);
 
         _shotAmmo.Clear();
 

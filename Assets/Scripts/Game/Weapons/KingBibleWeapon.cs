@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Scripts;
 using Scripts.Game;
 using UnityEngine;
 
@@ -53,6 +54,7 @@ public class KingBibleWeapon : Weapon
             _ammoFlyTime = weaponData.AmmoFlyTime.Value;
         });
         weaponData.DamageRadius.OnMultipleChangedEvent.AddListener((float multiple) => { radius = weaponData.DamageRadius.Value; });
+        AudioController.Instance.PlayEffect(weaponData.ShootAudio, weaponData.ExtendVolume);
     }
 
     private void _hitEnemy(Collider2D collision)
@@ -150,6 +152,7 @@ public class KingBibleWeapon : Weapon
 
         //逐漸快速放大物件繞著玩家旋轉的半徑與 _ammoObjList 裡面所有子彈的大小從 0 到 weaponData.AmmoScale.Value
         time = 0f;
+        AudioController.Instance.PlayEffect(weaponData.ShootAudio, weaponData.ExtendVolume);
         while (time < 1f)
         {
             time += Time.deltaTime * 2f;
@@ -163,7 +166,6 @@ public class KingBibleWeapon : Weapon
             }
             yield return null;
         }
-
         _ammoFlyTime = weaponData.AmmoFlyTime.Value;
         _isShrinkOn = false;
         Debug.Log("KingBibleWeapon Shrink end");

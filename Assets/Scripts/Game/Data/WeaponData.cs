@@ -35,12 +35,14 @@ public class WeaponData : BaseItemData
     /// <summary>
     /// 攻擊音效清單
     /// </summary>
-    [SerializeField, Header("攻擊音效清單")]
+    [Header("攻擊音效清單")]
     public AudioClip[] ShootAudios;
     /// <summary>
     /// 隨機取得攻擊音效清單中的一個音效
     /// </summary>
     public AudioClip ShootAudio { get => (ShootAudios.Length == 0 || ShootAudios == null) ? null : ShootAudios[UnityEngine.Random.Range(0, ShootAudios.Length)]; }
+    [Header("音效額外音量"), Range(-1f, 5f)]
+    public float ExtendVolume = 0f;
     #endregion
 
     #region 投射物屬性

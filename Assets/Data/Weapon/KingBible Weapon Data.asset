@@ -36,7 +36,9 @@ MonoBehaviour:
     OnMultipleChangedEvent:
       m_PersistentCalls:
         m_Calls: []
-  ShootAudios: []
+  ShootAudios:
+  - {fileID: 8300000, guid: 08c7a0f7c97300b439ad005f7aeae567, type: 3}
+  ExtendVolume: 0
   CoolDownTime:
     _value: 3
     _multiple: 1

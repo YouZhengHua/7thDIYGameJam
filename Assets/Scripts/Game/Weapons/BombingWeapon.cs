@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class BombingWeapon : Weapon
 {
+    private float soundDealy = 1f;
+
     public override void Start()
     {
         base.Start();
@@ -18,21 +20,22 @@ public class BombingWeapon : Weapon
 
         if (_timer >= weaponData.SkillTriggerInterval.Value)
         {
+            AudioController.Instance.PlayEffect(weaponData.ShootAudio, weaponData.ExtendVolume);
             _timer = 0f;
             for (int times = 0; times < weaponData.OneShootAmmoCount.Value; times++)
             {
-                _throwingBomb();
+                StartCoroutine(_throwingBomb());
             }
 
         }
         return true;
     }
 
-    private void _throwingBomb()
+    private IEnumerator _throwingBomb()
     {
+        yield return new WaitForSeconds(soundDealy);
         Debug.Log("轰炸");
         Vector3 randomPoint = getRandomPointAroundPlayer();
-        AudioController.Instance.PlayEffect(weaponData.ShootAudio);
         // 播放轰炸特效
         //TODO 用架構的物件池 AmmoPool
         GameObject effect = Instantiate(weaponData.AmmoPrefab, randomPoint, Quaternion.identity);
@@ -42,8 +45,6 @@ public class BombingWeapon : Weapon
         {
             particleSystem.startSize = weaponData.DamageRadius.Value;
         }
-
-
 
         // 在半径范围内查找敌人单位
         Collider2D[] colliders = Physics2D.OverlapCircleAll(randomPoint, weaponData.DamageRadius.Value);

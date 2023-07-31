@@ -61,7 +61,7 @@ public class DroneBWeapon : Weapon
         for (int i = 0; i < weaponData.OneShootAmmoCount.Value; i++)
         {
             launch(center);
-            AudioController.Instance.PlayEffect(weaponData.ShootAudio);
+            AudioController.Instance.PlayEffect(weaponData.ShootAudio, weaponData.ExtendVolume);
             yield return new WaitForSeconds(shootInterval);
         }
     }

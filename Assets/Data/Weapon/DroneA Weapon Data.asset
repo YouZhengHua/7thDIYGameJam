@@ -38,6 +38,7 @@ MonoBehaviour:
         m_Calls: []
   ShootAudios:
   - {fileID: 8300000, guid: cbf7a5e010a0f9d44a64368a2bd5daf4, type: 3}
+  ExtendVolume: 0.2
   CoolDownTime:
     _value: 0.1
     _multiple: 1

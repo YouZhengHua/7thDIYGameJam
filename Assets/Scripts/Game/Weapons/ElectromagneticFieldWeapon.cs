@@ -89,6 +89,6 @@ public class ElectromagneticFieldWeapon : Weapon
 
     private void PlaySound()
     {
-        AudioController.Instance.PlayEffect(weaponData.ShootAudio);
+        AudioController.Instance.PlayEffect(weaponData.ShootAudio, weaponData.ExtendVolume);
     }
 }

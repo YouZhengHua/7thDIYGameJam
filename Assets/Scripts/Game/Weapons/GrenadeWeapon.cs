@@ -19,6 +19,7 @@ public class GrenadeWeapon : Weapon
 
         if (_timer >= weaponData.SkillTriggerInterval.Value)
         {
+            AudioController.Instance.PlayEffect(weaponData.ShootAudio, weaponData.ExtendVolume);
             _timer = 0f;
             for (int times = 0; times < weaponData.OneShootAmmoCount.Value; times++)
             {
@@ -32,7 +33,6 @@ public class GrenadeWeapon : Weapon
     private void _throwingGrenade()
     {
         Vector3 randomPoint = getRandomPointAroundPlayer();
-        AudioController.Instance.PlayEffect(weaponData.ShootAudio);
         // 播放投擲手榴彈特效
         GameObject effect = Instantiate(weaponData.AmmoPrefab, transform.position, Quaternion.identity);
 
