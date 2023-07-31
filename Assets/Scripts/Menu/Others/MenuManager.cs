@@ -38,6 +38,10 @@ namespace Scripts.Menu
                 settingUI = new Game.SettingUIController(_settingCanvas, _defaultSetting, _nowSetting);
             settingUI.HideCanvas();
             AudioController.Instance.SetUserSetting(_nowSetting);
+            if (!isDebug)
+            {
+                stageManager.Load();
+            }
         }
 
         public void InvokeSettingUICanvas() {
@@ -47,9 +51,6 @@ namespace Scripts.Menu
         private void Start() {
             Debug.Log("MenuManager being called");
             Time.timeScale = 1.0f;
-            if (!isDebug) {
-                stageManager.Load();
-            }
 
             switch (stageManager.GetCurrentStage()) {
                 case StageManager.stage.firstStartGame:
