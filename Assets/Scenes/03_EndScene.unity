@@ -821,7 +821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &287642925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4255,7 +4255,7 @@ MonoBehaviour:
   endGameManager: {fileID: 1217772155}
   staffList: {fileID: 1178316658}
   pressKeyToContinue: {fileID: 287642925}
-  stageManager: {fileID: 0}
+  stageManager: {fileID: 11400000, guid: 2d81b05e1469a23479bcd1a9ecb12bbe, type: 2}
 --- !u!1 &1893609543
 GameObject:
   m_ObjectHideFlags: 0

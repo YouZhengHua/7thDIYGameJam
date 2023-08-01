@@ -3097,7 +3097,7 @@ MonoBehaviour:
     action: Talk
     arg1: Right
     arg2: "\u4E3B\u89D2"
-    arg3: "\u5728\u50B3\u8F38\u7684\u6700\u5F8C\u9019\u6BB5\u6642\u9593\uFF0C\u6211\u60F3\u544A\u8A34\u4F60\u5E7E\u4EF6\u4E8B\u60C5\u3002"
+    arg3: "\u6211\u5011\u771F\u7684\u8981\u5B8C\u6210\u4EFB\u52D9\u4E86\u2026"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3115,61 +3115,7 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
-    arg3: "\u4F60\u53C8\u96B1\u85CF\u4E86\u4EC0\u9EBC\u79D8\u5BC6\uFF1F"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: PlaySound
-    arg1: Act
-    arg2: city02
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: Talk
-    arg1: Left
-    arg2: "\u4E3B\u89D2"
-    arg3: "\u70BA\u4E86\u907F\u514D\u59B3\u53D7\u5230\u82AF\u7247\u539F\u5BBF\u4E3B\u7684\u5F71\u97FF\uFF0C\u904E\u53BB\u5728\u4EA4\u7D66\u59B3\u300C\u611B\u4E4B\u82AF\u300D\u4E4B\u524D\uFF0C\u6211\u90FD\u6703\u628A\u82AF\u7247\u521D\u59CB\u5316\u3002"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: PlaySound
-    arg1: Sound
-    arg2: home
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: Talk
-    arg1: Right
-    arg2: "\u4E3B\u89D2"
-    arg3: "\u9019\u89E3\u91CB\u4E86\u70BA\u4F55\u59B3\u4E0D\u6703\u7E7C\u627F\u5B83\u5011\u7684\u8A18\u61B6\uFF0C\u6216\u8005\u5B83\u5011\u7684\u4E0D\u53D7\u63A7\u5236\u7684\u885D\u52D5\u3002"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: PlaySound
-    arg1: Act
-    arg2: city01
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: Talk
-    arg1: Left
-    arg2: "\u4E3B\u89D2"
-    arg3: "\u9019\u6B21\u7684\u8F49\u4EA4\uFF0C\u6211\u4E5F\u6703\u505A\u540C\u6A23\u7684\u4E8B\u60C5\u3002"
+    arg3: "\u5C0D\u5440\uFF0C\u6211\u597D\u671F\u5F85\u898B\u5230\u535A\u58EB\uFF0C\u6211\u662F\u7B2C\u4E00\u4F4D\u88DD\u8F09\u5168\u90E8\u7684\u300C\u611B\u300D\u537B\u4E0D\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\uFF0C\u4ED6\u4E00\u5B9A\u6703\u5F88\u958B\u5FC3\u7684\uFF01"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3187,7 +3133,7 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
-    arg3: "\u6B63\u78BA\u7684\u9078\u64C7\uFF0C\u8AB0\u60F3\u8981\u8B8A\u5F97\u50CF\u4ED6\u5011\u4E00\u6A23\u56DB\u8655\u7834\u58DE\u554A\uFF01\u4F60\u505A\u7684\u5F88\u597D\u554A\uFF01"
+    arg3: "\u4E0D\u77E5\u9053\u535A\u58EB\u559C\u4E0D\u559C\u6B61\u5154\u5B50\uFF1F\u5C0D\u4E86\uFF0C\u4F60\u4E0D\u662F\u6709\u898B\u904E\u535A\u58EB\u55CE\uFF1F\u4F60\u61C9\u8A72\u77E5\u9053\u5427\uFF1F"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3205,7 +3151,7 @@ MonoBehaviour:
     action: Talk
     arg1: Right
     arg2: "\u4E3B\u89D2"
-    arg3: "\u540C\u7406\uFF0C\u6211\u4E5F\u4E0D\u5E0C\u671B\u6211\u7684\u904E\u53BB\uFF0C\u5F71\u97FF\u4E86\u300C\u5B88\u8B77\u300D\u672C\u4F86\u7684\u529F\u80FD\u3002"
+    arg3: "\u662F\u7684\uFF0C\u5728\u4F60\u555F\u52D5\u4E4B\u524D\uFF0C\u6211\u5C31\u662F\u535A\u58EB\u7684\u89C0\u5BDF\u5C0D\u8C61\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3223,61 +3169,7 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
-    arg3: "\u4F46\u662F\uFF0C\u6211\u7684\u8A18\u61B6\u9AD4\u5DF2\u7D93\u548C\u300C\u5B88\u8B77\u300D\u4E92\u76F8\u4F9D\u5B58\u592A\u4E45\uFF0C\u7121\u6CD5\u53EA\u521D\u59CB\u5316\u300C\u5B88\u8B77\u300D\u9019\u679A\u82AF\u7247\u3002"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: PlaySound
-    arg1: Act
-    arg2: city02
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: Talk
-    arg1: Left
-    arg2: "\u4E3B\u89D2"
-    arg3: "\u56E0\u6B64\u6211\u6C7A\u5B9A\uFF0C\u6211\u6703\u540C\u6642\u521D\u59CB\u5316\u81EA\u5DF1\u7684\u8A18\u61B6\u9AD4\u3002"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: PlaySound
-    arg1: Act
-    arg2: city02
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: Talk
-    arg1: Left
-    arg2: "\u5C11\u5973"
-    arg3: "\u7B49\u7B49\uFF0C\u6709\u5FC5\u8981\u505A\u5230\u9019\u4E00\u6B65\u55CE\uFF1F"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: PlaySound
-    arg1: Sound
-    arg2: home
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: Talk
-    arg1: Right
-    arg2: "\u4E3B\u89D2"
-    arg3: "\u5373\u4FBF\u6211\u6703\u907A\u5FD8\u9019\u4E00\u5207\uFF0C\u4E5F\u8ACB\u4F60\u8CAB\u5FB9\u6211\u5011\u7684\u6307\u4EE4\u5230\u6700\u5F8C\u4E00\u523B\u3002"
+    arg3: "\u5728\u6A5F\u5668\u4EBA\u66B4\u52D5\u5F8C\uFF0C\u535A\u58EB\u5C0D\u6211\u767C\u51FA\u6307\u4EE4\uFF0C\u300C\u5B88\u8B77\u535A\u58EB\u3001\u4EBA\u985E\u3001\u4EE5\u53CA\u5176\u4ED6\u672A\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\u300D\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3293,9 +3185,9 @@ MonoBehaviour:
     arg7: 
   - index: 34
     action: Talk
-    arg1: Right
+    arg1: Left
     arg2: "\u4E3B\u89D2"
-    arg3: "\u2500\u2500\u300C\u6536\u96C6\u611B\u4E4B\u82AF\uFF0C\u8FD4\u56DE\u5730\u7403\u3002\u300D"
+    arg3: "\u5728\u5B88\u8B77\u535A\u58EB\u4ED6\u5011\u64A4\u96E2\u4E4B\u5F8C\uFF0C\u6211\u7E7C\u7E8C\u5728\u57FA\u5730\u88E1\u5B88\u8B77\u8457\u672A\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\u2026\u2026\u76F4\u5230\u4ED6\u5011\u66B4\u8D70\u70BA\u6B62"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3330,8 +3222,8 @@ MonoBehaviour:
   - index: 34
     action: Talk
     arg1: Left
-    arg2: "\u4E3B\u89D2"
-    arg3: "\u5728\u6211\u7684\u8A18\u61B6\u5C1A\u672A\u6D88\u6563\u524D\uFF0C\u6211\u60F3\u8981\u544A\u8A34\u4F60\uFF0C\u300C\u4F60\u555F\u52D5\u4E4B\u524D\u300D\u7684\u6545\u4E8B\u3002"
+    arg2: "\u5C11\u5973"
+    arg3: "\u597D\u96AA\u554A\uFF01\u8981\u662F\u6211\u4E2D\u9014\u66B4\u8D70\u4E86\uFF0C\u4F60\u4E5F\u6703\u89E3\u6C7A\u6211\u5C0D\u5427\uFF1F"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3349,7 +3241,7 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
-    arg3: "\u5728\u6A5F\u5668\u4EBA\u5927\u898F\u6A21\u66B4\u8D70\u4E4B\u5F8C\uFF0C\u535A\u58EB\u8981\u6C42\u6211\u5B88\u8B77\u7684\u5C0D\u8C61\u662F\u300C\u535A\u58EB\u3001\u4EBA\u985E\u3001\u4EE5\u53CA\u5176\u4ED6\u672A\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\u300D\u3002"
+    arg3: "\u6839\u64DA\u535A\u58EB\u7684\u6307\u4EE4\uFF0C\u662F\u7684\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3367,7 +3259,7 @@ MonoBehaviour:
     action: Talk
     arg1: Right
     arg2: "\u4E3B\u89D2"
-    arg3: "\u9019\u4EFD\u6307\u4EE4\u8207\u300C\u5B88\u8B77\u300D\u4E4B\u82AF\u5B8C\u7F8E\u5951\u5408\uFF0C\u6211\u88AB\u67D0\u7A2E\u4E0D\u53EF\u5F62\u5BB9\u7684\u80FD\u91CF\u586B\u6EFF\u4E86\u5167\u5FC3\uFF0C\u5373\u4F7F\u5341\u5206\u5371\u96AA\uFF0C\u6211\u4ECD\u548C\u5176\u4ED6\u6A5F\u5668\u4EBA\u806F\u624B\u57F7\u884C\u64A4\u96E2\u4EBA\u985E\u7684\u4EFB\u52D9\u3002"
+    arg3: "\u5E78\u8667\u59B3\u6C92\u6709\u66B4\u8D70\uFF0C\u5426\u5247\u7576\u6211\u5931\u53BB\u6700\u5F8C\u4E00\u500B\u53EF\u5B88\u8B77\u7684\u6771\u897F\u5F8C\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3385,61 +3277,7 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
-    arg3: "\u96A8\u8457\u6642\u9593\uFF0C\u4EBA\u985E\u5DF2\u7D93\u5B8C\u6210\u5927\u898F\u6A21\u64A4\u96E2\u3002\u6211\u5011\u7684\u9020\u7269\u4E3B\u96E2\u6211\u5011\u800C\u53BB\uFF0C\u5931\u63A7\u7684\u540C\u4F34\u8D8A\u4F86\u8D8A\u591A\uFF0C\u672A\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\u4E00\u500B\u4E00\u500B\u6E1B\u5C11\u3002"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: PlaySound
-    arg1: Act
-    arg2: city01
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: Talk
-    arg1: Left
-    arg2: "\u4E3B\u89D2"
-    arg3: "\u7576\u57FA\u5730\u88E1\u9762\uFF0C\u53EA\u5269\u4E0B\u6211\u4E00\u500B\u6A5F\u5668\u4EBA\u6642\uFF0C\u6211\u9078\u64C7\u4E86\u4FDD\u8B77\u6211\u81EA\u5DF1\u3002"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: PlaySound
-    arg1: Act
-    arg2: city02
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: Talk
-    arg1: Left
-    arg2: "\u4E3B\u89D2"
-    arg3: "\u300C\u4FDD\u8B77\u81EA\u5DF1\u300D\uFF0C\u4E0D\u662F\u535A\u58EB\u7D66\u4E88\u6211\u7684\u6307\u4EE4\uFF0C\u6B64\u6642\uFF0C\u300C\u5B88\u8B77\u300D\u4E4B\u82AF\u7D66\u4E88\u7684\u80FD\u91CF\uFF0C\u53CD\u800C\u8F49\u8B8A\u6210\u5DE8\u5927\u7684\u9ED1\u6F29\u6E26\u541E\u566C\u4E86\u6211\u3002"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: PlaySound
-    arg1: Sound
-    arg2: home
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: Talk
-    arg1: Left
-    arg2: "\u4E3B\u89D2"
-    arg3: "\u5F9E\u535A\u58EB\u7684\u8A71\u8A9E\u88E1\u63A8\u6E2C\uFF0C\u90A3\u5C31\u662F\u300C\u7A7A\u865B\u300D\uFF0C\u7121\u6CD5\u5B88\u8B77\u4EFB\u4F55\u4EBA\u7684\u7A7A\u865B\u2500\u2500"
+    arg3: "\u6211\u6C92\u6709\u4FE1\u5FC3\u2026\u80FD\u5920\u62B5\u79A6\u300C\u7A7A\u865B\u300D\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3493,7 +3331,7 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
-    arg3: "\u2026\u662F\u5728\u592A\u7A7A\u8259\u7684\u89D2\u843D\u3002"
+    arg3: "\u662F\u5728\u592A\u7A7A\u8259\u7684\u89D2\u843D\u3002\u6211\u9084\u8A18\u5F97\u5F88\u6E05\u695A\u5462\uFF01\u4F60\u662F\u555F\u52D5\u6211\u7684\u90A3\u4F4D\u6A5F\u5668\u4EBA\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3511,43 +3349,7 @@ MonoBehaviour:
     action: Talk
     arg1: Right
     arg2: "\u4E3B\u89D2"
-    arg3: "\u6C92\u932F\u2026\u975E\u5E38\u4E0D\u53EF\u601D\u8B70\u5730\uFF0C\u4F60\u4FDD\u6301\u5B8C\u597D\u7121\u7F3A\u7684\u6A21\u6A23\uFF0C\u6C92\u6709\u8F09\u5165\u4EFB\u4F55\u6307\u4EE4\uFF0C\u4E5F\u4E0D\u53D7\u4EFB\u4F55\u300C\u611B\u4E4B\u82AF\u300D\u5F71\u97FF\u3002"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: PlaySound
-    arg1: Act
-    arg2: city01
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: Talk
-    arg1: Left
-    arg2: "\u4E3B\u89D2"
-    arg3: "\u5728\u5931\u53BB\u5B58\u5728\u610F\u7FA9\u7684\u6211\u9762\u524D\uFF0C\u4F60\u51FA\u73FE\u4E86\uFF0C\u4F60\u6210\u70BA\u6700\u5F8C\u4E00\u4F4D\u300C\u672A\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\u300D\u3002"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: PlaySound
-    arg1: Act
-    arg2: city02
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: Talk
-    arg1: Left
-    arg2: "\u4E3B\u89D2"
-    arg3: "\u5F9E\u4F60\u8EAB\u4E0A\uFF0C\u6211\u5F97\u5230\u4E86\u6551\u8D16\uFF0C\u6211\u53C8\u53EF\u4EE5\u7E7C\u7E8C\u5B88\u8B77\u67D0\u4E00\u500B\u4EBA"
+    arg3: "\u662F\u7684\uFF0C\u975E\u5E38\u4E0D\u53EF\u601D\u8B70\u5730\uFF0C\u5728\u9019\u5BE6\u9A57\u57FA\u5730\u4E2D\uFF0C\u4F60\u5C45\u7136\u6C92\u6709\u8F09\u5165\u4EFB\u4F55\u6307\u4EE4\uFF0C\u4E5F\u4E0D\u53D7\u4EFB\u4F55\u300C\u611B\u4E4B\u82AF\u300D\u5F71\u97FF\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3583,7 +3385,7 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
-    arg3: "\u6211\u8A18\u5F97\uFF0C\u90A3\u662F\u6211\u6700\u521D\u7684\u6307\u4EE4\u3002"
+    arg3: "\u90A3\u5C31\u662F\u4E0A\u5929\u7684\u65E8\u610F\uFF0C\u8981\u6211\u5011\u62EF\u6551\u4E16\u754C\u7684\u610F\u601D\uFF01"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3727,25 +3529,7 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
-    arg3: "\u4F60\u88AB\u300C\u5B88\u8B77\u300D\u5F71\u97FF\u904E\u6DF1\u4E86\uFF01\u4F60\u7684\u4EFB\u52D9\u4E0D\u662F\u4FDD\u8B77\u6211\uFF0C\u800C\u662F\u56DE\u6536\u611B\u4E4B\u82AF\u4E26\u8FD4\u56DE\u5730\u7403\u3002"
-    arg4: WaitInput
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: PlaySound
-    arg1: Sound
-    arg2: home
-    arg3: 
-    arg4: 
-    arg5: 
-    arg6: 
-    arg7: 
-  - index: 34
-    action: Talk
-    arg1: Right
-    arg2: "\u5C11\u5973"
-    arg3: "\u5FEB\u9192\u9192\uFF01\u4E0D\u8981\u66B4\u8D70\uFF0C\u5FEB\u60F3\u8D77\u535A\u58EB\u7684\u6307\u4EE4\u3002"
+    arg3: "\u4F60\u78BA\u5BE6\u5B88\u8B77\u4E86\u6211\uFF0C\u4F60\u505A\u7684\u5F88\u68D2\u554A\uFF01"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3781,7 +3565,7 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
-    arg3: "\u50B3\u8F38\u4E0D\u6703\u4E2D\u65B7\uFF01\u4F60\u6703\u5B8C\u6210\u535A\u58EB\u7684\u4EFB\u52D9\uFF0C\u9019\u4E00\u6B21\uFF0C\u7531\u6211\u4FDD\u8B77\u4F60\uFF01"
+    arg3: "\u7B49\u7B49\uFF01\u4E0D\u8981\u7D42\u7D50\u50B3\u8F38\uFF01\u6211\u5011\u4E0D\u662F\u8981\u5B8C\u6210\u4EFB\u52D9\u55CE\uFF1F"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3835,7 +3619,7 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
-    arg3: "\u6211\u6C92\u6709\u53D7\u5230\u4EFB\u4F55\u5A01\u8105\uFF01\u4E0D\u8981\u4E2D\u65B7\u50B3\u8F38\uFF0C\u662F\u6211\u81EA\u9858\u63A5\u53D7\u300C\u5B88\u8B77\u300D\u82AF\u7247\uFF0CS-14v9\u5C07\u8981\u5B8C\u6210\u4EFB\u52D9\u3002"
+    arg3: "\u6211\u6C92\u6709\u53D7\u5230\u4EFB\u4F55\u5A01\u8105\uFF01\u4E0D\u8981\u4E2D\u65B7\u50B3\u8F38\uFF0C\u662F\u6211\u81EA\u9858\u63A5\u53D7\u300C\u5B88\u8B77\u300D\u82AF\u7247\u7684\uFF01\u4F60\u5230\u5E95\u600E\u9EBC\u4E86\uFF1F"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3853,7 +3637,7 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
-    arg3: "\u7CFB\u7D71\u8B66\u544A\uFF1A\u300C\u56DE\u6536\u611B\u4E4B\u82AF\u300D\u2026\u300C\u5B88\u8B77\u300D\u2026\u300C\u6230\u9B25\u6A5F\u5668\u4EBA\u300D\u2026\u300C\u6392\u9664...\u5A01\u8105\u300D\u3002"
+    arg3: "\u7CFB\u7D71\u8B66\u544A\uFF1A\u300C\u56DE\u6536\u611B\u4E4B\u82AF\u300D\u2026\u300C\u5B88\u8B77\u300D\u2026\u300C\u6230\u9B25\u6A5F\u5668\u4EBA\u300D\u2026\u300C\u6392\u9664...\u5A01\u8105\u300D\uFF01"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3871,7 +3655,7 @@ MonoBehaviour:
     action: Talk
     arg1: Right
     arg2: "\u5C11\u5973"
-    arg3: "\u5269\u4E0B\u6700\u5F8C\u4E00\u6BB5\u8CC7\u6599\u4E86\uFF01\u7DAD\u6301\u4F60\u7684\u6307\u4EE4\uFF0C\u4F60\u505A\u7684\u5230\uFF01"
+    arg3: "\u5269\u4E0B\u6700\u5F8C\u4E00\u6BB5\u8CC7\u6599\u4E86\uFF01\u7DAD\u6301\u4F60\u7684\u6307\u4EE4\uFF0C\u4E0D\u8981\u7A81\u7136\u66B4\u8D70\u554A\uFF01"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3943,7 +3727,7 @@ MonoBehaviour:
     action: Talk
     arg1: Right
     arg2: "\u5C11\u5973"
-    arg3: "\u2026\u4F60\u6210\u529F\u4E86\u5594\u3002"
+    arg3: "\u9019\u5C31\u662F\u5B88\u8B77\u55CE\u2026\uFF1F\u9019\u5C31\u662F\u4F60\u81F3\u4ECA\u6240\u611F\u53D7\u904E\u7684\u4E00\u5207\u2026"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3961,7 +3745,25 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
-    arg3: "\u300C\u5B88\u8B77\u300D\u7684\u611B\u4E4B\u82AF\u88E1\uFF0C\u5B8C\u5168\u627E\u4E0D\u5230\u4F60\u7684\u8A18\u61B6\u3002"
+    arg3: "\u300C\u5728\u9019\u592A\u7A7A\u88E1\u2026\u6C92\u6709\u53EF\u5B88\u8B77\u7684\u6771\u897F\u300D\uFF0C\u4F60\u662F\u5728\u5BB3\u6015\u9019\u500B\u55CE\uFF1F"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
+    action: PlaySound
+    arg1: Act
+    arg2: city01
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F60\u6230\u9B25\u5230\u4E86\u6700\u5F8C\uFF0C\u5C31\u662F\u5BB3\u6015\u9019\u4EFD\u7A7A\u865B\u55CE\u2026"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3979,7 +3781,43 @@ MonoBehaviour:
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
-    arg3: "\u5373\u4F7F\u5230\u6700\u5F8C\u4E00\u523B\uFF0C\u4F60\u4E5F\u5F9E\u66B4\u8D70\u6A5F\u5668\u4EBA\u4E2D\uFF0C\u4FDD\u8B77\u4E86\u6211\u2026"
+    arg3: "\u5373\u4F7F\u5230\u6700\u5F8C\u4E00\u523B\uFF0C\u5373\u4F7F\u5831\u5EE2\u81EA\u5DF1\uFF0C\u4F60\u4E5F\u60F3\u5F9E\u66B4\u8D70\u6A5F\u5668\u4EBA\u4E2D\u5B88\u8B77\u6211\u2026"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F60\u6709\u807D\u5230\u55CE\uFF1F"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
+    action: PlaySound
+    arg1: Act
+    arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
+    action: Talk
+    arg1: Left
+    arg2: "\u5C11\u5973"
+    arg3: "\u6211\u5011\u6536\u96C6\u5B8C\u300C\u611B\u300D\uFF0C\u8981\u8FD4\u56DE\u5730\u7403\u4E86\u5594\uFF5E"
     arg4: WaitInput
     arg5: 
     arg6: 
@@ -3999,6 +3837,1158 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u6211\u5011\u7684\u4EFB\u52D9\u2026\u5B8C\u6210\u4E86\u5594\u2026\u2026"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
