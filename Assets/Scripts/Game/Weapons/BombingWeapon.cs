@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class BombingWeapon : Weapon
 {
-    private float soundDealy = 1f;
-
     public override void Start()
     {
         base.Start();
@@ -24,16 +22,15 @@ public class BombingWeapon : Weapon
             _timer = 0f;
             for (int times = 0; times < weaponData.OneShootAmmoCount.Value; times++)
             {
-                StartCoroutine(_throwingBomb());
+                _throwingBomb();
             }
 
         }
         return true;
     }
 
-    private IEnumerator _throwingBomb()
+    private void _throwingBomb()
     {
-        yield return new WaitForSeconds(soundDealy);
         Debug.Log("轰炸");
         Vector3 randomPoint = getRandomPointAroundPlayer();
         // 播放轰炸特效
