@@ -31,7 +31,7 @@ public class UpgradeDescriptionUI : MonoBehaviour
     }
 
     public void UpdateCost() {
-        cost.text = "花費："　+ chosenSO.cost.ToString();
+        cost.text = "花費："　+ ((int)chosenSO.CalcCost()).ToString();
 
         if (chosenSO.currentLevel == chosenSO.maxLevel) {
             cost.text = "Level Max";

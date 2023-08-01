@@ -11,6 +11,7 @@ public class UpgradeElementSO : ScriptableObject
     public int maxLevel;
     public Sprite Icon;
     public float cost;
+    public float ascendingCost;
     [Multiline]
     public string DescriptionOnUI = "";
 
@@ -40,7 +41,7 @@ public class UpgradeElementSO : ScriptableObject
         if (currentLevel == maxLevel) {
             return false;
         } else {
-            return StaticPrefs.IsAffordable(cost);
+            return StaticPrefs.IsAffordable(CalcCost());
         }
     }
 
@@ -51,10 +52,14 @@ public class UpgradeElementSO : ScriptableObject
         }
 
         if (IsUpgradeAvailable()) {
-            StaticPrefs.Cost(cost);
+            StaticPrefs.Cost(CalcCost());
             currentLevel++;
             Save();
             Debug.Log(name + " has been upgrade to level " + currentLevel);
         }
+    }
+
+    public int CalcCost() {
+        return (int)(cost + currentLevel * ascendingCost);
     }
 }

@@ -17,5 +17,6 @@ MonoBehaviour:
   maxLevel: 1
   Icon: {fileID: 21300000, guid: 8e3bfcb2b174cee4187f6d0cdcfa966d, type: 3}
   cost: 15000
+  ascendingCost: 5000
   DescriptionOnUI: "\u6BCF\u4E0A\u5347\u4E00\u7D1A\uFF0C\n\u53EF\u5C07\u5FA9\u6D3B\u6B21\u6578\u63D0\u9AD81\u6B21"
   EffectPerLevel: 1
