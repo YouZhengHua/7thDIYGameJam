@@ -32,12 +32,22 @@ public class UpgradeDescriptionUI : MonoBehaviour
 
     public void UpdateCost() {
         cost.text = "花費："　+ chosenSO.cost.ToString();
+
+        if (chosenSO.currentLevel == chosenSO.maxLevel) {
+            cost.text = "Level Max";
+        }
     }
     public void UpdateContext() {
         context.text = chosenSO.DescriptionOnUI;
     }
 
     public void UpdateCheckBoxVisual() {
+        if (chosenSO.currentLevel == chosenSO.maxLevel) {
+            confirmCheckBox.gameObject.SetActive(false);
+        } else {
+            confirmCheckBox.gameObject.SetActive(true);
+        }
+
         if (chosenSO.IsUpgradeAvailable()) {
             confirmCheckBox.ActiveCheckBox();
         } else {
