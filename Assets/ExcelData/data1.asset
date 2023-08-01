@@ -3066,7 +3066,16 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3075,7 +3084,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u7CFB\u7D71"
@@ -3084,7 +3093,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3093,7 +3102,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Right
     arg2: "\u4E3B\u89D2"
@@ -3102,7 +3111,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3111,7 +3120,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
@@ -3120,7 +3129,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3129,7 +3138,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
@@ -3138,7 +3147,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3147,16 +3156,16 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Right
     arg2: "\u4E3B\u89D2"
-    arg3: "\u662F\u7684\uFF0C\u5728\u4F60\u555F\u52D5\u4E4B\u524D\uFF0C\u6211\u5C31\u662F\u535A\u58EB\u7684\u89C0\u5BDF\u5C0D\u8C61\u3002"
+    arg3: "\u662F\u7684\uFF0C\u5728\u4F60\u555F\u52D5\u4E4B\u524D\uFF0C\u6211\u5C31\u662F\u535A\u58EB\u7684\u89C0\u5BDF\u300C\u5B88\u8B77\u300D\u662F\u5426\u751F\u6548\u7684\u6A5F\u5668\u4EBA\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3165,16 +3174,16 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
-    arg3: "\u5728\u6A5F\u5668\u4EBA\u66B4\u52D5\u5F8C\uFF0C\u535A\u58EB\u5C0D\u6211\u767C\u51FA\u6307\u4EE4\uFF0C\u300C\u5B88\u8B77\u535A\u58EB\u3001\u4EBA\u985E\u3001\u4EE5\u53CA\u5176\u4ED6\u672A\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\u300D\u3002"
+    arg3: "\u800C\u5728\u6A5F\u5668\u4EBA\u66B4\u52D5\u5F8C\uFF0C\u535A\u58EB\u5247\u8981\u6C42\u6211\u300C\u5B88\u8B77\u535A\u58EB\u3001\u4EBA\u985E\u3001\u4EE5\u53CA\u5176\u4ED6\u672A\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\u300D\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3183,16 +3192,16 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
-    arg3: "\u5728\u5B88\u8B77\u535A\u58EB\u4ED6\u5011\u64A4\u96E2\u4E4B\u5F8C\uFF0C\u6211\u7E7C\u7E8C\u5728\u57FA\u5730\u88E1\u5B88\u8B77\u8457\u672A\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\u2026\u2026\u76F4\u5230\u4ED6\u5011\u66B4\u8D70\u70BA\u6B62"
+    arg3: "\u5728\u5354\u52A9\u535A\u58EB\u4ED6\u5011\u64A4\u96E2\u4E4B\u5F8C\uFF0C\u6211\u7E7C\u7E8C\u5728\u57FA\u5730\u88E1\u5B88\u8B77\u8457\u672A\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\u2026\u2026\u76F4\u5230\u4ED6\u5011\u66B4\u8D70\u70BA\u6B62"
     arg4: WaitInput
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3201,7 +3210,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u7CFB\u7D71"
@@ -3210,7 +3219,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3219,7 +3228,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
@@ -3228,7 +3237,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3237,7 +3246,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
@@ -3246,7 +3255,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3255,7 +3264,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Right
     arg2: "\u4E3B\u89D2"
@@ -3264,7 +3273,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3273,7 +3282,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
@@ -3282,7 +3291,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3291,7 +3300,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Right
     arg2: "\u7CFB\u7D71"
@@ -3300,7 +3309,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3309,16 +3318,16 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
-    arg2: "\u4E3B\u89D2"
-    arg3: "\u521D\u6B21\u548C\u4F60\u76F8\u9047...\u662F\u5728\u6EAB\u5BA4\u3001\u99D5\u99DB\u8259\u3001\u9084\u662F\u592A\u7A7A\u8259\u7684\u67D0\u4E00\u500B\u89D2\u843D?"
+    arg2: "\u5C11\u5973"
+    arg3: "\u4F60\u6709\u66FE\u7D93\u611F\u53D7\u904E\u300C\u7A7A\u865B\u300D\uFF01\u4F46\u4F60\u770B\u8D77\u4F86\u6C92\u6709\u66B4\u8D70\u554A\uFF1F"
     arg4: WaitInput
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3327,16 +3336,16 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
-    arg2: "\u5C11\u5973"
-    arg3: "\u662F\u5728\u592A\u7A7A\u8259\u7684\u89D2\u843D\u3002\u6211\u9084\u8A18\u5F97\u5F88\u6E05\u695A\u5462\uFF01\u4F60\u662F\u555F\u52D5\u6211\u7684\u90A3\u4F4D\u6A5F\u5668\u4EBA\u3002"
+    arg2: "\u4E3B\u89D2"
+    arg3: "\u90A3\u662F\u56E0\u70BA\u4F60\uFF0C\u6211\u624D\u80FD\u4FDD\u7559\u4F4F\u6A5F\u5668\u4EBA\u7684\u5C0A\u56B4\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3345,16 +3354,16 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Right
     arg2: "\u4E3B\u89D2"
-    arg3: "\u662F\u7684\uFF0C\u975E\u5E38\u4E0D\u53EF\u601D\u8B70\u5730\uFF0C\u5728\u9019\u5BE6\u9A57\u57FA\u5730\u4E2D\uFF0C\u4F60\u5C45\u7136\u6C92\u6709\u8F09\u5165\u4EFB\u4F55\u6307\u4EE4\uFF0C\u4E5F\u4E0D\u53D7\u4EFB\u4F55\u300C\u611B\u4E4B\u82AF\u300D\u5F71\u97FF\u3002"
+    arg3: "\u4F60\u662F\u6700\u5F8C\u4E00\u4F4D\uFF0C\u672A\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3363,16 +3372,16 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
-    arg3: "\u5F77\u5F7F\u662F\u5947\u8E5F\u4F3C\u7684\uFF0C\u535A\u58EB\u5728\u540C\u4E00\u6642\u9593\uFF0C\u5411\u6211\u50B3\u9054\u4E86\u300C\u6536\u96C6\u611B\u4E4B\u82AF\uFF0C\u8FD4\u56DE\u5730\u7403\u300D\u7684\u6307\u4EE4\u3002"
+    arg3: "\u5F77\u5F7F\u662F\u5947\u8E5F\u4F3C\u7684\uFF0C\u767C\u73FE\u4F60\u7684\u540C\u6642\uFF0C\u535A\u58EB\u5728\u540C\u4E00\u6642\u9593\uFF0C\u5411\u6211\u50B3\u9054\u4E86\u300C\u6536\u96C6\u611B\u4E4B\u82AF\uFF0C\u8FD4\u56DE\u5730\u7403\u300D\u7684\u6307\u4EE4\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3381,7 +3390,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
@@ -3390,7 +3399,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3399,7 +3408,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Right
     arg2: "\u4E3B\u89D2"
@@ -3408,7 +3417,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3417,7 +3426,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
@@ -3426,7 +3435,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3435,7 +3444,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Right
     arg2: "\u4E3B\u89D2"
@@ -3444,7 +3453,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3453,7 +3462,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u7CFB\u7D71"
@@ -3462,7 +3471,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3471,7 +3480,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
@@ -3480,7 +3489,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3489,7 +3498,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Right
     arg2: "\u4E3B\u89D2"
@@ -3498,7 +3507,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3507,7 +3516,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
@@ -3516,7 +3525,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3525,7 +3534,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
@@ -3534,7 +3543,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3543,7 +3552,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
@@ -3552,7 +3561,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3561,7 +3570,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
@@ -3570,7 +3579,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3579,7 +3588,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Right
     arg2: "\u7CFB\u7D71"
@@ -3588,7 +3597,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3597,7 +3606,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
@@ -3606,7 +3615,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3615,7 +3624,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
@@ -3624,7 +3633,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3633,7 +3642,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
@@ -3642,7 +3651,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3651,7 +3660,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Right
     arg2: "\u5C11\u5973"
@@ -3660,7 +3669,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3669,7 +3678,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u7CFB\u7D71"
@@ -3678,7 +3687,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3687,7 +3696,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 35
     action: Talk
     arg1: Left
     arg2: "\u4E3B\u89D2"
@@ -3696,7 +3705,16 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 0
+    action: 
+    arg1: 
+    arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 36
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3705,7 +3723,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: Talk
     arg1: Left
     arg2: "\u7CFB\u7D71"
@@ -3714,7 +3732,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3723,7 +3741,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: Talk
     arg1: Right
     arg2: "\u5C11\u5973"
@@ -3732,7 +3750,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3741,7 +3759,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
@@ -3750,7 +3768,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3759,7 +3777,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
@@ -3768,7 +3786,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3777,7 +3795,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
@@ -3786,7 +3804,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3795,7 +3813,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
@@ -3804,7 +3822,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3813,16 +3831,16 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"
-    arg3: "\u6211\u5011\u6536\u96C6\u5B8C\u300C\u611B\u300D\uFF0C\u8981\u8FD4\u56DE\u5730\u7403\u4E86\u5594\uFF5E"
+    arg3: "\u6211\u5011\u6536\u96C6\u5B8C\u300C\u611B\u300D\uFF0C\u8981\u8FD4\u56DE\u5730\u7403\u4E86\u5594\u3002"
     arg4: WaitInput
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3831,7 +3849,7 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
-  - index: 34
+  - index: 36
     action: Talk
     arg1: Left
     arg2: "\u5C11\u5973"

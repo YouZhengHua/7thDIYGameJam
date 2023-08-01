@@ -12,11 +12,27 @@ public class EndGameManager : MonoBehaviour
 
     private void Start() {
         FadeIn();
-        storyManager.StartStory(34, EndingAnimation);
+        storyManager.StartStory(34, () => {
+            StartCoroutine(secPhase());
+        });
+    }
+
+    private IEnumerator secPhase() {
+        FadeOut();
+        yield return new WaitForSeconds(2f);
+        FadeIn();
+        storyManager.StartStory(35, () => {
+            StartCoroutine(thirdPhase());
+        });
+    }
+
+    private IEnumerator thirdPhase() {
+        FadeOut();
+        yield return new WaitForSeconds(1f);
+        storyManager.StartStory(36, EndingAnimation);
     }
 
     private void EndingAnimation() {
-        fadeEffect.SlowFadeOut();
         StartCoroutine(Credit(5));
     }
 
@@ -24,6 +40,7 @@ public class EndGameManager : MonoBehaviour
         yield return new WaitForSeconds(second);
         fadeEffect.gameObject.SetActive(false);
         credit.gameObject.SetActive(true);
+        StopAllCoroutines();
     }
 
     private void FadeIn() {
