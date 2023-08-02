@@ -10,32 +10,30 @@ public class UpgradeElementContainerUI : MonoBehaviour
     [SerializeField] private UpgradeDescriptionUI descriptionUI;
     [SerializeField] private AudioClip upgradeSE;
 
-    private List<Button> buttons;
+    private List<Button> elementButtons;
     private UpgradeElementUI chosenElement;
 
-    private void Awake()
-    {
-        buttons = new List<Button>();
+    private void Awake() {
+        elementButtons = new List<Button>();
+        InitElementButton();
+    }
 
-        foreach (UpgradeElementUI element in elements)
-        {
-            buttons.Add(element.GetButton());
+    private void InitElementButton() {
+        foreach (UpgradeElementUI element in elements) {
+            elementButtons.Add(element.GetButton());
+
+            element.GetButton().onClick.AddListener(() => chosenElement = element);
         }
     }
 
-    private void Start()
-    {
-        foreach (UpgradeElementUI element in elements)
-        {
-            element.GetButton().onClick.AddListener(() => chosenElement = element);
-        }
+    private void Start() {
+        InitButtonsOnClick();
+    }
 
-
-        foreach (Button button in buttons)
-        {
-            button.onClick.AddListener(() =>
-            {
-                DisableAllButtonsOutline(buttons);
+    private void InitButtonsOnClick() {
+        foreach (Button button in elementButtons) {
+            button.onClick.AddListener(() => {
+                DisableAllButtonsOutline(elementButtons);
                 EnableOutline(button);
                 descriptionUI.UpdateDescription();
             });
