@@ -201,7 +201,7 @@ namespace Scripts.Game
         private void UpdateGameTime()
         {
             AttributeHandle.Instance.GameTime += Time.deltaTime;
-            _gameUI.UpdateGameTime(AttributeHandle.Instance.TotalGameTime - AttributeHandle.Instance.GameTime);
+            _gameUI.UpdateGameTime(AttributeHandle.Instance.TotalGameTime - AttributeHandle.Instance.GameTime, _enemyContainer.GetComponentsInChildren<BaseEnemyController>().Length);
             if (AttributeHandle.Instance.IsTimeWin && IsKillAllEnemy)
             {
                 GameStateMachine.Instance.SetNextState(GameState.GameEnd);
@@ -211,6 +211,6 @@ namespace Scripts.Game
         /// <summary>
         /// 判斷是否殺光所有怪物
         /// </summary>
-        private bool IsKillAllEnemy { get => _enemyContainer.GetComponent<Transform>().childCount == 0; }
+        private bool IsKillAllEnemy { get => _enemyContainer.GetComponentsInChildren<BaseEnemyController>().Length == 0; }
     }
 }

@@ -82,12 +82,15 @@ namespace Scripts.Game
         /// 更新 UI 的遊戲時間
         /// </summary>
         /// <param name="gameTime"></param>
-        public void UpdateGameTime(float gameTime)
+        public void UpdateGameTime(float gameTime, int enemyCount = 0)
         {
             int showTime = Mathf.Max(Mathf.FloorToInt(gameTime), 0);
             int min = Mathf.FloorToInt(showTime / 60);
             int sec = showTime % 60;
-            _gameTime.text = string.Format("{0}:{1:00}", min, sec);
+            if(min > 0 || sec > 0)
+                _gameTime.text = string.Format("{0}:{1:00}", min, sec);
+            else
+                _gameTime.text = string.Format("剩餘怪物數量: {0}", enemyCount);
         }
 
         /// <summary>

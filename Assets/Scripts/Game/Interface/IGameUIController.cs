@@ -4,7 +4,7 @@ namespace Scripts.Game
 {
     public interface IGameUIController : IBaseUIController
     {
-        public void UpdateGameTime(float gameTime);
+        public void UpdateGameTime(float gameTime, int enemyCount = 0);
 
         public void UpdatePlayerHealth();
 
