@@ -21,10 +21,6 @@ public class UpgradeElementSO : ScriptableObject
         return EffectPerLevel * currentLevel;
     }
 
-    private void OnEnable() {
-        //Load();
-    }
-
     public void Load() {
         if (DataSystem.Instance != null) {
             if (DataSystem.Instance.gameValueData.elementLevelDic.ContainsKey(name)) {
