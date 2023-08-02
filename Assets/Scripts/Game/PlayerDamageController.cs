@@ -89,6 +89,8 @@ namespace Scripts.Game
         /// <param name="damage"></param>
         public void GetDamage(float damage)
         {
+            if (_invincibleTime > 0f)
+                return;
             AttributeHandle.Instance.PlayerGetDamage(damage);
             _playerAni.SetTrigger(_playerGetHitTriggerName);
             _globalVolumeAni.SetTrigger(_playerGetHitTriggerName);

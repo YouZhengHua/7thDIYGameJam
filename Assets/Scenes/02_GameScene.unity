@@ -1460,7 +1460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5351924043396952421, guid: 9440c88b58cd64b42bc36271f54e0391, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5351924043396952421, guid: 9440c88b58cd64b42bc36271f54e0391, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3223,8 +3223,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: ef07ea9e557019946ae066a881d46a8b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 82bce54663933124bbe28bd327646588, type: 2}
+  m_sharedMaterial: {fileID: 4372079647892169693, guid: 82bce54663933124bbe28bd327646588, type: 2}
   m_fontSharedMaterials:
   - {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontMaterial: {fileID: 0}
