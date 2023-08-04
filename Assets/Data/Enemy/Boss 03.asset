@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c50be2da776364a804db01ea359915, type: 3}
   m_Name: Boss 03
   m_EditorClassIdentifier: 
-  HealthPoint: 9000
+  HealthPoint: 6500
   MoveSpeed:
     _value: 3
     _multiple: 1

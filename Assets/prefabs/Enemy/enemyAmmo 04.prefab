@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c594bf71063e40d46adf3ebfc32365cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxRange: 15
+  _maxRange: 150
   _targetLayer:
     serializedVersion: 2
     m_Bits: 8

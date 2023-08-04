@@ -114,7 +114,7 @@ MonoBehaviour:
       m_Calls: []
   _bullet: {fileID: 3626254014405645773, guid: d424f0036b814cc4b99831b4162d4552, type: 3}
   _flySpeed: 5
-  _cooldownTime: 2
+  _cooldownTime: 1.5
 --- !u!95 &8312892398627385312
 Animator:
   serializedVersion: 4
