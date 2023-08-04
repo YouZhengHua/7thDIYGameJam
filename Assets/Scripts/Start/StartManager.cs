@@ -105,7 +105,7 @@ namespace Scripts.Start
 
         public void ShowGameOptions()
         {
-            LoadingScreen.instance.LoadScene("01_MenuScene", _stageManager.LoadingImage, _stageManager.LoadingTip);
+            LoadingScreen.instance.LoadScene("01_MenuScene", _stageManager.LoadingImage, _stageManager.LoadingTip, _stageManager.TipsLostion);
         }
 
         public void ShowSetting()

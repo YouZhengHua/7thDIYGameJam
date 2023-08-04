@@ -94,7 +94,7 @@ namespace Scripts.Menu
         /// <param name="sceneName">場景名稱</param>
         public void LoadScene(string sceneName)
         {
-            LoadingScreen.instance.LoadScene(sceneName, stageManager.LoadingImage, stageManager.LoadingTip);
+            LoadingScreen.instance.LoadScene(sceneName, stageManager.LoadingImage, stageManager.LoadingTip, stageManager.TipsLostion);
         }
 
         public void TalkToGirl() {

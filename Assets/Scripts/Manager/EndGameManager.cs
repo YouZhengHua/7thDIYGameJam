@@ -52,6 +52,6 @@ public class EndGameManager : MonoBehaviour
     }
 
     public void LoadScene(string sceneName) {
-        LoadingScreen.instance.LoadScene(sceneName, stageManager.LoadingImage, stageManager.LoadingTip);
+        LoadingScreen.instance.LoadScene(sceneName, stageManager.LoadingImage, stageManager.LoadingTip, stageManager.TipsLostion);
     }
 }

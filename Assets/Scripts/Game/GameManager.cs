@@ -177,7 +177,7 @@ namespace Scripts.Game
             {
                 GameStateMachine.Instance.SetNextState(GameState.BackToMenued);
                 StaticPrefs.Score += CalTool.Round(AttributeHandle.Instance.TotalMoney);
-                LoadingScreen.instance.LoadScene("01_MenuScene", _stageManager.LoadingImage, _stageManager.LoadingTip);
+                LoadingScreen.instance.LoadScene("01_MenuScene", _stageManager.LoadingImage, _stageManager.LoadingTip, _stageManager.TipsLostion);
             }
             else if (GameStateMachine.Instance.CurrectState == GameState.GameEnd)
             {
@@ -194,7 +194,7 @@ namespace Scripts.Game
             {
                 GameStateMachine.Instance.SetNextState(GameState.Restarted);
                 StaticPrefs.Score += CalTool.Round(AttributeHandle.Instance.TotalMoney);
-                LoadingScreen.instance.LoadScene(SceneManager.GetActiveScene().name, _stageManager.LoadingImage, _stageManager.LoadingTip);
+                LoadingScreen.instance.LoadScene(SceneManager.GetActiveScene().name, _stageManager.LoadingImage, _stageManager.LoadingTip, _stageManager.TipsLostion);
             }
         }
 

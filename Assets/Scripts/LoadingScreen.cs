@@ -72,11 +72,12 @@ namespace Scripts
             _canvas.enabled = false;
         }
 
-        public void LoadScene(string sceneName, Sprite loadingImage, string tipText, bool needAutoContinue = false)
+        public void LoadScene(string sceneName, Sprite loadingImage, string tipText, Vector3 postion, bool needAutoContinue = false)
         {
             _autoContinue = needAutoContinue;
             _loadingImage.sprite = loadingImage;
             _tipText.text = tipText.Replace("\\n", "\n");
+            _tipBackground.transform.localPosition = postion;
             LoadSceneAsync(sceneName);
         }
 

@@ -23,6 +23,8 @@ public class StageManager : ScriptableObject
     private Sprite[] _loadImages;
     [SerializeField]
     private string[] _loadTips;
+    [SerializeField]
+    private Vector3[] _tipsLostion;
     private bool isLevelCleared;
 
     public stage GetCurrentStage() {
@@ -65,6 +67,15 @@ public class StageManager : ScriptableObject
         {
             int index = Mathf.Min(Mathf.Max((int)currentStage-1, 0), _loadTips.Length-1);
             return _loadTips[index];
+        }
+    }
+
+    public Vector3 TipsLostion
+    {
+        get
+        {
+            int index = Mathf.Min(Mathf.Max((int)currentStage - 1, 0), _tipsLostion.Length - 1);
+            return _tipsLostion[index];
         }
     }
 }
