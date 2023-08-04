@@ -27,9 +27,9 @@ MonoBehaviour:
     _isNegative: 1
     _attributeDepiction: "\u50B7\u5BB3\u89F8\u767C\u9593\u9694\u7E2E\u77ED 10%"
   - _attributeType: 1
-    _value: 0.12
+    _value: 0.4
     _isNegative: 0
-    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 12%"
+    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 40%"
   - _attributeType: 13
     _value: 0.5
     _isNegative: 0
@@ -39,9 +39,9 @@ MonoBehaviour:
     _isNegative: 1
     _attributeDepiction: "\u50B7\u5BB3\u89F8\u767C\u9593\u9694\u7E2E\u77ED 10%"
   - _attributeType: 1
-    _value: 0.18
+    _value: 0.6
     _isNegative: 0
-    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 18%"
+    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 60%"
   - _attributeType: 13
     _value: 0.5
     _isNegative: 0

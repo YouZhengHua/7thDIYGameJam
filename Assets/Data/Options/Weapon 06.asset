@@ -43,14 +43,14 @@ MonoBehaviour:
     _isNegative: 0
     _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 15%"
   - _attributeType: 14
-    _value: 0.12
+    _value: 0.3
     _isNegative: 0
-    _attributeDepiction: "\u65CB\u8F49\u901F\u5EA6\u589E\u52A0 12%"
+    _attributeDepiction: "\u65CB\u8F49\u901F\u5EA6\u589E\u52A0 30%"
   - _attributeType: 21
-    _value: 1
+    _value: 2
     _isNegative: 0
-    _attributeDepiction: "\u6301\u7E8C\u6642\u9593\u589E\u52A0 1 \u79D2"
+    _attributeDepiction: "\u6301\u7E8C\u6642\u9593\u589E\u52A0 2 \u79D2"
   - _attributeType: 15
-    _value: 0.25
+    _value: 0.3
     _isNegative: 0
-    _attributeDepiction: "\u76FE\u724C\u9AD4\u7A4D\u589E\u52A0 25%"
+    _attributeDepiction: "\u76FE\u724C\u9AD4\u7A4D\u589E\u52A0 30%"

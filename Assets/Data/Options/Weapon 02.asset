@@ -47,9 +47,9 @@ MonoBehaviour:
     _isNegative: 0
     _attributeDepiction: "\u53EF\u4EE5\u984D\u5916\u7A7F\u900F 1 \u500B\u6575\u4EBA"
   - _attributeType: 1
-    _value: 0.12
+    _value: 0.2
     _isNegative: 0
-    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 12%"
+    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 20%"
   - _attributeType: 16
     _value: 0
     _isNegative: 0
