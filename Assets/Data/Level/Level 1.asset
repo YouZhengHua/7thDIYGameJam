@@ -111,7 +111,7 @@ MonoBehaviour:
       DistanceRange: 0
       Intervals: 3
       Quantity: 30
-      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      Prefab: {fileID: 8312892398627385315, guid: 93557de6b83a0bb418d794714e68b3f8, type: 3}
       IsGroup: 0
       IsRound: 1
       WarmingAudio: {fileID: 0}
@@ -168,7 +168,7 @@ MonoBehaviour:
       DistanceRange: 0
       Intervals: 3
       Quantity: 50
-      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      Prefab: {fileID: 8312892398627385315, guid: 93557de6b83a0bb418d794714e68b3f8, type: 3}
       IsGroup: 0
       IsRound: 1
       WarmingAudio: {fileID: 0}
@@ -234,7 +234,7 @@ MonoBehaviour:
       DistanceRange: 0
       Intervals: 3
       Quantity: 70
-      Prefab: {fileID: 8312892398627385315, guid: cd42b46b44ab55d49b74082ffe8fdce8, type: 3}
+      Prefab: {fileID: 8312892398627385315, guid: 93557de6b83a0bb418d794714e68b3f8, type: 3}
       IsGroup: 0
       IsRound: 1
       WarmingAudio: {fileID: 0}
