@@ -85,7 +85,6 @@ namespace Scripts.Game
         {
             _killEnemyCountText.text = AttributeHandle.Instance.TotalKillCount.ToString();
             _scoreText.text = AttributeHandle.Instance.TotalMoney.ToString();
-            StaticPrefs.Score += CalTool.Round(AttributeHandle.Instance.TotalMoney);
             float startX = (AttributeHandle.Instance.ActiveWeapons.Count - 1) * -50f;
             for (int i = 0; i < AttributeHandle.Instance.ActiveWeapons.Count; i++)
             {
