@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0903891f6c8d14a90c988ae551196a, type: 3}
   m_Name: Level 4
   m_EditorClassIdentifier: Assembly-CSharp:Scripts.Game.Data:Level
-  GameTime: 366
+  GameTime: 330
   LevelRounds:
   - LevelStartTime: 0
     LevelEndTime: 3
@@ -590,8 +590,8 @@ MonoBehaviour:
       IsRound: 0
       WarmingAudio: {fileID: 0}
       ExtendVolume: 0
-  - LevelStartTime: 330
-    LevelEndTime: 331.5
+  - LevelStartTime: 188
+    LevelEndTime: 191
     EnemyDatas:
     - Distance: 11
       DistanceRange: 0
