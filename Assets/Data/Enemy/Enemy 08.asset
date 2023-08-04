@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c50be2da776364a804db01ea359915, type: 3}
   m_Name: Enemy 08
   m_EditorClassIdentifier: 
-  HealthPoint: 250
+  HealthPoint: 180
   MoveSpeed:
     _value: 4
     _multiple: 1
