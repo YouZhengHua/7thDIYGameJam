@@ -50,7 +50,7 @@ public class ElectromagneticFieldWeapon : Weapon
         if (_ammoObj == null) return false;
         _timer += Time.deltaTime;
 
-        if (_timer >= weaponData.SkillTriggerInterval.Value)
+        if (_timer >= weaponData.CoolDownTime.Value)
         {
             _timer = 0f;
             _triggerElectricShock();
@@ -59,7 +59,7 @@ public class ElectromagneticFieldWeapon : Weapon
         //自動旋轉 _ammoObj
         _ammoObj.transform.Rotate(Vector3.forward * Time.deltaTime * rotateSpeed);
 
-        if(_nextSoundTime >= _soundDealy || _nextSoundTime == 0f)
+        if (_nextSoundTime >= _soundDealy || _nextSoundTime == 0f)
         {
             PlaySound();
             _nextSoundTime = 0f;

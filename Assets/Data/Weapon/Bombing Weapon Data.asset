@@ -52,7 +52,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   OneShootAmmoCount:
-    _value: 1
+    _value: 2
     _multiple: 1
   AmmoFlySpeed:
     _value: 100

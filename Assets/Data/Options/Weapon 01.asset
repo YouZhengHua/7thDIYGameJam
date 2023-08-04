@@ -22,35 +22,35 @@ MonoBehaviour:
   _isActive: 1
   _weaponIndex: 0
   _weaponUpdateAttributes:
-  - _attributeType: 1
-    _value: 0.12
-    _isNegative: 0
-    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 12%"
   - _attributeType: 13
-    _value: 0.5
+    _value: 1
     _isNegative: 0
-    _attributeDepiction: "\u7206\u70B8\u7BC4\u570D\u589E\u52A0 0.5"
+    _attributeDepiction: "\u7206\u70B8\u7BC4\u570D\u589E\u52A0 1"
+  - _attributeType: 1
+    _value: 0.2
+    _isNegative: 0
+    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 20%"
   - _attributeType: 2
-    _value: 0.12
+    _value: 0.2
     _isNegative: 1
-    _attributeDepiction: "\u51B7\u537B\u6642\u9593\u6E1B\u5C11 12 %"
+    _attributeDepiction: "\u51B7\u537B\u6642\u9593\u6E1B\u5C11 20 %"
   - _attributeType: 1
-    _value: 0.12
+    _value: 0.2
     _isNegative: 0
-    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 12%"
+    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 20%"
   - _attributeType: 13
-    _value: 0.5
+    _value: 1
     _isNegative: 0
-    _attributeDepiction: "\u7206\u70B8\u7BC4\u570D\u589E\u52A0 0.5"
+    _attributeDepiction: "\u7206\u70B8\u7BC4\u570D\u589E\u52A0 1"
   - _attributeType: 1
-    _value: 0.12
+    _value: 0.2
     _isNegative: 0
-    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 12%"
+    _attributeDepiction: "\u50B7\u5BB3\u589E\u52A0 20%"
   - _attributeType: 13
-    _value: 0.5
+    _value: 1
     _isNegative: 0
-    _attributeDepiction: "\u7206\u70B8\u7BC4\u570D\u589E\u52A0 0.5"
+    _attributeDepiction: "\u7206\u70B8\u7BC4\u570D\u589E\u52A0 1"
   - _attributeType: 19
-    _value: 0.25
+    _value: 0.4
     _isNegative: 0
-    _attributeDepiction: "\u589E\u52A0\u6575\u4EBA\u64CA\u9000\u7BC4\u570D 25%"
+    _attributeDepiction: "\u589E\u52A0\u6575\u4EBA\u64CA\u9000\u7BC4\u570D 40%"
