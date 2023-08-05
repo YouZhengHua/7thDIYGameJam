@@ -73,6 +73,11 @@ namespace Scripts.Game
         [SerializeField, Header("進度管理")]
         private StageManager _stageManager;
 
+        [SerializeField, Header("勝利結算畫面")]
+        private Sprite _winBackground;
+        [SerializeField, Header("失敗結算畫面")]
+        private Sprite _loseBackground;
+
         /// <summary>
         /// 攝影機控制器
         /// </summary>
@@ -182,7 +187,7 @@ namespace Scripts.Game
             else if (GameStateMachine.Instance.CurrectState == GameState.GameEnd)
             {
                 bool isWin = AttributeHandle.Instance.IsTimeWin && IsKillAllEnemy;
-                _endUI.ShowCanvas(isWin);
+                _endUI.ShowCanvas(isWin, isWin ? _winBackground : _loseBackground);
                 if (isWin)
                 {
                     if (_stageManager) _stageManager.GoingToNextStage(_stageManager.GetCurrentStage() + 1);

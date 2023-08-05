@@ -13,7 +13,16 @@ MonoBehaviour:
   m_Name: Map 04
   m_EditorClassIdentifier: 
   floorPrefabs:
+  - {fileID: 3989470051822936214, guid: 6811f1969c6150c4fbda0011145eb516, type: 3}
+  - {fileID: 3045775041193303444, guid: 2b0ef9e8770c8f14fab60edd721a54fb, type: 3}
+  - {fileID: 6386637161428585094, guid: d984e2ce32fbcff498ed958c635aac61, type: 3}
   - {fileID: 950200735826056701, guid: 215c0dd94a888e64dbc018ffe915cccd, type: 3}
+  - {fileID: 6721811624405166317, guid: 8ec18911f1b7d10478947496ef6c37b3, type: 3}
+  - {fileID: 8543598805669827526, guid: 58d42f76542c738468725ecbb72638e1, type: 3}
+  - {fileID: 8543598805669827526, guid: 2bbabe4c3e7f2ac4c99a3356e7873840, type: 3}
+  - {fileID: 8543598805669827526, guid: d917528b1d5e22f45b8579b3f0b0693b, type: 3}
+  - {fileID: 8543598805669827526, guid: d29c489f718373b45a330372343dc949, type: 3}
+  - {fileID: 8543598805669827526, guid: 88e9cdee4c6749c4db055bc4ddd30a8f, type: 3}
   mapWidth: 100
   mapHeight: 100
   floorWidth: 1
