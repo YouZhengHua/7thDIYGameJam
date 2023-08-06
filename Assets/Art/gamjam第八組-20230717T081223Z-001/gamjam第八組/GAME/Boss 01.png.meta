@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7c009ce6e6f0b14caca169951198ae6
+guid: e1d7700b5f0ab2f43b5aec33f0115e93
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-0013_0
+      name: Boss 01_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 128
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c15df7848adfb4146b1fac8445ade1a4
-      internalID: -176581362
+      spriteID: 23306105d678b444e88f7d4aa555356e
+      internalID: -1293136661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0013_1
+      name: Boss 01_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 128
         y: 0
-        width: 32
-        height: 32
+        width: 128
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d99206f41ef705348af4cea9209236b5
-      internalID: 686216402
+      spriteID: 3de4764415da7244196d93b10ddf11e4
+      internalID: -241566237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0013_2
+      name: Boss 01_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 256
         y: 0
-        width: 32
-        height: 32
+        width: 128
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ea484b898830374c9da19a1cd99f0b1
-      internalID: 407724097
+      spriteID: a847a3a985b37404099eecbcd80fa592
+      internalID: -2144030569
       vertices: []
       indices: 
       edges: []
@@ -202,9 +202,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite-0013_0: -176581362
-      Sprite-0013_1: 686216402
-      Sprite-0013_2: 407724097
+      Boss 01_1: -241566237
+      Boss 01_2: -2144030569
+      Boss 01_0: -1293136661
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

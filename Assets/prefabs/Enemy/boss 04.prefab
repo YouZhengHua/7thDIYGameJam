@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8312892398627385313}
   - component: {fileID: 2520314380143445981}
   - component: {fileID: 8312892398627385312}
-  - component: {fileID: 3684039371919112240}
   - component: {fileID: 8312892398627385319}
+  - component: {fileID: 9094981204003104487}
   m_Layer: 12
   m_Name: boss 04
   m_TagString: Untagged
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 626918169, guid: c4d2ccab0c2ad7e47853b6e31a7ac7c2, type: 3}
-  m_Color: {r: 0.9811321, g: 0.4202207, b: 0.4202207, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d7259e8e08d75eb4eb8f13523f851c52, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   _textShowTime: 0.5
   _enemyGetHit: Hit
   _enemyDead: Dead
-  _enemyAttack: 
+  _enemyAttack: Attack
   _playerBulletLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -125,7 +125,7 @@ Animator:
   m_GameObject: {fileID: 8312892398627385315}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 25f7a818644b68042bb0c0c2a28d1550, type: 2}
+  m_Controller: {fileID: 9100000, guid: bb481b38e02e2104ba1d7452a495140e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -135,22 +135,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &3684039371919112240
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8312892398627385315}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.55, y: 0.85}
-  m_Direction: 0
 --- !u!50 &8312892398627385319
 Rigidbody2D:
   serializedVersion: 4
@@ -172,3 +156,44 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!68 &9094981204003104487
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312892398627385315}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5941746, y: 0.28145957}
+  - {x: -0.5942559, y: -0.5933871}
+  - {x: -0.2820001, y: -0.5913118}
+  - {x: -0.28383178, y: -0.6859254}
+  - {x: 0.28182316, y: -0.6843941}
+  - {x: 0.2842418, y: -0.593088}
+  - {x: 0.6856059, y: -0.5918365}
+  - {x: 0.686619, y: 0.28255507}
+  - {x: 0.62443644, y: 0.2819791}
+  - {x: 0.6255681, y: 0.31281346}
+  - {x: 0.5638263, y: 0.31311592}
+  - {x: 0.56440306, y: 0.3424611}
+  - {x: 0.47002783, y: 0.3448317}
+  - {x: 0.46528214, y: 0.37454367}
+  - {x: -0.3726561, y: 0.37425718}
+  - {x: -0.3750376, y: 0.34599984}
+  - {x: -0.46818665, y: 0.34467846}
+  - {x: -0.4688118, y: 0.31148872}
+  - {x: -0.531173, y: 0.31198135}
+  - {x: -0.53354824, y: 0.28331396}
+  - {x: -0.5920292, y: 0.28191993}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

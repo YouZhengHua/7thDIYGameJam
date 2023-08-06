@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8312892398627385313}
   - component: {fileID: 2520314380143445981}
   - component: {fileID: 8312892398627385312}
-  - component: {fileID: 3684039371919112240}
+  - component: {fileID: 2768723349907929941}
   - component: {fileID: 8312892398627385319}
   m_Layer: 12
   m_Name: boss 02
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8312892398627385315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 626918169, guid: c4d2ccab0c2ad7e47853b6e31a7ac7c2, type: 3}
-  m_Color: {r: 0.9056604, g: 0.88927233, b: 0.31954432, a: 1}
+  m_Sprite: {fileID: -234021107, guid: 34cb152e1158ce24eb1002fb5fa83ff9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   _textShowTime: 0.5
   _enemyGetHit: Hit
   _enemyDead: Dead
-  _enemyAttack: 
+  _enemyAttack: Attack
   _playerBulletLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -125,7 +125,7 @@ Animator:
   m_GameObject: {fileID: 8312892398627385315}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 25f7a818644b68042bb0c0c2a28d1550, type: 2}
+  m_Controller: {fileID: 9100000, guid: c042595495d3e614bb6b5bdd3da5d879, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -135,8 +135,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &3684039371919112240
-CapsuleCollider2D:
+--- !u!68 &2768723349907929941
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -149,8 +149,28 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.55, y: 0.85}
-  m_Direction: 0
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.49982566, y: 0.34329355}
+  - {x: -0.4923065, y: 0.05130732}
+  - {x: -0.49993807, y: -0.18854083}
+  - {x: -0.5949823, y: -0.26218706}
+  - {x: -0.5906084, y: -0.70167106}
+  - {x: -0.19239113, y: -1.2367833}
+  - {x: 0.23535116, y: -0.78251255}
+  - {x: 0.2648527, y: -0.66643393}
+  - {x: 0.73288083, y: -0.5306608}
+  - {x: 0.7357533, y: 0.45694995}
+  - {x: 0.3949833, y: 0.7204687}
+  - {x: 0.064600006, y: 0.76362616}
+  - {x: -0.1102837, y: 0.648514}
+  - {x: -0.10541513, y: 0.5150805}
+  - {x: -0.32778057, y: 0.5248302}
+  - {x: -0.5012109, y: 0.34201354}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!50 &8312892398627385319
 Rigidbody2D:
   serializedVersion: 4

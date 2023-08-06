@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3000f923b3c3d8046b3a33b90a401595
+guid: ab79e90c2fbe36f48b53255f2d3dcf88
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-0012_0
+      name: Enemy 03_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa4756a40252d79468d7a673b0b50ad5
-      internalID: -897524121
+      spriteID: d139971f64720af419347e457b4878d4
+      internalID: -1636332915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0012_1
+      name: Enemy 03_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e177b0004f95d34eb981ccc5a5bea20
-      internalID: -503653225
+      spriteID: b84699869bcdb424b8d0906ca4f51e95
+      internalID: 1550587515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite-0012_2
+      name: Enemy 03_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5668d112669c7004b9a817c33d9a0d38
-      internalID: 1511625939
+      spriteID: 492cf0461bbb9684ea3a00b617bf63a6
+      internalID: -1304449822
       vertices: []
       indices: 
       edges: []
@@ -202,9 +202,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite-0012_0: -897524121
-      Sprite-0012_2: 1511625939
-      Sprite-0012_1: -503653225
+      Enemy 03_2: -1304449822
+      Enemy 03_1: 1550587515
+      Enemy 03_0: -1636332915
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
