@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8312892398627385318}
   - component: {fileID: 8312892398627385313}
-  - component: {fileID: 6865127366996811708}
+  - component: {fileID: 6032997215952239985}
   - component: {fileID: 8312892398627385312}
   - component: {fileID: 8896406020327418539}
   - component: {fileID: 8312892398627385319}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -869052309, guid: c7510a44cb85eda4cb31acf804107bb0, type: 3}
+  m_Sprite: {fileID: -1636332915, guid: ab79e90c2fbe36f48b53255f2d3dcf88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6865127366996811708
+--- !u!114 &6032997215952239985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8312892398627385315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af886303ff90a0f438bd01413bf0be59, type: 3}
+  m_Script: {fileID: 11500000, guid: 59815975cf0ff74458e18732b659ee19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: ea95a35808947014ab5768a622ff5f51, type: 2}
@@ -114,10 +114,6 @@ MonoBehaviour:
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls: []
-  _radius: 1.5
-  _playerLayer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!95 &8312892398627385312
 Animator:
   serializedVersion: 4
@@ -128,7 +124,7 @@ Animator:
   m_GameObject: {fileID: 8312892398627385315}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ae264b9dd9b23144db7331aef083d334, type: 2}
+  m_Controller: {fileID: 9100000, guid: 927c0445599f48d409891fa86ff45d62, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -151,8 +147,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6, y: 0.85}
+  m_Offset: {x: 0, y: -0.09}
+  m_Size: {x: 0.5, y: 0.85}
   m_Direction: 0
 --- !u!50 &8312892398627385319
 Rigidbody2D:
