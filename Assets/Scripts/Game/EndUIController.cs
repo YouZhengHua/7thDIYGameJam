@@ -17,8 +17,6 @@ namespace Scripts.Game
         private Image _background;
         private Transform _activeWeaponContainer;
         private GameObject _activeWeaponIconPrefab;
-        private readonly Color _winBackgroundColor = new (0.105f, 0.105f, 0.105f, 1f);
-        private readonly Color _loseBackgroundColor = new (0.333f, 0.039f, 0.039f, 1f);
 
         public EndUIController(GameObject activeWeaponIconPrefab)
         {
@@ -49,7 +47,6 @@ namespace Scripts.Game
 
             _backToMenuButton.onClick.AddListener(BackToMenuButtonOnClick);
             _restateGameButton.onClick.AddListener(RestrartMenuButtonOnClick);
-
         }
 
         /// <summary>
@@ -67,12 +64,12 @@ namespace Scripts.Game
             GameStateMachine.Instance.SetNextState(GameState.Restart);
         }
 
-        public void ShowCanvas(bool isWin)
+        public void ShowCanvas(bool isWin, Sprite background)
         {
             _canvas.gameObject.SetActive(true);
-            _background.color = isWin ? _winBackgroundColor : _loseBackgroundColor;
-            _restateGameButton.gameObject.SetActive(!isWin);
-            _backToMenuButton.transform.localPosition = new Vector3(isWin ? 0f : _backToMenuButton.transform.localPosition.x, _backToMenuButton.transform.localPosition.y, _backToMenuButton.transform.localPosition.z);
+            _background.sprite = background;
+            _restateGameButton.gameObject.SetActive(false);
+            _backToMenuButton.transform.localPosition = new Vector3(0f, _backToMenuButton.transform.localPosition.y, _backToMenuButton.transform.localPosition.z);
             UpdateScoreboard();
         }
 

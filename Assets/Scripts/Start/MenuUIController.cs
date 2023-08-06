@@ -28,6 +28,11 @@ namespace Scripts.Start
             _startButton.onClick.AddListener(StartButtonOnClick);
             _exitButton.onClick.AddListener(ExitButtonOnClick);
             _settingButton.onClick.AddListener(SettingButtonOnClick);
+
+            if(Application.platform == RuntimePlatform.WebGLPlayer)
+            {
+                _exitButton.gameObject.SetActive(false);
+            }
         }
 
         public void StartButtonOnClick()

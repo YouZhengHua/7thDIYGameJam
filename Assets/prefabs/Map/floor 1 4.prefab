@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6721811624405166316}
   - component: {fileID: 6721811624405166315}
   m_Layer: 1
-  m_Name: floor4
+  m_Name: floor 1 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1830541467, guid: 9ee30eb7d2f1f404790266ee96a67099, type: 3}
+  m_Sprite: {fileID: -101300630, guid: eb987f741403b534f87ff0250bbac360, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
