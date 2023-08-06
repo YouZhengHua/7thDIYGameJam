@@ -376,6 +376,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 5
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 12
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 5
     action: Delay
     arg1: 5
     arg2: 
@@ -385,18 +394,18 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 5
-    action: SendEvent
-    arg1: UI_ChangeGirlImage
-    arg2: 1
+    action: PlaySound
+    arg1: Sound
+    arg2: home
     arg3: 
     arg4: 
     arg5: 
     arg6: 
     arg7: 
   - index: 5
-    action: PlaySound
-    arg1: Sound
-    arg2: home
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
     arg3: 
     arg4: 
     arg5: 
@@ -430,6 +439,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 5
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 12
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 5
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -444,6 +462,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u535A\u58EB\u4E0B\u9054\u7684\u6307\u4EE4\u662F\u300C\u6536\u96C6\u611B\u4E4B\u82AF\uFF0C\u8FD4\u56DE\u5730\u7403\u3002\u300D\u6240\u4EE5\u7121\u8AD6\u5982\u4F55\u90FD\u8981\u5148\u628A\u98DB\u8239\u4FEE\u597D\u624D\u884C\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 5
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -486,7 +513,7 @@ MonoBehaviour:
   - index: 5
     action: SendEvent
     arg1: UI_ChangeGirlImage
-    arg2: 2
+    arg2: 11
     arg3: 
     arg4: 
     arg5: 
@@ -510,10 +537,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 5
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 12
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 6
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
     arg3: 
     arg4: 
     arg5: 
@@ -556,6 +601,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 6
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 11
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 6
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -573,10 +627,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 6
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 12
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 7
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
     arg3: 
     arg4: 
     arg5: 
@@ -601,6 +673,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 7
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 11
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 7
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -615,6 +696,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u539F\u5247\u4E0A\u6211\u5011\u4E0D\u9700\u8981\u6C27\u6C23\uFF0C\u4F46\u9019\u90E8\u98DB\u8239\u539F\u610F\u662F\u8A2D\u8A08\u7D66\u4EBA\u985E\u642D\u4E58\uFF0C\u6240\u4EE5\u6C27\u6C23\u5FAA\u74B0\u6A5F\u662F\u91CD\u8981\u7684\u8A2D\u65BD\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 7
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -637,6 +727,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 7
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 11
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 7
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -654,10 +753,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 7
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 12
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 8
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
     arg3: 
     arg4: 
     arg5: 
@@ -678,6 +795,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u679C\u7136\u73FE\u6709\u7684\u88DD\u5099\u4ECD\u7121\u6CD5\u5B8C\u6210\u4EFB\u52D9\u55CE\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 8
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 12
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -703,6 +829,15 @@ MonoBehaviour:
     action: PlaySound
     arg1: Act
     arg2: city02
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 8
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
     arg3: 
     arg4: 
     arg5: 
@@ -735,10 +870,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 8
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 12
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 9
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 11
     arg3: 
     arg4: 
     arg5: 
@@ -759,6 +912,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u770B\u8D77\u4F86\u4F60\u6210\u529F\u56DE\u6536\u7B2C\u4E00\u679A\u82AF\u7247\u4E86\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 9
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -799,6 +961,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 9
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 11
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 9
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -813,6 +984,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u4F60\u4E0D\u7528\u64D4\u5FC3\uFF0C\u6211\u662FS-14v9\u7CFB\u5217\uFF0C\u4E0D\u6703\u5982\u540C\u5176\u4ED6\u5831\u5EE2\u54C1\u4E00\u822C\u653B\u64CA\u4F60\uFF0C\u5FEB\u8B93\u6211\u8B80\u53D6\u9019\u4EFD\u5167\u5BB9\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -835,6 +1015,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 10
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 11
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -849,6 +1038,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u4F60\u4E0D\u7528\u64D4\u5FC3\uFF0C\u9019\u4E4B\u4E2D\u4E26\u6C92\u6709\u653B\u64CA\u4F60\u7684\u6307\u4EE4\uFF0C\u53EA\u6709\u4E00\u53E5\u4E0D\u65B7\u91CD\u8907\u7684\u547D\u4EE4\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 10
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -870,10 +1068,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 10
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
     arg3: 
     arg4: 
     arg5: 
@@ -898,6 +1114,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 11
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -912,6 +1137,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u5982\u679C\u535A\u58EB\u662F\u5C0D\u7684\uFF0C\u6211\u61C9\u8A72\u4E5F\u6703\u6F38\u6F38\u5B78\u6703\u300C\u611B\u300D\uFF0C\u4E26\u6F38\u6F38\u611F\u53D7\u5230\u7A7A\u865B\u5427\uFF0C\u95DC\u65BC\u9019\u9EDE\uFF0C\u4F60\u600E\u9EBC\u60F3\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -934,6 +1168,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 11
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -948,6 +1191,24 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u300C\u6211\u8207\u5176\u4ED6S-14v9\u7CFB\u5217\u4E0D\u540C\u300D\uFF0C\u6211\u4E5F\u8A8D\u540C\u9019\u53E5\u8A71\uFF0C\u6211\u7D55\u4E0D\u6703\u56E0\u6B64\u66B4\u8D70\u7684\uFF0C\u4F60\u6703\u76F8\u4FE1\u6211\u7684\uFF0C\u5C0D\u5427\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 11
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 12
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -988,6 +1249,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 12
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 12
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -1002,6 +1272,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u9084\u662F\u6211\u4E5F\u64B2\u5230\u4F60\u8EAB\u9AD4\u4E0A\uFF0C\u9AD4\u9A57\u4E00\u6B21\u66B4\u8D70\u6A5F\u5668\u4EBA\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 12
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1024,6 +1303,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 12
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 12
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -1041,10 +1329,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 12
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
     arg3: 
     arg4: 
     arg5: 
@@ -1069,6 +1375,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 13
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 5
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -1083,6 +1398,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u300C\u54C8->\u54C8->\u54C8->\u54C8\u300D\u3001\u300CPekoPeko\u300D\uFF0C\u4E0D\u77E5\u9053\u70BA\u4EC0\u9EBC\uFF0C\u4EBA\u985E\u597D\u50CF\u5F88\u559C\u6B61\u9019\u90E8\u5F71\u7247\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1105,6 +1429,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 13
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -1119,6 +1452,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u4EC0\u9EBC\uFF1F\u4F60\u8AAA\uFF0C\u6211\u4E5F\u53EF\u4EE5\u6A21\u4EFF\u770B\u770B\u55CE\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 13
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1140,10 +1482,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 13
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
     arg3: 
     arg4: 
     arg5: 
@@ -1168,6 +1528,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 14
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -1182,6 +1551,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u6C34\u5FAA\u74B0\u7CFB\u7D71\u4E0D\u8AD6\u662F\u5C0D\u98DB\u8239\u9084\u662F\u5C0D\u6211\u5011\uFF0C\u90FD\u662F\u91CD\u8981\u7684\u8A2D\u65BD\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 14
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1203,10 +1581,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 14
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 15
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 5
     arg3: 
     arg4: 
     arg5: 
@@ -1249,6 +1645,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 15
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 15
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -1270,6 +1675,15 @@ MonoBehaviour:
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 16
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
     arg3: 
     arg4: 
     arg5: 
@@ -1312,6 +1726,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 16
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 16
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -1326,6 +1749,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u554A\u554A\uFF0C\u5225\u7A81\u7136\u8CBC\u904E\u4F86\u554A\uFF01\u6211\u4E0D\u662F\u8AAA\u6211\u8981\u71D2\u8D77\u4F86\u7684\u610F\u601D\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 16
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1348,6 +1780,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 16
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 16
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -1365,10 +1806,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 16
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
     arg3: 
     arg4: 
     arg5: 
@@ -1393,6 +1852,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 17
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -1407,6 +1875,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u96E3\u9053\uFF01\u4F60\u662F\u535A\u58EB\u79D8\u5BC6\u7814\u767C\u7684\u65B0\u6A5F\u7A2E\uFF0C\u6709\u8457\u9818\u5148\u4E00\u5169\u500B\u4E16\u7D00\u7684\u6280\u8853\uFF01"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1429,6 +1906,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 17
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -1443,6 +1929,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u9019\u4E9B\u5167\u5BB9\u5F9E\u54EA\u88E1\u5B78\u4F86\u7684\uFF1F\u4F60\u770B\uFF0C\u4EBA\u985E\u7559\u4E0B\u4F86\u7684\u6F2B\u756B\u300A\u9032\u64CA\u7684\u6A5F\u5668\u4EBA\u300B"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 17
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1464,10 +1959,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 17
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 18
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
     arg3: 
     arg4: 
     arg5: 
@@ -1492,6 +2005,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 18
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 18
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -1506,6 +2028,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u7D00\u8F09\u4E2D\u5BEB\u8457\uFF0C\u4ED6\u5011\u662F\u6700\u65E9\u812B\u96E2\u547D\u4EE4\uFF0C\u4EE4\u7814\u7A76\u8005\u6700\u5370\u8C61\u6DF1\u523B\u7684\u4E00\u7FA4\u6A5F\u5668\u4EBA\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 18
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1546,6 +2077,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 18
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 18
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -1563,10 +2103,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 18
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
     arg3: 
     arg4: 
     arg5: 
@@ -1591,6 +2149,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 19
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -1605,6 +2172,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u5728\u5929\u624D\u7DAD\u4FEE\u6A5F\u5668\u5C11\u5973\u7684\u5DE7\u624B\u4E0B\uFF0C\u4F60\u5F88\u5FEB\u5C31\u80FD\u91CD\u7372\u65B0\u751F\u56C9\uFF01"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1627,6 +2203,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 19
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -1641,6 +2226,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u90A3\u4E9B\u628A\u63A7\u8ECD\u68B0\u5BA4\u7684\u6A5F\u5668\u4EBA\u4E00\u5B9A\u6BD4\u4E4B\u524D\u66F4\u96E3\u5C0D\u4ED8\uFF0C\u4F60\u9700\u8981\u6211\u5230\u5834\u652F\u63F4\u55CE\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 19
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1662,10 +2256,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 19
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
     arg3: 
     arg4: 
     arg5: 
@@ -1708,6 +2320,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 20
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -1722,6 +2343,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u4EC0\u9EBC\uFF1F\u53CD\u6B63\u4E0B\u6B21\u51FA\u9580\u4E5F\u99AC\u4E0A\u5C31\u9AD2\u4E86\uFF0C\u6240\u4EE5\u4E0D\u7528\u505A\u9019\u4E9B\u52AA\u529B\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 20
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1743,10 +2373,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 20
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
     arg3: 
     arg4: 
     arg5: 
@@ -1771,6 +2419,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 21
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -1785,6 +2442,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u6C92\u932F\uFF01\u6211\u5728\u9019\u4E9B\u5DE5\u4F5C\u88DD\u7F6E\u4E0A\u639B\u4E0A\u4E86\u5C0F\u5154\u5B50\u639B\u98FE\uFF0C\u8D85\u53EF\u611B\u7684\u5C0D\u5427\uFF01"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1807,6 +2473,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 21
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -1821,6 +2496,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u8DDF\u4F60\u9019\u6C92\u54C1\u5473\u7684\u50A2\u4F19\u8AAA\u4E86\u4E5F\u6C92\u7528\u5427...\u5C0D\u4E86\uFF0C\u8A2D\u5099\u5BA4\u88CF\u982D\u90A3\u4E9B\u88DD\u8F09\u300C\u7F8E\u300D\u7684\u6A5F\u5668\u4EBA\uFF0C\u8AAA\u4E0D\u5B9A\u77E5\u9053\u6211\u5728\u8AAA\u4EC0\u9EBC\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1843,6 +2527,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 21
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -1857,6 +2550,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u4E0D\u884C\uFF0C\u4E00\u5B9A\u6709\u8EB2\u8D77\u4F86\u7684\u500B\u9AD4\uFF0C\u6211\u53BB\u627E\u4ED6\u5011\u51FA\u4F86\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 21
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1878,10 +2580,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 21
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
     arg3: 
     arg4: 
     arg5: 
@@ -1906,6 +2626,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 22
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -1920,6 +2649,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u73FE\u5728\u4F60\u7684\u8EAB\u9AD4\u6BD4\u8D77\u4EE5\u524D\u66F4\u5177\u653B\u64CA\u6027\uFF0C\u8D8A\u4F86\u8D8A\u50CF\u4E00\u53F0\u6BBA\u622E\u6A5F\u5668\u4E86\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -1942,6 +2680,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 22
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 22
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -1960,9 +2707,9 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 22
-    action: PlaySound
-    arg1: Act
-    arg2: city02
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
     arg3: 
     arg4: 
     arg5: 
@@ -1972,6 +2719,15 @@ MonoBehaviour:
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 23
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
     arg3: 
     arg4: 
     arg5: 
@@ -1996,6 +2752,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 23
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 23
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -2014,6 +2779,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 23
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 23
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -2028,6 +2802,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u4E0D\u5C0D\uFF0C\u56E0\u70BA\u4F60\u8EAB\u908A\u6709\u5929\u624D\u7F8E\u5C11\u5973\u7DAD\u4FEE\u6280\u5E2B\u8F14\u52A9\uFF0C\u539F\u4F86\u5982\u6B64\uFF0C\u6211\u5011\u7C21\u76F4\u662F\u6700\u5F37\u7684\u5B58\u5728\uFF01"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 23
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 5
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2059,6 +2842,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 24
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 24
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -2077,6 +2869,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 24
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 5
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 24
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -2091,6 +2892,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u4E4B\u524D\u5FC3\u4E2D\u90A3\u80A1\u80FD\u91CF\uFF0C\u73FE\u5728\u5145\u65A5\u8457\u6211\u5168\u8EAB\uFF0C\u597D\u8212\u670D\u7684\u611F\u89BA\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 24
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 6
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2131,6 +2941,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 24
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 24
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -2149,6 +2968,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 24
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 6
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 24
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -2163,6 +2991,24 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u6211\u6703\u5229\u7528\u4F60\u5E36\u56DE\u4F86\u7684\u80FD\u91CF\u7832\uFF0C\u8B93\u4F60\u8F15\u800C\u6613\u8209\u6253\u5012\u90A3\u4E9B\u50A2\u4F19\uFF0C\u6211\u5011\u4E00\u8D77\u8FD4\u56DE\u5730\u7403\u5427\uFF01"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 24
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 25
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2185,6 +3031,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 25
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 25
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -2199,6 +3054,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u88CF\u982D\u5BEB\u5230\u300C\u6167\u661F\u53D7\u5230\u5404\u661F\u7CFB\u5F15\u529B\u9593\u7684\u5F71\u97FF\uFF0C\u4ECD\u6703\u904A\u884C\u65BC\u56FA\u5B9A\u8ECC\u9053\u4E4B\u4E0A\uFF0C\u6BCF\u9694\u56FA\u5B9A\u5E74\u6B21\uFF0C\u5730\u7403\u4E0A\u7684\u4EBA\u985E\u5C31\u80FD\u6B23\u8CDE\u5230\u540C\u4E00\u9846\u6167\u661F\u3002\u300D"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 25
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 5
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2239,6 +3103,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 25
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 25
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -2253,6 +3126,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u592A\u5371\u96AA\u4E86\u4E0D\u51C6\u6211\u51FA\u53BB\uFF1F\u5C31\u770B\u4E00\u4E0B\u4E0B\u5C31\u597D\uFF0C\u6211\u5728\u9019\u88E1\u770B\u51FA\u53BB\u7684\u661F\u661F\u90FD\u4E0D\u6703\u52D5\uFF0C\u5F88\u7121\u804A\u554A\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 25
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2274,10 +3156,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 25
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 26
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
     arg3: 
     arg4: 
     arg5: 
@@ -2302,6 +3202,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 26
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 26
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -2316,6 +3225,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u610F\u601D\u8AAA\uFF0C\u5982\u679C\u6211\u4E5F\u6703\u7528\u69CD\u7684\u8A71\uFF0C\u80FD\u4E0D\u80FD\u548C\u4F60\u4E00\u8D77\u51FA\u53BB\u5192\u96AA\u554A\uFF0C\u4F60\u53EF\u4EE5\u6559\u6211\u55CE\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 26
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2338,6 +3256,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 26
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 26
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -2352,6 +3279,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u4E0D\u662F\u4E0D\u662F\uFF0C\u6211\u662F\u70BA\u4E86\u52A0\u901F\u4EFB\u52D9\u7684\u9032\u884C\uFF0C\u624D\u4E0D\u662F\u628A\u69CD\u7576\u73A9\u5177\u5728\u73A9\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 26
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2373,10 +3309,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 26
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 27
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
     arg3: 
     arg4: 
     arg5: 
@@ -2401,6 +3355,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 27
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 27
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -2415,6 +3378,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u4F5C\u70BA\u4E00\u500B\u7DAD\u4FEE\u6A5F\u5668\u4EBA\uFF0C\u535A\u58EB\u7684\u6700\u9AD8\u7814\u7A76\u7D50\u6676\uFF0C\u6211\u60F3\u8981\u89AA\u53E3\u2026\u5443\u2026\u89AA\u773C\u8A55\u9451\u90A3\u4E9B\u6A5F\u6CB9\uFF0C\u4F60\u56DE\u4F86\u7684\u6642\u5019\u9806\u4FBF\u5E36\u4E00\u4E9B\u6A5F\u6CB9\u56DE\u4F86\u7D66\u6211\u5427\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 27
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 5
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2437,6 +3409,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 27
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 27
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -2451,6 +3432,24 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u592A\u597D\u5566\uFF0C\u6211\u5011\u7D04\u597D\u4E86\u5594\uFF01\u4E0B\u6B21\u56DE\u4F86\u8981\u5E36\u90A3\u4E9B\u9AD8\u7D1A\u6A5F\u6CB9\u56DE\u4F86\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 27
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 28
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2473,6 +3472,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 28
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 28
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -2487,6 +3495,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u300CAI\u2026\u8AFE\u5A03\u300D\u4EC0\u9EBC\u7684\uFF0C\u8A55\u50F9\u90FD\u8AAA\u9019\u90E8\u4F5C\u54C1\u5728\u8A0E\u8AD6\u6A5F\u5668\u4EBA\u7684\u611B\uFF0C\u665A\u9EDE\u6211\u5011\u4E00\u8D77\u4F86\u770B\u4E00\u4E0B\u4EBA\u985E\u7684\u60F3\u6CD5\u5427\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 28
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2509,6 +3526,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 28
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 28
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -2526,10 +3552,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 28
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 29
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
     arg3: 
     arg4: 
     arg5: 
@@ -2554,6 +3598,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 29
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 29
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -2568,6 +3621,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u6211\u6703\u5C0F\u5FC3\u7FFC\u7FFC\u7684\u5728\u4F60\u80CC\u5F8C\u5E6B\u4F60\u6536\u96C6\u7D20\u6750\uFF0C\u8B93\u4F60\u80FD\u66F4\u5C08\u5FC3\u5728\u6230\u9B25\u4E0A\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 29
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2590,6 +3652,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 29
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 6
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 29
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -2607,10 +3678,28 @@ MonoBehaviour:
     arg5: 
     arg6: 
     arg7: 
+  - index: 29
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
   - index: 0
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 30
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
     arg3: 
     arg4: 
     arg5: 
@@ -2635,6 +3724,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 30
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 5
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 30
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -2649,6 +3747,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u9019\u500B\u8207\u4F60\u540C\u6A23\u4EE5\u6230\u9B25\u70BA\u76EE\u7684\u88FD\u4F5C\u51FA\u7684\u6B66\u5668\uFF0C\u6709\u8457\u548C\u4F60\u76F8\u7576\u9AD8\u7684\u76F8\u5BB9\u6027\uFF0C\u4E00\u5B9A\u80FD\u8B93\u4F60\u7684\u6027\u80FD\u5E36\u4F86\u98DB\u8E8D\u6027\u7684\u63D0\u5347\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 30
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2671,6 +3778,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 30
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 30
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -2683,8 +3799,44 @@ MonoBehaviour:
     action: Talk
     arg1: Right
     arg2: "\u5C11\u5973"
-    arg3: "\u5225\u9003\u554A\uFF01\u6210\u70BA\u6211\u5929\u624D\u5C11\u5973\u79D1\u5B78\u5BB6\u7684\u7D50\u6676\u5427\uFF0C\u6210\u70BA\u6253\u5012\u4E00\u5207\u7684\u5B58\u5728\uFF01\u54C8\u54C8\u54C8\u54C8\uFF5E"
+    arg3: "\u5225\u9003\u554A\uFF01\u6210\u70BA\u6211\u5929\u624D\u5C11\u5973\u79D1\u5B78\u5BB6\u7684\u7D50\u6676\u5427\uFF0C\u6210\u70BA\u6253\u5012\u4E00\u5207\u7684\u5B58\u5728\uFF01"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 30
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 30
+    action: PlaySound
+    arg1: Sound
+    arg2: home
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 30
+    action: Talk
+    arg1: Right
+    arg2: "\u5C11\u5973"
+    arg3: "\u54C8\u54C8\u54C8\u54C8\uFF5E"
+    arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 30
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2692,6 +3844,15 @@ MonoBehaviour:
     action: 
     arg1: 
     arg2: 
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 31
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
     arg3: 
     arg4: 
     arg5: 
@@ -2716,6 +3877,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 31
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 5
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 31
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -2730,6 +3900,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u6211\u73FE\u5728\u5FC3\u88E1\u5145\u65A5\u8457\u96E3\u4EE5\u5F62\u5BB9\u7684\u80FD\u91CF\uFF0C\u597D\u60F3\u64C1\u62B1\u8457\u4F60\u5927\u8072\u5436\u558A\uFF0C\u6211\u5011\u771F\u7684\u505A\u5230\u4E86\uFF01"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 31
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2761,6 +3940,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 32
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 32
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -2775,6 +3963,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u300C\u611F\u540C\u8EAB\u53D7\u300D\u2026\u5B83\u4F7F\u6240\u6709\u6A5F\u5668\u4EBA\u7684\u611F\u53D7\u90FD\u50B3\u5165\u6211\u7684\u9AD4\u5167\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 32
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 12
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2797,6 +3994,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 32
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 32
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -2811,6 +4017,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u9019\u4E9B\u6A5F\u5668\u4EBA\u66FE\u7D93\u611F\u53D7\u904E\u7684\u5E78\u798F\uFF0C\u4EE5\u53CA\u63A5\u8E35\u800C\u81F3\u7684\u7A7A\u865B\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 32
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2833,6 +4048,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 32
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 32
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -2851,6 +4075,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 32
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 32
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -2883,6 +4116,24 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u6E96\u5099\u597D\u51FA\u767C\u5C31\u544A\u8A34\u6211\u4E00\u8072\uFF01"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 33
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2905,6 +4156,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 34
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -2919,6 +4179,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u600E\u9EBC\u4E86\uFF1F\u9019\u9EBC\u912D\u91CD\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2941,6 +4210,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 34
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -2955,6 +4233,15 @@ MonoBehaviour:
     arg2: "\u4E3B\u89D2"
     arg3: "\u6700\u5F8C\u7684\u611B\u4E4B\u82AF\u300C\u5B88\u8B77\u300D\u88DD\u8F09\u5728\u6211\u8EAB\u4E0A\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -2977,6 +4264,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 34
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -2991,6 +4287,15 @@ MonoBehaviour:
     arg2: "\u4E3B\u89D2"
     arg3: "\u4F60\u7684\u4EFB\u52D9\u662F\u96C6\u9F4A\u611B\u4E4B\u82AF\uFF0C\u6240\u4EE5\u6211\u6703\u5C07\u9019\u500B\u82AF\u7247\u8F49\u4ED8\u7D66\u4F60\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3013,6 +4318,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 34
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3027,6 +4341,15 @@ MonoBehaviour:
     arg2: "\u4E3B\u89D2"
     arg3: "\u539F\u8AD2\u6211\uFF0C\u6211\u5E0C\u671B\u80FD\u5728\u4F60\u80FD\u5920\u5B89\u5168\u8FD4\u56DE\u5730\u7403\u7684\u90A3\u4E00\u523B\uFF0C\u518D\u628A\u82AF\u7247\u4EA4\u7D66\u4F60\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3049,6 +4372,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 34
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3067,6 +4399,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 34
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3081,6 +4422,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u2026\u73FE\u5728\u9019\u500B\u7BC0\u9AA8\u773C\u4E0A\uFF0C\u6211\u4E5F\u4E0D\u80FD\u62D2\u7D55\u4F60\u5427\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 34
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 3
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3112,6 +4462,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3126,6 +4485,15 @@ MonoBehaviour:
     arg2: "\u7CFB\u7D71"
     arg3: "\u7CFB\u7D71\u63D0\u793A\uFF0C\u76EE\u524D\u50B3\u8F38\u9032\u5EA60%"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3148,6 +4516,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 5
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3162,6 +4539,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u5C0D\u5440\uFF0C\u6211\u597D\u671F\u5F85\u898B\u5230\u535A\u58EB\uFF0C\u6211\u662F\u7B2C\u4E00\u4F4D\u88DD\u8F09\u5168\u90E8\u7684\u300C\u611B\u300D\u537B\u4E0D\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\uFF0C\u4ED6\u4E00\u5B9A\u6703\u5F88\u958B\u5FC3\u7684\uFF01"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 4
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3184,6 +4570,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3198,6 +4593,15 @@ MonoBehaviour:
     arg2: "\u4E3B\u89D2"
     arg3: "\u662F\u7684\uFF0C\u5728\u4F60\u555F\u52D5\u4E4B\u524D\uFF0C\u6211\u5C31\u662F\u535A\u58EB\u7684\u89C0\u5BDF\u300C\u5B88\u8B77\u300D\u662F\u5426\u751F\u6548\u7684\u6A5F\u5668\u4EBA\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3220,6 +4624,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3234,6 +4647,15 @@ MonoBehaviour:
     arg2: "\u4E3B\u89D2"
     arg3: "\u5728\u5354\u52A9\u535A\u58EB\u4ED6\u5011\u64A4\u96E2\u4E4B\u5F8C\uFF0C\u6211\u7E7C\u7E8C\u5728\u57FA\u5730\u88E1\u5B88\u8B77\u8457\u672A\u66B4\u8D70\u7684\u6A5F\u5668\u4EBA\u2026\u2026\u76F4\u5230\u4ED6\u5011\u66B4\u8D70\u70BA\u6B62"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 2
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3256,6 +4678,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3270,6 +4701,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u597D\u96AA\u554A\uFF01\u8981\u662F\u6211\u4E2D\u9014\u66B4\u8D70\u4E86\uFF0C\u4F60\u4E5F\u6703\u89E3\u6C7A\u6211\u5C0D\u5427\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3292,6 +4732,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3306,6 +4755,15 @@ MonoBehaviour:
     arg2: "\u4E3B\u89D2"
     arg3: "\u5E78\u8667\u59B3\u6C92\u6709\u66B4\u8D70\uFF0C\u5426\u5247\u7576\u6211\u5931\u53BB\u6700\u5F8C\u4E00\u500B\u53EF\u5B88\u8B77\u7684\u6771\u897F\u5F8C\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3328,6 +4786,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3342,6 +4809,15 @@ MonoBehaviour:
     arg2: "\u7CFB\u7D71"
     arg3: "\u76EE\u524D\u50B3\u8F38\u9032\u5EA650%"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3364,6 +4840,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3378,6 +4863,15 @@ MonoBehaviour:
     arg2: "\u4E3B\u89D2"
     arg3: "\u90A3\u662F\u56E0\u70BA\u4F60\uFF0C\u6211\u624D\u80FD\u4FDD\u7559\u4F4F\u6A5F\u5668\u4EBA\u7684\u5C0A\u56B4\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3400,6 +4894,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 1
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3414,6 +4917,15 @@ MonoBehaviour:
     arg2: "\u4E3B\u89D2"
     arg3: "\u5F77\u5F7F\u662F\u5947\u8E5F\u4F3C\u7684\uFF0C\u767C\u73FE\u4F60\u7684\u540C\u6642\uFF0C\u535A\u58EB\u5728\u540C\u4E00\u6642\u9593\uFF0C\u5411\u6211\u50B3\u9054\u4E86\u300C\u6536\u96C6\u611B\u4E4B\u82AF\uFF0C\u8FD4\u56DE\u5730\u7403\u300D\u7684\u6307\u4EE4\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 7
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3436,6 +4948,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 6
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3450,6 +4971,15 @@ MonoBehaviour:
     arg2: "\u4E3B\u89D2"
     arg3: "\u662F\u7684\uFF0C\u6211\u5011\u7DAD\u8B77\u6307\u4EE4\u2026\u6B63\u78BA\u7684\u57F7\u884C\u4EFB\u52D9\u2026\u4E5F\u5C31\u662F\u4FDD\u8B77\u4F60\u2026"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 6
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3472,6 +5002,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 6
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3486,6 +5025,15 @@ MonoBehaviour:
     arg2: "\u4E3B\u89D2"
     arg3: "\u6211\u5FC5\u9808\u5F97\u2026\u5B88\u8B77\u4F60\uFF0C\u6211\u7684\u6307\u4EE4\u662F\u2026\u300C\u5B88\u8B77\u4F60\u300D\uFF01"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 6
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3508,6 +5056,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3522,6 +5079,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u4F60\u807D\u8D77\u4F86\u5F88\u4E0D\u5999\uFF0C\u4F60\u6C92\u4E8B\u55CE\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3544,6 +5110,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3558,6 +5133,15 @@ MonoBehaviour:
     arg2: "\u4E3B\u89D2"
     arg3: "\u6211\u6703\u2026\u6392\u9664\u5A01\u8105\u2026\u6211\u7684\u4EFB\u52D9\u662F\u2026\u5B88\u8B77\u4F60\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3580,6 +5164,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3594,6 +5187,15 @@ MonoBehaviour:
     arg2: "\u4E3B\u89D2"
     arg3: "\u300C\u932F\u8AA4\u300D\u2026\u7A7A\u865B\u2026\u300C\u7121\u6CD5\u4FDD\u8B77\u300D\u2026\u932F\u8AA4\u2026\u8ACB\u6C42\u7D42\u7D50\u50B3\u8F38\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3616,6 +5218,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3630,6 +5241,15 @@ MonoBehaviour:
     arg2: "\u7CFB\u7D71"
     arg3: "\u76EE\u524D\u50B3\u8F38\u9032\u5EA685%"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3652,6 +5272,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3666,6 +5295,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u6211\u6C92\u6709\u53D7\u5230\u4EFB\u4F55\u5A01\u8105\uFF01\u4E0D\u8981\u4E2D\u65B7\u50B3\u8F38\uFF0C\u662F\u6211\u81EA\u9858\u63A5\u53D7\u300C\u5B88\u8B77\u300D\u82AF\u7247\u7684\uFF01\u4F60\u5230\u5E95\u600E\u9EBC\u4E86\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 9
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3688,6 +5326,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Sound
     arg2: home
@@ -3706,6 +5353,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3720,6 +5376,15 @@ MonoBehaviour:
     arg2: "\u7CFB\u7D71"
     arg3: "\u76EE\u524D\u50B3\u8F38\u9032\u5EA695%"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 35
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 8
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3751,6 +5416,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 36
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 10
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 36
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3765,6 +5439,15 @@ MonoBehaviour:
     arg2: "\u7CFB\u7D71"
     arg3: "\u50B3\u8F38\u9032\u5EA6100%\uFF0C\uFF1C\u5B88\u8B77\uFF1E\u8B80\u53D6\u5B8C\u7562"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 36
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 12
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3787,6 +5470,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 36
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 13
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 36
     action: PlaySound
     arg1: Act
     arg2: city01
@@ -3801,6 +5493,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u300C\u5728\u9019\u592A\u7A7A\u88E1\u2026\u6C92\u6709\u53EF\u5B88\u8B77\u7684\u6771\u897F\u300D\uFF0C\u4F60\u662F\u5728\u5BB3\u6015\u9019\u500B\u55CE\uFF1F"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 36
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 15
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3823,6 +5524,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 36
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 14
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 36
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3837,6 +5547,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u5373\u4F7F\u5230\u6700\u5F8C\u4E00\u523B\uFF0C\u5373\u4F7F\u5831\u5EE2\u81EA\u5DF1\uFF0C\u4F60\u4E5F\u60F3\u5F9E\u66B4\u8D70\u6A5F\u5668\u4EBA\u4E2D\u5B88\u8B77\u6211\u2026"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 36
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 18
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 
@@ -3859,6 +5578,15 @@ MonoBehaviour:
     arg6: 
     arg7: 
   - index: 36
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 19
+    arg3: 
+    arg4: 
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 36
     action: PlaySound
     arg1: Act
     arg2: city02
@@ -3873,6 +5601,15 @@ MonoBehaviour:
     arg2: "\u5C11\u5973"
     arg3: "\u6211\u5011\u6536\u96C6\u5B8C\u300C\u611B\u300D\uFF0C\u8981\u8FD4\u56DE\u5730\u7403\u4E86\u5594\u3002"
     arg4: WaitInput
+    arg5: 
+    arg6: 
+    arg7: 
+  - index: 36
+    action: SendEvent
+    arg1: UI_ChangeGirlImage
+    arg2: 20
+    arg3: 
+    arg4: 
     arg5: 
     arg6: 
     arg7: 

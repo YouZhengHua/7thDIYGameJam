@@ -9,6 +9,7 @@ public class EndGameManager : MonoBehaviour
     [SerializeField] private FadeEffectUI fadeEffect;
     [SerializeField] private CreditManager credit;
     [SerializeField] private StageManager stageManager;
+    [SerializeField] private Transform background2;
 
     private void Start() {
         FadeIn();
@@ -29,6 +30,8 @@ public class EndGameManager : MonoBehaviour
     private IEnumerator thirdPhase() {
         FadeOut();
         yield return new WaitForSeconds(1f);
+        FadeIn();
+        background2.gameObject.SetActive(true);
         storyManager.StartStory(36, EndingAnimation);
     }
 
@@ -40,6 +43,7 @@ public class EndGameManager : MonoBehaviour
         yield return new WaitForSeconds(second);
         fadeEffect.gameObject.SetActive(false);
         credit.gameObject.SetActive(true);
+        background2.gameObject.SetActive(false); 
         StopAllCoroutines();
     }
 
